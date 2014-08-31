@@ -1,0 +1,2573 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.clickclickBOOM.com/MachinaX/DisplayX" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://www.clickclickBOOM.com/MachinaX/DisplayX" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">ContentXBlogs Web Service</wsdl:documentation>
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.clickclickBOOM.com/MachinaX/DisplayX">
+      <s:element name="List">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="topic" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SortBy" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="SortAscending" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="topic" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBlog">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="topic" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBlogResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetBlogResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Add">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="topic" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="author" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="title" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="html" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddNews">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="topic" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="author" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="year" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="month" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="day" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="title" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="text" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="html" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddNewsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddNewsResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Edit">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="topic" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="title" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="html" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EditResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EditResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EditText">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="topic" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="title" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="text" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="html" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EditTextResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EditTextResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EditNews">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="topic" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="year" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="month" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="day" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="title" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="text" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="html" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EditNewsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EditNewsResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EditTitle">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="topic" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="title" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EditTitleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EditTitleResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EditDateTitle">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="topic" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="year" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="month" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="day" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="title" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EditDateTitleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EditDateTitleResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Delete">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="topic" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DeleteResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetComments">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="topic" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCommentsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCommentsResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetComment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="topic" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="commentid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCommentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCommentResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddComment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="topic" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="author" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="title" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="comment" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="approved" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddCommentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddCommentResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EditComment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="topic" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="commentid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="title" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="comment" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="approved" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EditCommentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EditCommentResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteComment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="topic" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="commentid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteCommentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DeleteCommentResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListHistory">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="topic" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListHistoryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListHistoryResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RestoreHistory">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="topic" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="historyid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RestoreHistoryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RestoreHistoryResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetHistory">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="topic" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="historyid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetHistoryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetHistoryResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteHistory">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="topic" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="historyid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteHistoryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DeleteHistoryResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteAllHistory">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="topic" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteAllHistoryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DeleteAllHistoryResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Test">
+        <s:complexType />
+      </s:element>
+      <s:element name="TestResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TestResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TestName">
+        <s:complexType />
+      </s:element>
+      <s:element name="TestNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TestNameResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TestCustom">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Format" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RootName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ResultName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CodeName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DescriptionName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TestCustomResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TestCustomResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TestError">
+        <s:complexType />
+      </s:element>
+      <s:element name="TestErrorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TestErrorResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TestException">
+        <s:complexType />
+      </s:element>
+      <s:element name="TestExceptionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TestExceptionResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ListSoapIn">
+    <wsdl:part name="parameters" element="tns:List" />
+  </wsdl:message>
+  <wsdl:message name="ListSoapOut">
+    <wsdl:part name="parameters" element="tns:ListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSoapIn">
+    <wsdl:part name="parameters" element="tns:Get" />
+  </wsdl:message>
+  <wsdl:message name="GetSoapOut">
+    <wsdl:part name="parameters" element="tns:GetResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetBlogSoapIn">
+    <wsdl:part name="parameters" element="tns:GetBlog" />
+  </wsdl:message>
+  <wsdl:message name="GetBlogSoapOut">
+    <wsdl:part name="parameters" element="tns:GetBlogResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddSoapIn">
+    <wsdl:part name="parameters" element="tns:Add" />
+  </wsdl:message>
+  <wsdl:message name="AddSoapOut">
+    <wsdl:part name="parameters" element="tns:AddResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddNewsSoapIn">
+    <wsdl:part name="parameters" element="tns:AddNews" />
+  </wsdl:message>
+  <wsdl:message name="AddNewsSoapOut">
+    <wsdl:part name="parameters" element="tns:AddNewsResponse" />
+  </wsdl:message>
+  <wsdl:message name="EditSoapIn">
+    <wsdl:part name="parameters" element="tns:Edit" />
+  </wsdl:message>
+  <wsdl:message name="EditSoapOut">
+    <wsdl:part name="parameters" element="tns:EditResponse" />
+  </wsdl:message>
+  <wsdl:message name="EditTextSoapIn">
+    <wsdl:part name="parameters" element="tns:EditText" />
+  </wsdl:message>
+  <wsdl:message name="EditTextSoapOut">
+    <wsdl:part name="parameters" element="tns:EditTextResponse" />
+  </wsdl:message>
+  <wsdl:message name="EditNewsSoapIn">
+    <wsdl:part name="parameters" element="tns:EditNews" />
+  </wsdl:message>
+  <wsdl:message name="EditNewsSoapOut">
+    <wsdl:part name="parameters" element="tns:EditNewsResponse" />
+  </wsdl:message>
+  <wsdl:message name="EditTitleSoapIn">
+    <wsdl:part name="parameters" element="tns:EditTitle" />
+  </wsdl:message>
+  <wsdl:message name="EditTitleSoapOut">
+    <wsdl:part name="parameters" element="tns:EditTitleResponse" />
+  </wsdl:message>
+  <wsdl:message name="EditDateTitleSoapIn">
+    <wsdl:part name="parameters" element="tns:EditDateTitle" />
+  </wsdl:message>
+  <wsdl:message name="EditDateTitleSoapOut">
+    <wsdl:part name="parameters" element="tns:EditDateTitleResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteSoapIn">
+    <wsdl:part name="parameters" element="tns:Delete" />
+  </wsdl:message>
+  <wsdl:message name="DeleteSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCommentsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetComments" />
+  </wsdl:message>
+  <wsdl:message name="GetCommentsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCommentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCommentSoapIn">
+    <wsdl:part name="parameters" element="tns:GetComment" />
+  </wsdl:message>
+  <wsdl:message name="GetCommentSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCommentResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddCommentSoapIn">
+    <wsdl:part name="parameters" element="tns:AddComment" />
+  </wsdl:message>
+  <wsdl:message name="AddCommentSoapOut">
+    <wsdl:part name="parameters" element="tns:AddCommentResponse" />
+  </wsdl:message>
+  <wsdl:message name="EditCommentSoapIn">
+    <wsdl:part name="parameters" element="tns:EditComment" />
+  </wsdl:message>
+  <wsdl:message name="EditCommentSoapOut">
+    <wsdl:part name="parameters" element="tns:EditCommentResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteCommentSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteComment" />
+  </wsdl:message>
+  <wsdl:message name="DeleteCommentSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteCommentResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListHistorySoapIn">
+    <wsdl:part name="parameters" element="tns:ListHistory" />
+  </wsdl:message>
+  <wsdl:message name="ListHistorySoapOut">
+    <wsdl:part name="parameters" element="tns:ListHistoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="RestoreHistorySoapIn">
+    <wsdl:part name="parameters" element="tns:RestoreHistory" />
+  </wsdl:message>
+  <wsdl:message name="RestoreHistorySoapOut">
+    <wsdl:part name="parameters" element="tns:RestoreHistoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetHistorySoapIn">
+    <wsdl:part name="parameters" element="tns:GetHistory" />
+  </wsdl:message>
+  <wsdl:message name="GetHistorySoapOut">
+    <wsdl:part name="parameters" element="tns:GetHistoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteHistorySoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteHistory" />
+  </wsdl:message>
+  <wsdl:message name="DeleteHistorySoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteHistoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteAllHistorySoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteAllHistory" />
+  </wsdl:message>
+  <wsdl:message name="DeleteAllHistorySoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteAllHistoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="TestSoapIn">
+    <wsdl:part name="parameters" element="tns:Test" />
+  </wsdl:message>
+  <wsdl:message name="TestSoapOut">
+    <wsdl:part name="parameters" element="tns:TestResponse" />
+  </wsdl:message>
+  <wsdl:message name="TestNameSoapIn">
+    <wsdl:part name="parameters" element="tns:TestName" />
+  </wsdl:message>
+  <wsdl:message name="TestNameSoapOut">
+    <wsdl:part name="parameters" element="tns:TestNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="TestCustomSoapIn">
+    <wsdl:part name="parameters" element="tns:TestCustom" />
+  </wsdl:message>
+  <wsdl:message name="TestCustomSoapOut">
+    <wsdl:part name="parameters" element="tns:TestCustomResponse" />
+  </wsdl:message>
+  <wsdl:message name="TestErrorSoapIn">
+    <wsdl:part name="parameters" element="tns:TestError" />
+  </wsdl:message>
+  <wsdl:message name="TestErrorSoapOut">
+    <wsdl:part name="parameters" element="tns:TestErrorResponse" />
+  </wsdl:message>
+  <wsdl:message name="TestExceptionSoapIn">
+    <wsdl:part name="parameters" element="tns:TestException" />
+  </wsdl:message>
+  <wsdl:message name="TestExceptionSoapOut">
+    <wsdl:part name="parameters" element="tns:TestExceptionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListHttpGetIn">
+    <wsdl:part name="name" type="s:string" />
+    <wsdl:part name="topic" type="s:string" />
+    <wsdl:part name="SortBy" type="s:string" />
+    <wsdl:part name="SortAscending" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ListHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="GetHttpGetIn">
+    <wsdl:part name="name" type="s:string" />
+    <wsdl:part name="topic" type="s:string" />
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="GetBlogHttpGetIn">
+    <wsdl:part name="name" type="s:string" />
+    <wsdl:part name="topic" type="s:string" />
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetBlogHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="AddHttpGetIn">
+    <wsdl:part name="name" type="s:string" />
+    <wsdl:part name="topic" type="s:string" />
+    <wsdl:part name="author" type="s:string" />
+    <wsdl:part name="title" type="s:string" />
+    <wsdl:part name="html" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AddHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="AddNewsHttpGetIn">
+    <wsdl:part name="name" type="s:string" />
+    <wsdl:part name="topic" type="s:string" />
+    <wsdl:part name="author" type="s:string" />
+    <wsdl:part name="year" type="s:string" />
+    <wsdl:part name="month" type="s:string" />
+    <wsdl:part name="day" type="s:string" />
+    <wsdl:part name="title" type="s:string" />
+    <wsdl:part name="text" type="s:string" />
+    <wsdl:part name="html" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AddNewsHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="EditHttpGetIn">
+    <wsdl:part name="name" type="s:string" />
+    <wsdl:part name="topic" type="s:string" />
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="title" type="s:string" />
+    <wsdl:part name="html" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="EditHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="EditTextHttpGetIn">
+    <wsdl:part name="name" type="s:string" />
+    <wsdl:part name="topic" type="s:string" />
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="title" type="s:string" />
+    <wsdl:part name="text" type="s:string" />
+    <wsdl:part name="html" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="EditTextHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="EditNewsHttpGetIn">
+    <wsdl:part name="name" type="s:string" />
+    <wsdl:part name="topic" type="s:string" />
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="year" type="s:string" />
+    <wsdl:part name="month" type="s:string" />
+    <wsdl:part name="day" type="s:string" />
+    <wsdl:part name="title" type="s:string" />
+    <wsdl:part name="text" type="s:string" />
+    <wsdl:part name="html" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="EditNewsHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="EditTitleHttpGetIn">
+    <wsdl:part name="name" type="s:string" />
+    <wsdl:part name="topic" type="s:string" />
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="title" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="EditTitleHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="EditDateTitleHttpGetIn">
+    <wsdl:part name="name" type="s:string" />
+    <wsdl:part name="topic" type="s:string" />
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="year" type="s:string" />
+    <wsdl:part name="month" type="s:string" />
+    <wsdl:part name="day" type="s:string" />
+    <wsdl:part name="title" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="EditDateTitleHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="DeleteHttpGetIn">
+    <wsdl:part name="name" type="s:string" />
+    <wsdl:part name="topic" type="s:string" />
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DeleteHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="GetCommentsHttpGetIn">
+    <wsdl:part name="name" type="s:string" />
+    <wsdl:part name="topic" type="s:string" />
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCommentsHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="GetCommentHttpGetIn">
+    <wsdl:part name="name" type="s:string" />
+    <wsdl:part name="topic" type="s:string" />
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="commentid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCommentHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="AddCommentHttpGetIn">
+    <wsdl:part name="name" type="s:string" />
+    <wsdl:part name="topic" type="s:string" />
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="username" type="s:string" />
+    <wsdl:part name="author" type="s:string" />
+    <wsdl:part name="title" type="s:string" />
+    <wsdl:part name="comment" type="s:string" />
+    <wsdl:part name="approved" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AddCommentHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="EditCommentHttpGetIn">
+    <wsdl:part name="name" type="s:string" />
+    <wsdl:part name="topic" type="s:string" />
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="commentid" type="s:string" />
+    <wsdl:part name="title" type="s:string" />
+    <wsdl:part name="comment" type="s:string" />
+    <wsdl:part name="approved" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="EditCommentHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="DeleteCommentHttpGetIn">
+    <wsdl:part name="name" type="s:string" />
+    <wsdl:part name="topic" type="s:string" />
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="commentid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DeleteCommentHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="ListHistoryHttpGetIn">
+    <wsdl:part name="name" type="s:string" />
+    <wsdl:part name="topic" type="s:string" />
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ListHistoryHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="RestoreHistoryHttpGetIn">
+    <wsdl:part name="name" type="s:string" />
+    <wsdl:part name="topic" type="s:string" />
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="historyid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RestoreHistoryHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="GetHistoryHttpGetIn">
+    <wsdl:part name="name" type="s:string" />
+    <wsdl:part name="topic" type="s:string" />
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="historyid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetHistoryHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="DeleteHistoryHttpGetIn">
+    <wsdl:part name="name" type="s:string" />
+    <wsdl:part name="topic" type="s:string" />
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="historyid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DeleteHistoryHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="DeleteAllHistoryHttpGetIn">
+    <wsdl:part name="name" type="s:string" />
+    <wsdl:part name="topic" type="s:string" />
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DeleteAllHistoryHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="TestHttpGetIn" />
+  <wsdl:message name="TestHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="TestNameHttpGetIn" />
+  <wsdl:message name="TestNameHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="TestCustomHttpGetIn">
+    <wsdl:part name="Format" type="s:string" />
+    <wsdl:part name="RootName" type="s:string" />
+    <wsdl:part name="ResultName" type="s:string" />
+    <wsdl:part name="CodeName" type="s:string" />
+    <wsdl:part name="DescriptionName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="TestCustomHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="TestErrorHttpGetIn" />
+  <wsdl:message name="TestErrorHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="TestExceptionHttpGetIn" />
+  <wsdl:message name="TestExceptionHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="ListHttpPostIn">
+    <wsdl:part name="name" type="s:string" />
+    <wsdl:part name="topic" type="s:string" />
+    <wsdl:part name="SortBy" type="s:string" />
+    <wsdl:part name="SortAscending" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ListHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="GetHttpPostIn">
+    <wsdl:part name="name" type="s:string" />
+    <wsdl:part name="topic" type="s:string" />
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="GetBlogHttpPostIn">
+    <wsdl:part name="name" type="s:string" />
+    <wsdl:part name="topic" type="s:string" />
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetBlogHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="AddHttpPostIn">
+    <wsdl:part name="name" type="s:string" />
+    <wsdl:part name="topic" type="s:string" />
+    <wsdl:part name="author" type="s:string" />
+    <wsdl:part name="title" type="s:string" />
+    <wsdl:part name="html" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AddHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="AddNewsHttpPostIn">
+    <wsdl:part name="name" type="s:string" />
+    <wsdl:part name="topic" type="s:string" />
+    <wsdl:part name="author" type="s:string" />
+    <wsdl:part name="year" type="s:string" />
+    <wsdl:part name="month" type="s:string" />
+    <wsdl:part name="day" type="s:string" />
+    <wsdl:part name="title" type="s:string" />
+    <wsdl:part name="text" type="s:string" />
+    <wsdl:part name="html" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AddNewsHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="EditHttpPostIn">
+    <wsdl:part name="name" type="s:string" />
+    <wsdl:part name="topic" type="s:string" />
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="title" type="s:string" />
+    <wsdl:part name="html" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="EditHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="EditTextHttpPostIn">
+    <wsdl:part name="name" type="s:string" />
+    <wsdl:part name="topic" type="s:string" />
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="title" type="s:string" />
+    <wsdl:part name="text" type="s:string" />
+    <wsdl:part name="html" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="EditTextHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="EditNewsHttpPostIn">
+    <wsdl:part name="name" type="s:string" />
+    <wsdl:part name="topic" type="s:string" />
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="year" type="s:string" />
+    <wsdl:part name="month" type="s:string" />
+    <wsdl:part name="day" type="s:string" />
+    <wsdl:part name="title" type="s:string" />
+    <wsdl:part name="text" type="s:string" />
+    <wsdl:part name="html" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="EditNewsHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="EditTitleHttpPostIn">
+    <wsdl:part name="name" type="s:string" />
+    <wsdl:part name="topic" type="s:string" />
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="title" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="EditTitleHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="EditDateTitleHttpPostIn">
+    <wsdl:part name="name" type="s:string" />
+    <wsdl:part name="topic" type="s:string" />
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="year" type="s:string" />
+    <wsdl:part name="month" type="s:string" />
+    <wsdl:part name="day" type="s:string" />
+    <wsdl:part name="title" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="EditDateTitleHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="DeleteHttpPostIn">
+    <wsdl:part name="name" type="s:string" />
+    <wsdl:part name="topic" type="s:string" />
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DeleteHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="GetCommentsHttpPostIn">
+    <wsdl:part name="name" type="s:string" />
+    <wsdl:part name="topic" type="s:string" />
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCommentsHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="GetCommentHttpPostIn">
+    <wsdl:part name="name" type="s:string" />
+    <wsdl:part name="topic" type="s:string" />
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="commentid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCommentHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="AddCommentHttpPostIn">
+    <wsdl:part name="name" type="s:string" />
+    <wsdl:part name="topic" type="s:string" />
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="username" type="s:string" />
+    <wsdl:part name="author" type="s:string" />
+    <wsdl:part name="title" type="s:string" />
+    <wsdl:part name="comment" type="s:string" />
+    <wsdl:part name="approved" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AddCommentHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="EditCommentHttpPostIn">
+    <wsdl:part name="name" type="s:string" />
+    <wsdl:part name="topic" type="s:string" />
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="commentid" type="s:string" />
+    <wsdl:part name="title" type="s:string" />
+    <wsdl:part name="comment" type="s:string" />
+    <wsdl:part name="approved" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="EditCommentHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="DeleteCommentHttpPostIn">
+    <wsdl:part name="name" type="s:string" />
+    <wsdl:part name="topic" type="s:string" />
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="commentid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DeleteCommentHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="ListHistoryHttpPostIn">
+    <wsdl:part name="name" type="s:string" />
+    <wsdl:part name="topic" type="s:string" />
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ListHistoryHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="RestoreHistoryHttpPostIn">
+    <wsdl:part name="name" type="s:string" />
+    <wsdl:part name="topic" type="s:string" />
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="historyid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RestoreHistoryHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="GetHistoryHttpPostIn">
+    <wsdl:part name="name" type="s:string" />
+    <wsdl:part name="topic" type="s:string" />
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="historyid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetHistoryHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="DeleteHistoryHttpPostIn">
+    <wsdl:part name="name" type="s:string" />
+    <wsdl:part name="topic" type="s:string" />
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="historyid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DeleteHistoryHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="DeleteAllHistoryHttpPostIn">
+    <wsdl:part name="name" type="s:string" />
+    <wsdl:part name="topic" type="s:string" />
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DeleteAllHistoryHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="TestHttpPostIn" />
+  <wsdl:message name="TestHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="TestNameHttpPostIn" />
+  <wsdl:message name="TestNameHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="TestCustomHttpPostIn">
+    <wsdl:part name="Format" type="s:string" />
+    <wsdl:part name="RootName" type="s:string" />
+    <wsdl:part name="ResultName" type="s:string" />
+    <wsdl:part name="CodeName" type="s:string" />
+    <wsdl:part name="DescriptionName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="TestCustomHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="TestErrorHttpPostIn" />
+  <wsdl:message name="TestErrorHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="TestExceptionHttpPostIn" />
+  <wsdl:message name="TestExceptionHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:portType name="ContentXBlogsSoap">
+    <wsdl:operation name="List">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">List Content Blogs</wsdl:documentation>
+      <wsdl:input message="tns:ListSoapIn" />
+      <wsdl:output message="tns:ListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Get">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get Blog</wsdl:documentation>
+      <wsdl:input message="tns:GetSoapIn" />
+      <wsdl:output message="tns:GetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBlog">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a Blog (raw format)</wsdl:documentation>
+      <wsdl:input message="tns:GetBlogSoapIn" />
+      <wsdl:output message="tns:GetBlogSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Add">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Add a Blog</wsdl:documentation>
+      <wsdl:input message="tns:AddSoapIn" />
+      <wsdl:output message="tns:AddSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddNews">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Add a news Blog</wsdl:documentation>
+      <wsdl:input message="tns:AddNewsSoapIn" />
+      <wsdl:output message="tns:AddNewsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Edit">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Edit a Blog</wsdl:documentation>
+      <wsdl:input message="tns:EditSoapIn" />
+      <wsdl:output message="tns:EditSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EditText">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Edit a text+html Blog</wsdl:documentation>
+      <wsdl:input message="tns:EditTextSoapIn" />
+      <wsdl:output message="tns:EditTextSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EditNews">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Edit a news Blog</wsdl:documentation>
+      <wsdl:input message="tns:EditNewsSoapIn" />
+      <wsdl:output message="tns:EditNewsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EditTitle">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Edit a Blog's title</wsdl:documentation>
+      <wsdl:input message="tns:EditTitleSoapIn" />
+      <wsdl:output message="tns:EditTitleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EditDateTitle">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Edit a Blog's date and title</wsdl:documentation>
+      <wsdl:input message="tns:EditDateTitleSoapIn" />
+      <wsdl:output message="tns:EditDateTitleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Delete">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Delete a Blog</wsdl:documentation>
+      <wsdl:input message="tns:DeleteSoapIn" />
+      <wsdl:output message="tns:DeleteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetComments">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a Blog's comments</wsdl:documentation>
+      <wsdl:input message="tns:GetCommentsSoapIn" />
+      <wsdl:output message="tns:GetCommentsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetComment">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a Blog's comment</wsdl:documentation>
+      <wsdl:input message="tns:GetCommentSoapIn" />
+      <wsdl:output message="tns:GetCommentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddComment">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Add a Blog's comment</wsdl:documentation>
+      <wsdl:input message="tns:AddCommentSoapIn" />
+      <wsdl:output message="tns:AddCommentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EditComment">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Edit a Blog's comment</wsdl:documentation>
+      <wsdl:input message="tns:EditCommentSoapIn" />
+      <wsdl:output message="tns:EditCommentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteComment">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Delete a Blog's comment</wsdl:documentation>
+      <wsdl:input message="tns:DeleteCommentSoapIn" />
+      <wsdl:output message="tns:DeleteCommentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListHistory">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a Blog's history</wsdl:documentation>
+      <wsdl:input message="tns:ListHistorySoapIn" />
+      <wsdl:output message="tns:ListHistorySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RestoreHistory">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Restore a Blog's history</wsdl:documentation>
+      <wsdl:input message="tns:RestoreHistorySoapIn" />
+      <wsdl:output message="tns:RestoreHistorySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetHistory">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a Blog's history blog</wsdl:documentation>
+      <wsdl:input message="tns:GetHistorySoapIn" />
+      <wsdl:output message="tns:GetHistorySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteHistory">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Delete a Blog's history entry</wsdl:documentation>
+      <wsdl:input message="tns:DeleteHistorySoapIn" />
+      <wsdl:output message="tns:DeleteHistorySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAllHistory">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Delete a Blog's entrire history</wsdl:documentation>
+      <wsdl:input message="tns:DeleteAllHistorySoapIn" />
+      <wsdl:output message="tns:DeleteAllHistorySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Test">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Basic test of the web service</wsdl:documentation>
+      <wsdl:input message="tns:TestSoapIn" />
+      <wsdl:output message="tns:TestSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TestName">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Tests the web service by returning the Result name</wsdl:documentation>
+      <wsdl:input message="tns:TestNameSoapIn" />
+      <wsdl:output message="tns:TestNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TestCustom">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Tests the custom result formatting</wsdl:documentation>
+      <wsdl:input message="tns:TestCustomSoapIn" />
+      <wsdl:output message="tns:TestCustomSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TestError">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Basic test of an error condition</wsdl:documentation>
+      <wsdl:input message="tns:TestErrorSoapIn" />
+      <wsdl:output message="tns:TestErrorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TestException">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Basic test of an error exception</wsdl:documentation>
+      <wsdl:input message="tns:TestExceptionSoapIn" />
+      <wsdl:output message="tns:TestExceptionSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ContentXBlogsHttpGet">
+    <wsdl:operation name="List">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">List Content Blogs</wsdl:documentation>
+      <wsdl:input message="tns:ListHttpGetIn" />
+      <wsdl:output message="tns:ListHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Get">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get Blog</wsdl:documentation>
+      <wsdl:input message="tns:GetHttpGetIn" />
+      <wsdl:output message="tns:GetHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBlog">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a Blog (raw format)</wsdl:documentation>
+      <wsdl:input message="tns:GetBlogHttpGetIn" />
+      <wsdl:output message="tns:GetBlogHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Add">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Add a Blog</wsdl:documentation>
+      <wsdl:input message="tns:AddHttpGetIn" />
+      <wsdl:output message="tns:AddHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddNews">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Add a news Blog</wsdl:documentation>
+      <wsdl:input message="tns:AddNewsHttpGetIn" />
+      <wsdl:output message="tns:AddNewsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Edit">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Edit a Blog</wsdl:documentation>
+      <wsdl:input message="tns:EditHttpGetIn" />
+      <wsdl:output message="tns:EditHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EditText">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Edit a text+html Blog</wsdl:documentation>
+      <wsdl:input message="tns:EditTextHttpGetIn" />
+      <wsdl:output message="tns:EditTextHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EditNews">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Edit a news Blog</wsdl:documentation>
+      <wsdl:input message="tns:EditNewsHttpGetIn" />
+      <wsdl:output message="tns:EditNewsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EditTitle">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Edit a Blog's title</wsdl:documentation>
+      <wsdl:input message="tns:EditTitleHttpGetIn" />
+      <wsdl:output message="tns:EditTitleHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EditDateTitle">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Edit a Blog's date and title</wsdl:documentation>
+      <wsdl:input message="tns:EditDateTitleHttpGetIn" />
+      <wsdl:output message="tns:EditDateTitleHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Delete">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Delete a Blog</wsdl:documentation>
+      <wsdl:input message="tns:DeleteHttpGetIn" />
+      <wsdl:output message="tns:DeleteHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetComments">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a Blog's comments</wsdl:documentation>
+      <wsdl:input message="tns:GetCommentsHttpGetIn" />
+      <wsdl:output message="tns:GetCommentsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetComment">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a Blog's comment</wsdl:documentation>
+      <wsdl:input message="tns:GetCommentHttpGetIn" />
+      <wsdl:output message="tns:GetCommentHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddComment">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Add a Blog's comment</wsdl:documentation>
+      <wsdl:input message="tns:AddCommentHttpGetIn" />
+      <wsdl:output message="tns:AddCommentHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EditComment">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Edit a Blog's comment</wsdl:documentation>
+      <wsdl:input message="tns:EditCommentHttpGetIn" />
+      <wsdl:output message="tns:EditCommentHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteComment">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Delete a Blog's comment</wsdl:documentation>
+      <wsdl:input message="tns:DeleteCommentHttpGetIn" />
+      <wsdl:output message="tns:DeleteCommentHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListHistory">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a Blog's history</wsdl:documentation>
+      <wsdl:input message="tns:ListHistoryHttpGetIn" />
+      <wsdl:output message="tns:ListHistoryHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RestoreHistory">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Restore a Blog's history</wsdl:documentation>
+      <wsdl:input message="tns:RestoreHistoryHttpGetIn" />
+      <wsdl:output message="tns:RestoreHistoryHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetHistory">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a Blog's history blog</wsdl:documentation>
+      <wsdl:input message="tns:GetHistoryHttpGetIn" />
+      <wsdl:output message="tns:GetHistoryHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteHistory">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Delete a Blog's history entry</wsdl:documentation>
+      <wsdl:input message="tns:DeleteHistoryHttpGetIn" />
+      <wsdl:output message="tns:DeleteHistoryHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAllHistory">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Delete a Blog's entrire history</wsdl:documentation>
+      <wsdl:input message="tns:DeleteAllHistoryHttpGetIn" />
+      <wsdl:output message="tns:DeleteAllHistoryHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Test">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Basic test of the web service</wsdl:documentation>
+      <wsdl:input message="tns:TestHttpGetIn" />
+      <wsdl:output message="tns:TestHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TestName">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Tests the web service by returning the Result name</wsdl:documentation>
+      <wsdl:input message="tns:TestNameHttpGetIn" />
+      <wsdl:output message="tns:TestNameHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TestCustom">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Tests the custom result formatting</wsdl:documentation>
+      <wsdl:input message="tns:TestCustomHttpGetIn" />
+      <wsdl:output message="tns:TestCustomHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TestError">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Basic test of an error condition</wsdl:documentation>
+      <wsdl:input message="tns:TestErrorHttpGetIn" />
+      <wsdl:output message="tns:TestErrorHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TestException">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Basic test of an error exception</wsdl:documentation>
+      <wsdl:input message="tns:TestExceptionHttpGetIn" />
+      <wsdl:output message="tns:TestExceptionHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ContentXBlogsHttpPost">
+    <wsdl:operation name="List">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">List Content Blogs</wsdl:documentation>
+      <wsdl:input message="tns:ListHttpPostIn" />
+      <wsdl:output message="tns:ListHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Get">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get Blog</wsdl:documentation>
+      <wsdl:input message="tns:GetHttpPostIn" />
+      <wsdl:output message="tns:GetHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBlog">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a Blog (raw format)</wsdl:documentation>
+      <wsdl:input message="tns:GetBlogHttpPostIn" />
+      <wsdl:output message="tns:GetBlogHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Add">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Add a Blog</wsdl:documentation>
+      <wsdl:input message="tns:AddHttpPostIn" />
+      <wsdl:output message="tns:AddHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddNews">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Add a news Blog</wsdl:documentation>
+      <wsdl:input message="tns:AddNewsHttpPostIn" />
+      <wsdl:output message="tns:AddNewsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Edit">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Edit a Blog</wsdl:documentation>
+      <wsdl:input message="tns:EditHttpPostIn" />
+      <wsdl:output message="tns:EditHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EditText">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Edit a text+html Blog</wsdl:documentation>
+      <wsdl:input message="tns:EditTextHttpPostIn" />
+      <wsdl:output message="tns:EditTextHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EditNews">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Edit a news Blog</wsdl:documentation>
+      <wsdl:input message="tns:EditNewsHttpPostIn" />
+      <wsdl:output message="tns:EditNewsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EditTitle">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Edit a Blog's title</wsdl:documentation>
+      <wsdl:input message="tns:EditTitleHttpPostIn" />
+      <wsdl:output message="tns:EditTitleHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EditDateTitle">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Edit a Blog's date and title</wsdl:documentation>
+      <wsdl:input message="tns:EditDateTitleHttpPostIn" />
+      <wsdl:output message="tns:EditDateTitleHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Delete">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Delete a Blog</wsdl:documentation>
+      <wsdl:input message="tns:DeleteHttpPostIn" />
+      <wsdl:output message="tns:DeleteHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetComments">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a Blog's comments</wsdl:documentation>
+      <wsdl:input message="tns:GetCommentsHttpPostIn" />
+      <wsdl:output message="tns:GetCommentsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetComment">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a Blog's comment</wsdl:documentation>
+      <wsdl:input message="tns:GetCommentHttpPostIn" />
+      <wsdl:output message="tns:GetCommentHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddComment">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Add a Blog's comment</wsdl:documentation>
+      <wsdl:input message="tns:AddCommentHttpPostIn" />
+      <wsdl:output message="tns:AddCommentHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EditComment">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Edit a Blog's comment</wsdl:documentation>
+      <wsdl:input message="tns:EditCommentHttpPostIn" />
+      <wsdl:output message="tns:EditCommentHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteComment">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Delete a Blog's comment</wsdl:documentation>
+      <wsdl:input message="tns:DeleteCommentHttpPostIn" />
+      <wsdl:output message="tns:DeleteCommentHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListHistory">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a Blog's history</wsdl:documentation>
+      <wsdl:input message="tns:ListHistoryHttpPostIn" />
+      <wsdl:output message="tns:ListHistoryHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RestoreHistory">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Restore a Blog's history</wsdl:documentation>
+      <wsdl:input message="tns:RestoreHistoryHttpPostIn" />
+      <wsdl:output message="tns:RestoreHistoryHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetHistory">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a Blog's history blog</wsdl:documentation>
+      <wsdl:input message="tns:GetHistoryHttpPostIn" />
+      <wsdl:output message="tns:GetHistoryHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteHistory">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Delete a Blog's history entry</wsdl:documentation>
+      <wsdl:input message="tns:DeleteHistoryHttpPostIn" />
+      <wsdl:output message="tns:DeleteHistoryHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAllHistory">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Delete a Blog's entrire history</wsdl:documentation>
+      <wsdl:input message="tns:DeleteAllHistoryHttpPostIn" />
+      <wsdl:output message="tns:DeleteAllHistoryHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Test">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Basic test of the web service</wsdl:documentation>
+      <wsdl:input message="tns:TestHttpPostIn" />
+      <wsdl:output message="tns:TestHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TestName">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Tests the web service by returning the Result name</wsdl:documentation>
+      <wsdl:input message="tns:TestNameHttpPostIn" />
+      <wsdl:output message="tns:TestNameHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TestCustom">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Tests the custom result formatting</wsdl:documentation>
+      <wsdl:input message="tns:TestCustomHttpPostIn" />
+      <wsdl:output message="tns:TestCustomHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TestError">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Basic test of an error condition</wsdl:documentation>
+      <wsdl:input message="tns:TestErrorHttpPostIn" />
+      <wsdl:output message="tns:TestErrorHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TestException">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Basic test of an error exception</wsdl:documentation>
+      <wsdl:input message="tns:TestExceptionHttpPostIn" />
+      <wsdl:output message="tns:TestExceptionHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ContentXBlogsSoap" type="tns:ContentXBlogsSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="List">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/List" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/Get" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBlog">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/GetBlog" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Add">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/Add" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddNews">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/AddNews" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Edit">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/Edit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditText">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/EditText" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditNews">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/EditNews" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditTitle">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/EditTitle" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditDateTitle">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/EditDateTitle" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Delete">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/Delete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetComments">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/GetComments" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetComment">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/GetComment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddComment">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/AddComment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditComment">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/EditComment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteComment">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/DeleteComment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListHistory">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/ListHistory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RestoreHistory">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/RestoreHistory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHistory">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/GetHistory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteHistory">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/DeleteHistory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAllHistory">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/DeleteAllHistory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Test">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/Test" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestName">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/TestName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestCustom">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/TestCustom" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestError">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/TestError" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestException">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/TestException" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ContentXBlogsSoap12" type="tns:ContentXBlogsSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="List">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/List" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/Get" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBlog">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/GetBlog" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Add">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/Add" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddNews">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/AddNews" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Edit">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/Edit" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditText">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/EditText" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditNews">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/EditNews" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditTitle">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/EditTitle" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditDateTitle">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/EditDateTitle" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Delete">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/Delete" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetComments">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/GetComments" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetComment">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/GetComment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddComment">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/AddComment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditComment">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/EditComment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteComment">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/DeleteComment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListHistory">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/ListHistory" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RestoreHistory">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/RestoreHistory" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHistory">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/GetHistory" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteHistory">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/DeleteHistory" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAllHistory">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/DeleteAllHistory" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Test">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/Test" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestName">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/TestName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestCustom">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/TestCustom" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestError">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/TestError" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestException">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/TestException" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ContentXBlogsHttpGet" type="tns:ContentXBlogsHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="List">
+      <http:operation location="/List" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get">
+      <http:operation location="/Get" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBlog">
+      <http:operation location="/GetBlog" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Add">
+      <http:operation location="/Add" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddNews">
+      <http:operation location="/AddNews" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Edit">
+      <http:operation location="/Edit" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditText">
+      <http:operation location="/EditText" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditNews">
+      <http:operation location="/EditNews" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditTitle">
+      <http:operation location="/EditTitle" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditDateTitle">
+      <http:operation location="/EditDateTitle" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Delete">
+      <http:operation location="/Delete" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetComments">
+      <http:operation location="/GetComments" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetComment">
+      <http:operation location="/GetComment" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddComment">
+      <http:operation location="/AddComment" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditComment">
+      <http:operation location="/EditComment" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteComment">
+      <http:operation location="/DeleteComment" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListHistory">
+      <http:operation location="/ListHistory" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RestoreHistory">
+      <http:operation location="/RestoreHistory" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHistory">
+      <http:operation location="/GetHistory" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteHistory">
+      <http:operation location="/DeleteHistory" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAllHistory">
+      <http:operation location="/DeleteAllHistory" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Test">
+      <http:operation location="/Test" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestName">
+      <http:operation location="/TestName" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestCustom">
+      <http:operation location="/TestCustom" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestError">
+      <http:operation location="/TestError" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestException">
+      <http:operation location="/TestException" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ContentXBlogsHttpPost" type="tns:ContentXBlogsHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="List">
+      <http:operation location="/List" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get">
+      <http:operation location="/Get" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBlog">
+      <http:operation location="/GetBlog" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Add">
+      <http:operation location="/Add" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddNews">
+      <http:operation location="/AddNews" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Edit">
+      <http:operation location="/Edit" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditText">
+      <http:operation location="/EditText" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditNews">
+      <http:operation location="/EditNews" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditTitle">
+      <http:operation location="/EditTitle" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditDateTitle">
+      <http:operation location="/EditDateTitle" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Delete">
+      <http:operation location="/Delete" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetComments">
+      <http:operation location="/GetComments" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetComment">
+      <http:operation location="/GetComment" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddComment">
+      <http:operation location="/AddComment" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditComment">
+      <http:operation location="/EditComment" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteComment">
+      <http:operation location="/DeleteComment" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListHistory">
+      <http:operation location="/ListHistory" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RestoreHistory">
+      <http:operation location="/RestoreHistory" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHistory">
+      <http:operation location="/GetHistory" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteHistory">
+      <http:operation location="/DeleteHistory" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAllHistory">
+      <http:operation location="/DeleteAllHistory" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Test">
+      <http:operation location="/Test" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestName">
+      <http:operation location="/TestName" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestCustom">
+      <http:operation location="/TestCustom" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestError">
+      <http:operation location="/TestError" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestException">
+      <http:operation location="/TestException" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ContentXBlogs">
+    <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">ContentXBlogs Web Service</wsdl:documentation>
+    <wsdl:port name="ContentXBlogsSoap" binding="tns:ContentXBlogsSoap">
+      <soap:address location="http://www.ididthatad.com/ContentXBlogs.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ContentXBlogsSoap12" binding="tns:ContentXBlogsSoap12">
+      <soap12:address location="http://www.ididthatad.com/ContentXBlogs.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ContentXBlogsHttpGet" binding="tns:ContentXBlogsHttpGet">
+      <http:address location="http://www.ididthatad.com/ContentXBlogs.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ContentXBlogsHttpPost" binding="tns:ContentXBlogsHttpPost">
+      <http:address location="http://www.ididthatad.com/ContentXBlogs.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

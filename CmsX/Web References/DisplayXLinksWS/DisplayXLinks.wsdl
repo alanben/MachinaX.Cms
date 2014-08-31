@@ -1,0 +1,4307 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.clickclickBOOM.com/MachinaX/DisplayX" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://www.clickclickBOOM.com/MachinaX/DisplayX" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">DisplayXLinks Web Service</wsdl:documentation>
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.clickclickBOOM.com/MachinaX/DisplayX">
+      <s:element name="ListDD">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="blogxID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListDDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListDDResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListAll">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="blogxID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Group" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SortBy" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="SortAscending" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListAllResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListAllResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="List">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="blogxID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Group" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SortBy" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="SortAscending" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="SortNumber" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="StartPage" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="Rows" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Search">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="blogxID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="GroupSrchType" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Group" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="NameSrchType" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="PromptSrchType" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Prompt" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SortBy" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="SortAscending" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="SortNumber" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="StartPage" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="Rows" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SearchResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListGroups">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="blogxID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListGroupsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListGroupsResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListFlags">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="blogxID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListFlagsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListFlagsResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="blogxID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="LinkID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLink">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="blogxID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="LinkID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLinkResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetLinkResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Add">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="blogxID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="linkref" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="prompt" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="broker" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="group" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="display" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="secure" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="type" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tags" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="track" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="url" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Edit">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="blogxID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="linkref" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="prompt" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="broker" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="group" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="display" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="secure" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="type" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tags" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="track" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="url" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EditResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EditResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Delete">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="blogxID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DeleteResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListLinks">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="blogxID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListLinksResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListLinksResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddPage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="blogxID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="LinkID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="sect" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sub" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="proc" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="file" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddPageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddPageResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EditPage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="blogxID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="LinkID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="sect" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sub" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="proc" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="file" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EditPageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EditPageResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBlogs">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="blogxID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="LinkID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBlogsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetBlogsResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBlog">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="blogxID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="LinkID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="space" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="topic" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="blog" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBlogResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetBlogResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddBlog">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="blogxID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="LinkID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="space" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="topic" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="blog" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="position" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="title" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddBlogResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddBlogResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EditBlog">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="blogxID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="LinkID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="space" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="topic" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="blog" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="position" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="title" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EditBlogResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EditBlogResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteBlog">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="blogxID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="LinkID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="space" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="topic" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="blog" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteBlogResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DeleteBlogResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFlags">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="blogxID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="LinkID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFlagsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFlagsResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFlag">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="blogxID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="LinkID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="flag" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFlagResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFlagResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddFlag">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="blogxID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="LinkID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="flag" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="value" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddFlagResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddFlagResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EditFlag">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="blogxID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="LinkID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="flag" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="value" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EditFlagResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EditFlagResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteFlag">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="blogxID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="LinkID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="flag" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteFlagResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DeleteFlagResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLinkLinks">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="blogxID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="LinkID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLinkLinksResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetLinkLinksResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLinkLink">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="blogxID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="LinkID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="RelLink" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLinkLinkResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetLinkLinkResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddLinkLink">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="blogxID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="LinkID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="RelLink" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="value" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddLinkLinkResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddLinkLinkResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EditLinkLink">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="blogxID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="LinkID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="RelLink" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="value" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EditLinkLinkResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EditLinkLinkResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteLinkLink">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="blogxID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="LinkID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="RelLink" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteLinkLinkResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DeleteLinkLinkResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListFilesDD">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="blogxID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListFilesDDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListFilesDDResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListFiles">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="blogxID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListFilesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListFilesResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFiles">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="blogxID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="LinkID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFilesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFilesResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="blogxID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="LinkID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="FileID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFileResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFileResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFileXml">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="blogxID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="LinkID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="FileID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFileXmlResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFileXmlResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveFileXml">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="blogxID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="LinkID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="FileID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveFileXmlResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SaveFileXmlResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddFile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="blogxID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="LinkID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Sect" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SubSect" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Process" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="File" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Position" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddFileResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddFileResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddFileID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="blogxID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="LinkID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="FileID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Position" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddFileIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddFileIDResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EditFile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="blogxID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="LinkID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="FileID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Sect" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SubSect" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Process" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="File" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Position" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EditFileResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EditFileResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteFile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="blogxID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="LinkID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="FileID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteFileResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DeleteFileResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Test">
+        <s:complexType />
+      </s:element>
+      <s:element name="TestResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TestResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TestName">
+        <s:complexType />
+      </s:element>
+      <s:element name="TestNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TestNameResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TestCustom">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Format" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RootName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ResultName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CodeName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DescriptionName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TestCustomResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TestCustomResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TestError">
+        <s:complexType />
+      </s:element>
+      <s:element name="TestErrorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TestErrorResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TestException">
+        <s:complexType />
+      </s:element>
+      <s:element name="TestExceptionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TestExceptionResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ListDDSoapIn">
+    <wsdl:part name="parameters" element="tns:ListDD" />
+  </wsdl:message>
+  <wsdl:message name="ListDDSoapOut">
+    <wsdl:part name="parameters" element="tns:ListDDResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListAllSoapIn">
+    <wsdl:part name="parameters" element="tns:ListAll" />
+  </wsdl:message>
+  <wsdl:message name="ListAllSoapOut">
+    <wsdl:part name="parameters" element="tns:ListAllResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListSoapIn">
+    <wsdl:part name="parameters" element="tns:List" />
+  </wsdl:message>
+  <wsdl:message name="ListSoapOut">
+    <wsdl:part name="parameters" element="tns:ListResponse" />
+  </wsdl:message>
+  <wsdl:message name="SearchSoapIn">
+    <wsdl:part name="parameters" element="tns:Search" />
+  </wsdl:message>
+  <wsdl:message name="SearchSoapOut">
+    <wsdl:part name="parameters" element="tns:SearchResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListGroupsSoapIn">
+    <wsdl:part name="parameters" element="tns:ListGroups" />
+  </wsdl:message>
+  <wsdl:message name="ListGroupsSoapOut">
+    <wsdl:part name="parameters" element="tns:ListGroupsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListFlagsSoapIn">
+    <wsdl:part name="parameters" element="tns:ListFlags" />
+  </wsdl:message>
+  <wsdl:message name="ListFlagsSoapOut">
+    <wsdl:part name="parameters" element="tns:ListFlagsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSoapIn">
+    <wsdl:part name="parameters" element="tns:Get" />
+  </wsdl:message>
+  <wsdl:message name="GetSoapOut">
+    <wsdl:part name="parameters" element="tns:GetResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetLinkSoapIn">
+    <wsdl:part name="parameters" element="tns:GetLink" />
+  </wsdl:message>
+  <wsdl:message name="GetLinkSoapOut">
+    <wsdl:part name="parameters" element="tns:GetLinkResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddSoapIn">
+    <wsdl:part name="parameters" element="tns:Add" />
+  </wsdl:message>
+  <wsdl:message name="AddSoapOut">
+    <wsdl:part name="parameters" element="tns:AddResponse" />
+  </wsdl:message>
+  <wsdl:message name="EditSoapIn">
+    <wsdl:part name="parameters" element="tns:Edit" />
+  </wsdl:message>
+  <wsdl:message name="EditSoapOut">
+    <wsdl:part name="parameters" element="tns:EditResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteSoapIn">
+    <wsdl:part name="parameters" element="tns:Delete" />
+  </wsdl:message>
+  <wsdl:message name="DeleteSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListLinksSoapIn">
+    <wsdl:part name="parameters" element="tns:ListLinks" />
+  </wsdl:message>
+  <wsdl:message name="ListLinksSoapOut">
+    <wsdl:part name="parameters" element="tns:ListLinksResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddPageSoapIn">
+    <wsdl:part name="parameters" element="tns:AddPage" />
+  </wsdl:message>
+  <wsdl:message name="AddPageSoapOut">
+    <wsdl:part name="parameters" element="tns:AddPageResponse" />
+  </wsdl:message>
+  <wsdl:message name="EditPageSoapIn">
+    <wsdl:part name="parameters" element="tns:EditPage" />
+  </wsdl:message>
+  <wsdl:message name="EditPageSoapOut">
+    <wsdl:part name="parameters" element="tns:EditPageResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetBlogsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetBlogs" />
+  </wsdl:message>
+  <wsdl:message name="GetBlogsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetBlogsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetBlogSoapIn">
+    <wsdl:part name="parameters" element="tns:GetBlog" />
+  </wsdl:message>
+  <wsdl:message name="GetBlogSoapOut">
+    <wsdl:part name="parameters" element="tns:GetBlogResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddBlogSoapIn">
+    <wsdl:part name="parameters" element="tns:AddBlog" />
+  </wsdl:message>
+  <wsdl:message name="AddBlogSoapOut">
+    <wsdl:part name="parameters" element="tns:AddBlogResponse" />
+  </wsdl:message>
+  <wsdl:message name="EditBlogSoapIn">
+    <wsdl:part name="parameters" element="tns:EditBlog" />
+  </wsdl:message>
+  <wsdl:message name="EditBlogSoapOut">
+    <wsdl:part name="parameters" element="tns:EditBlogResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteBlogSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteBlog" />
+  </wsdl:message>
+  <wsdl:message name="DeleteBlogSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteBlogResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFlagsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFlags" />
+  </wsdl:message>
+  <wsdl:message name="GetFlagsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFlagsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFlagSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFlag" />
+  </wsdl:message>
+  <wsdl:message name="GetFlagSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFlagResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddFlagSoapIn">
+    <wsdl:part name="parameters" element="tns:AddFlag" />
+  </wsdl:message>
+  <wsdl:message name="AddFlagSoapOut">
+    <wsdl:part name="parameters" element="tns:AddFlagResponse" />
+  </wsdl:message>
+  <wsdl:message name="EditFlagSoapIn">
+    <wsdl:part name="parameters" element="tns:EditFlag" />
+  </wsdl:message>
+  <wsdl:message name="EditFlagSoapOut">
+    <wsdl:part name="parameters" element="tns:EditFlagResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteFlagSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteFlag" />
+  </wsdl:message>
+  <wsdl:message name="DeleteFlagSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteFlagResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetLinkLinksSoapIn">
+    <wsdl:part name="parameters" element="tns:GetLinkLinks" />
+  </wsdl:message>
+  <wsdl:message name="GetLinkLinksSoapOut">
+    <wsdl:part name="parameters" element="tns:GetLinkLinksResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetLinkLinkSoapIn">
+    <wsdl:part name="parameters" element="tns:GetLinkLink" />
+  </wsdl:message>
+  <wsdl:message name="GetLinkLinkSoapOut">
+    <wsdl:part name="parameters" element="tns:GetLinkLinkResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddLinkLinkSoapIn">
+    <wsdl:part name="parameters" element="tns:AddLinkLink" />
+  </wsdl:message>
+  <wsdl:message name="AddLinkLinkSoapOut">
+    <wsdl:part name="parameters" element="tns:AddLinkLinkResponse" />
+  </wsdl:message>
+  <wsdl:message name="EditLinkLinkSoapIn">
+    <wsdl:part name="parameters" element="tns:EditLinkLink" />
+  </wsdl:message>
+  <wsdl:message name="EditLinkLinkSoapOut">
+    <wsdl:part name="parameters" element="tns:EditLinkLinkResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteLinkLinkSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteLinkLink" />
+  </wsdl:message>
+  <wsdl:message name="DeleteLinkLinkSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteLinkLinkResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListFilesDDSoapIn">
+    <wsdl:part name="parameters" element="tns:ListFilesDD" />
+  </wsdl:message>
+  <wsdl:message name="ListFilesDDSoapOut">
+    <wsdl:part name="parameters" element="tns:ListFilesDDResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListFilesSoapIn">
+    <wsdl:part name="parameters" element="tns:ListFiles" />
+  </wsdl:message>
+  <wsdl:message name="ListFilesSoapOut">
+    <wsdl:part name="parameters" element="tns:ListFilesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFilesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFiles" />
+  </wsdl:message>
+  <wsdl:message name="GetFilesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFilesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFileSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFile" />
+  </wsdl:message>
+  <wsdl:message name="GetFileSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFileXmlSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFileXml" />
+  </wsdl:message>
+  <wsdl:message name="GetFileXmlSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFileXmlResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveFileXmlSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveFileXml" />
+  </wsdl:message>
+  <wsdl:message name="SaveFileXmlSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveFileXmlResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddFileSoapIn">
+    <wsdl:part name="parameters" element="tns:AddFile" />
+  </wsdl:message>
+  <wsdl:message name="AddFileSoapOut">
+    <wsdl:part name="parameters" element="tns:AddFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddFileIDSoapIn">
+    <wsdl:part name="parameters" element="tns:AddFileID" />
+  </wsdl:message>
+  <wsdl:message name="AddFileIDSoapOut">
+    <wsdl:part name="parameters" element="tns:AddFileIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="EditFileSoapIn">
+    <wsdl:part name="parameters" element="tns:EditFile" />
+  </wsdl:message>
+  <wsdl:message name="EditFileSoapOut">
+    <wsdl:part name="parameters" element="tns:EditFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteFileSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteFile" />
+  </wsdl:message>
+  <wsdl:message name="DeleteFileSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="TestSoapIn">
+    <wsdl:part name="parameters" element="tns:Test" />
+  </wsdl:message>
+  <wsdl:message name="TestSoapOut">
+    <wsdl:part name="parameters" element="tns:TestResponse" />
+  </wsdl:message>
+  <wsdl:message name="TestNameSoapIn">
+    <wsdl:part name="parameters" element="tns:TestName" />
+  </wsdl:message>
+  <wsdl:message name="TestNameSoapOut">
+    <wsdl:part name="parameters" element="tns:TestNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="TestCustomSoapIn">
+    <wsdl:part name="parameters" element="tns:TestCustom" />
+  </wsdl:message>
+  <wsdl:message name="TestCustomSoapOut">
+    <wsdl:part name="parameters" element="tns:TestCustomResponse" />
+  </wsdl:message>
+  <wsdl:message name="TestErrorSoapIn">
+    <wsdl:part name="parameters" element="tns:TestError" />
+  </wsdl:message>
+  <wsdl:message name="TestErrorSoapOut">
+    <wsdl:part name="parameters" element="tns:TestErrorResponse" />
+  </wsdl:message>
+  <wsdl:message name="TestExceptionSoapIn">
+    <wsdl:part name="parameters" element="tns:TestException" />
+  </wsdl:message>
+  <wsdl:message name="TestExceptionSoapOut">
+    <wsdl:part name="parameters" element="tns:TestExceptionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListDDHttpGetIn">
+    <wsdl:part name="blogxID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ListDDHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="ListAllHttpGetIn">
+    <wsdl:part name="blogxID" type="s:string" />
+    <wsdl:part name="Group" type="s:string" />
+    <wsdl:part name="SortBy" type="s:string" />
+    <wsdl:part name="SortAscending" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ListAllHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="ListHttpGetIn">
+    <wsdl:part name="blogxID" type="s:string" />
+    <wsdl:part name="Group" type="s:string" />
+    <wsdl:part name="SortBy" type="s:string" />
+    <wsdl:part name="SortAscending" type="s:string" />
+    <wsdl:part name="SortNumber" type="s:string" />
+    <wsdl:part name="StartPage" type="s:string" />
+    <wsdl:part name="Rows" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ListHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="SearchHttpGetIn">
+    <wsdl:part name="blogxID" type="s:string" />
+    <wsdl:part name="GroupSrchType" type="s:string" />
+    <wsdl:part name="Group" type="s:string" />
+    <wsdl:part name="NameSrchType" type="s:string" />
+    <wsdl:part name="Name" type="s:string" />
+    <wsdl:part name="PromptSrchType" type="s:string" />
+    <wsdl:part name="Prompt" type="s:string" />
+    <wsdl:part name="SortBy" type="s:string" />
+    <wsdl:part name="SortAscending" type="s:string" />
+    <wsdl:part name="SortNumber" type="s:string" />
+    <wsdl:part name="StartPage" type="s:string" />
+    <wsdl:part name="Rows" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SearchHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="ListGroupsHttpGetIn">
+    <wsdl:part name="blogxID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ListGroupsHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="ListFlagsHttpGetIn">
+    <wsdl:part name="blogxID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ListFlagsHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="GetHttpGetIn">
+    <wsdl:part name="blogxID" type="s:string" />
+    <wsdl:part name="LinkID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="GetLinkHttpGetIn">
+    <wsdl:part name="blogxID" type="s:string" />
+    <wsdl:part name="LinkID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetLinkHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="AddHttpGetIn">
+    <wsdl:part name="blogxID" type="s:string" />
+    <wsdl:part name="name" type="s:string" />
+    <wsdl:part name="linkref" type="s:string" />
+    <wsdl:part name="prompt" type="s:string" />
+    <wsdl:part name="broker" type="s:string" />
+    <wsdl:part name="group" type="s:string" />
+    <wsdl:part name="display" type="s:string" />
+    <wsdl:part name="secure" type="s:string" />
+    <wsdl:part name="type" type="s:string" />
+    <wsdl:part name="tags" type="s:string" />
+    <wsdl:part name="track" type="s:string" />
+    <wsdl:part name="url" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AddHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="EditHttpGetIn">
+    <wsdl:part name="blogxID" type="s:string" />
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="name" type="s:string" />
+    <wsdl:part name="linkref" type="s:string" />
+    <wsdl:part name="prompt" type="s:string" />
+    <wsdl:part name="broker" type="s:string" />
+    <wsdl:part name="group" type="s:string" />
+    <wsdl:part name="display" type="s:string" />
+    <wsdl:part name="secure" type="s:string" />
+    <wsdl:part name="type" type="s:string" />
+    <wsdl:part name="tags" type="s:string" />
+    <wsdl:part name="track" type="s:string" />
+    <wsdl:part name="url" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="EditHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="DeleteHttpGetIn">
+    <wsdl:part name="blogxID" type="s:string" />
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DeleteHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="ListLinksHttpGetIn">
+    <wsdl:part name="blogxID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ListLinksHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="AddPageHttpGetIn">
+    <wsdl:part name="blogxID" type="s:string" />
+    <wsdl:part name="LinkID" type="s:string" />
+    <wsdl:part name="sect" type="s:string" />
+    <wsdl:part name="sub" type="s:string" />
+    <wsdl:part name="proc" type="s:string" />
+    <wsdl:part name="file" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AddPageHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="EditPageHttpGetIn">
+    <wsdl:part name="blogxID" type="s:string" />
+    <wsdl:part name="LinkID" type="s:string" />
+    <wsdl:part name="sect" type="s:string" />
+    <wsdl:part name="sub" type="s:string" />
+    <wsdl:part name="proc" type="s:string" />
+    <wsdl:part name="file" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="EditPageHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="GetBlogsHttpGetIn">
+    <wsdl:part name="blogxID" type="s:string" />
+    <wsdl:part name="LinkID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetBlogsHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="GetBlogHttpGetIn">
+    <wsdl:part name="blogxID" type="s:string" />
+    <wsdl:part name="LinkID" type="s:string" />
+    <wsdl:part name="space" type="s:string" />
+    <wsdl:part name="topic" type="s:string" />
+    <wsdl:part name="blog" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetBlogHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="AddBlogHttpGetIn">
+    <wsdl:part name="blogxID" type="s:string" />
+    <wsdl:part name="LinkID" type="s:string" />
+    <wsdl:part name="space" type="s:string" />
+    <wsdl:part name="topic" type="s:string" />
+    <wsdl:part name="blog" type="s:string" />
+    <wsdl:part name="position" type="s:string" />
+    <wsdl:part name="title" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AddBlogHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="EditBlogHttpGetIn">
+    <wsdl:part name="blogxID" type="s:string" />
+    <wsdl:part name="LinkID" type="s:string" />
+    <wsdl:part name="space" type="s:string" />
+    <wsdl:part name="topic" type="s:string" />
+    <wsdl:part name="blog" type="s:string" />
+    <wsdl:part name="position" type="s:string" />
+    <wsdl:part name="title" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="EditBlogHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="DeleteBlogHttpGetIn">
+    <wsdl:part name="blogxID" type="s:string" />
+    <wsdl:part name="LinkID" type="s:string" />
+    <wsdl:part name="space" type="s:string" />
+    <wsdl:part name="topic" type="s:string" />
+    <wsdl:part name="blog" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DeleteBlogHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="GetFlagsHttpGetIn">
+    <wsdl:part name="blogxID" type="s:string" />
+    <wsdl:part name="LinkID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetFlagsHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="GetFlagHttpGetIn">
+    <wsdl:part name="blogxID" type="s:string" />
+    <wsdl:part name="LinkID" type="s:string" />
+    <wsdl:part name="flag" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetFlagHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="AddFlagHttpGetIn">
+    <wsdl:part name="blogxID" type="s:string" />
+    <wsdl:part name="LinkID" type="s:string" />
+    <wsdl:part name="flag" type="s:string" />
+    <wsdl:part name="value" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AddFlagHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="EditFlagHttpGetIn">
+    <wsdl:part name="blogxID" type="s:string" />
+    <wsdl:part name="LinkID" type="s:string" />
+    <wsdl:part name="flag" type="s:string" />
+    <wsdl:part name="value" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="EditFlagHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="DeleteFlagHttpGetIn">
+    <wsdl:part name="blogxID" type="s:string" />
+    <wsdl:part name="LinkID" type="s:string" />
+    <wsdl:part name="flag" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DeleteFlagHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="GetLinkLinksHttpGetIn">
+    <wsdl:part name="blogxID" type="s:string" />
+    <wsdl:part name="LinkID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetLinkLinksHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="GetLinkLinkHttpGetIn">
+    <wsdl:part name="blogxID" type="s:string" />
+    <wsdl:part name="LinkID" type="s:string" />
+    <wsdl:part name="RelLink" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetLinkLinkHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="AddLinkLinkHttpGetIn">
+    <wsdl:part name="blogxID" type="s:string" />
+    <wsdl:part name="LinkID" type="s:string" />
+    <wsdl:part name="RelLink" type="s:string" />
+    <wsdl:part name="value" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AddLinkLinkHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="EditLinkLinkHttpGetIn">
+    <wsdl:part name="blogxID" type="s:string" />
+    <wsdl:part name="LinkID" type="s:string" />
+    <wsdl:part name="RelLink" type="s:string" />
+    <wsdl:part name="value" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="EditLinkLinkHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="DeleteLinkLinkHttpGetIn">
+    <wsdl:part name="blogxID" type="s:string" />
+    <wsdl:part name="LinkID" type="s:string" />
+    <wsdl:part name="RelLink" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DeleteLinkLinkHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="ListFilesDDHttpGetIn">
+    <wsdl:part name="blogxID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ListFilesDDHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="ListFilesHttpGetIn">
+    <wsdl:part name="blogxID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ListFilesHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="GetFilesHttpGetIn">
+    <wsdl:part name="blogxID" type="s:string" />
+    <wsdl:part name="LinkID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetFilesHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="GetFileHttpGetIn">
+    <wsdl:part name="blogxID" type="s:string" />
+    <wsdl:part name="LinkID" type="s:string" />
+    <wsdl:part name="FileID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetFileHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="GetFileXmlHttpGetIn">
+    <wsdl:part name="blogxID" type="s:string" />
+    <wsdl:part name="LinkID" type="s:string" />
+    <wsdl:part name="FileID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetFileXmlHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="SaveFileXmlHttpGetIn">
+    <wsdl:part name="blogxID" type="s:string" />
+    <wsdl:part name="LinkID" type="s:string" />
+    <wsdl:part name="FileID" type="s:string" />
+    <wsdl:part name="Xml" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SaveFileXmlHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="AddFileHttpGetIn">
+    <wsdl:part name="blogxID" type="s:string" />
+    <wsdl:part name="LinkID" type="s:string" />
+    <wsdl:part name="Sect" type="s:string" />
+    <wsdl:part name="SubSect" type="s:string" />
+    <wsdl:part name="Process" type="s:string" />
+    <wsdl:part name="File" type="s:string" />
+    <wsdl:part name="Position" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AddFileHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="AddFileIDHttpGetIn">
+    <wsdl:part name="blogxID" type="s:string" />
+    <wsdl:part name="LinkID" type="s:string" />
+    <wsdl:part name="FileID" type="s:string" />
+    <wsdl:part name="Position" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AddFileIDHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="EditFileHttpGetIn">
+    <wsdl:part name="blogxID" type="s:string" />
+    <wsdl:part name="LinkID" type="s:string" />
+    <wsdl:part name="FileID" type="s:string" />
+    <wsdl:part name="Sect" type="s:string" />
+    <wsdl:part name="SubSect" type="s:string" />
+    <wsdl:part name="Process" type="s:string" />
+    <wsdl:part name="File" type="s:string" />
+    <wsdl:part name="Position" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="EditFileHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="DeleteFileHttpGetIn">
+    <wsdl:part name="blogxID" type="s:string" />
+    <wsdl:part name="LinkID" type="s:string" />
+    <wsdl:part name="FileID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DeleteFileHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="TestHttpGetIn" />
+  <wsdl:message name="TestHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="TestNameHttpGetIn" />
+  <wsdl:message name="TestNameHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="TestCustomHttpGetIn">
+    <wsdl:part name="Format" type="s:string" />
+    <wsdl:part name="RootName" type="s:string" />
+    <wsdl:part name="ResultName" type="s:string" />
+    <wsdl:part name="CodeName" type="s:string" />
+    <wsdl:part name="DescriptionName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="TestCustomHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="TestErrorHttpGetIn" />
+  <wsdl:message name="TestErrorHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="TestExceptionHttpGetIn" />
+  <wsdl:message name="TestExceptionHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="ListDDHttpPostIn">
+    <wsdl:part name="blogxID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ListDDHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="ListAllHttpPostIn">
+    <wsdl:part name="blogxID" type="s:string" />
+    <wsdl:part name="Group" type="s:string" />
+    <wsdl:part name="SortBy" type="s:string" />
+    <wsdl:part name="SortAscending" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ListAllHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="ListHttpPostIn">
+    <wsdl:part name="blogxID" type="s:string" />
+    <wsdl:part name="Group" type="s:string" />
+    <wsdl:part name="SortBy" type="s:string" />
+    <wsdl:part name="SortAscending" type="s:string" />
+    <wsdl:part name="SortNumber" type="s:string" />
+    <wsdl:part name="StartPage" type="s:string" />
+    <wsdl:part name="Rows" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ListHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="SearchHttpPostIn">
+    <wsdl:part name="blogxID" type="s:string" />
+    <wsdl:part name="GroupSrchType" type="s:string" />
+    <wsdl:part name="Group" type="s:string" />
+    <wsdl:part name="NameSrchType" type="s:string" />
+    <wsdl:part name="Name" type="s:string" />
+    <wsdl:part name="PromptSrchType" type="s:string" />
+    <wsdl:part name="Prompt" type="s:string" />
+    <wsdl:part name="SortBy" type="s:string" />
+    <wsdl:part name="SortAscending" type="s:string" />
+    <wsdl:part name="SortNumber" type="s:string" />
+    <wsdl:part name="StartPage" type="s:string" />
+    <wsdl:part name="Rows" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SearchHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="ListGroupsHttpPostIn">
+    <wsdl:part name="blogxID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ListGroupsHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="ListFlagsHttpPostIn">
+    <wsdl:part name="blogxID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ListFlagsHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="GetHttpPostIn">
+    <wsdl:part name="blogxID" type="s:string" />
+    <wsdl:part name="LinkID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="GetLinkHttpPostIn">
+    <wsdl:part name="blogxID" type="s:string" />
+    <wsdl:part name="LinkID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetLinkHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="AddHttpPostIn">
+    <wsdl:part name="blogxID" type="s:string" />
+    <wsdl:part name="name" type="s:string" />
+    <wsdl:part name="linkref" type="s:string" />
+    <wsdl:part name="prompt" type="s:string" />
+    <wsdl:part name="broker" type="s:string" />
+    <wsdl:part name="group" type="s:string" />
+    <wsdl:part name="display" type="s:string" />
+    <wsdl:part name="secure" type="s:string" />
+    <wsdl:part name="type" type="s:string" />
+    <wsdl:part name="tags" type="s:string" />
+    <wsdl:part name="track" type="s:string" />
+    <wsdl:part name="url" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AddHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="EditHttpPostIn">
+    <wsdl:part name="blogxID" type="s:string" />
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="name" type="s:string" />
+    <wsdl:part name="linkref" type="s:string" />
+    <wsdl:part name="prompt" type="s:string" />
+    <wsdl:part name="broker" type="s:string" />
+    <wsdl:part name="group" type="s:string" />
+    <wsdl:part name="display" type="s:string" />
+    <wsdl:part name="secure" type="s:string" />
+    <wsdl:part name="type" type="s:string" />
+    <wsdl:part name="tags" type="s:string" />
+    <wsdl:part name="track" type="s:string" />
+    <wsdl:part name="url" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="EditHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="DeleteHttpPostIn">
+    <wsdl:part name="blogxID" type="s:string" />
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DeleteHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="ListLinksHttpPostIn">
+    <wsdl:part name="blogxID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ListLinksHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="AddPageHttpPostIn">
+    <wsdl:part name="blogxID" type="s:string" />
+    <wsdl:part name="LinkID" type="s:string" />
+    <wsdl:part name="sect" type="s:string" />
+    <wsdl:part name="sub" type="s:string" />
+    <wsdl:part name="proc" type="s:string" />
+    <wsdl:part name="file" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AddPageHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="EditPageHttpPostIn">
+    <wsdl:part name="blogxID" type="s:string" />
+    <wsdl:part name="LinkID" type="s:string" />
+    <wsdl:part name="sect" type="s:string" />
+    <wsdl:part name="sub" type="s:string" />
+    <wsdl:part name="proc" type="s:string" />
+    <wsdl:part name="file" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="EditPageHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="GetBlogsHttpPostIn">
+    <wsdl:part name="blogxID" type="s:string" />
+    <wsdl:part name="LinkID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetBlogsHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="GetBlogHttpPostIn">
+    <wsdl:part name="blogxID" type="s:string" />
+    <wsdl:part name="LinkID" type="s:string" />
+    <wsdl:part name="space" type="s:string" />
+    <wsdl:part name="topic" type="s:string" />
+    <wsdl:part name="blog" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetBlogHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="AddBlogHttpPostIn">
+    <wsdl:part name="blogxID" type="s:string" />
+    <wsdl:part name="LinkID" type="s:string" />
+    <wsdl:part name="space" type="s:string" />
+    <wsdl:part name="topic" type="s:string" />
+    <wsdl:part name="blog" type="s:string" />
+    <wsdl:part name="position" type="s:string" />
+    <wsdl:part name="title" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AddBlogHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="EditBlogHttpPostIn">
+    <wsdl:part name="blogxID" type="s:string" />
+    <wsdl:part name="LinkID" type="s:string" />
+    <wsdl:part name="space" type="s:string" />
+    <wsdl:part name="topic" type="s:string" />
+    <wsdl:part name="blog" type="s:string" />
+    <wsdl:part name="position" type="s:string" />
+    <wsdl:part name="title" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="EditBlogHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="DeleteBlogHttpPostIn">
+    <wsdl:part name="blogxID" type="s:string" />
+    <wsdl:part name="LinkID" type="s:string" />
+    <wsdl:part name="space" type="s:string" />
+    <wsdl:part name="topic" type="s:string" />
+    <wsdl:part name="blog" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DeleteBlogHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="GetFlagsHttpPostIn">
+    <wsdl:part name="blogxID" type="s:string" />
+    <wsdl:part name="LinkID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetFlagsHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="GetFlagHttpPostIn">
+    <wsdl:part name="blogxID" type="s:string" />
+    <wsdl:part name="LinkID" type="s:string" />
+    <wsdl:part name="flag" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetFlagHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="AddFlagHttpPostIn">
+    <wsdl:part name="blogxID" type="s:string" />
+    <wsdl:part name="LinkID" type="s:string" />
+    <wsdl:part name="flag" type="s:string" />
+    <wsdl:part name="value" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AddFlagHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="EditFlagHttpPostIn">
+    <wsdl:part name="blogxID" type="s:string" />
+    <wsdl:part name="LinkID" type="s:string" />
+    <wsdl:part name="flag" type="s:string" />
+    <wsdl:part name="value" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="EditFlagHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="DeleteFlagHttpPostIn">
+    <wsdl:part name="blogxID" type="s:string" />
+    <wsdl:part name="LinkID" type="s:string" />
+    <wsdl:part name="flag" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DeleteFlagHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="GetLinkLinksHttpPostIn">
+    <wsdl:part name="blogxID" type="s:string" />
+    <wsdl:part name="LinkID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetLinkLinksHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="GetLinkLinkHttpPostIn">
+    <wsdl:part name="blogxID" type="s:string" />
+    <wsdl:part name="LinkID" type="s:string" />
+    <wsdl:part name="RelLink" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetLinkLinkHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="AddLinkLinkHttpPostIn">
+    <wsdl:part name="blogxID" type="s:string" />
+    <wsdl:part name="LinkID" type="s:string" />
+    <wsdl:part name="RelLink" type="s:string" />
+    <wsdl:part name="value" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AddLinkLinkHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="EditLinkLinkHttpPostIn">
+    <wsdl:part name="blogxID" type="s:string" />
+    <wsdl:part name="LinkID" type="s:string" />
+    <wsdl:part name="RelLink" type="s:string" />
+    <wsdl:part name="value" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="EditLinkLinkHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="DeleteLinkLinkHttpPostIn">
+    <wsdl:part name="blogxID" type="s:string" />
+    <wsdl:part name="LinkID" type="s:string" />
+    <wsdl:part name="RelLink" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DeleteLinkLinkHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="ListFilesDDHttpPostIn">
+    <wsdl:part name="blogxID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ListFilesDDHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="ListFilesHttpPostIn">
+    <wsdl:part name="blogxID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ListFilesHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="GetFilesHttpPostIn">
+    <wsdl:part name="blogxID" type="s:string" />
+    <wsdl:part name="LinkID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetFilesHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="GetFileHttpPostIn">
+    <wsdl:part name="blogxID" type="s:string" />
+    <wsdl:part name="LinkID" type="s:string" />
+    <wsdl:part name="FileID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetFileHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="GetFileXmlHttpPostIn">
+    <wsdl:part name="blogxID" type="s:string" />
+    <wsdl:part name="LinkID" type="s:string" />
+    <wsdl:part name="FileID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetFileXmlHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="SaveFileXmlHttpPostIn">
+    <wsdl:part name="blogxID" type="s:string" />
+    <wsdl:part name="LinkID" type="s:string" />
+    <wsdl:part name="FileID" type="s:string" />
+    <wsdl:part name="Xml" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SaveFileXmlHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="AddFileHttpPostIn">
+    <wsdl:part name="blogxID" type="s:string" />
+    <wsdl:part name="LinkID" type="s:string" />
+    <wsdl:part name="Sect" type="s:string" />
+    <wsdl:part name="SubSect" type="s:string" />
+    <wsdl:part name="Process" type="s:string" />
+    <wsdl:part name="File" type="s:string" />
+    <wsdl:part name="Position" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AddFileHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="AddFileIDHttpPostIn">
+    <wsdl:part name="blogxID" type="s:string" />
+    <wsdl:part name="LinkID" type="s:string" />
+    <wsdl:part name="FileID" type="s:string" />
+    <wsdl:part name="Position" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AddFileIDHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="EditFileHttpPostIn">
+    <wsdl:part name="blogxID" type="s:string" />
+    <wsdl:part name="LinkID" type="s:string" />
+    <wsdl:part name="FileID" type="s:string" />
+    <wsdl:part name="Sect" type="s:string" />
+    <wsdl:part name="SubSect" type="s:string" />
+    <wsdl:part name="Process" type="s:string" />
+    <wsdl:part name="File" type="s:string" />
+    <wsdl:part name="Position" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="EditFileHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="DeleteFileHttpPostIn">
+    <wsdl:part name="blogxID" type="s:string" />
+    <wsdl:part name="LinkID" type="s:string" />
+    <wsdl:part name="FileID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DeleteFileHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="TestHttpPostIn" />
+  <wsdl:message name="TestHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="TestNameHttpPostIn" />
+  <wsdl:message name="TestNameHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="TestCustomHttpPostIn">
+    <wsdl:part name="Format" type="s:string" />
+    <wsdl:part name="RootName" type="s:string" />
+    <wsdl:part name="ResultName" type="s:string" />
+    <wsdl:part name="CodeName" type="s:string" />
+    <wsdl:part name="DescriptionName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="TestCustomHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="TestErrorHttpPostIn" />
+  <wsdl:message name="TestErrorHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="TestExceptionHttpPostIn" />
+  <wsdl:message name="TestExceptionHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:portType name="DisplayXLinksSoap">
+    <wsdl:operation name="ListDD">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a list of all Links</wsdl:documentation>
+      <wsdl:input message="tns:ListDDSoapIn" />
+      <wsdl:output message="tns:ListDDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListAll">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a list of all Links</wsdl:documentation>
+      <wsdl:input message="tns:ListAllSoapIn" />
+      <wsdl:output message="tns:ListAllSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="List">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a sorted, filtered, paginated list of Links</wsdl:documentation>
+      <wsdl:input message="tns:ListSoapIn" />
+      <wsdl:output message="tns:ListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Search">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a sorted, filtered, paginated list of Links</wsdl:documentation>
+      <wsdl:input message="tns:SearchSoapIn" />
+      <wsdl:output message="tns:SearchSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListGroups">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a list of all Link groups</wsdl:documentation>
+      <wsdl:input message="tns:ListGroupsSoapIn" />
+      <wsdl:output message="tns:ListGroupsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListFlags">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a list of all Link flags</wsdl:documentation>
+      <wsdl:input message="tns:ListFlagsSoapIn" />
+      <wsdl:output message="tns:ListFlagsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Get">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a Link (item format)</wsdl:documentation>
+      <wsdl:input message="tns:GetSoapIn" />
+      <wsdl:output message="tns:GetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLink">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a Link (raw format)</wsdl:documentation>
+      <wsdl:input message="tns:GetLinkSoapIn" />
+      <wsdl:output message="tns:GetLinkSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Add">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Add a Link</wsdl:documentation>
+      <wsdl:input message="tns:AddSoapIn" />
+      <wsdl:output message="tns:AddSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Edit">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Edit a Link</wsdl:documentation>
+      <wsdl:input message="tns:EditSoapIn" />
+      <wsdl:output message="tns:EditSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Delete">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Delete a Link</wsdl:documentation>
+      <wsdl:input message="tns:DeleteSoapIn" />
+      <wsdl:output message="tns:DeleteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListLinks">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Legacy::Lists links in DisplayX (default order)</wsdl:documentation>
+      <wsdl:input message="tns:ListLinksSoapIn" />
+      <wsdl:output message="tns:ListLinksSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddPage">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Add a Link's page</wsdl:documentation>
+      <wsdl:input message="tns:AddPageSoapIn" />
+      <wsdl:output message="tns:AddPageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EditPage">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Edit a Link's page</wsdl:documentation>
+      <wsdl:input message="tns:EditPageSoapIn" />
+      <wsdl:output message="tns:EditPageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBlogs">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a Link's blogs</wsdl:documentation>
+      <wsdl:input message="tns:GetBlogsSoapIn" />
+      <wsdl:output message="tns:GetBlogsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBlog">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a Link's blog</wsdl:documentation>
+      <wsdl:input message="tns:GetBlogSoapIn" />
+      <wsdl:output message="tns:GetBlogSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddBlog">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Add a Link's blog</wsdl:documentation>
+      <wsdl:input message="tns:AddBlogSoapIn" />
+      <wsdl:output message="tns:AddBlogSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EditBlog">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Edit a Link's blog</wsdl:documentation>
+      <wsdl:input message="tns:EditBlogSoapIn" />
+      <wsdl:output message="tns:EditBlogSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteBlog">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Delete a Link's blog</wsdl:documentation>
+      <wsdl:input message="tns:DeleteBlogSoapIn" />
+      <wsdl:output message="tns:DeleteBlogSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFlags">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a Link's flags</wsdl:documentation>
+      <wsdl:input message="tns:GetFlagsSoapIn" />
+      <wsdl:output message="tns:GetFlagsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFlag">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a Link's flag</wsdl:documentation>
+      <wsdl:input message="tns:GetFlagSoapIn" />
+      <wsdl:output message="tns:GetFlagSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddFlag">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Add a Link's flag</wsdl:documentation>
+      <wsdl:input message="tns:AddFlagSoapIn" />
+      <wsdl:output message="tns:AddFlagSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EditFlag">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Edit a Link's flag</wsdl:documentation>
+      <wsdl:input message="tns:EditFlagSoapIn" />
+      <wsdl:output message="tns:EditFlagSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFlag">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Delete a Link's flag</wsdl:documentation>
+      <wsdl:input message="tns:DeleteFlagSoapIn" />
+      <wsdl:output message="tns:DeleteFlagSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLinkLinks">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a Link's links</wsdl:documentation>
+      <wsdl:input message="tns:GetLinkLinksSoapIn" />
+      <wsdl:output message="tns:GetLinkLinksSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLinkLink">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a Link's (related) link</wsdl:documentation>
+      <wsdl:input message="tns:GetLinkLinkSoapIn" />
+      <wsdl:output message="tns:GetLinkLinkSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddLinkLink">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Add a Link's link</wsdl:documentation>
+      <wsdl:input message="tns:AddLinkLinkSoapIn" />
+      <wsdl:output message="tns:AddLinkLinkSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EditLinkLink">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Edit a Link's link</wsdl:documentation>
+      <wsdl:input message="tns:EditLinkLinkSoapIn" />
+      <wsdl:output message="tns:EditLinkLinkSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteLinkLink">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Delete a Link's link</wsdl:documentation>
+      <wsdl:input message="tns:DeleteLinkLinkSoapIn" />
+      <wsdl:output message="tns:DeleteLinkLinkSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListFilesDD">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a list of all Link files</wsdl:documentation>
+      <wsdl:input message="tns:ListFilesDDSoapIn" />
+      <wsdl:output message="tns:ListFilesDDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListFiles">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a list of all Link files</wsdl:documentation>
+      <wsdl:input message="tns:ListFilesSoapIn" />
+      <wsdl:output message="tns:ListFilesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFiles">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a Link's files</wsdl:documentation>
+      <wsdl:input message="tns:GetFilesSoapIn" />
+      <wsdl:output message="tns:GetFilesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFile">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a Link's file</wsdl:documentation>
+      <wsdl:input message="tns:GetFileSoapIn" />
+      <wsdl:output message="tns:GetFileSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFileXml">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a Link file's xml</wsdl:documentation>
+      <wsdl:input message="tns:GetFileXmlSoapIn" />
+      <wsdl:output message="tns:GetFileXmlSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveFileXml">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Save a Link file's xml</wsdl:documentation>
+      <wsdl:input message="tns:SaveFileXmlSoapIn" />
+      <wsdl:output message="tns:SaveFileXmlSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddFile">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Add a Link's file</wsdl:documentation>
+      <wsdl:input message="tns:AddFileSoapIn" />
+      <wsdl:output message="tns:AddFileSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddFileID">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Add a Link's file</wsdl:documentation>
+      <wsdl:input message="tns:AddFileIDSoapIn" />
+      <wsdl:output message="tns:AddFileIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EditFile">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Edit a Link's file</wsdl:documentation>
+      <wsdl:input message="tns:EditFileSoapIn" />
+      <wsdl:output message="tns:EditFileSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFile">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Delete a Link's file</wsdl:documentation>
+      <wsdl:input message="tns:DeleteFileSoapIn" />
+      <wsdl:output message="tns:DeleteFileSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Test">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Basic test of the web service</wsdl:documentation>
+      <wsdl:input message="tns:TestSoapIn" />
+      <wsdl:output message="tns:TestSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TestName">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Tests the web service by returning the Result name</wsdl:documentation>
+      <wsdl:input message="tns:TestNameSoapIn" />
+      <wsdl:output message="tns:TestNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TestCustom">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Tests the custom result formatting</wsdl:documentation>
+      <wsdl:input message="tns:TestCustomSoapIn" />
+      <wsdl:output message="tns:TestCustomSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TestError">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Basic test of an error condition</wsdl:documentation>
+      <wsdl:input message="tns:TestErrorSoapIn" />
+      <wsdl:output message="tns:TestErrorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TestException">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Basic test of an error exception</wsdl:documentation>
+      <wsdl:input message="tns:TestExceptionSoapIn" />
+      <wsdl:output message="tns:TestExceptionSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="DisplayXLinksHttpGet">
+    <wsdl:operation name="ListDD">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a list of all Links</wsdl:documentation>
+      <wsdl:input message="tns:ListDDHttpGetIn" />
+      <wsdl:output message="tns:ListDDHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListAll">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a list of all Links</wsdl:documentation>
+      <wsdl:input message="tns:ListAllHttpGetIn" />
+      <wsdl:output message="tns:ListAllHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="List">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a sorted, filtered, paginated list of Links</wsdl:documentation>
+      <wsdl:input message="tns:ListHttpGetIn" />
+      <wsdl:output message="tns:ListHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Search">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a sorted, filtered, paginated list of Links</wsdl:documentation>
+      <wsdl:input message="tns:SearchHttpGetIn" />
+      <wsdl:output message="tns:SearchHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListGroups">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a list of all Link groups</wsdl:documentation>
+      <wsdl:input message="tns:ListGroupsHttpGetIn" />
+      <wsdl:output message="tns:ListGroupsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListFlags">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a list of all Link flags</wsdl:documentation>
+      <wsdl:input message="tns:ListFlagsHttpGetIn" />
+      <wsdl:output message="tns:ListFlagsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Get">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a Link (item format)</wsdl:documentation>
+      <wsdl:input message="tns:GetHttpGetIn" />
+      <wsdl:output message="tns:GetHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLink">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a Link (raw format)</wsdl:documentation>
+      <wsdl:input message="tns:GetLinkHttpGetIn" />
+      <wsdl:output message="tns:GetLinkHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Add">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Add a Link</wsdl:documentation>
+      <wsdl:input message="tns:AddHttpGetIn" />
+      <wsdl:output message="tns:AddHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Edit">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Edit a Link</wsdl:documentation>
+      <wsdl:input message="tns:EditHttpGetIn" />
+      <wsdl:output message="tns:EditHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Delete">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Delete a Link</wsdl:documentation>
+      <wsdl:input message="tns:DeleteHttpGetIn" />
+      <wsdl:output message="tns:DeleteHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListLinks">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Legacy::Lists links in DisplayX (default order)</wsdl:documentation>
+      <wsdl:input message="tns:ListLinksHttpGetIn" />
+      <wsdl:output message="tns:ListLinksHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddPage">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Add a Link's page</wsdl:documentation>
+      <wsdl:input message="tns:AddPageHttpGetIn" />
+      <wsdl:output message="tns:AddPageHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EditPage">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Edit a Link's page</wsdl:documentation>
+      <wsdl:input message="tns:EditPageHttpGetIn" />
+      <wsdl:output message="tns:EditPageHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBlogs">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a Link's blogs</wsdl:documentation>
+      <wsdl:input message="tns:GetBlogsHttpGetIn" />
+      <wsdl:output message="tns:GetBlogsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBlog">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a Link's blog</wsdl:documentation>
+      <wsdl:input message="tns:GetBlogHttpGetIn" />
+      <wsdl:output message="tns:GetBlogHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddBlog">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Add a Link's blog</wsdl:documentation>
+      <wsdl:input message="tns:AddBlogHttpGetIn" />
+      <wsdl:output message="tns:AddBlogHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EditBlog">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Edit a Link's blog</wsdl:documentation>
+      <wsdl:input message="tns:EditBlogHttpGetIn" />
+      <wsdl:output message="tns:EditBlogHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteBlog">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Delete a Link's blog</wsdl:documentation>
+      <wsdl:input message="tns:DeleteBlogHttpGetIn" />
+      <wsdl:output message="tns:DeleteBlogHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFlags">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a Link's flags</wsdl:documentation>
+      <wsdl:input message="tns:GetFlagsHttpGetIn" />
+      <wsdl:output message="tns:GetFlagsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFlag">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a Link's flag</wsdl:documentation>
+      <wsdl:input message="tns:GetFlagHttpGetIn" />
+      <wsdl:output message="tns:GetFlagHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddFlag">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Add a Link's flag</wsdl:documentation>
+      <wsdl:input message="tns:AddFlagHttpGetIn" />
+      <wsdl:output message="tns:AddFlagHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EditFlag">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Edit a Link's flag</wsdl:documentation>
+      <wsdl:input message="tns:EditFlagHttpGetIn" />
+      <wsdl:output message="tns:EditFlagHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFlag">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Delete a Link's flag</wsdl:documentation>
+      <wsdl:input message="tns:DeleteFlagHttpGetIn" />
+      <wsdl:output message="tns:DeleteFlagHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLinkLinks">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a Link's links</wsdl:documentation>
+      <wsdl:input message="tns:GetLinkLinksHttpGetIn" />
+      <wsdl:output message="tns:GetLinkLinksHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLinkLink">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a Link's (related) link</wsdl:documentation>
+      <wsdl:input message="tns:GetLinkLinkHttpGetIn" />
+      <wsdl:output message="tns:GetLinkLinkHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddLinkLink">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Add a Link's link</wsdl:documentation>
+      <wsdl:input message="tns:AddLinkLinkHttpGetIn" />
+      <wsdl:output message="tns:AddLinkLinkHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EditLinkLink">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Edit a Link's link</wsdl:documentation>
+      <wsdl:input message="tns:EditLinkLinkHttpGetIn" />
+      <wsdl:output message="tns:EditLinkLinkHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteLinkLink">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Delete a Link's link</wsdl:documentation>
+      <wsdl:input message="tns:DeleteLinkLinkHttpGetIn" />
+      <wsdl:output message="tns:DeleteLinkLinkHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListFilesDD">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a list of all Link files</wsdl:documentation>
+      <wsdl:input message="tns:ListFilesDDHttpGetIn" />
+      <wsdl:output message="tns:ListFilesDDHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListFiles">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a list of all Link files</wsdl:documentation>
+      <wsdl:input message="tns:ListFilesHttpGetIn" />
+      <wsdl:output message="tns:ListFilesHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFiles">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a Link's files</wsdl:documentation>
+      <wsdl:input message="tns:GetFilesHttpGetIn" />
+      <wsdl:output message="tns:GetFilesHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFile">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a Link's file</wsdl:documentation>
+      <wsdl:input message="tns:GetFileHttpGetIn" />
+      <wsdl:output message="tns:GetFileHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFileXml">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a Link file's xml</wsdl:documentation>
+      <wsdl:input message="tns:GetFileXmlHttpGetIn" />
+      <wsdl:output message="tns:GetFileXmlHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveFileXml">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Save a Link file's xml</wsdl:documentation>
+      <wsdl:input message="tns:SaveFileXmlHttpGetIn" />
+      <wsdl:output message="tns:SaveFileXmlHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddFile">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Add a Link's file</wsdl:documentation>
+      <wsdl:input message="tns:AddFileHttpGetIn" />
+      <wsdl:output message="tns:AddFileHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddFileID">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Add a Link's file</wsdl:documentation>
+      <wsdl:input message="tns:AddFileIDHttpGetIn" />
+      <wsdl:output message="tns:AddFileIDHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EditFile">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Edit a Link's file</wsdl:documentation>
+      <wsdl:input message="tns:EditFileHttpGetIn" />
+      <wsdl:output message="tns:EditFileHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFile">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Delete a Link's file</wsdl:documentation>
+      <wsdl:input message="tns:DeleteFileHttpGetIn" />
+      <wsdl:output message="tns:DeleteFileHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Test">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Basic test of the web service</wsdl:documentation>
+      <wsdl:input message="tns:TestHttpGetIn" />
+      <wsdl:output message="tns:TestHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TestName">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Tests the web service by returning the Result name</wsdl:documentation>
+      <wsdl:input message="tns:TestNameHttpGetIn" />
+      <wsdl:output message="tns:TestNameHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TestCustom">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Tests the custom result formatting</wsdl:documentation>
+      <wsdl:input message="tns:TestCustomHttpGetIn" />
+      <wsdl:output message="tns:TestCustomHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TestError">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Basic test of an error condition</wsdl:documentation>
+      <wsdl:input message="tns:TestErrorHttpGetIn" />
+      <wsdl:output message="tns:TestErrorHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TestException">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Basic test of an error exception</wsdl:documentation>
+      <wsdl:input message="tns:TestExceptionHttpGetIn" />
+      <wsdl:output message="tns:TestExceptionHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="DisplayXLinksHttpPost">
+    <wsdl:operation name="ListDD">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a list of all Links</wsdl:documentation>
+      <wsdl:input message="tns:ListDDHttpPostIn" />
+      <wsdl:output message="tns:ListDDHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListAll">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a list of all Links</wsdl:documentation>
+      <wsdl:input message="tns:ListAllHttpPostIn" />
+      <wsdl:output message="tns:ListAllHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="List">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a sorted, filtered, paginated list of Links</wsdl:documentation>
+      <wsdl:input message="tns:ListHttpPostIn" />
+      <wsdl:output message="tns:ListHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Search">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a sorted, filtered, paginated list of Links</wsdl:documentation>
+      <wsdl:input message="tns:SearchHttpPostIn" />
+      <wsdl:output message="tns:SearchHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListGroups">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a list of all Link groups</wsdl:documentation>
+      <wsdl:input message="tns:ListGroupsHttpPostIn" />
+      <wsdl:output message="tns:ListGroupsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListFlags">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a list of all Link flags</wsdl:documentation>
+      <wsdl:input message="tns:ListFlagsHttpPostIn" />
+      <wsdl:output message="tns:ListFlagsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Get">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a Link (item format)</wsdl:documentation>
+      <wsdl:input message="tns:GetHttpPostIn" />
+      <wsdl:output message="tns:GetHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLink">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a Link (raw format)</wsdl:documentation>
+      <wsdl:input message="tns:GetLinkHttpPostIn" />
+      <wsdl:output message="tns:GetLinkHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Add">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Add a Link</wsdl:documentation>
+      <wsdl:input message="tns:AddHttpPostIn" />
+      <wsdl:output message="tns:AddHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Edit">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Edit a Link</wsdl:documentation>
+      <wsdl:input message="tns:EditHttpPostIn" />
+      <wsdl:output message="tns:EditHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Delete">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Delete a Link</wsdl:documentation>
+      <wsdl:input message="tns:DeleteHttpPostIn" />
+      <wsdl:output message="tns:DeleteHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListLinks">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Legacy::Lists links in DisplayX (default order)</wsdl:documentation>
+      <wsdl:input message="tns:ListLinksHttpPostIn" />
+      <wsdl:output message="tns:ListLinksHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddPage">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Add a Link's page</wsdl:documentation>
+      <wsdl:input message="tns:AddPageHttpPostIn" />
+      <wsdl:output message="tns:AddPageHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EditPage">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Edit a Link's page</wsdl:documentation>
+      <wsdl:input message="tns:EditPageHttpPostIn" />
+      <wsdl:output message="tns:EditPageHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBlogs">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a Link's blogs</wsdl:documentation>
+      <wsdl:input message="tns:GetBlogsHttpPostIn" />
+      <wsdl:output message="tns:GetBlogsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBlog">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a Link's blog</wsdl:documentation>
+      <wsdl:input message="tns:GetBlogHttpPostIn" />
+      <wsdl:output message="tns:GetBlogHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddBlog">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Add a Link's blog</wsdl:documentation>
+      <wsdl:input message="tns:AddBlogHttpPostIn" />
+      <wsdl:output message="tns:AddBlogHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EditBlog">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Edit a Link's blog</wsdl:documentation>
+      <wsdl:input message="tns:EditBlogHttpPostIn" />
+      <wsdl:output message="tns:EditBlogHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteBlog">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Delete a Link's blog</wsdl:documentation>
+      <wsdl:input message="tns:DeleteBlogHttpPostIn" />
+      <wsdl:output message="tns:DeleteBlogHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFlags">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a Link's flags</wsdl:documentation>
+      <wsdl:input message="tns:GetFlagsHttpPostIn" />
+      <wsdl:output message="tns:GetFlagsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFlag">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a Link's flag</wsdl:documentation>
+      <wsdl:input message="tns:GetFlagHttpPostIn" />
+      <wsdl:output message="tns:GetFlagHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddFlag">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Add a Link's flag</wsdl:documentation>
+      <wsdl:input message="tns:AddFlagHttpPostIn" />
+      <wsdl:output message="tns:AddFlagHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EditFlag">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Edit a Link's flag</wsdl:documentation>
+      <wsdl:input message="tns:EditFlagHttpPostIn" />
+      <wsdl:output message="tns:EditFlagHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFlag">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Delete a Link's flag</wsdl:documentation>
+      <wsdl:input message="tns:DeleteFlagHttpPostIn" />
+      <wsdl:output message="tns:DeleteFlagHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLinkLinks">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a Link's links</wsdl:documentation>
+      <wsdl:input message="tns:GetLinkLinksHttpPostIn" />
+      <wsdl:output message="tns:GetLinkLinksHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLinkLink">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a Link's (related) link</wsdl:documentation>
+      <wsdl:input message="tns:GetLinkLinkHttpPostIn" />
+      <wsdl:output message="tns:GetLinkLinkHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddLinkLink">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Add a Link's link</wsdl:documentation>
+      <wsdl:input message="tns:AddLinkLinkHttpPostIn" />
+      <wsdl:output message="tns:AddLinkLinkHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EditLinkLink">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Edit a Link's link</wsdl:documentation>
+      <wsdl:input message="tns:EditLinkLinkHttpPostIn" />
+      <wsdl:output message="tns:EditLinkLinkHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteLinkLink">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Delete a Link's link</wsdl:documentation>
+      <wsdl:input message="tns:DeleteLinkLinkHttpPostIn" />
+      <wsdl:output message="tns:DeleteLinkLinkHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListFilesDD">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a list of all Link files</wsdl:documentation>
+      <wsdl:input message="tns:ListFilesDDHttpPostIn" />
+      <wsdl:output message="tns:ListFilesDDHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListFiles">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a list of all Link files</wsdl:documentation>
+      <wsdl:input message="tns:ListFilesHttpPostIn" />
+      <wsdl:output message="tns:ListFilesHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFiles">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a Link's files</wsdl:documentation>
+      <wsdl:input message="tns:GetFilesHttpPostIn" />
+      <wsdl:output message="tns:GetFilesHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFile">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a Link's file</wsdl:documentation>
+      <wsdl:input message="tns:GetFileHttpPostIn" />
+      <wsdl:output message="tns:GetFileHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFileXml">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a Link file's xml</wsdl:documentation>
+      <wsdl:input message="tns:GetFileXmlHttpPostIn" />
+      <wsdl:output message="tns:GetFileXmlHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveFileXml">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Save a Link file's xml</wsdl:documentation>
+      <wsdl:input message="tns:SaveFileXmlHttpPostIn" />
+      <wsdl:output message="tns:SaveFileXmlHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddFile">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Add a Link's file</wsdl:documentation>
+      <wsdl:input message="tns:AddFileHttpPostIn" />
+      <wsdl:output message="tns:AddFileHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddFileID">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Add a Link's file</wsdl:documentation>
+      <wsdl:input message="tns:AddFileIDHttpPostIn" />
+      <wsdl:output message="tns:AddFileIDHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EditFile">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Edit a Link's file</wsdl:documentation>
+      <wsdl:input message="tns:EditFileHttpPostIn" />
+      <wsdl:output message="tns:EditFileHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFile">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Delete a Link's file</wsdl:documentation>
+      <wsdl:input message="tns:DeleteFileHttpPostIn" />
+      <wsdl:output message="tns:DeleteFileHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Test">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Basic test of the web service</wsdl:documentation>
+      <wsdl:input message="tns:TestHttpPostIn" />
+      <wsdl:output message="tns:TestHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TestName">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Tests the web service by returning the Result name</wsdl:documentation>
+      <wsdl:input message="tns:TestNameHttpPostIn" />
+      <wsdl:output message="tns:TestNameHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TestCustom">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Tests the custom result formatting</wsdl:documentation>
+      <wsdl:input message="tns:TestCustomHttpPostIn" />
+      <wsdl:output message="tns:TestCustomHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TestError">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Basic test of an error condition</wsdl:documentation>
+      <wsdl:input message="tns:TestErrorHttpPostIn" />
+      <wsdl:output message="tns:TestErrorHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TestException">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Basic test of an error exception</wsdl:documentation>
+      <wsdl:input message="tns:TestExceptionHttpPostIn" />
+      <wsdl:output message="tns:TestExceptionHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="DisplayXLinksSoap" type="tns:DisplayXLinksSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ListDD">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/ListDD" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListAll">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/ListAll" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="List">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/List" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Search">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/Search" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListGroups">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/ListGroups" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListFlags">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/ListFlags" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/Get" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLink">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/GetLink" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Add">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/Add" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Edit">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/Edit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Delete">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/Delete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListLinks">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/ListLinks" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddPage">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/AddPage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditPage">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/EditPage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBlogs">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/GetBlogs" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBlog">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/GetBlog" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddBlog">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/AddBlog" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditBlog">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/EditBlog" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteBlog">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/DeleteBlog" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFlags">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/GetFlags" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFlag">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/GetFlag" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddFlag">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/AddFlag" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditFlag">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/EditFlag" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFlag">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/DeleteFlag" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLinkLinks">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/GetLinkLinks" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLinkLink">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/GetLinkLink" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddLinkLink">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/AddLinkLink" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditLinkLink">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/EditLinkLink" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteLinkLink">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/DeleteLinkLink" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListFilesDD">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/ListFilesDD" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListFiles">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/ListFiles" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFiles">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/GetFiles" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFile">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/GetFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFileXml">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/GetFileXml" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveFileXml">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/SaveFileXml" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddFile">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/AddFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddFileID">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/AddFileID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditFile">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/EditFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFile">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/DeleteFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Test">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/Test" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestName">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/TestName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestCustom">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/TestCustom" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestError">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/TestError" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestException">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/TestException" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="DisplayXLinksSoap12" type="tns:DisplayXLinksSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ListDD">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/ListDD" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListAll">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/ListAll" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="List">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/List" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Search">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/Search" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListGroups">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/ListGroups" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListFlags">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/ListFlags" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/Get" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLink">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/GetLink" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Add">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/Add" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Edit">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/Edit" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Delete">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/Delete" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListLinks">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/ListLinks" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddPage">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/AddPage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditPage">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/EditPage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBlogs">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/GetBlogs" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBlog">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/GetBlog" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddBlog">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/AddBlog" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditBlog">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/EditBlog" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteBlog">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/DeleteBlog" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFlags">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/GetFlags" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFlag">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/GetFlag" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddFlag">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/AddFlag" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditFlag">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/EditFlag" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFlag">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/DeleteFlag" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLinkLinks">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/GetLinkLinks" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLinkLink">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/GetLinkLink" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddLinkLink">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/AddLinkLink" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditLinkLink">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/EditLinkLink" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteLinkLink">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/DeleteLinkLink" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListFilesDD">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/ListFilesDD" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListFiles">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/ListFiles" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFiles">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/GetFiles" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFile">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/GetFile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFileXml">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/GetFileXml" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveFileXml">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/SaveFileXml" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddFile">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/AddFile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddFileID">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/AddFileID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditFile">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/EditFile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFile">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/DeleteFile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Test">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/Test" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestName">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/TestName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestCustom">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/TestCustom" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestError">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/TestError" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestException">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/TestException" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="DisplayXLinksHttpGet" type="tns:DisplayXLinksHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="ListDD">
+      <http:operation location="/ListDD" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListAll">
+      <http:operation location="/ListAll" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="List">
+      <http:operation location="/List" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Search">
+      <http:operation location="/Search" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListGroups">
+      <http:operation location="/ListGroups" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListFlags">
+      <http:operation location="/ListFlags" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get">
+      <http:operation location="/Get" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLink">
+      <http:operation location="/GetLink" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Add">
+      <http:operation location="/Add" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Edit">
+      <http:operation location="/Edit" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Delete">
+      <http:operation location="/Delete" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListLinks">
+      <http:operation location="/ListLinks" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddPage">
+      <http:operation location="/AddPage" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditPage">
+      <http:operation location="/EditPage" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBlogs">
+      <http:operation location="/GetBlogs" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBlog">
+      <http:operation location="/GetBlog" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddBlog">
+      <http:operation location="/AddBlog" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditBlog">
+      <http:operation location="/EditBlog" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteBlog">
+      <http:operation location="/DeleteBlog" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFlags">
+      <http:operation location="/GetFlags" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFlag">
+      <http:operation location="/GetFlag" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddFlag">
+      <http:operation location="/AddFlag" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditFlag">
+      <http:operation location="/EditFlag" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFlag">
+      <http:operation location="/DeleteFlag" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLinkLinks">
+      <http:operation location="/GetLinkLinks" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLinkLink">
+      <http:operation location="/GetLinkLink" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddLinkLink">
+      <http:operation location="/AddLinkLink" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditLinkLink">
+      <http:operation location="/EditLinkLink" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteLinkLink">
+      <http:operation location="/DeleteLinkLink" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListFilesDD">
+      <http:operation location="/ListFilesDD" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListFiles">
+      <http:operation location="/ListFiles" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFiles">
+      <http:operation location="/GetFiles" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFile">
+      <http:operation location="/GetFile" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFileXml">
+      <http:operation location="/GetFileXml" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveFileXml">
+      <http:operation location="/SaveFileXml" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddFile">
+      <http:operation location="/AddFile" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddFileID">
+      <http:operation location="/AddFileID" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditFile">
+      <http:operation location="/EditFile" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFile">
+      <http:operation location="/DeleteFile" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Test">
+      <http:operation location="/Test" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestName">
+      <http:operation location="/TestName" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestCustom">
+      <http:operation location="/TestCustom" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestError">
+      <http:operation location="/TestError" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestException">
+      <http:operation location="/TestException" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="DisplayXLinksHttpPost" type="tns:DisplayXLinksHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="ListDD">
+      <http:operation location="/ListDD" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListAll">
+      <http:operation location="/ListAll" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="List">
+      <http:operation location="/List" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Search">
+      <http:operation location="/Search" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListGroups">
+      <http:operation location="/ListGroups" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListFlags">
+      <http:operation location="/ListFlags" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get">
+      <http:operation location="/Get" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLink">
+      <http:operation location="/GetLink" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Add">
+      <http:operation location="/Add" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Edit">
+      <http:operation location="/Edit" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Delete">
+      <http:operation location="/Delete" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListLinks">
+      <http:operation location="/ListLinks" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddPage">
+      <http:operation location="/AddPage" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditPage">
+      <http:operation location="/EditPage" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBlogs">
+      <http:operation location="/GetBlogs" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBlog">
+      <http:operation location="/GetBlog" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddBlog">
+      <http:operation location="/AddBlog" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditBlog">
+      <http:operation location="/EditBlog" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteBlog">
+      <http:operation location="/DeleteBlog" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFlags">
+      <http:operation location="/GetFlags" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFlag">
+      <http:operation location="/GetFlag" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddFlag">
+      <http:operation location="/AddFlag" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditFlag">
+      <http:operation location="/EditFlag" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFlag">
+      <http:operation location="/DeleteFlag" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLinkLinks">
+      <http:operation location="/GetLinkLinks" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLinkLink">
+      <http:operation location="/GetLinkLink" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddLinkLink">
+      <http:operation location="/AddLinkLink" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditLinkLink">
+      <http:operation location="/EditLinkLink" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteLinkLink">
+      <http:operation location="/DeleteLinkLink" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListFilesDD">
+      <http:operation location="/ListFilesDD" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListFiles">
+      <http:operation location="/ListFiles" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFiles">
+      <http:operation location="/GetFiles" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFile">
+      <http:operation location="/GetFile" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFileXml">
+      <http:operation location="/GetFileXml" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveFileXml">
+      <http:operation location="/SaveFileXml" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddFile">
+      <http:operation location="/AddFile" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddFileID">
+      <http:operation location="/AddFileID" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditFile">
+      <http:operation location="/EditFile" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFile">
+      <http:operation location="/DeleteFile" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Test">
+      <http:operation location="/Test" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestName">
+      <http:operation location="/TestName" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestCustom">
+      <http:operation location="/TestCustom" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestError">
+      <http:operation location="/TestError" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestException">
+      <http:operation location="/TestException" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="DisplayXLinks">
+    <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">DisplayXLinks Web Service</wsdl:documentation>
+    <wsdl:port name="DisplayXLinksSoap" binding="tns:DisplayXLinksSoap">
+      <soap:address location="http://www.loeries.co.za/DisplayXLinks.asmx" />
+    </wsdl:port>
+    <wsdl:port name="DisplayXLinksSoap12" binding="tns:DisplayXLinksSoap12">
+      <soap12:address location="http://www.loeries.co.za/DisplayXLinks.asmx" />
+    </wsdl:port>
+    <wsdl:port name="DisplayXLinksHttpGet" binding="tns:DisplayXLinksHttpGet">
+      <http:address location="http://www.loeries.co.za/DisplayXLinks.asmx" />
+    </wsdl:port>
+    <wsdl:port name="DisplayXLinksHttpPost" binding="tns:DisplayXLinksHttpPost">
+      <http:address location="http://www.loeries.co.za/DisplayXLinks.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

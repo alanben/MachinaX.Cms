@@ -1,0 +1,3204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.clickclickBOOM.com/MachinaX/ServiceX" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://www.clickclickBOOM.com/MachinaX/ServiceX" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">FoundationX Access Web Service</wsdl:documentation>
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.clickclickBOOM.com/MachinaX/ServiceX">
+      <s:element name="ListGroups">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Is_CSV" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="StartPage" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SortCol" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="SortDesc" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="Rows" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListGroupsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListGroupsResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListProfilesDrop">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Is_CSV" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="AwardID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="CategoryCollectionID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="StartPage" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SortCol" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="SortDesc" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="Rows" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListProfilesDropResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListProfilesDropResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddGroup">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddGroupResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddGroupResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetGroup">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GroupID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetGroupResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetGroupResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateGroup">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ProfileID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateGroupResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateGroupResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveGroup">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GroupID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveGroupResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RemoveGroupResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListProfileUsersAll">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ProfileID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListProfileUsersAllResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListProfileUsersAllResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListProfileUsers">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ProfileID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SortCol" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="SortDesc" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListProfileUsersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListProfileUsersResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProfileUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ProfileID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProfileUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetProfileUserResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddGroupUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GroupID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddGroupUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddGroupUserResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddGroupCategory">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GroupID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="CategoryID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="RightID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddGroupCategoryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddGroupCategoryResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateProfileUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ProfileID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateProfileUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateProfileUserResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveProfileUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ProfileID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveProfileUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RemoveProfileUserResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveGroupUsers">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GroupID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveGroupUsersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RemoveGroupUsersResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveGroupCategories">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GroupID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveGroupCategoriesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RemoveGroupCategoriesResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListAdminUsersAll">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Is_CSV" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="GroupID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="StatusID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SortCol" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="SortDesc" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListAdminUsersAllResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListAdminUsersAllResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListAdminUsers">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Is_CSV" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="GroupID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="StatusID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="StartPage" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SortCol" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="SortDesc" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="Rows" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListAdminUsersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListAdminUsersResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddAdminUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Firstname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Surname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Telephone" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Cellphone" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddAdminUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddAdminUserResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateAdminUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Firstname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Surname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Telephone" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Cellphone" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="StatusID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateAdminUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateAdminUserResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAdminUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AdminUserID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAdminUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAdminUserResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAdminUserAdminUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AwardID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="AdminUserID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAdminUserAdminUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAdminUserAdminUserResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveAdminUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AdminUserID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveAdminUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RemoveAdminUserResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListCollections">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Is_CSV" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="StartPage" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SortCol" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="SortDesc" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="Rows" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListCollectionsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListCollectionsResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListCollectionsDrop">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Is_CSV" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="StartPage" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SortCol" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="SortDesc" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="Rows" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListCollectionsDropResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListCollectionsDropResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCollection">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CollectionID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCollectionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCollectionResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveCollectionUsers">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CollectionID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveCollectionUsersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RemoveCollectionUsersResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddCollectionUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CollectionID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddCollectionUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddCollectionUserResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRights">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GroupID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRightsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetRightsResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserRights">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserRightsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUserRightsResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Test">
+        <s:complexType />
+      </s:element>
+      <s:element name="TestResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TestResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TestName">
+        <s:complexType />
+      </s:element>
+      <s:element name="TestNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TestNameResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TestCustom">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Format" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RootName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ResultName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CodeName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DescriptionName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TestCustomResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TestCustomResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TestError">
+        <s:complexType />
+      </s:element>
+      <s:element name="TestErrorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TestErrorResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TestException">
+        <s:complexType />
+      </s:element>
+      <s:element name="TestExceptionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TestExceptionResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ListGroupsSoapIn">
+    <wsdl:part name="parameters" element="tns:ListGroups" />
+  </wsdl:message>
+  <wsdl:message name="ListGroupsSoapOut">
+    <wsdl:part name="parameters" element="tns:ListGroupsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListProfilesDropSoapIn">
+    <wsdl:part name="parameters" element="tns:ListProfilesDrop" />
+  </wsdl:message>
+  <wsdl:message name="ListProfilesDropSoapOut">
+    <wsdl:part name="parameters" element="tns:ListProfilesDropResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddGroupSoapIn">
+    <wsdl:part name="parameters" element="tns:AddGroup" />
+  </wsdl:message>
+  <wsdl:message name="AddGroupSoapOut">
+    <wsdl:part name="parameters" element="tns:AddGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetGroupSoapIn">
+    <wsdl:part name="parameters" element="tns:GetGroup" />
+  </wsdl:message>
+  <wsdl:message name="GetGroupSoapOut">
+    <wsdl:part name="parameters" element="tns:GetGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateGroupSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateGroup" />
+  </wsdl:message>
+  <wsdl:message name="UpdateGroupSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="RemoveGroupSoapIn">
+    <wsdl:part name="parameters" element="tns:RemoveGroup" />
+  </wsdl:message>
+  <wsdl:message name="RemoveGroupSoapOut">
+    <wsdl:part name="parameters" element="tns:RemoveGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListProfileUsersAllSoapIn">
+    <wsdl:part name="parameters" element="tns:ListProfileUsersAll" />
+  </wsdl:message>
+  <wsdl:message name="ListProfileUsersAllSoapOut">
+    <wsdl:part name="parameters" element="tns:ListProfileUsersAllResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListProfileUsersSoapIn">
+    <wsdl:part name="parameters" element="tns:ListProfileUsers" />
+  </wsdl:message>
+  <wsdl:message name="ListProfileUsersSoapOut">
+    <wsdl:part name="parameters" element="tns:ListProfileUsersResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetProfileUserSoapIn">
+    <wsdl:part name="parameters" element="tns:GetProfileUser" />
+  </wsdl:message>
+  <wsdl:message name="GetProfileUserSoapOut">
+    <wsdl:part name="parameters" element="tns:GetProfileUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddGroupUserSoapIn">
+    <wsdl:part name="parameters" element="tns:AddGroupUser" />
+  </wsdl:message>
+  <wsdl:message name="AddGroupUserSoapOut">
+    <wsdl:part name="parameters" element="tns:AddGroupUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddGroupCategorySoapIn">
+    <wsdl:part name="parameters" element="tns:AddGroupCategory" />
+  </wsdl:message>
+  <wsdl:message name="AddGroupCategorySoapOut">
+    <wsdl:part name="parameters" element="tns:AddGroupCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateProfileUserSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateProfileUser" />
+  </wsdl:message>
+  <wsdl:message name="UpdateProfileUserSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateProfileUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="RemoveProfileUserSoapIn">
+    <wsdl:part name="parameters" element="tns:RemoveProfileUser" />
+  </wsdl:message>
+  <wsdl:message name="RemoveProfileUserSoapOut">
+    <wsdl:part name="parameters" element="tns:RemoveProfileUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="RemoveGroupUsersSoapIn">
+    <wsdl:part name="parameters" element="tns:RemoveGroupUsers" />
+  </wsdl:message>
+  <wsdl:message name="RemoveGroupUsersSoapOut">
+    <wsdl:part name="parameters" element="tns:RemoveGroupUsersResponse" />
+  </wsdl:message>
+  <wsdl:message name="RemoveGroupCategoriesSoapIn">
+    <wsdl:part name="parameters" element="tns:RemoveGroupCategories" />
+  </wsdl:message>
+  <wsdl:message name="RemoveGroupCategoriesSoapOut">
+    <wsdl:part name="parameters" element="tns:RemoveGroupCategoriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListAdminUsersAllSoapIn">
+    <wsdl:part name="parameters" element="tns:ListAdminUsersAll" />
+  </wsdl:message>
+  <wsdl:message name="ListAdminUsersAllSoapOut">
+    <wsdl:part name="parameters" element="tns:ListAdminUsersAllResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListAdminUsersSoapIn">
+    <wsdl:part name="parameters" element="tns:ListAdminUsers" />
+  </wsdl:message>
+  <wsdl:message name="ListAdminUsersSoapOut">
+    <wsdl:part name="parameters" element="tns:ListAdminUsersResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddAdminUserSoapIn">
+    <wsdl:part name="parameters" element="tns:AddAdminUser" />
+  </wsdl:message>
+  <wsdl:message name="AddAdminUserSoapOut">
+    <wsdl:part name="parameters" element="tns:AddAdminUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateAdminUserSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateAdminUser" />
+  </wsdl:message>
+  <wsdl:message name="UpdateAdminUserSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateAdminUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAdminUserSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAdminUser" />
+  </wsdl:message>
+  <wsdl:message name="GetAdminUserSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAdminUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAdminUserAdminUserSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAdminUserAdminUser" />
+  </wsdl:message>
+  <wsdl:message name="GetAdminUserAdminUserSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAdminUserAdminUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="RemoveAdminUserSoapIn">
+    <wsdl:part name="parameters" element="tns:RemoveAdminUser" />
+  </wsdl:message>
+  <wsdl:message name="RemoveAdminUserSoapOut">
+    <wsdl:part name="parameters" element="tns:RemoveAdminUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListCollectionsSoapIn">
+    <wsdl:part name="parameters" element="tns:ListCollections" />
+  </wsdl:message>
+  <wsdl:message name="ListCollectionsSoapOut">
+    <wsdl:part name="parameters" element="tns:ListCollectionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListCollectionsDropSoapIn">
+    <wsdl:part name="parameters" element="tns:ListCollectionsDrop" />
+  </wsdl:message>
+  <wsdl:message name="ListCollectionsDropSoapOut">
+    <wsdl:part name="parameters" element="tns:ListCollectionsDropResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCollectionSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCollection" />
+  </wsdl:message>
+  <wsdl:message name="GetCollectionSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCollectionResponse" />
+  </wsdl:message>
+  <wsdl:message name="RemoveCollectionUsersSoapIn">
+    <wsdl:part name="parameters" element="tns:RemoveCollectionUsers" />
+  </wsdl:message>
+  <wsdl:message name="RemoveCollectionUsersSoapOut">
+    <wsdl:part name="parameters" element="tns:RemoveCollectionUsersResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddCollectionUserSoapIn">
+    <wsdl:part name="parameters" element="tns:AddCollectionUser" />
+  </wsdl:message>
+  <wsdl:message name="AddCollectionUserSoapOut">
+    <wsdl:part name="parameters" element="tns:AddCollectionUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRightsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetRights" />
+  </wsdl:message>
+  <wsdl:message name="GetRightsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetRightsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUserRightsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUserRights" />
+  </wsdl:message>
+  <wsdl:message name="GetUserRightsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserRightsResponse" />
+  </wsdl:message>
+  <wsdl:message name="TestSoapIn">
+    <wsdl:part name="parameters" element="tns:Test" />
+  </wsdl:message>
+  <wsdl:message name="TestSoapOut">
+    <wsdl:part name="parameters" element="tns:TestResponse" />
+  </wsdl:message>
+  <wsdl:message name="TestNameSoapIn">
+    <wsdl:part name="parameters" element="tns:TestName" />
+  </wsdl:message>
+  <wsdl:message name="TestNameSoapOut">
+    <wsdl:part name="parameters" element="tns:TestNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="TestCustomSoapIn">
+    <wsdl:part name="parameters" element="tns:TestCustom" />
+  </wsdl:message>
+  <wsdl:message name="TestCustomSoapOut">
+    <wsdl:part name="parameters" element="tns:TestCustomResponse" />
+  </wsdl:message>
+  <wsdl:message name="TestErrorSoapIn">
+    <wsdl:part name="parameters" element="tns:TestError" />
+  </wsdl:message>
+  <wsdl:message name="TestErrorSoapOut">
+    <wsdl:part name="parameters" element="tns:TestErrorResponse" />
+  </wsdl:message>
+  <wsdl:message name="TestExceptionSoapIn">
+    <wsdl:part name="parameters" element="tns:TestException" />
+  </wsdl:message>
+  <wsdl:message name="TestExceptionSoapOut">
+    <wsdl:part name="parameters" element="tns:TestExceptionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListGroupsHttpGetIn">
+    <wsdl:part name="Is_CSV" type="s:string" />
+    <wsdl:part name="StartPage" type="s:string" />
+    <wsdl:part name="SortCol" type="s:string" />
+    <wsdl:part name="SortDesc" type="s:string" />
+    <wsdl:part name="Rows" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ListGroupsHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="ListProfilesDropHttpGetIn">
+    <wsdl:part name="Is_CSV" type="s:string" />
+    <wsdl:part name="AwardID" type="s:string" />
+    <wsdl:part name="CategoryCollectionID" type="s:string" />
+    <wsdl:part name="StartPage" type="s:string" />
+    <wsdl:part name="SortCol" type="s:string" />
+    <wsdl:part name="SortDesc" type="s:string" />
+    <wsdl:part name="Rows" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ListProfilesDropHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="AddGroupHttpGetIn">
+    <wsdl:part name="Name" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AddGroupHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="GetGroupHttpGetIn">
+    <wsdl:part name="GroupID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetGroupHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="UpdateGroupHttpGetIn">
+    <wsdl:part name="ProfileID" type="s:string" />
+    <wsdl:part name="Name" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateGroupHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="RemoveGroupHttpGetIn">
+    <wsdl:part name="GroupID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RemoveGroupHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="ListProfileUsersAllHttpGetIn">
+    <wsdl:part name="ProfileID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ListProfileUsersAllHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="ListProfileUsersHttpGetIn">
+    <wsdl:part name="ProfileID" type="s:string" />
+    <wsdl:part name="UserID" type="s:string" />
+    <wsdl:part name="SortCol" type="s:string" />
+    <wsdl:part name="SortDesc" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ListProfileUsersHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="GetProfileUserHttpGetIn">
+    <wsdl:part name="ProfileID" type="s:string" />
+    <wsdl:part name="UserID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetProfileUserHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="AddGroupUserHttpGetIn">
+    <wsdl:part name="GroupID" type="s:string" />
+    <wsdl:part name="UserID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AddGroupUserHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="AddGroupCategoryHttpGetIn">
+    <wsdl:part name="GroupID" type="s:string" />
+    <wsdl:part name="CategoryID" type="s:string" />
+    <wsdl:part name="RightID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AddGroupCategoryHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="UpdateProfileUserHttpGetIn">
+    <wsdl:part name="ProfileID" type="s:string" />
+    <wsdl:part name="UserID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateProfileUserHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="RemoveProfileUserHttpGetIn">
+    <wsdl:part name="ProfileID" type="s:string" />
+    <wsdl:part name="UserID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RemoveProfileUserHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="RemoveGroupUsersHttpGetIn">
+    <wsdl:part name="GroupID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RemoveGroupUsersHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="RemoveGroupCategoriesHttpGetIn">
+    <wsdl:part name="GroupID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RemoveGroupCategoriesHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="ListAdminUsersAllHttpGetIn">
+    <wsdl:part name="Is_CSV" type="s:string" />
+    <wsdl:part name="GroupID" type="s:string" />
+    <wsdl:part name="StatusID" type="s:string" />
+    <wsdl:part name="SortCol" type="s:string" />
+    <wsdl:part name="SortDesc" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ListAdminUsersAllHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="ListAdminUsersHttpGetIn">
+    <wsdl:part name="Is_CSV" type="s:string" />
+    <wsdl:part name="GroupID" type="s:string" />
+    <wsdl:part name="StatusID" type="s:string" />
+    <wsdl:part name="StartPage" type="s:string" />
+    <wsdl:part name="SortCol" type="s:string" />
+    <wsdl:part name="SortDesc" type="s:string" />
+    <wsdl:part name="Rows" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ListAdminUsersHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="AddAdminUserHttpGetIn">
+    <wsdl:part name="Username" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+    <wsdl:part name="Firstname" type="s:string" />
+    <wsdl:part name="Surname" type="s:string" />
+    <wsdl:part name="Email" type="s:string" />
+    <wsdl:part name="Telephone" type="s:string" />
+    <wsdl:part name="Cellphone" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AddAdminUserHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="UpdateAdminUserHttpGetIn">
+    <wsdl:part name="UserID" type="s:string" />
+    <wsdl:part name="Username" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+    <wsdl:part name="Firstname" type="s:string" />
+    <wsdl:part name="Surname" type="s:string" />
+    <wsdl:part name="Email" type="s:string" />
+    <wsdl:part name="Telephone" type="s:string" />
+    <wsdl:part name="Cellphone" type="s:string" />
+    <wsdl:part name="StatusID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateAdminUserHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="GetAdminUserHttpGetIn">
+    <wsdl:part name="AdminUserID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAdminUserHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="GetAdminUserAdminUserHttpGetIn">
+    <wsdl:part name="AwardID" type="s:string" />
+    <wsdl:part name="AdminUserID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAdminUserAdminUserHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="RemoveAdminUserHttpGetIn">
+    <wsdl:part name="AdminUserID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RemoveAdminUserHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="ListCollectionsHttpGetIn">
+    <wsdl:part name="Is_CSV" type="s:string" />
+    <wsdl:part name="StartPage" type="s:string" />
+    <wsdl:part name="SortCol" type="s:string" />
+    <wsdl:part name="SortDesc" type="s:string" />
+    <wsdl:part name="Rows" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ListCollectionsHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="ListCollectionsDropHttpGetIn">
+    <wsdl:part name="Is_CSV" type="s:string" />
+    <wsdl:part name="StartPage" type="s:string" />
+    <wsdl:part name="SortCol" type="s:string" />
+    <wsdl:part name="SortDesc" type="s:string" />
+    <wsdl:part name="Rows" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ListCollectionsDropHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="GetCollectionHttpGetIn">
+    <wsdl:part name="CollectionID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCollectionHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="RemoveCollectionUsersHttpGetIn">
+    <wsdl:part name="CollectionID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RemoveCollectionUsersHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="AddCollectionUserHttpGetIn">
+    <wsdl:part name="CollectionID" type="s:string" />
+    <wsdl:part name="UserID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AddCollectionUserHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="GetRightsHttpGetIn">
+    <wsdl:part name="GroupID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetRightsHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="GetUserRightsHttpGetIn">
+    <wsdl:part name="UserID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetUserRightsHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="TestHttpGetIn" />
+  <wsdl:message name="TestHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="TestNameHttpGetIn" />
+  <wsdl:message name="TestNameHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="TestCustomHttpGetIn">
+    <wsdl:part name="Format" type="s:string" />
+    <wsdl:part name="RootName" type="s:string" />
+    <wsdl:part name="ResultName" type="s:string" />
+    <wsdl:part name="CodeName" type="s:string" />
+    <wsdl:part name="DescriptionName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="TestCustomHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="TestErrorHttpGetIn" />
+  <wsdl:message name="TestErrorHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="TestExceptionHttpGetIn" />
+  <wsdl:message name="TestExceptionHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="ListGroupsHttpPostIn">
+    <wsdl:part name="Is_CSV" type="s:string" />
+    <wsdl:part name="StartPage" type="s:string" />
+    <wsdl:part name="SortCol" type="s:string" />
+    <wsdl:part name="SortDesc" type="s:string" />
+    <wsdl:part name="Rows" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ListGroupsHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="ListProfilesDropHttpPostIn">
+    <wsdl:part name="Is_CSV" type="s:string" />
+    <wsdl:part name="AwardID" type="s:string" />
+    <wsdl:part name="CategoryCollectionID" type="s:string" />
+    <wsdl:part name="StartPage" type="s:string" />
+    <wsdl:part name="SortCol" type="s:string" />
+    <wsdl:part name="SortDesc" type="s:string" />
+    <wsdl:part name="Rows" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ListProfilesDropHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="AddGroupHttpPostIn">
+    <wsdl:part name="Name" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AddGroupHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="GetGroupHttpPostIn">
+    <wsdl:part name="GroupID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetGroupHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="UpdateGroupHttpPostIn">
+    <wsdl:part name="ProfileID" type="s:string" />
+    <wsdl:part name="Name" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateGroupHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="RemoveGroupHttpPostIn">
+    <wsdl:part name="GroupID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RemoveGroupHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="ListProfileUsersAllHttpPostIn">
+    <wsdl:part name="ProfileID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ListProfileUsersAllHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="ListProfileUsersHttpPostIn">
+    <wsdl:part name="ProfileID" type="s:string" />
+    <wsdl:part name="UserID" type="s:string" />
+    <wsdl:part name="SortCol" type="s:string" />
+    <wsdl:part name="SortDesc" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ListProfileUsersHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="GetProfileUserHttpPostIn">
+    <wsdl:part name="ProfileID" type="s:string" />
+    <wsdl:part name="UserID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetProfileUserHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="AddGroupUserHttpPostIn">
+    <wsdl:part name="GroupID" type="s:string" />
+    <wsdl:part name="UserID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AddGroupUserHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="AddGroupCategoryHttpPostIn">
+    <wsdl:part name="GroupID" type="s:string" />
+    <wsdl:part name="CategoryID" type="s:string" />
+    <wsdl:part name="RightID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AddGroupCategoryHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="UpdateProfileUserHttpPostIn">
+    <wsdl:part name="ProfileID" type="s:string" />
+    <wsdl:part name="UserID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateProfileUserHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="RemoveProfileUserHttpPostIn">
+    <wsdl:part name="ProfileID" type="s:string" />
+    <wsdl:part name="UserID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RemoveProfileUserHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="RemoveGroupUsersHttpPostIn">
+    <wsdl:part name="GroupID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RemoveGroupUsersHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="RemoveGroupCategoriesHttpPostIn">
+    <wsdl:part name="GroupID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RemoveGroupCategoriesHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="ListAdminUsersAllHttpPostIn">
+    <wsdl:part name="Is_CSV" type="s:string" />
+    <wsdl:part name="GroupID" type="s:string" />
+    <wsdl:part name="StatusID" type="s:string" />
+    <wsdl:part name="SortCol" type="s:string" />
+    <wsdl:part name="SortDesc" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ListAdminUsersAllHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="ListAdminUsersHttpPostIn">
+    <wsdl:part name="Is_CSV" type="s:string" />
+    <wsdl:part name="GroupID" type="s:string" />
+    <wsdl:part name="StatusID" type="s:string" />
+    <wsdl:part name="StartPage" type="s:string" />
+    <wsdl:part name="SortCol" type="s:string" />
+    <wsdl:part name="SortDesc" type="s:string" />
+    <wsdl:part name="Rows" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ListAdminUsersHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="AddAdminUserHttpPostIn">
+    <wsdl:part name="Username" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+    <wsdl:part name="Firstname" type="s:string" />
+    <wsdl:part name="Surname" type="s:string" />
+    <wsdl:part name="Email" type="s:string" />
+    <wsdl:part name="Telephone" type="s:string" />
+    <wsdl:part name="Cellphone" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AddAdminUserHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="UpdateAdminUserHttpPostIn">
+    <wsdl:part name="UserID" type="s:string" />
+    <wsdl:part name="Username" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+    <wsdl:part name="Firstname" type="s:string" />
+    <wsdl:part name="Surname" type="s:string" />
+    <wsdl:part name="Email" type="s:string" />
+    <wsdl:part name="Telephone" type="s:string" />
+    <wsdl:part name="Cellphone" type="s:string" />
+    <wsdl:part name="StatusID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateAdminUserHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="GetAdminUserHttpPostIn">
+    <wsdl:part name="AdminUserID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAdminUserHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="GetAdminUserAdminUserHttpPostIn">
+    <wsdl:part name="AwardID" type="s:string" />
+    <wsdl:part name="AdminUserID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAdminUserAdminUserHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="RemoveAdminUserHttpPostIn">
+    <wsdl:part name="AdminUserID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RemoveAdminUserHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="ListCollectionsHttpPostIn">
+    <wsdl:part name="Is_CSV" type="s:string" />
+    <wsdl:part name="StartPage" type="s:string" />
+    <wsdl:part name="SortCol" type="s:string" />
+    <wsdl:part name="SortDesc" type="s:string" />
+    <wsdl:part name="Rows" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ListCollectionsHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="ListCollectionsDropHttpPostIn">
+    <wsdl:part name="Is_CSV" type="s:string" />
+    <wsdl:part name="StartPage" type="s:string" />
+    <wsdl:part name="SortCol" type="s:string" />
+    <wsdl:part name="SortDesc" type="s:string" />
+    <wsdl:part name="Rows" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ListCollectionsDropHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="GetCollectionHttpPostIn">
+    <wsdl:part name="CollectionID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCollectionHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="RemoveCollectionUsersHttpPostIn">
+    <wsdl:part name="CollectionID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RemoveCollectionUsersHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="AddCollectionUserHttpPostIn">
+    <wsdl:part name="CollectionID" type="s:string" />
+    <wsdl:part name="UserID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AddCollectionUserHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="GetRightsHttpPostIn">
+    <wsdl:part name="GroupID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetRightsHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="GetUserRightsHttpPostIn">
+    <wsdl:part name="UserID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetUserRightsHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="TestHttpPostIn" />
+  <wsdl:message name="TestHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="TestNameHttpPostIn" />
+  <wsdl:message name="TestNameHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="TestCustomHttpPostIn">
+    <wsdl:part name="Format" type="s:string" />
+    <wsdl:part name="RootName" type="s:string" />
+    <wsdl:part name="ResultName" type="s:string" />
+    <wsdl:part name="CodeName" type="s:string" />
+    <wsdl:part name="DescriptionName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="TestCustomHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="TestErrorHttpPostIn" />
+  <wsdl:message name="TestErrorHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="TestExceptionHttpPostIn" />
+  <wsdl:message name="TestExceptionHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:portType name="AccessServiceXSoap">
+    <wsdl:operation name="ListGroups">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a list of profiles</wsdl:documentation>
+      <wsdl:input message="tns:ListGroupsSoapIn" />
+      <wsdl:output message="tns:ListGroupsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListProfilesDrop">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a list of profiles</wsdl:documentation>
+      <wsdl:input message="tns:ListProfilesDropSoapIn" />
+      <wsdl:output message="tns:ListProfilesDropSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddGroup">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">add group</wsdl:documentation>
+      <wsdl:input message="tns:AddGroupSoapIn" />
+      <wsdl:output message="tns:AddGroupSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGroup">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">get group</wsdl:documentation>
+      <wsdl:input message="tns:GetGroupSoapIn" />
+      <wsdl:output message="tns:GetGroupSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateGroup">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">update access profile</wsdl:documentation>
+      <wsdl:input message="tns:UpdateGroupSoapIn" />
+      <wsdl:output message="tns:UpdateGroupSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveGroup">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">remove group</wsdl:documentation>
+      <wsdl:input message="tns:RemoveGroupSoapIn" />
+      <wsdl:output message="tns:RemoveGroupSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListProfileUsersAll">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a list of users for a profile</wsdl:documentation>
+      <wsdl:input message="tns:ListProfileUsersAllSoapIn" />
+      <wsdl:output message="tns:ListProfileUsersAllSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListProfileUsers">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a list of users for a profile</wsdl:documentation>
+      <wsdl:input message="tns:ListProfileUsersSoapIn" />
+      <wsdl:output message="tns:ListProfileUsersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProfileUser">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get users for a profile</wsdl:documentation>
+      <wsdl:input message="tns:GetProfileUserSoapIn" />
+      <wsdl:output message="tns:GetProfileUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddGroupUser">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Add user to a group</wsdl:documentation>
+      <wsdl:input message="tns:AddGroupUserSoapIn" />
+      <wsdl:output message="tns:AddGroupUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddGroupCategory">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Add category with rights to a group</wsdl:documentation>
+      <wsdl:input message="tns:AddGroupCategorySoapIn" />
+      <wsdl:output message="tns:AddGroupCategorySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProfileUser">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Update user to a profile</wsdl:documentation>
+      <wsdl:input message="tns:UpdateProfileUserSoapIn" />
+      <wsdl:output message="tns:UpdateProfileUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveProfileUser">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Remove user from a profile</wsdl:documentation>
+      <wsdl:input message="tns:RemoveProfileUserSoapIn" />
+      <wsdl:output message="tns:RemoveProfileUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveGroupUsers">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Remove all users from a group</wsdl:documentation>
+      <wsdl:input message="tns:RemoveGroupUsersSoapIn" />
+      <wsdl:output message="tns:RemoveGroupUsersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveGroupCategories">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Remove all categories and rights from a group</wsdl:documentation>
+      <wsdl:input message="tns:RemoveGroupCategoriesSoapIn" />
+      <wsdl:output message="tns:RemoveGroupCategoriesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListAdminUsersAll">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a list of all AdminUsers</wsdl:documentation>
+      <wsdl:input message="tns:ListAdminUsersAllSoapIn" />
+      <wsdl:output message="tns:ListAdminUsersAllSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListAdminUsers">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a list of admin-users</wsdl:documentation>
+      <wsdl:input message="tns:ListAdminUsersSoapIn" />
+      <wsdl:output message="tns:ListAdminUsersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddAdminUser">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">add admin-user</wsdl:documentation>
+      <wsdl:input message="tns:AddAdminUserSoapIn" />
+      <wsdl:output message="tns:AddAdminUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAdminUser">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">edit admin-user</wsdl:documentation>
+      <wsdl:input message="tns:UpdateAdminUserSoapIn" />
+      <wsdl:output message="tns:UpdateAdminUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAdminUser">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">get admin-user</wsdl:documentation>
+      <wsdl:input message="tns:GetAdminUserSoapIn" />
+      <wsdl:output message="tns:GetAdminUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAdminUserAdminUser">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">get admin-user by admin-userID</wsdl:documentation>
+      <wsdl:input message="tns:GetAdminUserAdminUserSoapIn" />
+      <wsdl:output message="tns:GetAdminUserAdminUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveAdminUser">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">remove admin-user</wsdl:documentation>
+      <wsdl:input message="tns:RemoveAdminUserSoapIn" />
+      <wsdl:output message="tns:RemoveAdminUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListCollections">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a list of shows</wsdl:documentation>
+      <wsdl:input message="tns:ListCollectionsSoapIn" />
+      <wsdl:output message="tns:ListCollectionsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListCollectionsDrop">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a list of shows</wsdl:documentation>
+      <wsdl:input message="tns:ListCollectionsDropSoapIn" />
+      <wsdl:output message="tns:ListCollectionsDropSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCollection">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">get show</wsdl:documentation>
+      <wsdl:input message="tns:GetCollectionSoapIn" />
+      <wsdl:output message="tns:GetCollectionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveCollectionUsers">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Remove all users from a show</wsdl:documentation>
+      <wsdl:input message="tns:RemoveCollectionUsersSoapIn" />
+      <wsdl:output message="tns:RemoveCollectionUsersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddCollectionUser">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Add user to a show</wsdl:documentation>
+      <wsdl:input message="tns:AddCollectionUserSoapIn" />
+      <wsdl:output message="tns:AddCollectionUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRights">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">get rights</wsdl:documentation>
+      <wsdl:input message="tns:GetRightsSoapIn" />
+      <wsdl:output message="tns:GetRightsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserRights">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">get users category rights</wsdl:documentation>
+      <wsdl:input message="tns:GetUserRightsSoapIn" />
+      <wsdl:output message="tns:GetUserRightsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Test">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Basic test of the web service</wsdl:documentation>
+      <wsdl:input message="tns:TestSoapIn" />
+      <wsdl:output message="tns:TestSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TestName">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Tests the web service by returning the Result name</wsdl:documentation>
+      <wsdl:input message="tns:TestNameSoapIn" />
+      <wsdl:output message="tns:TestNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TestCustom">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Tests the custom result formatting</wsdl:documentation>
+      <wsdl:input message="tns:TestCustomSoapIn" />
+      <wsdl:output message="tns:TestCustomSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TestError">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Basic test of an error condition</wsdl:documentation>
+      <wsdl:input message="tns:TestErrorSoapIn" />
+      <wsdl:output message="tns:TestErrorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TestException">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Basic test of an error exception</wsdl:documentation>
+      <wsdl:input message="tns:TestExceptionSoapIn" />
+      <wsdl:output message="tns:TestExceptionSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="AccessServiceXHttpGet">
+    <wsdl:operation name="ListGroups">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a list of profiles</wsdl:documentation>
+      <wsdl:input message="tns:ListGroupsHttpGetIn" />
+      <wsdl:output message="tns:ListGroupsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListProfilesDrop">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a list of profiles</wsdl:documentation>
+      <wsdl:input message="tns:ListProfilesDropHttpGetIn" />
+      <wsdl:output message="tns:ListProfilesDropHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddGroup">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">add group</wsdl:documentation>
+      <wsdl:input message="tns:AddGroupHttpGetIn" />
+      <wsdl:output message="tns:AddGroupHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGroup">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">get group</wsdl:documentation>
+      <wsdl:input message="tns:GetGroupHttpGetIn" />
+      <wsdl:output message="tns:GetGroupHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateGroup">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">update access profile</wsdl:documentation>
+      <wsdl:input message="tns:UpdateGroupHttpGetIn" />
+      <wsdl:output message="tns:UpdateGroupHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveGroup">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">remove group</wsdl:documentation>
+      <wsdl:input message="tns:RemoveGroupHttpGetIn" />
+      <wsdl:output message="tns:RemoveGroupHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListProfileUsersAll">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a list of users for a profile</wsdl:documentation>
+      <wsdl:input message="tns:ListProfileUsersAllHttpGetIn" />
+      <wsdl:output message="tns:ListProfileUsersAllHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListProfileUsers">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a list of users for a profile</wsdl:documentation>
+      <wsdl:input message="tns:ListProfileUsersHttpGetIn" />
+      <wsdl:output message="tns:ListProfileUsersHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProfileUser">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get users for a profile</wsdl:documentation>
+      <wsdl:input message="tns:GetProfileUserHttpGetIn" />
+      <wsdl:output message="tns:GetProfileUserHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddGroupUser">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Add user to a group</wsdl:documentation>
+      <wsdl:input message="tns:AddGroupUserHttpGetIn" />
+      <wsdl:output message="tns:AddGroupUserHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddGroupCategory">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Add category with rights to a group</wsdl:documentation>
+      <wsdl:input message="tns:AddGroupCategoryHttpGetIn" />
+      <wsdl:output message="tns:AddGroupCategoryHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProfileUser">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Update user to a profile</wsdl:documentation>
+      <wsdl:input message="tns:UpdateProfileUserHttpGetIn" />
+      <wsdl:output message="tns:UpdateProfileUserHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveProfileUser">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Remove user from a profile</wsdl:documentation>
+      <wsdl:input message="tns:RemoveProfileUserHttpGetIn" />
+      <wsdl:output message="tns:RemoveProfileUserHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveGroupUsers">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Remove all users from a group</wsdl:documentation>
+      <wsdl:input message="tns:RemoveGroupUsersHttpGetIn" />
+      <wsdl:output message="tns:RemoveGroupUsersHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveGroupCategories">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Remove all categories and rights from a group</wsdl:documentation>
+      <wsdl:input message="tns:RemoveGroupCategoriesHttpGetIn" />
+      <wsdl:output message="tns:RemoveGroupCategoriesHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListAdminUsersAll">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a list of all AdminUsers</wsdl:documentation>
+      <wsdl:input message="tns:ListAdminUsersAllHttpGetIn" />
+      <wsdl:output message="tns:ListAdminUsersAllHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListAdminUsers">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a list of admin-users</wsdl:documentation>
+      <wsdl:input message="tns:ListAdminUsersHttpGetIn" />
+      <wsdl:output message="tns:ListAdminUsersHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddAdminUser">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">add admin-user</wsdl:documentation>
+      <wsdl:input message="tns:AddAdminUserHttpGetIn" />
+      <wsdl:output message="tns:AddAdminUserHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAdminUser">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">edit admin-user</wsdl:documentation>
+      <wsdl:input message="tns:UpdateAdminUserHttpGetIn" />
+      <wsdl:output message="tns:UpdateAdminUserHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAdminUser">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">get admin-user</wsdl:documentation>
+      <wsdl:input message="tns:GetAdminUserHttpGetIn" />
+      <wsdl:output message="tns:GetAdminUserHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAdminUserAdminUser">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">get admin-user by admin-userID</wsdl:documentation>
+      <wsdl:input message="tns:GetAdminUserAdminUserHttpGetIn" />
+      <wsdl:output message="tns:GetAdminUserAdminUserHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveAdminUser">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">remove admin-user</wsdl:documentation>
+      <wsdl:input message="tns:RemoveAdminUserHttpGetIn" />
+      <wsdl:output message="tns:RemoveAdminUserHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListCollections">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a list of shows</wsdl:documentation>
+      <wsdl:input message="tns:ListCollectionsHttpGetIn" />
+      <wsdl:output message="tns:ListCollectionsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListCollectionsDrop">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a list of shows</wsdl:documentation>
+      <wsdl:input message="tns:ListCollectionsDropHttpGetIn" />
+      <wsdl:output message="tns:ListCollectionsDropHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCollection">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">get show</wsdl:documentation>
+      <wsdl:input message="tns:GetCollectionHttpGetIn" />
+      <wsdl:output message="tns:GetCollectionHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveCollectionUsers">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Remove all users from a show</wsdl:documentation>
+      <wsdl:input message="tns:RemoveCollectionUsersHttpGetIn" />
+      <wsdl:output message="tns:RemoveCollectionUsersHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddCollectionUser">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Add user to a show</wsdl:documentation>
+      <wsdl:input message="tns:AddCollectionUserHttpGetIn" />
+      <wsdl:output message="tns:AddCollectionUserHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRights">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">get rights</wsdl:documentation>
+      <wsdl:input message="tns:GetRightsHttpGetIn" />
+      <wsdl:output message="tns:GetRightsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserRights">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">get users category rights</wsdl:documentation>
+      <wsdl:input message="tns:GetUserRightsHttpGetIn" />
+      <wsdl:output message="tns:GetUserRightsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Test">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Basic test of the web service</wsdl:documentation>
+      <wsdl:input message="tns:TestHttpGetIn" />
+      <wsdl:output message="tns:TestHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TestName">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Tests the web service by returning the Result name</wsdl:documentation>
+      <wsdl:input message="tns:TestNameHttpGetIn" />
+      <wsdl:output message="tns:TestNameHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TestCustom">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Tests the custom result formatting</wsdl:documentation>
+      <wsdl:input message="tns:TestCustomHttpGetIn" />
+      <wsdl:output message="tns:TestCustomHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TestError">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Basic test of an error condition</wsdl:documentation>
+      <wsdl:input message="tns:TestErrorHttpGetIn" />
+      <wsdl:output message="tns:TestErrorHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TestException">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Basic test of an error exception</wsdl:documentation>
+      <wsdl:input message="tns:TestExceptionHttpGetIn" />
+      <wsdl:output message="tns:TestExceptionHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="AccessServiceXHttpPost">
+    <wsdl:operation name="ListGroups">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a list of profiles</wsdl:documentation>
+      <wsdl:input message="tns:ListGroupsHttpPostIn" />
+      <wsdl:output message="tns:ListGroupsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListProfilesDrop">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a list of profiles</wsdl:documentation>
+      <wsdl:input message="tns:ListProfilesDropHttpPostIn" />
+      <wsdl:output message="tns:ListProfilesDropHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddGroup">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">add group</wsdl:documentation>
+      <wsdl:input message="tns:AddGroupHttpPostIn" />
+      <wsdl:output message="tns:AddGroupHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGroup">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">get group</wsdl:documentation>
+      <wsdl:input message="tns:GetGroupHttpPostIn" />
+      <wsdl:output message="tns:GetGroupHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateGroup">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">update access profile</wsdl:documentation>
+      <wsdl:input message="tns:UpdateGroupHttpPostIn" />
+      <wsdl:output message="tns:UpdateGroupHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveGroup">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">remove group</wsdl:documentation>
+      <wsdl:input message="tns:RemoveGroupHttpPostIn" />
+      <wsdl:output message="tns:RemoveGroupHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListProfileUsersAll">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a list of users for a profile</wsdl:documentation>
+      <wsdl:input message="tns:ListProfileUsersAllHttpPostIn" />
+      <wsdl:output message="tns:ListProfileUsersAllHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListProfileUsers">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a list of users for a profile</wsdl:documentation>
+      <wsdl:input message="tns:ListProfileUsersHttpPostIn" />
+      <wsdl:output message="tns:ListProfileUsersHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProfileUser">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get users for a profile</wsdl:documentation>
+      <wsdl:input message="tns:GetProfileUserHttpPostIn" />
+      <wsdl:output message="tns:GetProfileUserHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddGroupUser">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Add user to a group</wsdl:documentation>
+      <wsdl:input message="tns:AddGroupUserHttpPostIn" />
+      <wsdl:output message="tns:AddGroupUserHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddGroupCategory">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Add category with rights to a group</wsdl:documentation>
+      <wsdl:input message="tns:AddGroupCategoryHttpPostIn" />
+      <wsdl:output message="tns:AddGroupCategoryHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProfileUser">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Update user to a profile</wsdl:documentation>
+      <wsdl:input message="tns:UpdateProfileUserHttpPostIn" />
+      <wsdl:output message="tns:UpdateProfileUserHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveProfileUser">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Remove user from a profile</wsdl:documentation>
+      <wsdl:input message="tns:RemoveProfileUserHttpPostIn" />
+      <wsdl:output message="tns:RemoveProfileUserHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveGroupUsers">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Remove all users from a group</wsdl:documentation>
+      <wsdl:input message="tns:RemoveGroupUsersHttpPostIn" />
+      <wsdl:output message="tns:RemoveGroupUsersHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveGroupCategories">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Remove all categories and rights from a group</wsdl:documentation>
+      <wsdl:input message="tns:RemoveGroupCategoriesHttpPostIn" />
+      <wsdl:output message="tns:RemoveGroupCategoriesHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListAdminUsersAll">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a list of all AdminUsers</wsdl:documentation>
+      <wsdl:input message="tns:ListAdminUsersAllHttpPostIn" />
+      <wsdl:output message="tns:ListAdminUsersAllHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListAdminUsers">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a list of admin-users</wsdl:documentation>
+      <wsdl:input message="tns:ListAdminUsersHttpPostIn" />
+      <wsdl:output message="tns:ListAdminUsersHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddAdminUser">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">add admin-user</wsdl:documentation>
+      <wsdl:input message="tns:AddAdminUserHttpPostIn" />
+      <wsdl:output message="tns:AddAdminUserHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAdminUser">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">edit admin-user</wsdl:documentation>
+      <wsdl:input message="tns:UpdateAdminUserHttpPostIn" />
+      <wsdl:output message="tns:UpdateAdminUserHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAdminUser">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">get admin-user</wsdl:documentation>
+      <wsdl:input message="tns:GetAdminUserHttpPostIn" />
+      <wsdl:output message="tns:GetAdminUserHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAdminUserAdminUser">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">get admin-user by admin-userID</wsdl:documentation>
+      <wsdl:input message="tns:GetAdminUserAdminUserHttpPostIn" />
+      <wsdl:output message="tns:GetAdminUserAdminUserHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveAdminUser">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">remove admin-user</wsdl:documentation>
+      <wsdl:input message="tns:RemoveAdminUserHttpPostIn" />
+      <wsdl:output message="tns:RemoveAdminUserHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListCollections">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a list of shows</wsdl:documentation>
+      <wsdl:input message="tns:ListCollectionsHttpPostIn" />
+      <wsdl:output message="tns:ListCollectionsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListCollectionsDrop">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a list of shows</wsdl:documentation>
+      <wsdl:input message="tns:ListCollectionsDropHttpPostIn" />
+      <wsdl:output message="tns:ListCollectionsDropHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCollection">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">get show</wsdl:documentation>
+      <wsdl:input message="tns:GetCollectionHttpPostIn" />
+      <wsdl:output message="tns:GetCollectionHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveCollectionUsers">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Remove all users from a show</wsdl:documentation>
+      <wsdl:input message="tns:RemoveCollectionUsersHttpPostIn" />
+      <wsdl:output message="tns:RemoveCollectionUsersHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddCollectionUser">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Add user to a show</wsdl:documentation>
+      <wsdl:input message="tns:AddCollectionUserHttpPostIn" />
+      <wsdl:output message="tns:AddCollectionUserHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRights">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">get rights</wsdl:documentation>
+      <wsdl:input message="tns:GetRightsHttpPostIn" />
+      <wsdl:output message="tns:GetRightsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserRights">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">get users category rights</wsdl:documentation>
+      <wsdl:input message="tns:GetUserRightsHttpPostIn" />
+      <wsdl:output message="tns:GetUserRightsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Test">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Basic test of the web service</wsdl:documentation>
+      <wsdl:input message="tns:TestHttpPostIn" />
+      <wsdl:output message="tns:TestHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TestName">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Tests the web service by returning the Result name</wsdl:documentation>
+      <wsdl:input message="tns:TestNameHttpPostIn" />
+      <wsdl:output message="tns:TestNameHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TestCustom">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Tests the custom result formatting</wsdl:documentation>
+      <wsdl:input message="tns:TestCustomHttpPostIn" />
+      <wsdl:output message="tns:TestCustomHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TestError">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Basic test of an error condition</wsdl:documentation>
+      <wsdl:input message="tns:TestErrorHttpPostIn" />
+      <wsdl:output message="tns:TestErrorHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TestException">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Basic test of an error exception</wsdl:documentation>
+      <wsdl:input message="tns:TestExceptionHttpPostIn" />
+      <wsdl:output message="tns:TestExceptionHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="AccessServiceXSoap" type="tns:AccessServiceXSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ListGroups">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/ServiceX/ListGroups" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListProfilesDrop">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/ServiceX/ListProfilesDrop" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddGroup">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/ServiceX/AddGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGroup">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/ServiceX/GetGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateGroup">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/ServiceX/UpdateGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveGroup">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/ServiceX/RemoveGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListProfileUsersAll">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/ServiceX/ListProfileUsersAll" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListProfileUsers">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/ServiceX/ListProfileUsers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProfileUser">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/ServiceX/GetProfileUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddGroupUser">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/ServiceX/AddGroupUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddGroupCategory">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/ServiceX/AddGroupCategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProfileUser">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/ServiceX/UpdateProfileUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveProfileUser">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/ServiceX/RemoveProfileUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveGroupUsers">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/ServiceX/RemoveGroupUsers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveGroupCategories">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/ServiceX/RemoveGroupCategories" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListAdminUsersAll">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/ServiceX/ListAdminUsersAll" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListAdminUsers">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/ServiceX/ListAdminUsers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddAdminUser">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/ServiceX/AddAdminUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAdminUser">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/ServiceX/UpdateAdminUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAdminUser">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/ServiceX/GetAdminUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAdminUserAdminUser">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/ServiceX/GetAdminUserAdminUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveAdminUser">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/ServiceX/RemoveAdminUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListCollections">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/ServiceX/ListCollections" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListCollectionsDrop">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/ServiceX/ListCollectionsDrop" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCollection">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/ServiceX/GetCollection" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveCollectionUsers">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/ServiceX/RemoveCollectionUsers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddCollectionUser">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/ServiceX/AddCollectionUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRights">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/ServiceX/GetRights" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserRights">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/ServiceX/GetUserRights" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Test">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/ServiceX/Test" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestName">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/ServiceX/TestName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestCustom">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/ServiceX/TestCustom" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestError">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/ServiceX/TestError" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestException">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/ServiceX/TestException" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="AccessServiceXSoap12" type="tns:AccessServiceXSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ListGroups">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/ServiceX/ListGroups" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListProfilesDrop">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/ServiceX/ListProfilesDrop" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddGroup">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/ServiceX/AddGroup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGroup">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/ServiceX/GetGroup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateGroup">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/ServiceX/UpdateGroup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveGroup">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/ServiceX/RemoveGroup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListProfileUsersAll">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/ServiceX/ListProfileUsersAll" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListProfileUsers">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/ServiceX/ListProfileUsers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProfileUser">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/ServiceX/GetProfileUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddGroupUser">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/ServiceX/AddGroupUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddGroupCategory">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/ServiceX/AddGroupCategory" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProfileUser">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/ServiceX/UpdateProfileUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveProfileUser">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/ServiceX/RemoveProfileUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveGroupUsers">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/ServiceX/RemoveGroupUsers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveGroupCategories">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/ServiceX/RemoveGroupCategories" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListAdminUsersAll">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/ServiceX/ListAdminUsersAll" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListAdminUsers">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/ServiceX/ListAdminUsers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddAdminUser">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/ServiceX/AddAdminUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAdminUser">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/ServiceX/UpdateAdminUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAdminUser">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/ServiceX/GetAdminUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAdminUserAdminUser">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/ServiceX/GetAdminUserAdminUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveAdminUser">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/ServiceX/RemoveAdminUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListCollections">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/ServiceX/ListCollections" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListCollectionsDrop">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/ServiceX/ListCollectionsDrop" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCollection">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/ServiceX/GetCollection" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveCollectionUsers">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/ServiceX/RemoveCollectionUsers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddCollectionUser">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/ServiceX/AddCollectionUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRights">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/ServiceX/GetRights" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserRights">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/ServiceX/GetUserRights" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Test">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/ServiceX/Test" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestName">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/ServiceX/TestName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestCustom">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/ServiceX/TestCustom" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestError">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/ServiceX/TestError" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestException">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/ServiceX/TestException" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="AccessServiceXHttpGet" type="tns:AccessServiceXHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="ListGroups">
+      <http:operation location="/ListGroups" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListProfilesDrop">
+      <http:operation location="/ListProfilesDrop" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddGroup">
+      <http:operation location="/AddGroup" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGroup">
+      <http:operation location="/GetGroup" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateGroup">
+      <http:operation location="/UpdateGroup" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveGroup">
+      <http:operation location="/RemoveGroup" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListProfileUsersAll">
+      <http:operation location="/ListProfileUsersAll" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListProfileUsers">
+      <http:operation location="/ListProfileUsers" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProfileUser">
+      <http:operation location="/GetProfileUser" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddGroupUser">
+      <http:operation location="/AddGroupUser" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddGroupCategory">
+      <http:operation location="/AddGroupCategory" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProfileUser">
+      <http:operation location="/UpdateProfileUser" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveProfileUser">
+      <http:operation location="/RemoveProfileUser" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveGroupUsers">
+      <http:operation location="/RemoveGroupUsers" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveGroupCategories">
+      <http:operation location="/RemoveGroupCategories" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListAdminUsersAll">
+      <http:operation location="/ListAdminUsersAll" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListAdminUsers">
+      <http:operation location="/ListAdminUsers" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddAdminUser">
+      <http:operation location="/AddAdminUser" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAdminUser">
+      <http:operation location="/UpdateAdminUser" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAdminUser">
+      <http:operation location="/GetAdminUser" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAdminUserAdminUser">
+      <http:operation location="/GetAdminUserAdminUser" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveAdminUser">
+      <http:operation location="/RemoveAdminUser" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListCollections">
+      <http:operation location="/ListCollections" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListCollectionsDrop">
+      <http:operation location="/ListCollectionsDrop" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCollection">
+      <http:operation location="/GetCollection" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveCollectionUsers">
+      <http:operation location="/RemoveCollectionUsers" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddCollectionUser">
+      <http:operation location="/AddCollectionUser" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRights">
+      <http:operation location="/GetRights" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserRights">
+      <http:operation location="/GetUserRights" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Test">
+      <http:operation location="/Test" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestName">
+      <http:operation location="/TestName" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestCustom">
+      <http:operation location="/TestCustom" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestError">
+      <http:operation location="/TestError" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestException">
+      <http:operation location="/TestException" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="AccessServiceXHttpPost" type="tns:AccessServiceXHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="ListGroups">
+      <http:operation location="/ListGroups" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListProfilesDrop">
+      <http:operation location="/ListProfilesDrop" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddGroup">
+      <http:operation location="/AddGroup" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGroup">
+      <http:operation location="/GetGroup" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateGroup">
+      <http:operation location="/UpdateGroup" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveGroup">
+      <http:operation location="/RemoveGroup" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListProfileUsersAll">
+      <http:operation location="/ListProfileUsersAll" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListProfileUsers">
+      <http:operation location="/ListProfileUsers" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProfileUser">
+      <http:operation location="/GetProfileUser" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddGroupUser">
+      <http:operation location="/AddGroupUser" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddGroupCategory">
+      <http:operation location="/AddGroupCategory" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProfileUser">
+      <http:operation location="/UpdateProfileUser" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveProfileUser">
+      <http:operation location="/RemoveProfileUser" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveGroupUsers">
+      <http:operation location="/RemoveGroupUsers" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveGroupCategories">
+      <http:operation location="/RemoveGroupCategories" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListAdminUsersAll">
+      <http:operation location="/ListAdminUsersAll" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListAdminUsers">
+      <http:operation location="/ListAdminUsers" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddAdminUser">
+      <http:operation location="/AddAdminUser" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAdminUser">
+      <http:operation location="/UpdateAdminUser" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAdminUser">
+      <http:operation location="/GetAdminUser" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAdminUserAdminUser">
+      <http:operation location="/GetAdminUserAdminUser" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveAdminUser">
+      <http:operation location="/RemoveAdminUser" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListCollections">
+      <http:operation location="/ListCollections" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListCollectionsDrop">
+      <http:operation location="/ListCollectionsDrop" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCollection">
+      <http:operation location="/GetCollection" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveCollectionUsers">
+      <http:operation location="/RemoveCollectionUsers" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddCollectionUser">
+      <http:operation location="/AddCollectionUser" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRights">
+      <http:operation location="/GetRights" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserRights">
+      <http:operation location="/GetUserRights" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Test">
+      <http:operation location="/Test" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestName">
+      <http:operation location="/TestName" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestCustom">
+      <http:operation location="/TestCustom" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestError">
+      <http:operation location="/TestError" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestException">
+      <http:operation location="/TestException" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AccessServiceX">
+    <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">FoundationX Access Web Service</wsdl:documentation>
+    <wsdl:port name="AccessServiceXSoap" binding="tns:AccessServiceXSoap">
+      <soap:address location="http://services.ididthatad.com/Access.asmx" />
+    </wsdl:port>
+    <wsdl:port name="AccessServiceXSoap12" binding="tns:AccessServiceXSoap12">
+      <soap12:address location="http://services.ididthatad.com/Access.asmx" />
+    </wsdl:port>
+    <wsdl:port name="AccessServiceXHttpGet" binding="tns:AccessServiceXHttpGet">
+      <http:address location="http://services.ididthatad.com/Access.asmx" />
+    </wsdl:port>
+    <wsdl:port name="AccessServiceXHttpPost" binding="tns:AccessServiceXHttpPost">
+      <http:address location="http://services.ididthatad.com/Access.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

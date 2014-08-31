@@ -1,0 +1,1165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.clickclickBOOM.com/MachinaX/ServiceX" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://www.clickclickBOOM.com/MachinaX/ServiceX" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">FoundationX LinkLog Web Service</wsdl:documentation>
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.clickclickBOOM.com/MachinaX/ServiceX">
+      <s:element name="GetLinkLog">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="LinkLogID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLinkLogResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetLinkLogResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListLinkLogsAll">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Is_CSV" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="PersonID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SortCol" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="SortDesc" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListLinkLogsAllResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListLinkLogsAllResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListLinkLogs">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Is_CSV" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="PersonID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="StartPage" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SortCol" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="SortDesc" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="Rows" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListLinkLogsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListLinkLogsResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchLinkLogs">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Is_CSV" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="PersonIDSrchType" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="PersonID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="NameSrchType" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="LinkSrchType" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Link" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="DateStartSrchType" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="DateStart" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="DateEndSrchType" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="DateEnd" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="StartPage" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SortCol" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="SortDesc" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="Rows" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchLinkLogsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SearchLinkLogsResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddLinkLog">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Link" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Token" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="PersonID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddLinkLogResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddLinkLogResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveLinkLog">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="LinkLogID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveLinkLogResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RemoveLinkLogResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateLinkLog">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="LinkLogID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Link" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Token" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="PersonID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateLinkLogResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateLinkLogResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Test">
+        <s:complexType />
+      </s:element>
+      <s:element name="TestResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TestResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TestName">
+        <s:complexType />
+      </s:element>
+      <s:element name="TestNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TestNameResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TestCustom">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Format" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RootName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ResultName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CodeName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DescriptionName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TestCustomResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TestCustomResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TestError">
+        <s:complexType />
+      </s:element>
+      <s:element name="TestErrorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TestErrorResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TestException">
+        <s:complexType />
+      </s:element>
+      <s:element name="TestExceptionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TestExceptionResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetLinkLogSoapIn">
+    <wsdl:part name="parameters" element="tns:GetLinkLog" />
+  </wsdl:message>
+  <wsdl:message name="GetLinkLogSoapOut">
+    <wsdl:part name="parameters" element="tns:GetLinkLogResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListLinkLogsAllSoapIn">
+    <wsdl:part name="parameters" element="tns:ListLinkLogsAll" />
+  </wsdl:message>
+  <wsdl:message name="ListLinkLogsAllSoapOut">
+    <wsdl:part name="parameters" element="tns:ListLinkLogsAllResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListLinkLogsSoapIn">
+    <wsdl:part name="parameters" element="tns:ListLinkLogs" />
+  </wsdl:message>
+  <wsdl:message name="ListLinkLogsSoapOut">
+    <wsdl:part name="parameters" element="tns:ListLinkLogsResponse" />
+  </wsdl:message>
+  <wsdl:message name="SearchLinkLogsSoapIn">
+    <wsdl:part name="parameters" element="tns:SearchLinkLogs" />
+  </wsdl:message>
+  <wsdl:message name="SearchLinkLogsSoapOut">
+    <wsdl:part name="parameters" element="tns:SearchLinkLogsResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddLinkLogSoapIn">
+    <wsdl:part name="parameters" element="tns:AddLinkLog" />
+  </wsdl:message>
+  <wsdl:message name="AddLinkLogSoapOut">
+    <wsdl:part name="parameters" element="tns:AddLinkLogResponse" />
+  </wsdl:message>
+  <wsdl:message name="RemoveLinkLogSoapIn">
+    <wsdl:part name="parameters" element="tns:RemoveLinkLog" />
+  </wsdl:message>
+  <wsdl:message name="RemoveLinkLogSoapOut">
+    <wsdl:part name="parameters" element="tns:RemoveLinkLogResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateLinkLogSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateLinkLog" />
+  </wsdl:message>
+  <wsdl:message name="UpdateLinkLogSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateLinkLogResponse" />
+  </wsdl:message>
+  <wsdl:message name="TestSoapIn">
+    <wsdl:part name="parameters" element="tns:Test" />
+  </wsdl:message>
+  <wsdl:message name="TestSoapOut">
+    <wsdl:part name="parameters" element="tns:TestResponse" />
+  </wsdl:message>
+  <wsdl:message name="TestNameSoapIn">
+    <wsdl:part name="parameters" element="tns:TestName" />
+  </wsdl:message>
+  <wsdl:message name="TestNameSoapOut">
+    <wsdl:part name="parameters" element="tns:TestNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="TestCustomSoapIn">
+    <wsdl:part name="parameters" element="tns:TestCustom" />
+  </wsdl:message>
+  <wsdl:message name="TestCustomSoapOut">
+    <wsdl:part name="parameters" element="tns:TestCustomResponse" />
+  </wsdl:message>
+  <wsdl:message name="TestErrorSoapIn">
+    <wsdl:part name="parameters" element="tns:TestError" />
+  </wsdl:message>
+  <wsdl:message name="TestErrorSoapOut">
+    <wsdl:part name="parameters" element="tns:TestErrorResponse" />
+  </wsdl:message>
+  <wsdl:message name="TestExceptionSoapIn">
+    <wsdl:part name="parameters" element="tns:TestException" />
+  </wsdl:message>
+  <wsdl:message name="TestExceptionSoapOut">
+    <wsdl:part name="parameters" element="tns:TestExceptionResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetLinkLogHttpGetIn">
+    <wsdl:part name="LinkLogID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetLinkLogHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="ListLinkLogsAllHttpGetIn">
+    <wsdl:part name="Is_CSV" type="s:string" />
+    <wsdl:part name="PersonID" type="s:string" />
+    <wsdl:part name="SortCol" type="s:string" />
+    <wsdl:part name="SortDesc" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ListLinkLogsAllHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="ListLinkLogsHttpGetIn">
+    <wsdl:part name="Is_CSV" type="s:string" />
+    <wsdl:part name="PersonID" type="s:string" />
+    <wsdl:part name="StartPage" type="s:string" />
+    <wsdl:part name="SortCol" type="s:string" />
+    <wsdl:part name="SortDesc" type="s:string" />
+    <wsdl:part name="Rows" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ListLinkLogsHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="SearchLinkLogsHttpGetIn">
+    <wsdl:part name="Is_CSV" type="s:string" />
+    <wsdl:part name="PersonIDSrchType" type="s:string" />
+    <wsdl:part name="PersonID" type="s:string" />
+    <wsdl:part name="NameSrchType" type="s:string" />
+    <wsdl:part name="Name" type="s:string" />
+    <wsdl:part name="LinkSrchType" type="s:string" />
+    <wsdl:part name="Link" type="s:string" />
+    <wsdl:part name="DateStartSrchType" type="s:string" />
+    <wsdl:part name="DateStart" type="s:string" />
+    <wsdl:part name="DateEndSrchType" type="s:string" />
+    <wsdl:part name="DateEnd" type="s:string" />
+    <wsdl:part name="StartPage" type="s:string" />
+    <wsdl:part name="SortCol" type="s:string" />
+    <wsdl:part name="SortDesc" type="s:string" />
+    <wsdl:part name="Rows" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SearchLinkLogsHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="AddLinkLogHttpGetIn">
+    <wsdl:part name="Link" type="s:string" />
+    <wsdl:part name="Token" type="s:string" />
+    <wsdl:part name="PersonID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AddLinkLogHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="RemoveLinkLogHttpGetIn">
+    <wsdl:part name="LinkLogID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RemoveLinkLogHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="UpdateLinkLogHttpGetIn">
+    <wsdl:part name="LinkLogID" type="s:string" />
+    <wsdl:part name="Link" type="s:string" />
+    <wsdl:part name="Token" type="s:string" />
+    <wsdl:part name="PersonID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateLinkLogHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="TestHttpGetIn" />
+  <wsdl:message name="TestHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="TestNameHttpGetIn" />
+  <wsdl:message name="TestNameHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="TestCustomHttpGetIn">
+    <wsdl:part name="Format" type="s:string" />
+    <wsdl:part name="RootName" type="s:string" />
+    <wsdl:part name="ResultName" type="s:string" />
+    <wsdl:part name="CodeName" type="s:string" />
+    <wsdl:part name="DescriptionName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="TestCustomHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="TestErrorHttpGetIn" />
+  <wsdl:message name="TestErrorHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="TestExceptionHttpGetIn" />
+  <wsdl:message name="TestExceptionHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="GetLinkLogHttpPostIn">
+    <wsdl:part name="LinkLogID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetLinkLogHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="ListLinkLogsAllHttpPostIn">
+    <wsdl:part name="Is_CSV" type="s:string" />
+    <wsdl:part name="PersonID" type="s:string" />
+    <wsdl:part name="SortCol" type="s:string" />
+    <wsdl:part name="SortDesc" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ListLinkLogsAllHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="ListLinkLogsHttpPostIn">
+    <wsdl:part name="Is_CSV" type="s:string" />
+    <wsdl:part name="PersonID" type="s:string" />
+    <wsdl:part name="StartPage" type="s:string" />
+    <wsdl:part name="SortCol" type="s:string" />
+    <wsdl:part name="SortDesc" type="s:string" />
+    <wsdl:part name="Rows" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ListLinkLogsHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="SearchLinkLogsHttpPostIn">
+    <wsdl:part name="Is_CSV" type="s:string" />
+    <wsdl:part name="PersonIDSrchType" type="s:string" />
+    <wsdl:part name="PersonID" type="s:string" />
+    <wsdl:part name="NameSrchType" type="s:string" />
+    <wsdl:part name="Name" type="s:string" />
+    <wsdl:part name="LinkSrchType" type="s:string" />
+    <wsdl:part name="Link" type="s:string" />
+    <wsdl:part name="DateStartSrchType" type="s:string" />
+    <wsdl:part name="DateStart" type="s:string" />
+    <wsdl:part name="DateEndSrchType" type="s:string" />
+    <wsdl:part name="DateEnd" type="s:string" />
+    <wsdl:part name="StartPage" type="s:string" />
+    <wsdl:part name="SortCol" type="s:string" />
+    <wsdl:part name="SortDesc" type="s:string" />
+    <wsdl:part name="Rows" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SearchLinkLogsHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="AddLinkLogHttpPostIn">
+    <wsdl:part name="Link" type="s:string" />
+    <wsdl:part name="Token" type="s:string" />
+    <wsdl:part name="PersonID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AddLinkLogHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="RemoveLinkLogHttpPostIn">
+    <wsdl:part name="LinkLogID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RemoveLinkLogHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="UpdateLinkLogHttpPostIn">
+    <wsdl:part name="LinkLogID" type="s:string" />
+    <wsdl:part name="Link" type="s:string" />
+    <wsdl:part name="Token" type="s:string" />
+    <wsdl:part name="PersonID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateLinkLogHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="TestHttpPostIn" />
+  <wsdl:message name="TestHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="TestNameHttpPostIn" />
+  <wsdl:message name="TestNameHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="TestCustomHttpPostIn">
+    <wsdl:part name="Format" type="s:string" />
+    <wsdl:part name="RootName" type="s:string" />
+    <wsdl:part name="ResultName" type="s:string" />
+    <wsdl:part name="CodeName" type="s:string" />
+    <wsdl:part name="DescriptionName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="TestCustomHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="TestErrorHttpPostIn" />
+  <wsdl:message name="TestErrorHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="TestExceptionHttpPostIn" />
+  <wsdl:message name="TestExceptionHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:portType name="LinkLogServiceXSoap">
+    <wsdl:operation name="GetLinkLog">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">get linklog</wsdl:documentation>
+      <wsdl:input message="tns:GetLinkLogSoapIn" />
+      <wsdl:output message="tns:GetLinkLogSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListLinkLogsAll">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a list of all LinkLogs</wsdl:documentation>
+      <wsdl:input message="tns:ListLinkLogsAllSoapIn" />
+      <wsdl:output message="tns:ListLinkLogsAllSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListLinkLogs">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a sorted, filtered, paginated list of LinkLogs</wsdl:documentation>
+      <wsdl:input message="tns:ListLinkLogsSoapIn" />
+      <wsdl:output message="tns:ListLinkLogsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchLinkLogs">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a list of linklogs from a search</wsdl:documentation>
+      <wsdl:input message="tns:SearchLinkLogsSoapIn" />
+      <wsdl:output message="tns:SearchLinkLogsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddLinkLog">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">add new linklog</wsdl:documentation>
+      <wsdl:input message="tns:AddLinkLogSoapIn" />
+      <wsdl:output message="tns:AddLinkLogSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveLinkLog">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">get linklog</wsdl:documentation>
+      <wsdl:input message="tns:RemoveLinkLogSoapIn" />
+      <wsdl:output message="tns:RemoveLinkLogSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateLinkLog">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">edit linklog</wsdl:documentation>
+      <wsdl:input message="tns:UpdateLinkLogSoapIn" />
+      <wsdl:output message="tns:UpdateLinkLogSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Test">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Basic test of the web service</wsdl:documentation>
+      <wsdl:input message="tns:TestSoapIn" />
+      <wsdl:output message="tns:TestSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TestName">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Tests the web service by returning the Result name</wsdl:documentation>
+      <wsdl:input message="tns:TestNameSoapIn" />
+      <wsdl:output message="tns:TestNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TestCustom">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Tests the custom result formatting</wsdl:documentation>
+      <wsdl:input message="tns:TestCustomSoapIn" />
+      <wsdl:output message="tns:TestCustomSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TestError">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Basic test of an error condition</wsdl:documentation>
+      <wsdl:input message="tns:TestErrorSoapIn" />
+      <wsdl:output message="tns:TestErrorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TestException">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Basic test of an error exception</wsdl:documentation>
+      <wsdl:input message="tns:TestExceptionSoapIn" />
+      <wsdl:output message="tns:TestExceptionSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="LinkLogServiceXHttpGet">
+    <wsdl:operation name="GetLinkLog">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">get linklog</wsdl:documentation>
+      <wsdl:input message="tns:GetLinkLogHttpGetIn" />
+      <wsdl:output message="tns:GetLinkLogHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListLinkLogsAll">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a list of all LinkLogs</wsdl:documentation>
+      <wsdl:input message="tns:ListLinkLogsAllHttpGetIn" />
+      <wsdl:output message="tns:ListLinkLogsAllHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListLinkLogs">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a sorted, filtered, paginated list of LinkLogs</wsdl:documentation>
+      <wsdl:input message="tns:ListLinkLogsHttpGetIn" />
+      <wsdl:output message="tns:ListLinkLogsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchLinkLogs">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a list of linklogs from a search</wsdl:documentation>
+      <wsdl:input message="tns:SearchLinkLogsHttpGetIn" />
+      <wsdl:output message="tns:SearchLinkLogsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddLinkLog">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">add new linklog</wsdl:documentation>
+      <wsdl:input message="tns:AddLinkLogHttpGetIn" />
+      <wsdl:output message="tns:AddLinkLogHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveLinkLog">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">get linklog</wsdl:documentation>
+      <wsdl:input message="tns:RemoveLinkLogHttpGetIn" />
+      <wsdl:output message="tns:RemoveLinkLogHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateLinkLog">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">edit linklog</wsdl:documentation>
+      <wsdl:input message="tns:UpdateLinkLogHttpGetIn" />
+      <wsdl:output message="tns:UpdateLinkLogHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Test">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Basic test of the web service</wsdl:documentation>
+      <wsdl:input message="tns:TestHttpGetIn" />
+      <wsdl:output message="tns:TestHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TestName">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Tests the web service by returning the Result name</wsdl:documentation>
+      <wsdl:input message="tns:TestNameHttpGetIn" />
+      <wsdl:output message="tns:TestNameHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TestCustom">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Tests the custom result formatting</wsdl:documentation>
+      <wsdl:input message="tns:TestCustomHttpGetIn" />
+      <wsdl:output message="tns:TestCustomHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TestError">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Basic test of an error condition</wsdl:documentation>
+      <wsdl:input message="tns:TestErrorHttpGetIn" />
+      <wsdl:output message="tns:TestErrorHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TestException">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Basic test of an error exception</wsdl:documentation>
+      <wsdl:input message="tns:TestExceptionHttpGetIn" />
+      <wsdl:output message="tns:TestExceptionHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="LinkLogServiceXHttpPost">
+    <wsdl:operation name="GetLinkLog">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">get linklog</wsdl:documentation>
+      <wsdl:input message="tns:GetLinkLogHttpPostIn" />
+      <wsdl:output message="tns:GetLinkLogHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListLinkLogsAll">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a list of all LinkLogs</wsdl:documentation>
+      <wsdl:input message="tns:ListLinkLogsAllHttpPostIn" />
+      <wsdl:output message="tns:ListLinkLogsAllHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListLinkLogs">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a sorted, filtered, paginated list of LinkLogs</wsdl:documentation>
+      <wsdl:input message="tns:ListLinkLogsHttpPostIn" />
+      <wsdl:output message="tns:ListLinkLogsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchLinkLogs">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a list of linklogs from a search</wsdl:documentation>
+      <wsdl:input message="tns:SearchLinkLogsHttpPostIn" />
+      <wsdl:output message="tns:SearchLinkLogsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddLinkLog">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">add new linklog</wsdl:documentation>
+      <wsdl:input message="tns:AddLinkLogHttpPostIn" />
+      <wsdl:output message="tns:AddLinkLogHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveLinkLog">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">get linklog</wsdl:documentation>
+      <wsdl:input message="tns:RemoveLinkLogHttpPostIn" />
+      <wsdl:output message="tns:RemoveLinkLogHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateLinkLog">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">edit linklog</wsdl:documentation>
+      <wsdl:input message="tns:UpdateLinkLogHttpPostIn" />
+      <wsdl:output message="tns:UpdateLinkLogHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Test">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Basic test of the web service</wsdl:documentation>
+      <wsdl:input message="tns:TestHttpPostIn" />
+      <wsdl:output message="tns:TestHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TestName">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Tests the web service by returning the Result name</wsdl:documentation>
+      <wsdl:input message="tns:TestNameHttpPostIn" />
+      <wsdl:output message="tns:TestNameHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TestCustom">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Tests the custom result formatting</wsdl:documentation>
+      <wsdl:input message="tns:TestCustomHttpPostIn" />
+      <wsdl:output message="tns:TestCustomHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TestError">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Basic test of an error condition</wsdl:documentation>
+      <wsdl:input message="tns:TestErrorHttpPostIn" />
+      <wsdl:output message="tns:TestErrorHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TestException">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Basic test of an error exception</wsdl:documentation>
+      <wsdl:input message="tns:TestExceptionHttpPostIn" />
+      <wsdl:output message="tns:TestExceptionHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="LinkLogServiceXSoap" type="tns:LinkLogServiceXSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetLinkLog">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/ServiceX/GetLinkLog" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListLinkLogsAll">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/ServiceX/ListLinkLogsAll" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListLinkLogs">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/ServiceX/ListLinkLogs" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchLinkLogs">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/ServiceX/SearchLinkLogs" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddLinkLog">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/ServiceX/AddLinkLog" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveLinkLog">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/ServiceX/RemoveLinkLog" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateLinkLog">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/ServiceX/UpdateLinkLog" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Test">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/ServiceX/Test" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestName">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/ServiceX/TestName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestCustom">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/ServiceX/TestCustom" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestError">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/ServiceX/TestError" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestException">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/ServiceX/TestException" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="LinkLogServiceXSoap12" type="tns:LinkLogServiceXSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetLinkLog">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/ServiceX/GetLinkLog" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListLinkLogsAll">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/ServiceX/ListLinkLogsAll" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListLinkLogs">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/ServiceX/ListLinkLogs" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchLinkLogs">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/ServiceX/SearchLinkLogs" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddLinkLog">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/ServiceX/AddLinkLog" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveLinkLog">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/ServiceX/RemoveLinkLog" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateLinkLog">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/ServiceX/UpdateLinkLog" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Test">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/ServiceX/Test" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestName">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/ServiceX/TestName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestCustom">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/ServiceX/TestCustom" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestError">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/ServiceX/TestError" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestException">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/ServiceX/TestException" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="LinkLogServiceXHttpGet" type="tns:LinkLogServiceXHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="GetLinkLog">
+      <http:operation location="/GetLinkLog" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListLinkLogsAll">
+      <http:operation location="/ListLinkLogsAll" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListLinkLogs">
+      <http:operation location="/ListLinkLogs" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchLinkLogs">
+      <http:operation location="/SearchLinkLogs" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddLinkLog">
+      <http:operation location="/AddLinkLog" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveLinkLog">
+      <http:operation location="/RemoveLinkLog" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateLinkLog">
+      <http:operation location="/UpdateLinkLog" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Test">
+      <http:operation location="/Test" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestName">
+      <http:operation location="/TestName" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestCustom">
+      <http:operation location="/TestCustom" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestError">
+      <http:operation location="/TestError" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestException">
+      <http:operation location="/TestException" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="LinkLogServiceXHttpPost" type="tns:LinkLogServiceXHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="GetLinkLog">
+      <http:operation location="/GetLinkLog" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListLinkLogsAll">
+      <http:operation location="/ListLinkLogsAll" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListLinkLogs">
+      <http:operation location="/ListLinkLogs" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchLinkLogs">
+      <http:operation location="/SearchLinkLogs" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddLinkLog">
+      <http:operation location="/AddLinkLog" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveLinkLog">
+      <http:operation location="/RemoveLinkLog" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateLinkLog">
+      <http:operation location="/UpdateLinkLog" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Test">
+      <http:operation location="/Test" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestName">
+      <http:operation location="/TestName" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestCustom">
+      <http:operation location="/TestCustom" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestError">
+      <http:operation location="/TestError" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestException">
+      <http:operation location="/TestException" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="LinkLogServiceX">
+    <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">FoundationX LinkLog Web Service</wsdl:documentation>
+    <wsdl:port name="LinkLogServiceXSoap" binding="tns:LinkLogServiceXSoap">
+      <soap:address location="http://services.ididthatad.com/LinkLog.asmx" />
+    </wsdl:port>
+    <wsdl:port name="LinkLogServiceXSoap12" binding="tns:LinkLogServiceXSoap12">
+      <soap12:address location="http://services.ididthatad.com/LinkLog.asmx" />
+    </wsdl:port>
+    <wsdl:port name="LinkLogServiceXHttpGet" binding="tns:LinkLogServiceXHttpGet">
+      <http:address location="http://services.ididthatad.com/LinkLog.asmx" />
+    </wsdl:port>
+    <wsdl:port name="LinkLogServiceXHttpPost" binding="tns:LinkLogServiceXHttpPost">
+      <http:address location="http://services.ididthatad.com/LinkLog.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

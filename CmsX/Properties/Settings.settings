@@ -1,0 +1,48 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="clickclickboom.machinaX.blogX.cmsX.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="CmsX_2_6_0_CustomerWS_PassportX_x0020_Customer_x0020_Services" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://service.tabula.com/Passport.Customer.asmx</Value>
+    </Setting>
+    <Setting Name="CmsX_2_6_0_PassportAdminWS_PassportX_x0020_Admin_x0020_Services" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://service.tabula.com/Passport.Admin.asmx</Value>
+    </Setting>
+    <Setting Name="CmsX_2_6_0_AccessWS_AccessServiceX" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://services.ididthatad.com/Access.asmx</Value>
+    </Setting>
+    <Setting Name="CmsX_2_6_0_UserWS_UserServiceX" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://services.ididthatad.com/User.asmx</Value>
+    </Setting>
+    <Setting Name="CmsX_2_6_0_LinkLogWS_LinkLogServiceX" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://services.ididthatad.com/LinkLog.asmx</Value>
+    </Setting>
+    <Setting Name="CmsX_2_6_0_AdminXWS_adminX" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://www.ididthatad.com/adminx.asmx</Value>
+    </Setting>
+    <Setting Name="CmsX_2_6_0_DisplayXMenusWS_DisplayXMenus" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://www.loeries.co.za/DisplayXMenus.asmx</Value>
+    </Setting>
+    <Setting Name="CmsX_2_6_0_DisplayXSiteWS_SiteDisplayxServiceX" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://www.ididthatad.com/DisplayXSite.asmx</Value>
+    </Setting>
+    <Setting Name="CmsX_2_6_0_ContentXBlogsWS_ContentXBlogs" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://www.ididthatad.com/ContentXBlogs.asmx</Value>
+    </Setting>
+    <Setting Name="CmsX_2_6_0_ContentXSpacesWS_ContentXSpaces" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://www.ididthatad.com/ContentXSpaces.asmx</Value>
+    </Setting>
+    <Setting Name="CmsX_2_6_0_ContentXMediaWS_ContentXMedia" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://www.ididthatad.com/ContentXMedia.asmx</Value>
+    </Setting>
+    <Setting Name="CmsX_2_6_0_DisplayXLinksWS_DisplayXLinks" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://www.loeries.co.za/DisplayXLinks.asmx</Value>
+    </Setting>
+    <Setting Name="CmsX_2_6_0_ContentXFilesWS_ContentXFiles" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://www.ididthatad.com/ContentXFiles.asmx</Value>
+    </Setting>
+    <Setting Name="CmsX_2_6_0_PassportWS_PassportX_x0020_Passport_x0020_Services" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://service.tabula.com/Passport.Passport.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

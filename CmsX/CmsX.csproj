@@ -1,0 +1,571 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{46D5EBC9-6C85-4B04-A6E4-4BC48BC3BF08}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>clickclickboom.machinaX.blogX.cmsX</RootNamespace>
+    <AssemblyName>CmsX</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BlogTemplateX">
+      <HintPath>..\..\bin\BlogTemplateX.dll</HintPath>
+    </Reference>
+    <Reference Include="BlogX">
+      <HintPath>..\..\bin\BlogX.dll</HintPath>
+    </Reference>
+    <Reference Include="EmailX">
+      <HintPath>..\..\bin\EmailX.dll</HintPath>
+    </Reference>
+    <Reference Include="Facebook, Version=6.0.10.0, Culture=neutral, PublicKeyToken=58cb4f2111d1e6de, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\bin\Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\..\bin\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="MachinaX">
+      <HintPath>..\..\bin\MachinaX.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\bin\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="ReCaptchaX">
+      <HintPath>..\..\bin\ReCaptchaX.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Brokers\CmsX.Broker.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Brokers\CmsX.Broker.IO.cs" />
+    <Compile Include="Brokers\CmsX.Broker.Template.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Brokers\CmsX.Broker.Yyyy.cs" />
+    <Compile Include="Brokers\CmsX.Broker.Yyyy.Default.cs" />
+    <Compile Include="Brokers\CmsX.Broker.Yyyy.Upload.cs" />
+    <Compile Include="Brokers\CmsX.Broker.Yyyy.SubItem.cs" />
+    <Compile Include="Brokers\CmsX.Broker.Access.Group.cs" />
+    <Compile Include="Brokers\CmsX.Broker.Access.Right.cs" />
+    <Compile Include="Brokers\CmsX.Broker.Zzzz.cs" />
+    <Compile Include="Brokers\CmsX.Broker.Recruit.cs" />
+    <Compile Include="CsvReader\CachedCsvReader.cs" />
+    <Compile Include="CsvReader\CachedCsvReader.CsvBindingList.cs" />
+    <Compile Include="CsvReader\CachedCsvReader.CsvPropertyDescriptor.cs" />
+    <Compile Include="CsvReader\CachedCsvReader.CsvRecordComparer.cs" />
+    <Compile Include="Cms.cs" />
+    <Compile Include="Datatable\CmsX.Base.cs" />
+    <Compile Include="Datatable\CmsX.Input.cs" />
+    <Compile Include="Datatable\CmsX.Output.cs" />
+    <Compile Include="Proxies\CmsWS.Base.New.cs" />
+    <Compile Include="Utils\CmsX.SubItem.cs" />
+    <Compile Include="CsvReader\CsvReader.cs" />
+    <Compile Include="CsvReader\CsvReader.DataReaderValidations.cs" />
+    <Compile Include="CsvReader\CsvReader.RecordEnumerator.cs" />
+    <Compile Include="CsvReader\Events\ParseErrorEventArgs.cs" />
+    <Compile Include="CsvReader\Exceptions\MalformedCsvException.cs" />
+    <Compile Include="CsvReader\Exceptions\MissingFieldCsvException.cs" />
+    <Compile Include="CsvReader\MissingFieldAction.cs" />
+    <Compile Include="CsvReader\ParseErrorAction.cs" />
+    <Compile Include="CsvReader\Resources\ExceptionMessage.Designer.cs" />
+    <Compile Include="Import\CmsX.Importer.Xxxx.cs" />
+    <Compile Include="Import\CmsX.Reader.Xxxx.cs" />
+    <Compile Include="Import\CmsX.Importer.Base.cs" />
+    <Compile Include="CsvReader\ValueTrimmingOptions.cs" />
+    <Compile Include="Utils\CmsX.Recruit.cs" />
+    <Compile Include="Web References\PassportWS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Proxies\CmsWS.Access.cs" />
+    <Compile Include="Proxies\CmsWS.AdminX.cs" />
+    <Compile Include="Proxies\CmsWS.Base.cs" />
+    <Compile Include="Proxies\CmsWS.Blogs.cs" />
+    <Compile Include="Proxies\CmsWS.Displayx.cs" />
+    <Compile Include="Proxies\CmsWS.LinkLog.cs" />
+    <Compile Include="Proxies\CmsWS.Links.cs" />
+    <Compile Include="Proxies\CmsWS.Media.cs" />
+    <Compile Include="Proxies\CmsWS.Menus.cs" />
+    <Compile Include="Proxies\CmsWS.Search.cs" />
+    <Compile Include="Proxies\CmsWS.Site.cs" />
+    <Compile Include="Proxies\CmsWS.Spaces.cs" />
+    <Compile Include="Proxies\CmsWS.Topics.cs" />
+    <Compile Include="Proxies\CmsWS.Users.cs" />
+    <Compile Include="Proxies\CmsWS.Xxxx.cs" />
+    <Compile Include="CmsX.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Brokers\CmsX.Broker.Access.cs" />
+    <Compile Include="Brokers\CmsX.Broker.Auth.cs" />
+    <Compile Include="Brokers\CmsX.Broker.Base.cs" />
+    <Compile Include="Brokers\CmsX.Broker.Blogs.cs" />
+    <Compile Include="Brokers\CmsX.Broker.CSV.cs" />
+    <Compile Include="Brokers\CmsX.Broker.Display.cs" />
+    <Compile Include="Brokers\CmsX.Broker.LinkLog.cs" />
+    <Compile Include="Brokers\CmsX.Broker.Links.cs" />
+    <Compile Include="Brokers\CmsX.Broker.Media.cs" />
+    <Compile Include="Brokers\CmsX.Broker.Menus.cs" />
+    <Compile Include="Brokers\CmsX.Broker.Passport.cs" />
+    <Compile Include="Brokers\CmsX.Broker.Sites.cs" />
+    <Compile Include="Brokers\CmsX.Broker.Spaces.cs" />
+    <Compile Include="Brokers\CmsX.Broker.Topics.cs" />
+    <Compile Include="Brokers\CmsX.Broker.Xxxx.cs" />
+    <Compile Include="Utils\CmsX.Class.cs" />
+    <Compile Include="Utils\CmsX.Cookies.cs" />
+    <Compile Include="Utils\CmsX.CSV.cs" />
+    <Compile Include="Utils\CmsX.Grid.cs" />
+    <Compile Include="Utils\CmsX.Startup.cs" />
+    <Compile Include="Utils\CmsX.User.cs" />
+    <Compile Include="CmsXGridX.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CmsXProfileX.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Brokers\CmsX.Broker.News.cs" />
+    <Compile Include="Brokers\CmsX.Broker.File.cs" />
+    <Compile Include="Proxies\CmsWS.File.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\AccessWS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\AdminXWS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\ContentXBlogsWS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\ContentXFilesWS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\ContentXMediaWS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\ContentXSpacesWS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\PassportCustomerWS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\DisplayXLinksWS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\DisplayXMenusWS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\DisplayXSiteWS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\LinkLogWS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\PassportAdminWS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\UserWS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Proxies\CmsWS.Yyyy.cs" />
+    <Compile Include="Proxies\CmsWS.Passport.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://service.tabula.com/Passport.Passport.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\PassportWS\</RelPath>
+      <UpdateFromURL>http://service.tabula.com/Passport.Passport.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>CmsX_2_6_0_PassportWS_PassportX_x0020_Passport_x0020_Services</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://www.ididthatad.com/adminx.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\AdminXWS\</RelPath>
+      <UpdateFromURL>http://www.ididthatad.com/adminx.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>CmsX_2_6_0_AdminXWS_adminX</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://www.ididthatad.com/ContentXBlogs.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\ContentXBlogsWS\</RelPath>
+      <UpdateFromURL>http://www.ididthatad.com/ContentXBlogs.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>CmsX_2_6_0_ContentXBlogsWS_ContentXBlogs</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://www.ididthatad.com/ContentXFiles.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\ContentXFilesWS\</RelPath>
+      <UpdateFromURL>http://www.ididthatad.com/ContentXFiles.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>CmsX_2_6_0_ContentXFilesWS_ContentXFiles</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://www.ididthatad.com/ContentXMedia.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\ContentXMediaWS\</RelPath>
+      <UpdateFromURL>http://www.ididthatad.com/ContentXMedia.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>CmsX_2_6_0_ContentXMediaWS_ContentXMedia</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://www.ididthatad.com/ContentXSpaces.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\ContentXSpacesWS\</RelPath>
+      <UpdateFromURL>http://www.ididthatad.com/ContentXSpaces.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>CmsX_2_6_0_ContentXSpacesWS_ContentXSpaces</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://www.loeries.co.za/DisplayXLinks.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\DisplayXLinksWS\</RelPath>
+      <UpdateFromURL>http://www.loeries.co.za/DisplayXLinks.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>CmsX_2_6_0_DisplayXLinksWS_DisplayXLinks</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://www.loeries.co.za/DisplayXMenus.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\DisplayXMenusWS\</RelPath>
+      <UpdateFromURL>http://www.loeries.co.za/DisplayXMenus.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>CmsX_2_6_0_DisplayXMenusWS_DisplayXMenus</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://www.ididthatad.com/DisplayXSite.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\DisplayXSiteWS\</RelPath>
+      <UpdateFromURL>http://www.ididthatad.com/DisplayXSite.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>CmsX_2_6_0_DisplayXSiteWS_SiteDisplayxServiceX</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://service.tabula.com/Passport.Admin.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\PassportAdminWS\</RelPath>
+      <UpdateFromURL>http://service.tabula.com/Passport.Admin.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>CmsX_2_6_0_PassportAdminWS_PassportX_x0020_Admin_x0020_Services</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://service.tabula.com/Passport.Customer.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\PassportCustomerWS\</RelPath>
+      <UpdateFromURL>http://service.tabula.com/Passport.Customer.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>CmsX_2_6_0_CustomerWS_PassportX_x0020_Customer_x0020_Services</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://services.ididthatad.com/Access.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\AccessWS\</RelPath>
+      <UpdateFromURL>http://services.ididthatad.com/Access.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>CmsX_2_6_0_AccessWS_AccessServiceX</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://services.ididthatad.com/LinkLog.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\LinkLogWS\</RelPath>
+      <UpdateFromURL>http://services.ididthatad.com/LinkLog.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>CmsX_2_6_0_LinkLogWS_LinkLogServiceX</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://services.ididthatad.com/User.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\UserWS\</RelPath>
+      <UpdateFromURL>http://services.ididthatad.com/User.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>CmsX_2_6_0_UserWS_UserServiceX</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\AccessWS\Access.wsdl" />
+    <None Include="Web References\AccessWS\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\AdminXWS\adminx.wsdl" />
+    <None Include="Web References\AdminXWS\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\ContentXBlogsWS\ContentXBlogs.wsdl" />
+    <None Include="Web References\ContentXBlogsWS\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\ContentXFilesWS\ContentXFiles.wsdl" />
+    <None Include="Web References\ContentXFilesWS\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\ContentXMediaWS\ContentXMedia.wsdl" />
+    <None Include="Web References\ContentXMediaWS\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\ContentXSpacesWS\ContentXSpaces.wsdl" />
+    <None Include="Web References\ContentXSpacesWS\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\PassportAdminWS\Passport.wsdl" />
+    <None Include="Web References\PassportCustomerWS\Passport.wsdl" />
+    <None Include="Web References\PassportCustomerWS\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\DisplayXLinksWS\DisplayXLinks.wsdl" />
+    <None Include="Web References\DisplayXLinksWS\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\DisplayXMenusWS\DisplayXMenus.wsdl" />
+    <None Include="Web References\DisplayXMenusWS\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\DisplayXSiteWS\DisplayXSite.wsdl" />
+    <None Include="Web References\DisplayXSiteWS\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\LinkLogWS\LinkLog.wsdl" />
+    <None Include="Web References\LinkLogWS\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\PassportAdminWS\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\PassportWS\Passport.wsdl" />
+    <None Include="Web References\PassportWS\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\UserWS\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\UserWS\User.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\AccessWS\Access.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\UserWS\User.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\LinkLogWS\LinkLog.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\AdminXWS\adminx.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\DisplayXMenusWS\DisplayXMenus.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\DisplayXSiteWS\DisplayXSite.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\ContentXBlogsWS\ContentXBlogs.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\ContentXSpacesWS\ContentXSpaces.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\ContentXMediaWS\ContentXMedia.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\DisplayXLinksWS\DisplayXLinks.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\ContentXFilesWS\ContentXFiles.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="CsvReader\Resources\ExceptionMessage.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\PassportWS\Passport.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\PassportCustomerWS\Passport.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\PassportAdminWS\Passport.disco" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>Copy $(TargetPath) $(SolutionDir)..\bin\$(TargetFileName)
+</PostBuildEvent>
+  </PropertyGroup>
+</Project>

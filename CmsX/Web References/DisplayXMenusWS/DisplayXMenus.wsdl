@@ -1,0 +1,2207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.clickclickBOOM.com/MachinaX/DisplayX" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://www.clickclickBOOM.com/MachinaX/DisplayX" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">DisplayXMenus Web Service</wsdl:documentation>
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.clickclickBOOM.com/MachinaX/DisplayX">
+      <s:element name="ListDD">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="blogxID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListDDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListDDResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListAll">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="blogxID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Profile" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SortBy" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="SortAscending" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListAllResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListAllResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="List">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="blogxID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Profile" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SortBy" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="SortAscending" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="SortNumber" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="StartPage" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="Rows" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListProfiles">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="blogxID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListProfilesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListProfilesResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="blogxID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="MenuID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMenu">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="blogxID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="MenuID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMenuResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMenuResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Add">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="blogxID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="label" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="profile" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="display" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="parentID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="logo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Edit">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="blogxID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="label" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="profile" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="display" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="parentID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="logo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EditResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EditResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Order">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="blogxID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="increment" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OrderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OrderResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Delete">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="blogxID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DeleteResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListMenuItems">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="blogxID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="MenuID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListMenuItemsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListMenuItemsResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMenuItems">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="blogxID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="MenuID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMenuItemsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMenuItemsResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMenuMenuItem">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="blogxID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="MenuID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="MenuItemID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMenuMenuItemResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMenuMenuItemResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMenuItem">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="blogxID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="MenuItemID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMenuItemResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMenuItemResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddMenuItem">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="blogxID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="MenuID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Label" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Link" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Display" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Order" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Logo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddMenuItemResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddMenuItemResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EditMenuItem">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="blogxID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="MenuID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="MenuItemID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Label" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Link" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Display" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Order" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Logo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EditMenuItemResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EditMenuItemResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteMenuItem">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="blogxID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="MenuItemID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteMenuItemResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DeleteMenuItemResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteMenuMenuItem">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="blogxID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="MenuID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="MenuItemID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteMenuMenuItemResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DeleteMenuMenuItemResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Test">
+        <s:complexType />
+      </s:element>
+      <s:element name="TestResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TestResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TestName">
+        <s:complexType />
+      </s:element>
+      <s:element name="TestNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TestNameResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TestCustom">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Format" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RootName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ResultName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CodeName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DescriptionName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TestCustomResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TestCustomResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TestError">
+        <s:complexType />
+      </s:element>
+      <s:element name="TestErrorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TestErrorResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TestException">
+        <s:complexType />
+      </s:element>
+      <s:element name="TestExceptionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TestExceptionResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ListDDSoapIn">
+    <wsdl:part name="parameters" element="tns:ListDD" />
+  </wsdl:message>
+  <wsdl:message name="ListDDSoapOut">
+    <wsdl:part name="parameters" element="tns:ListDDResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListAllSoapIn">
+    <wsdl:part name="parameters" element="tns:ListAll" />
+  </wsdl:message>
+  <wsdl:message name="ListAllSoapOut">
+    <wsdl:part name="parameters" element="tns:ListAllResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListSoapIn">
+    <wsdl:part name="parameters" element="tns:List" />
+  </wsdl:message>
+  <wsdl:message name="ListSoapOut">
+    <wsdl:part name="parameters" element="tns:ListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListProfilesSoapIn">
+    <wsdl:part name="parameters" element="tns:ListProfiles" />
+  </wsdl:message>
+  <wsdl:message name="ListProfilesSoapOut">
+    <wsdl:part name="parameters" element="tns:ListProfilesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSoapIn">
+    <wsdl:part name="parameters" element="tns:Get" />
+  </wsdl:message>
+  <wsdl:message name="GetSoapOut">
+    <wsdl:part name="parameters" element="tns:GetResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMenuSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMenu" />
+  </wsdl:message>
+  <wsdl:message name="GetMenuSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMenuResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddSoapIn">
+    <wsdl:part name="parameters" element="tns:Add" />
+  </wsdl:message>
+  <wsdl:message name="AddSoapOut">
+    <wsdl:part name="parameters" element="tns:AddResponse" />
+  </wsdl:message>
+  <wsdl:message name="EditSoapIn">
+    <wsdl:part name="parameters" element="tns:Edit" />
+  </wsdl:message>
+  <wsdl:message name="EditSoapOut">
+    <wsdl:part name="parameters" element="tns:EditResponse" />
+  </wsdl:message>
+  <wsdl:message name="OrderSoapIn">
+    <wsdl:part name="parameters" element="tns:Order" />
+  </wsdl:message>
+  <wsdl:message name="OrderSoapOut">
+    <wsdl:part name="parameters" element="tns:OrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteSoapIn">
+    <wsdl:part name="parameters" element="tns:Delete" />
+  </wsdl:message>
+  <wsdl:message name="DeleteSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListMenuItemsSoapIn">
+    <wsdl:part name="parameters" element="tns:ListMenuItems" />
+  </wsdl:message>
+  <wsdl:message name="ListMenuItemsSoapOut">
+    <wsdl:part name="parameters" element="tns:ListMenuItemsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMenuItemsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMenuItems" />
+  </wsdl:message>
+  <wsdl:message name="GetMenuItemsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMenuItemsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMenuMenuItemSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMenuMenuItem" />
+  </wsdl:message>
+  <wsdl:message name="GetMenuMenuItemSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMenuMenuItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMenuItemSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMenuItem" />
+  </wsdl:message>
+  <wsdl:message name="GetMenuItemSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMenuItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddMenuItemSoapIn">
+    <wsdl:part name="parameters" element="tns:AddMenuItem" />
+  </wsdl:message>
+  <wsdl:message name="AddMenuItemSoapOut">
+    <wsdl:part name="parameters" element="tns:AddMenuItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="EditMenuItemSoapIn">
+    <wsdl:part name="parameters" element="tns:EditMenuItem" />
+  </wsdl:message>
+  <wsdl:message name="EditMenuItemSoapOut">
+    <wsdl:part name="parameters" element="tns:EditMenuItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteMenuItemSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteMenuItem" />
+  </wsdl:message>
+  <wsdl:message name="DeleteMenuItemSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteMenuItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteMenuMenuItemSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteMenuMenuItem" />
+  </wsdl:message>
+  <wsdl:message name="DeleteMenuMenuItemSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteMenuMenuItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="TestSoapIn">
+    <wsdl:part name="parameters" element="tns:Test" />
+  </wsdl:message>
+  <wsdl:message name="TestSoapOut">
+    <wsdl:part name="parameters" element="tns:TestResponse" />
+  </wsdl:message>
+  <wsdl:message name="TestNameSoapIn">
+    <wsdl:part name="parameters" element="tns:TestName" />
+  </wsdl:message>
+  <wsdl:message name="TestNameSoapOut">
+    <wsdl:part name="parameters" element="tns:TestNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="TestCustomSoapIn">
+    <wsdl:part name="parameters" element="tns:TestCustom" />
+  </wsdl:message>
+  <wsdl:message name="TestCustomSoapOut">
+    <wsdl:part name="parameters" element="tns:TestCustomResponse" />
+  </wsdl:message>
+  <wsdl:message name="TestErrorSoapIn">
+    <wsdl:part name="parameters" element="tns:TestError" />
+  </wsdl:message>
+  <wsdl:message name="TestErrorSoapOut">
+    <wsdl:part name="parameters" element="tns:TestErrorResponse" />
+  </wsdl:message>
+  <wsdl:message name="TestExceptionSoapIn">
+    <wsdl:part name="parameters" element="tns:TestException" />
+  </wsdl:message>
+  <wsdl:message name="TestExceptionSoapOut">
+    <wsdl:part name="parameters" element="tns:TestExceptionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListDDHttpGetIn">
+    <wsdl:part name="blogxID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ListDDHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="ListAllHttpGetIn">
+    <wsdl:part name="blogxID" type="s:string" />
+    <wsdl:part name="Profile" type="s:string" />
+    <wsdl:part name="SortBy" type="s:string" />
+    <wsdl:part name="SortAscending" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ListAllHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="ListHttpGetIn">
+    <wsdl:part name="blogxID" type="s:string" />
+    <wsdl:part name="Profile" type="s:string" />
+    <wsdl:part name="SortBy" type="s:string" />
+    <wsdl:part name="SortAscending" type="s:string" />
+    <wsdl:part name="SortNumber" type="s:string" />
+    <wsdl:part name="StartPage" type="s:string" />
+    <wsdl:part name="Rows" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ListHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="ListProfilesHttpGetIn">
+    <wsdl:part name="blogxID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ListProfilesHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="GetHttpGetIn">
+    <wsdl:part name="blogxID" type="s:string" />
+    <wsdl:part name="MenuID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="GetMenuHttpGetIn">
+    <wsdl:part name="blogxID" type="s:string" />
+    <wsdl:part name="MenuID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetMenuHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="AddHttpGetIn">
+    <wsdl:part name="blogxID" type="s:string" />
+    <wsdl:part name="name" type="s:string" />
+    <wsdl:part name="label" type="s:string" />
+    <wsdl:part name="profile" type="s:string" />
+    <wsdl:part name="display" type="s:string" />
+    <wsdl:part name="parentID" type="s:string" />
+    <wsdl:part name="logo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AddHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="EditHttpGetIn">
+    <wsdl:part name="blogxID" type="s:string" />
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="name" type="s:string" />
+    <wsdl:part name="label" type="s:string" />
+    <wsdl:part name="profile" type="s:string" />
+    <wsdl:part name="display" type="s:string" />
+    <wsdl:part name="parentID" type="s:string" />
+    <wsdl:part name="logo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="EditHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="OrderHttpGetIn">
+    <wsdl:part name="blogxID" type="s:string" />
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="increment" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="OrderHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="DeleteHttpGetIn">
+    <wsdl:part name="blogxID" type="s:string" />
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DeleteHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="ListMenuItemsHttpGetIn">
+    <wsdl:part name="blogxID" type="s:string" />
+    <wsdl:part name="MenuID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ListMenuItemsHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="GetMenuItemsHttpGetIn">
+    <wsdl:part name="blogxID" type="s:string" />
+    <wsdl:part name="MenuID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetMenuItemsHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="GetMenuMenuItemHttpGetIn">
+    <wsdl:part name="blogxID" type="s:string" />
+    <wsdl:part name="MenuID" type="s:string" />
+    <wsdl:part name="MenuItemID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetMenuMenuItemHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="GetMenuItemHttpGetIn">
+    <wsdl:part name="blogxID" type="s:string" />
+    <wsdl:part name="MenuItemID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetMenuItemHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="AddMenuItemHttpGetIn">
+    <wsdl:part name="blogxID" type="s:string" />
+    <wsdl:part name="MenuID" type="s:string" />
+    <wsdl:part name="Label" type="s:string" />
+    <wsdl:part name="Link" type="s:string" />
+    <wsdl:part name="Display" type="s:string" />
+    <wsdl:part name="Order" type="s:string" />
+    <wsdl:part name="Logo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AddMenuItemHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="EditMenuItemHttpGetIn">
+    <wsdl:part name="blogxID" type="s:string" />
+    <wsdl:part name="MenuID" type="s:string" />
+    <wsdl:part name="MenuItemID" type="s:string" />
+    <wsdl:part name="Label" type="s:string" />
+    <wsdl:part name="Link" type="s:string" />
+    <wsdl:part name="Display" type="s:string" />
+    <wsdl:part name="Order" type="s:string" />
+    <wsdl:part name="Logo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="EditMenuItemHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="DeleteMenuItemHttpGetIn">
+    <wsdl:part name="blogxID" type="s:string" />
+    <wsdl:part name="MenuItemID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DeleteMenuItemHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="DeleteMenuMenuItemHttpGetIn">
+    <wsdl:part name="blogxID" type="s:string" />
+    <wsdl:part name="MenuID" type="s:string" />
+    <wsdl:part name="MenuItemID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DeleteMenuMenuItemHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="TestHttpGetIn" />
+  <wsdl:message name="TestHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="TestNameHttpGetIn" />
+  <wsdl:message name="TestNameHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="TestCustomHttpGetIn">
+    <wsdl:part name="Format" type="s:string" />
+    <wsdl:part name="RootName" type="s:string" />
+    <wsdl:part name="ResultName" type="s:string" />
+    <wsdl:part name="CodeName" type="s:string" />
+    <wsdl:part name="DescriptionName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="TestCustomHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="TestErrorHttpGetIn" />
+  <wsdl:message name="TestErrorHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="TestExceptionHttpGetIn" />
+  <wsdl:message name="TestExceptionHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="ListDDHttpPostIn">
+    <wsdl:part name="blogxID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ListDDHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="ListAllHttpPostIn">
+    <wsdl:part name="blogxID" type="s:string" />
+    <wsdl:part name="Profile" type="s:string" />
+    <wsdl:part name="SortBy" type="s:string" />
+    <wsdl:part name="SortAscending" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ListAllHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="ListHttpPostIn">
+    <wsdl:part name="blogxID" type="s:string" />
+    <wsdl:part name="Profile" type="s:string" />
+    <wsdl:part name="SortBy" type="s:string" />
+    <wsdl:part name="SortAscending" type="s:string" />
+    <wsdl:part name="SortNumber" type="s:string" />
+    <wsdl:part name="StartPage" type="s:string" />
+    <wsdl:part name="Rows" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ListHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="ListProfilesHttpPostIn">
+    <wsdl:part name="blogxID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ListProfilesHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="GetHttpPostIn">
+    <wsdl:part name="blogxID" type="s:string" />
+    <wsdl:part name="MenuID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="GetMenuHttpPostIn">
+    <wsdl:part name="blogxID" type="s:string" />
+    <wsdl:part name="MenuID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetMenuHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="AddHttpPostIn">
+    <wsdl:part name="blogxID" type="s:string" />
+    <wsdl:part name="name" type="s:string" />
+    <wsdl:part name="label" type="s:string" />
+    <wsdl:part name="profile" type="s:string" />
+    <wsdl:part name="display" type="s:string" />
+    <wsdl:part name="parentID" type="s:string" />
+    <wsdl:part name="logo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AddHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="EditHttpPostIn">
+    <wsdl:part name="blogxID" type="s:string" />
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="name" type="s:string" />
+    <wsdl:part name="label" type="s:string" />
+    <wsdl:part name="profile" type="s:string" />
+    <wsdl:part name="display" type="s:string" />
+    <wsdl:part name="parentID" type="s:string" />
+    <wsdl:part name="logo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="EditHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="OrderHttpPostIn">
+    <wsdl:part name="blogxID" type="s:string" />
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="increment" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="OrderHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="DeleteHttpPostIn">
+    <wsdl:part name="blogxID" type="s:string" />
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DeleteHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="ListMenuItemsHttpPostIn">
+    <wsdl:part name="blogxID" type="s:string" />
+    <wsdl:part name="MenuID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ListMenuItemsHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="GetMenuItemsHttpPostIn">
+    <wsdl:part name="blogxID" type="s:string" />
+    <wsdl:part name="MenuID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetMenuItemsHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="GetMenuMenuItemHttpPostIn">
+    <wsdl:part name="blogxID" type="s:string" />
+    <wsdl:part name="MenuID" type="s:string" />
+    <wsdl:part name="MenuItemID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetMenuMenuItemHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="GetMenuItemHttpPostIn">
+    <wsdl:part name="blogxID" type="s:string" />
+    <wsdl:part name="MenuItemID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetMenuItemHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="AddMenuItemHttpPostIn">
+    <wsdl:part name="blogxID" type="s:string" />
+    <wsdl:part name="MenuID" type="s:string" />
+    <wsdl:part name="Label" type="s:string" />
+    <wsdl:part name="Link" type="s:string" />
+    <wsdl:part name="Display" type="s:string" />
+    <wsdl:part name="Order" type="s:string" />
+    <wsdl:part name="Logo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AddMenuItemHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="EditMenuItemHttpPostIn">
+    <wsdl:part name="blogxID" type="s:string" />
+    <wsdl:part name="MenuID" type="s:string" />
+    <wsdl:part name="MenuItemID" type="s:string" />
+    <wsdl:part name="Label" type="s:string" />
+    <wsdl:part name="Link" type="s:string" />
+    <wsdl:part name="Display" type="s:string" />
+    <wsdl:part name="Order" type="s:string" />
+    <wsdl:part name="Logo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="EditMenuItemHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="DeleteMenuItemHttpPostIn">
+    <wsdl:part name="blogxID" type="s:string" />
+    <wsdl:part name="MenuItemID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DeleteMenuItemHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="DeleteMenuMenuItemHttpPostIn">
+    <wsdl:part name="blogxID" type="s:string" />
+    <wsdl:part name="MenuID" type="s:string" />
+    <wsdl:part name="MenuItemID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DeleteMenuMenuItemHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="TestHttpPostIn" />
+  <wsdl:message name="TestHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="TestNameHttpPostIn" />
+  <wsdl:message name="TestNameHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="TestCustomHttpPostIn">
+    <wsdl:part name="Format" type="s:string" />
+    <wsdl:part name="RootName" type="s:string" />
+    <wsdl:part name="ResultName" type="s:string" />
+    <wsdl:part name="CodeName" type="s:string" />
+    <wsdl:part name="DescriptionName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="TestCustomHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="TestErrorHttpPostIn" />
+  <wsdl:message name="TestErrorHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="TestExceptionHttpPostIn" />
+  <wsdl:message name="TestExceptionHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:portType name="DisplayXMenusSoap">
+    <wsdl:operation name="ListDD">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a list of all Menus</wsdl:documentation>
+      <wsdl:input message="tns:ListDDSoapIn" />
+      <wsdl:output message="tns:ListDDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListAll">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a list of all Menus</wsdl:documentation>
+      <wsdl:input message="tns:ListAllSoapIn" />
+      <wsdl:output message="tns:ListAllSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="List">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a sorted, filtered, paginated list of Menus</wsdl:documentation>
+      <wsdl:input message="tns:ListSoapIn" />
+      <wsdl:output message="tns:ListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListProfiles">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a list of all Menu profiles</wsdl:documentation>
+      <wsdl:input message="tns:ListProfilesSoapIn" />
+      <wsdl:output message="tns:ListProfilesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Get">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a Menu (item format)</wsdl:documentation>
+      <wsdl:input message="tns:GetSoapIn" />
+      <wsdl:output message="tns:GetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMenu">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a Menu (raw format)</wsdl:documentation>
+      <wsdl:input message="tns:GetMenuSoapIn" />
+      <wsdl:output message="tns:GetMenuSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Add">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Add a Menu</wsdl:documentation>
+      <wsdl:input message="tns:AddSoapIn" />
+      <wsdl:output message="tns:AddSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Edit">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Edit a Menu</wsdl:documentation>
+      <wsdl:input message="tns:EditSoapIn" />
+      <wsdl:output message="tns:EditSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Order">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Change order of a Menu</wsdl:documentation>
+      <wsdl:input message="tns:OrderSoapIn" />
+      <wsdl:output message="tns:OrderSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Delete">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Delete a Menu</wsdl:documentation>
+      <wsdl:input message="tns:DeleteSoapIn" />
+      <wsdl:output message="tns:DeleteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListMenuItems">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">List a Menu's menuitems</wsdl:documentation>
+      <wsdl:input message="tns:ListMenuItemsSoapIn" />
+      <wsdl:output message="tns:ListMenuItemsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMenuItems">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a Menu's menuitems</wsdl:documentation>
+      <wsdl:input message="tns:GetMenuItemsSoapIn" />
+      <wsdl:output message="tns:GetMenuItemsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMenuMenuItem">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a Menu's MenuItem</wsdl:documentation>
+      <wsdl:input message="tns:GetMenuMenuItemSoapIn" />
+      <wsdl:output message="tns:GetMenuMenuItemSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMenuItem">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a MenuItem</wsdl:documentation>
+      <wsdl:input message="tns:GetMenuItemSoapIn" />
+      <wsdl:output message="tns:GetMenuItemSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddMenuItem">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Add a Menu's menuitem</wsdl:documentation>
+      <wsdl:input message="tns:AddMenuItemSoapIn" />
+      <wsdl:output message="tns:AddMenuItemSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EditMenuItem">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Edit a Menu's menuitem</wsdl:documentation>
+      <wsdl:input message="tns:EditMenuItemSoapIn" />
+      <wsdl:output message="tns:EditMenuItemSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteMenuItem">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Delete a MenuItem</wsdl:documentation>
+      <wsdl:input message="tns:DeleteMenuItemSoapIn" />
+      <wsdl:output message="tns:DeleteMenuItemSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteMenuMenuItem">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Delete a Menu's menuitem</wsdl:documentation>
+      <wsdl:input message="tns:DeleteMenuMenuItemSoapIn" />
+      <wsdl:output message="tns:DeleteMenuMenuItemSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Test">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Basic test of the web service</wsdl:documentation>
+      <wsdl:input message="tns:TestSoapIn" />
+      <wsdl:output message="tns:TestSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TestName">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Tests the web service by returning the Result name</wsdl:documentation>
+      <wsdl:input message="tns:TestNameSoapIn" />
+      <wsdl:output message="tns:TestNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TestCustom">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Tests the custom result formatting</wsdl:documentation>
+      <wsdl:input message="tns:TestCustomSoapIn" />
+      <wsdl:output message="tns:TestCustomSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TestError">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Basic test of an error condition</wsdl:documentation>
+      <wsdl:input message="tns:TestErrorSoapIn" />
+      <wsdl:output message="tns:TestErrorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TestException">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Basic test of an error exception</wsdl:documentation>
+      <wsdl:input message="tns:TestExceptionSoapIn" />
+      <wsdl:output message="tns:TestExceptionSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="DisplayXMenusHttpGet">
+    <wsdl:operation name="ListDD">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a list of all Menus</wsdl:documentation>
+      <wsdl:input message="tns:ListDDHttpGetIn" />
+      <wsdl:output message="tns:ListDDHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListAll">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a list of all Menus</wsdl:documentation>
+      <wsdl:input message="tns:ListAllHttpGetIn" />
+      <wsdl:output message="tns:ListAllHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="List">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a sorted, filtered, paginated list of Menus</wsdl:documentation>
+      <wsdl:input message="tns:ListHttpGetIn" />
+      <wsdl:output message="tns:ListHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListProfiles">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a list of all Menu profiles</wsdl:documentation>
+      <wsdl:input message="tns:ListProfilesHttpGetIn" />
+      <wsdl:output message="tns:ListProfilesHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Get">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a Menu (item format)</wsdl:documentation>
+      <wsdl:input message="tns:GetHttpGetIn" />
+      <wsdl:output message="tns:GetHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMenu">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a Menu (raw format)</wsdl:documentation>
+      <wsdl:input message="tns:GetMenuHttpGetIn" />
+      <wsdl:output message="tns:GetMenuHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Add">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Add a Menu</wsdl:documentation>
+      <wsdl:input message="tns:AddHttpGetIn" />
+      <wsdl:output message="tns:AddHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Edit">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Edit a Menu</wsdl:documentation>
+      <wsdl:input message="tns:EditHttpGetIn" />
+      <wsdl:output message="tns:EditHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Order">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Change order of a Menu</wsdl:documentation>
+      <wsdl:input message="tns:OrderHttpGetIn" />
+      <wsdl:output message="tns:OrderHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Delete">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Delete a Menu</wsdl:documentation>
+      <wsdl:input message="tns:DeleteHttpGetIn" />
+      <wsdl:output message="tns:DeleteHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListMenuItems">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">List a Menu's menuitems</wsdl:documentation>
+      <wsdl:input message="tns:ListMenuItemsHttpGetIn" />
+      <wsdl:output message="tns:ListMenuItemsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMenuItems">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a Menu's menuitems</wsdl:documentation>
+      <wsdl:input message="tns:GetMenuItemsHttpGetIn" />
+      <wsdl:output message="tns:GetMenuItemsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMenuMenuItem">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a Menu's MenuItem</wsdl:documentation>
+      <wsdl:input message="tns:GetMenuMenuItemHttpGetIn" />
+      <wsdl:output message="tns:GetMenuMenuItemHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMenuItem">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a MenuItem</wsdl:documentation>
+      <wsdl:input message="tns:GetMenuItemHttpGetIn" />
+      <wsdl:output message="tns:GetMenuItemHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddMenuItem">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Add a Menu's menuitem</wsdl:documentation>
+      <wsdl:input message="tns:AddMenuItemHttpGetIn" />
+      <wsdl:output message="tns:AddMenuItemHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EditMenuItem">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Edit a Menu's menuitem</wsdl:documentation>
+      <wsdl:input message="tns:EditMenuItemHttpGetIn" />
+      <wsdl:output message="tns:EditMenuItemHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteMenuItem">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Delete a MenuItem</wsdl:documentation>
+      <wsdl:input message="tns:DeleteMenuItemHttpGetIn" />
+      <wsdl:output message="tns:DeleteMenuItemHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteMenuMenuItem">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Delete a Menu's menuitem</wsdl:documentation>
+      <wsdl:input message="tns:DeleteMenuMenuItemHttpGetIn" />
+      <wsdl:output message="tns:DeleteMenuMenuItemHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Test">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Basic test of the web service</wsdl:documentation>
+      <wsdl:input message="tns:TestHttpGetIn" />
+      <wsdl:output message="tns:TestHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TestName">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Tests the web service by returning the Result name</wsdl:documentation>
+      <wsdl:input message="tns:TestNameHttpGetIn" />
+      <wsdl:output message="tns:TestNameHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TestCustom">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Tests the custom result formatting</wsdl:documentation>
+      <wsdl:input message="tns:TestCustomHttpGetIn" />
+      <wsdl:output message="tns:TestCustomHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TestError">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Basic test of an error condition</wsdl:documentation>
+      <wsdl:input message="tns:TestErrorHttpGetIn" />
+      <wsdl:output message="tns:TestErrorHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TestException">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Basic test of an error exception</wsdl:documentation>
+      <wsdl:input message="tns:TestExceptionHttpGetIn" />
+      <wsdl:output message="tns:TestExceptionHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="DisplayXMenusHttpPost">
+    <wsdl:operation name="ListDD">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a list of all Menus</wsdl:documentation>
+      <wsdl:input message="tns:ListDDHttpPostIn" />
+      <wsdl:output message="tns:ListDDHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListAll">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a list of all Menus</wsdl:documentation>
+      <wsdl:input message="tns:ListAllHttpPostIn" />
+      <wsdl:output message="tns:ListAllHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="List">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a sorted, filtered, paginated list of Menus</wsdl:documentation>
+      <wsdl:input message="tns:ListHttpPostIn" />
+      <wsdl:output message="tns:ListHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListProfiles">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a list of all Menu profiles</wsdl:documentation>
+      <wsdl:input message="tns:ListProfilesHttpPostIn" />
+      <wsdl:output message="tns:ListProfilesHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Get">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a Menu (item format)</wsdl:documentation>
+      <wsdl:input message="tns:GetHttpPostIn" />
+      <wsdl:output message="tns:GetHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMenu">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a Menu (raw format)</wsdl:documentation>
+      <wsdl:input message="tns:GetMenuHttpPostIn" />
+      <wsdl:output message="tns:GetMenuHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Add">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Add a Menu</wsdl:documentation>
+      <wsdl:input message="tns:AddHttpPostIn" />
+      <wsdl:output message="tns:AddHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Edit">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Edit a Menu</wsdl:documentation>
+      <wsdl:input message="tns:EditHttpPostIn" />
+      <wsdl:output message="tns:EditHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Order">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Change order of a Menu</wsdl:documentation>
+      <wsdl:input message="tns:OrderHttpPostIn" />
+      <wsdl:output message="tns:OrderHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Delete">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Delete a Menu</wsdl:documentation>
+      <wsdl:input message="tns:DeleteHttpPostIn" />
+      <wsdl:output message="tns:DeleteHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListMenuItems">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">List a Menu's menuitems</wsdl:documentation>
+      <wsdl:input message="tns:ListMenuItemsHttpPostIn" />
+      <wsdl:output message="tns:ListMenuItemsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMenuItems">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a Menu's menuitems</wsdl:documentation>
+      <wsdl:input message="tns:GetMenuItemsHttpPostIn" />
+      <wsdl:output message="tns:GetMenuItemsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMenuMenuItem">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a Menu's MenuItem</wsdl:documentation>
+      <wsdl:input message="tns:GetMenuMenuItemHttpPostIn" />
+      <wsdl:output message="tns:GetMenuMenuItemHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMenuItem">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a MenuItem</wsdl:documentation>
+      <wsdl:input message="tns:GetMenuItemHttpPostIn" />
+      <wsdl:output message="tns:GetMenuItemHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddMenuItem">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Add a Menu's menuitem</wsdl:documentation>
+      <wsdl:input message="tns:AddMenuItemHttpPostIn" />
+      <wsdl:output message="tns:AddMenuItemHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EditMenuItem">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Edit a Menu's menuitem</wsdl:documentation>
+      <wsdl:input message="tns:EditMenuItemHttpPostIn" />
+      <wsdl:output message="tns:EditMenuItemHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteMenuItem">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Delete a MenuItem</wsdl:documentation>
+      <wsdl:input message="tns:DeleteMenuItemHttpPostIn" />
+      <wsdl:output message="tns:DeleteMenuItemHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteMenuMenuItem">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Delete a Menu's menuitem</wsdl:documentation>
+      <wsdl:input message="tns:DeleteMenuMenuItemHttpPostIn" />
+      <wsdl:output message="tns:DeleteMenuMenuItemHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Test">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Basic test of the web service</wsdl:documentation>
+      <wsdl:input message="tns:TestHttpPostIn" />
+      <wsdl:output message="tns:TestHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TestName">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Tests the web service by returning the Result name</wsdl:documentation>
+      <wsdl:input message="tns:TestNameHttpPostIn" />
+      <wsdl:output message="tns:TestNameHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TestCustom">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Tests the custom result formatting</wsdl:documentation>
+      <wsdl:input message="tns:TestCustomHttpPostIn" />
+      <wsdl:output message="tns:TestCustomHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TestError">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Basic test of an error condition</wsdl:documentation>
+      <wsdl:input message="tns:TestErrorHttpPostIn" />
+      <wsdl:output message="tns:TestErrorHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TestException">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Basic test of an error exception</wsdl:documentation>
+      <wsdl:input message="tns:TestExceptionHttpPostIn" />
+      <wsdl:output message="tns:TestExceptionHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="DisplayXMenusSoap" type="tns:DisplayXMenusSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ListDD">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/ListDD" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListAll">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/ListAll" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="List">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/List" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListProfiles">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/ListProfiles" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/Get" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMenu">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/GetMenu" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Add">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/Add" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Edit">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/Edit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Order">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/Order" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Delete">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/Delete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListMenuItems">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/ListMenuItems" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMenuItems">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/GetMenuItems" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMenuMenuItem">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/GetMenuMenuItem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMenuItem">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/GetMenuItem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddMenuItem">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/AddMenuItem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditMenuItem">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/EditMenuItem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteMenuItem">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/DeleteMenuItem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteMenuMenuItem">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/DeleteMenuMenuItem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Test">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/Test" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestName">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/TestName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestCustom">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/TestCustom" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestError">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/TestError" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestException">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/TestException" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="DisplayXMenusSoap12" type="tns:DisplayXMenusSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ListDD">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/ListDD" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListAll">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/ListAll" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="List">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/List" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListProfiles">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/ListProfiles" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/Get" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMenu">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/GetMenu" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Add">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/Add" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Edit">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/Edit" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Order">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/Order" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Delete">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/Delete" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListMenuItems">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/ListMenuItems" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMenuItems">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/GetMenuItems" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMenuMenuItem">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/GetMenuMenuItem" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMenuItem">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/GetMenuItem" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddMenuItem">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/AddMenuItem" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditMenuItem">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/EditMenuItem" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteMenuItem">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/DeleteMenuItem" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteMenuMenuItem">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/DeleteMenuMenuItem" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Test">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/Test" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestName">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/TestName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestCustom">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/TestCustom" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestError">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/TestError" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestException">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/TestException" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="DisplayXMenusHttpGet" type="tns:DisplayXMenusHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="ListDD">
+      <http:operation location="/ListDD" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListAll">
+      <http:operation location="/ListAll" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="List">
+      <http:operation location="/List" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListProfiles">
+      <http:operation location="/ListProfiles" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get">
+      <http:operation location="/Get" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMenu">
+      <http:operation location="/GetMenu" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Add">
+      <http:operation location="/Add" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Edit">
+      <http:operation location="/Edit" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Order">
+      <http:operation location="/Order" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Delete">
+      <http:operation location="/Delete" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListMenuItems">
+      <http:operation location="/ListMenuItems" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMenuItems">
+      <http:operation location="/GetMenuItems" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMenuMenuItem">
+      <http:operation location="/GetMenuMenuItem" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMenuItem">
+      <http:operation location="/GetMenuItem" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddMenuItem">
+      <http:operation location="/AddMenuItem" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditMenuItem">
+      <http:operation location="/EditMenuItem" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteMenuItem">
+      <http:operation location="/DeleteMenuItem" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteMenuMenuItem">
+      <http:operation location="/DeleteMenuMenuItem" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Test">
+      <http:operation location="/Test" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestName">
+      <http:operation location="/TestName" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestCustom">
+      <http:operation location="/TestCustom" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestError">
+      <http:operation location="/TestError" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestException">
+      <http:operation location="/TestException" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="DisplayXMenusHttpPost" type="tns:DisplayXMenusHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="ListDD">
+      <http:operation location="/ListDD" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListAll">
+      <http:operation location="/ListAll" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="List">
+      <http:operation location="/List" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListProfiles">
+      <http:operation location="/ListProfiles" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get">
+      <http:operation location="/Get" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMenu">
+      <http:operation location="/GetMenu" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Add">
+      <http:operation location="/Add" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Edit">
+      <http:operation location="/Edit" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Order">
+      <http:operation location="/Order" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Delete">
+      <http:operation location="/Delete" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListMenuItems">
+      <http:operation location="/ListMenuItems" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMenuItems">
+      <http:operation location="/GetMenuItems" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMenuMenuItem">
+      <http:operation location="/GetMenuMenuItem" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMenuItem">
+      <http:operation location="/GetMenuItem" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddMenuItem">
+      <http:operation location="/AddMenuItem" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditMenuItem">
+      <http:operation location="/EditMenuItem" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteMenuItem">
+      <http:operation location="/DeleteMenuItem" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteMenuMenuItem">
+      <http:operation location="/DeleteMenuMenuItem" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Test">
+      <http:operation location="/Test" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestName">
+      <http:operation location="/TestName" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestCustom">
+      <http:operation location="/TestCustom" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestError">
+      <http:operation location="/TestError" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestException">
+      <http:operation location="/TestException" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="DisplayXMenus">
+    <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">DisplayXMenus Web Service</wsdl:documentation>
+    <wsdl:port name="DisplayXMenusSoap" binding="tns:DisplayXMenusSoap">
+      <soap:address location="http://www.loeries.co.za/DisplayXMenus.asmx" />
+    </wsdl:port>
+    <wsdl:port name="DisplayXMenusSoap12" binding="tns:DisplayXMenusSoap12">
+      <soap12:address location="http://www.loeries.co.za/DisplayXMenus.asmx" />
+    </wsdl:port>
+    <wsdl:port name="DisplayXMenusHttpGet" binding="tns:DisplayXMenusHttpGet">
+      <http:address location="http://www.loeries.co.za/DisplayXMenus.asmx" />
+    </wsdl:port>
+    <wsdl:port name="DisplayXMenusHttpPost" binding="tns:DisplayXMenusHttpPost">
+      <http:address location="http://www.loeries.co.za/DisplayXMenus.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

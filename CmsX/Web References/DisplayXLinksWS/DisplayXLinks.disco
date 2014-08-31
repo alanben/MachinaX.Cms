@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<discovery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/disco/">
+  <contractRef ref="http://www.loeries.co.za/DisplayXLinks.asmx?wsdl" docRef="http://www.loeries.co.za/DisplayXLinks.asmx" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
+  <soap address="http://www.loeries.co.za/DisplayXLinks.asmx" xmlns:q1="http://www.clickclickBOOM.com/MachinaX/DisplayX" binding="q1:DisplayXLinksSoap" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+  <soap address="http://www.loeries.co.za/DisplayXLinks.asmx" xmlns:q2="http://www.clickclickBOOM.com/MachinaX/DisplayX" binding="q2:DisplayXLinksSoap12" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+</discovery>
