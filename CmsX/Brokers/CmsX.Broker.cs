@@ -200,7 +200,7 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 			get {
 				if (adminWS == null) {
 					adminWS = new PassportAdminWS.PassportXAdminServices();
-					adminWS.Url = getPassportUrl(CONFIG_PASSPORT_CUSTOMERID);
+					adminWS.Url = getPassportUrl(CONFIG_PASSPORT_ADMINID);
 				}
 				return adminWS;
 			}
@@ -211,7 +211,7 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 			get {
 				if (passportWS == null) {
 					passportWS = new PassportWS.PassportXPassportServices();
-					passportWS.Url = getPassportUrl(CONFIG_PASSPORT_CUSTOMERID);
+					passportWS.Url = getPassportUrl(CONFIG_PASSPORT_PASSPORTID);
 				}
 				return passportWS;
 			}
