@@ -10,8 +10,8 @@ using clickclickboom.machinaX.recaptchaX;
 	Author:		Alan Benington
 	Started:	2010-07-01
 	Status:		release	
-	Version:	4.0.2
-	Build:		20140112
+	Version:	4.0.3
+	Build:		20141023
 	License:	GNU General Public License
 	-----------------------------------------------------------------------	*/
 
@@ -26,6 +26,7 @@ using clickclickboom.machinaX.recaptchaX;
 	20131023:	Changed _User.SetName to _User.Set at login
 	20140102:	Moved LINK_DESTINATION to Cms.LINK_DESTINATION
 	20140112:	Refactored constructor
+	20141023:	Added handling of account on-hold
 	---------------------------------------------------------------------------	*/
 
 namespace clickclickboom.machinaX.blogX.cmsX {
@@ -66,6 +67,7 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 		private const string error_passport_result_token = "Token invalid";
 		private const string error_passport_result_usernot = "User not found";
 		private const string error_passport_result_duplicate = "User already exists";
+		private const string error_passport_result_onhold = "Account on-hold";
 		private const string error_passport_template = " Template error for: ";
 		#endregion
 
@@ -100,6 +102,7 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 		private const int VERIFY_TOKEN_INVALID = 3;
 		private const int VERIFY_USER_NOTFOUND = 4;
 		private const int VERIFY_USER_DUPLICATE = 5;
+		private const int VERIFY_LOGIN_ONHOLD = 6;
 		#endregion
 
 		#region Visible properties
@@ -269,7 +272,8 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 				throw e;
 			}
 			catch (WebsiteXPassportException e) {
-				throw (new x_exception("error_passport_login", String.Concat(error_passport_login, "::", e.Code, ": '", e.Message, "'")));
+				//throw (new x_exception("error_passport_login", String.Concat(error_passport_login, "::", e.Code, ": '", e.Message, "'")));
+				throw (new x_exception(e.Code, e.Message));
 			}
 			catch (Exception e) {
 				throw (new x_exception("error_passport_login", String.Concat(error_passport_login, "::", e.Message, " - ", e.StackTrace)));
@@ -718,6 +722,12 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 							exdesc = error_passport_result_login;
 							returnCode = VERIFY_LOGIN_LOCKED;
 							throwException = false;
+							break;
+						case "1006":	// code returned when On-hold
+							excode = "error_passport_result_onhold";
+							exdesc = error_passport_result_login;
+							returnCode = VERIFY_LOGIN_ONHOLD;
+							throwException = true;
 							break;
 						case "1004":
 						case "2070":
