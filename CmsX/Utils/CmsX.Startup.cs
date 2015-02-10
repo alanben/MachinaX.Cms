@@ -74,13 +74,13 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 
 		/// <summary>Normal constructor</summary>
 		public CmsXStartup(HttpApplicationState application, x_config config) {
-			initialise(application, config, (x_siteprofile)application.Get(Profile.SITEPROFILE));
+			initialise(application, config, (x_siteprofile)application.Get(BlogTemplateX.SITEPROFILE));
 		}
 
 		/// <summary>Normal constructor</summary>
 		public CmsXStartup(HttpApplicationState application, string BlogID) {
 			x_config config = new x_config(BlogID);
-			initialise(application, config, (x_siteprofile)application.Get(Profile.SITEPROFILE));
+			initialise(application, config, (x_siteprofile)application.Get(BlogTemplateX.SITEPROFILE));
 		}
 
 		/// <summary>Normal constructor</summary>

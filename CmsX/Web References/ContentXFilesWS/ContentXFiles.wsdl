@@ -6,7 +6,6 @@
       <s:element name="List">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="blogxID" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="StartPath" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="Filter" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="SortBy" type="s:string" />
@@ -30,7 +29,6 @@
       <s:element name="ListDrop">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="blogxID" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="StartPath" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="Filter" type="s:string" />
           </s:sequence>
@@ -52,7 +50,6 @@
       <s:element name="ListPaths">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="blogxID" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="StartPath" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="SortBy" type="s:string" />
             <s:element minOccurs="1" maxOccurs="1" name="SortAscending" type="s:boolean" />
@@ -75,7 +72,6 @@
       <s:element name="ListExtensions">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="blogxID" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="StartPath" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="SortBy" type="s:string" />
             <s:element minOccurs="1" maxOccurs="1" name="SortAscending" type="s:boolean" />
@@ -98,7 +94,6 @@
       <s:element name="Get">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="blogxID" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="StartPath" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="FileID" type="s:string" />
           </s:sequence>
@@ -120,7 +115,6 @@
       <s:element name="GetFile">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="blogxID" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="StartPath" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="FilePath" type="s:string" />
           </s:sequence>
@@ -142,7 +136,6 @@
       <s:element name="Add">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="blogxID" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="StartPath" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="FileName" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="FileExtn" type="s:string" />
@@ -167,7 +160,6 @@
       <s:element name="Edit">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="blogxID" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="StartPath" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="FileID" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="FileName" type="s:string" />
@@ -193,7 +185,6 @@
       <s:element name="Delete">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="blogxID" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="StartPath" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="FileID" type="s:string" />
           </s:sequence>
@@ -394,7 +385,6 @@
     <wsdl:part name="parameters" element="tns:TestExceptionResponse" />
   </wsdl:message>
   <wsdl:message name="ListHttpGetIn">
-    <wsdl:part name="blogxID" type="s:string" />
     <wsdl:part name="StartPath" type="s:string" />
     <wsdl:part name="Filter" type="s:string" />
     <wsdl:part name="SortBy" type="s:string" />
@@ -404,7 +394,6 @@
     <wsdl:part name="Body" />
   </wsdl:message>
   <wsdl:message name="ListDropHttpGetIn">
-    <wsdl:part name="blogxID" type="s:string" />
     <wsdl:part name="StartPath" type="s:string" />
     <wsdl:part name="Filter" type="s:string" />
   </wsdl:message>
@@ -412,7 +401,6 @@
     <wsdl:part name="Body" />
   </wsdl:message>
   <wsdl:message name="ListPathsHttpGetIn">
-    <wsdl:part name="blogxID" type="s:string" />
     <wsdl:part name="StartPath" type="s:string" />
     <wsdl:part name="SortBy" type="s:string" />
     <wsdl:part name="SortAscending" type="s:string" />
@@ -421,7 +409,6 @@
     <wsdl:part name="Body" />
   </wsdl:message>
   <wsdl:message name="ListExtensionsHttpGetIn">
-    <wsdl:part name="blogxID" type="s:string" />
     <wsdl:part name="StartPath" type="s:string" />
     <wsdl:part name="SortBy" type="s:string" />
     <wsdl:part name="SortAscending" type="s:string" />
@@ -430,7 +417,6 @@
     <wsdl:part name="Body" />
   </wsdl:message>
   <wsdl:message name="GetHttpGetIn">
-    <wsdl:part name="blogxID" type="s:string" />
     <wsdl:part name="StartPath" type="s:string" />
     <wsdl:part name="FileID" type="s:string" />
   </wsdl:message>
@@ -438,7 +424,6 @@
     <wsdl:part name="Body" />
   </wsdl:message>
   <wsdl:message name="GetFileHttpGetIn">
-    <wsdl:part name="blogxID" type="s:string" />
     <wsdl:part name="StartPath" type="s:string" />
     <wsdl:part name="FilePath" type="s:string" />
   </wsdl:message>
@@ -446,7 +431,6 @@
     <wsdl:part name="Body" />
   </wsdl:message>
   <wsdl:message name="AddHttpGetIn">
-    <wsdl:part name="blogxID" type="s:string" />
     <wsdl:part name="StartPath" type="s:string" />
     <wsdl:part name="FileName" type="s:string" />
     <wsdl:part name="FileExtn" type="s:string" />
@@ -457,7 +441,6 @@
     <wsdl:part name="Body" />
   </wsdl:message>
   <wsdl:message name="EditHttpGetIn">
-    <wsdl:part name="blogxID" type="s:string" />
     <wsdl:part name="StartPath" type="s:string" />
     <wsdl:part name="FileID" type="s:string" />
     <wsdl:part name="FileName" type="s:string" />
@@ -469,7 +452,6 @@
     <wsdl:part name="Body" />
   </wsdl:message>
   <wsdl:message name="DeleteHttpGetIn">
-    <wsdl:part name="blogxID" type="s:string" />
     <wsdl:part name="StartPath" type="s:string" />
     <wsdl:part name="FileID" type="s:string" />
   </wsdl:message>
@@ -503,7 +485,6 @@
     <wsdl:part name="Body" />
   </wsdl:message>
   <wsdl:message name="ListHttpPostIn">
-    <wsdl:part name="blogxID" type="s:string" />
     <wsdl:part name="StartPath" type="s:string" />
     <wsdl:part name="Filter" type="s:string" />
     <wsdl:part name="SortBy" type="s:string" />
@@ -513,7 +494,6 @@
     <wsdl:part name="Body" />
   </wsdl:message>
   <wsdl:message name="ListDropHttpPostIn">
-    <wsdl:part name="blogxID" type="s:string" />
     <wsdl:part name="StartPath" type="s:string" />
     <wsdl:part name="Filter" type="s:string" />
   </wsdl:message>
@@ -521,7 +501,6 @@
     <wsdl:part name="Body" />
   </wsdl:message>
   <wsdl:message name="ListPathsHttpPostIn">
-    <wsdl:part name="blogxID" type="s:string" />
     <wsdl:part name="StartPath" type="s:string" />
     <wsdl:part name="SortBy" type="s:string" />
     <wsdl:part name="SortAscending" type="s:string" />
@@ -530,7 +509,6 @@
     <wsdl:part name="Body" />
   </wsdl:message>
   <wsdl:message name="ListExtensionsHttpPostIn">
-    <wsdl:part name="blogxID" type="s:string" />
     <wsdl:part name="StartPath" type="s:string" />
     <wsdl:part name="SortBy" type="s:string" />
     <wsdl:part name="SortAscending" type="s:string" />
@@ -539,7 +517,6 @@
     <wsdl:part name="Body" />
   </wsdl:message>
   <wsdl:message name="GetHttpPostIn">
-    <wsdl:part name="blogxID" type="s:string" />
     <wsdl:part name="StartPath" type="s:string" />
     <wsdl:part name="FileID" type="s:string" />
   </wsdl:message>
@@ -547,7 +524,6 @@
     <wsdl:part name="Body" />
   </wsdl:message>
   <wsdl:message name="GetFileHttpPostIn">
-    <wsdl:part name="blogxID" type="s:string" />
     <wsdl:part name="StartPath" type="s:string" />
     <wsdl:part name="FilePath" type="s:string" />
   </wsdl:message>
@@ -555,7 +531,6 @@
     <wsdl:part name="Body" />
   </wsdl:message>
   <wsdl:message name="AddHttpPostIn">
-    <wsdl:part name="blogxID" type="s:string" />
     <wsdl:part name="StartPath" type="s:string" />
     <wsdl:part name="FileName" type="s:string" />
     <wsdl:part name="FileExtn" type="s:string" />
@@ -566,7 +541,6 @@
     <wsdl:part name="Body" />
   </wsdl:message>
   <wsdl:message name="EditHttpPostIn">
-    <wsdl:part name="blogxID" type="s:string" />
     <wsdl:part name="StartPath" type="s:string" />
     <wsdl:part name="FileID" type="s:string" />
     <wsdl:part name="FileName" type="s:string" />
@@ -578,7 +552,6 @@
     <wsdl:part name="Body" />
   </wsdl:message>
   <wsdl:message name="DeleteHttpPostIn">
-    <wsdl:part name="blogxID" type="s:string" />
     <wsdl:part name="StartPath" type="s:string" />
     <wsdl:part name="FileID" type="s:string" />
   </wsdl:message>
@@ -1346,16 +1319,16 @@
   <wsdl:service name="ContentXFiles">
     <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">ContentXFiles Web Service</wsdl:documentation>
     <wsdl:port name="ContentXFilesSoap" binding="tns:ContentXFilesSoap">
-      <soap:address location="http://www.ididthatad.com/ContentXFiles.asmx" />
+      <soap:address location="http://maxima.xxboom.co.za/ContentXFiles.asmx" />
     </wsdl:port>
     <wsdl:port name="ContentXFilesSoap12" binding="tns:ContentXFilesSoap12">
-      <soap12:address location="http://www.ididthatad.com/ContentXFiles.asmx" />
+      <soap12:address location="http://maxima.xxboom.co.za/ContentXFiles.asmx" />
     </wsdl:port>
     <wsdl:port name="ContentXFilesHttpGet" binding="tns:ContentXFilesHttpGet">
-      <http:address location="http://www.ididthatad.com/ContentXFiles.asmx" />
+      <http:address location="http://maxima.xxboom.co.za/ContentXFiles.asmx" />
     </wsdl:port>
     <wsdl:port name="ContentXFilesHttpPost" binding="tns:ContentXFilesHttpPost">
-      <http:address location="http://www.ididthatad.com/ContentXFiles.asmx" />
+      <http:address location="http://maxima.xxboom.co.za/ContentXFiles.asmx" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

@@ -43,7 +43,7 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 
 		#region Visible properties
 		/// <summary>Web Configuration object</summary>
-		public clickclickboom.machinaX.blogX.x_config Config { get; set; }
+		//public clickclickboom.machinaX.blogX.x_config Config { get; set; }
 		public x_logger xLogger;	// ideally move this to x_broker / x_actor
 		public ILog Logger {
 			get { return xLogger.Logger; }
@@ -311,7 +311,7 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 		}
 		/// <summary>Initiate properties</summary>
 		private void initialize() {
-			Config = new clickclickboom.machinaX.blogX.x_config();
+			//Config = new clickclickboom.machinaX.blogX.x_config();
 
 			ItemXml = new XmlDocument();
 			ItemXml.LoadXml(String.Format("<{0}/>", name));

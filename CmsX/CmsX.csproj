@@ -115,6 +115,7 @@
     <Compile Include="Datatable\CmsX.Input.cs" />
     <Compile Include="Datatable\CmsX.Output.cs" />
     <Compile Include="Proxies\CmsWS.Base.New.cs" />
+    <Compile Include="Settings.cs" />
     <Compile Include="Utils\CmsX.SubItem.cs" />
     <Compile Include="CsvReader\CsvReader.cs" />
     <Compile Include="CsvReader\CsvReader.DataReaderValidations.cs" />
@@ -311,10 +312,10 @@
       <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
       <CachedSettingsPropName>CmsX_2_6_0_ContentXBlogsWS_ContentXBlogs</CachedSettingsPropName>
     </WebReferenceUrl>
-    <WebReferenceUrl Include="http://www.ididthatad.com/ContentXFiles.asmx">
+    <WebReferenceUrl Include="http://maxima.xxboom.co.za/ContentXFiles.asmx">
       <UrlBehavior>Dynamic</UrlBehavior>
       <RelPath>Web References\ContentXFilesWS\</RelPath>
-      <UpdateFromURL>http://www.ididthatad.com/ContentXFiles.asmx</UpdateFromURL>
+      <UpdateFromURL>http://maxima.xxboom.co.za/ContentXFiles.asmx</UpdateFromURL>
       <ServiceLocationURL>
       </ServiceLocationURL>
       <CachedDynamicPropName>

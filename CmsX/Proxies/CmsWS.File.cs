@@ -62,12 +62,12 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 		/// Get a list of all files
 		/// </summary>
 		public void ListFiles(string StartPath, string Filter, SearchSettings Settings) {
-			xLogger.Debug("List", "::BlogxID:", BlogxID, "::StartPath:", StartPath, "::Filter:", Filter, "::Column:", Settings.Column, "::Descending:", Settings.Descending.ToString());
+			xLogger.Debug("List", "::StartPath:", StartPath, "::Filter:", Filter, "::Column:", Settings.Column, "::Descending:", Settings.Descending.ToString());
 			ListXmlRoot.RemoveAll();
 			ListXmlRoot.AppendChild(
 					ListXml.ImportNode(
 						_CheckWSResult(
-							filesService.List(BlogxID, StartPath, Filter, Settings.Column, !Settings.Descending)
+							filesService.List(StartPath, Filter, Settings.Column, !Settings.Descending)
 						   )
 					, true)
 				);
@@ -82,7 +82,7 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 			ListXmlRoot.AppendChild(
 					ListXml.ImportNode(
 						_CheckWSResult(
-							filesService.ListDrop(BlogxID, StartPath, Filter)
+							filesService.ListDrop(StartPath, Filter)
 						   )
 					, true)
 				);
@@ -92,12 +92,12 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 		/// Get a list of all file paths
 		/// </summary>
 		public void ListPaths(string StartPath, SearchSettings Settings) {
-			xLogger.Debug("List", "::BlogxID:", BlogxID, "::StartPath:", StartPath, "::Column:", Settings.Column, "::Descending:", Settings.Descending.ToString());
+			xLogger.Debug("List", "::StartPath:", StartPath, "::Column:", Settings.Column, "::Descending:", Settings.Descending.ToString());
 			ListXmlRoot.RemoveAll();
 			ListXmlRoot.AppendChild(
 					ListXml.ImportNode(
 						_CheckWSResult(
-							filesService.ListPaths(BlogxID, StartPath, Settings.Column, !Settings.Descending)
+							filesService.ListPaths(StartPath, Settings.Column, !Settings.Descending)
 						   )
 					, true)
 				);
@@ -107,12 +107,12 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 		/// Get a list of all file paths
 		/// </summary>
 		public void ListPaths(string StartPath) {
-			xLogger.Debug("List", "::BlogxID:", BlogxID, "::StartPath:", StartPath);
+			xLogger.Debug("List", "::StartPath:", StartPath);
 			ListXmlRoot.RemoveAll();
 			ListXmlRoot.AppendChild(
 					ListXml.ImportNode(
 						_CheckWSResult(
-							filesService.ListPaths(BlogxID, StartPath, "desc", true)
+							filesService.ListPaths(StartPath, "desc", true)
 						   )
 					, true)
 				);
@@ -122,12 +122,12 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 		/// Get a list of all file extensions
 		/// </summary>
 		public void ListExtensions(string StartPath, SearchSettings Settings) {
-			xLogger.Debug("List", "::BlogxID:", BlogxID, "::StartPath:", StartPath, "::Column:", Settings.Column, "::Descending:", Settings.Descending.ToString());
+			xLogger.Debug("List", "::StartPath:", StartPath, "::Column:", Settings.Column, "::Descending:", Settings.Descending.ToString());
 			ListXmlRoot.RemoveAll();
 			ListXmlRoot.AppendChild(
 					ListXml.ImportNode(
 						_CheckWSResult(
-							filesService.ListExtensions(BlogxID, StartPath, Settings.Column, !Settings.Descending)
+							filesService.ListExtensions(StartPath, Settings.Column, !Settings.Descending)
 						   )
 					, true)
 				);
@@ -137,12 +137,12 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 		/// Get a list of all file extensions
 		/// </summary>
 		public void ListExtensions(string StartPath) {
-			xLogger.Debug("List", "::BlogxID:", BlogxID, "::StartPath:", StartPath);
+			xLogger.Debug("List", "::StartPath:", StartPath);
 			ListXmlRoot.RemoveAll();
 			ListXmlRoot.AppendChild(
 					ListXml.ImportNode(
 						_CheckWSResult(
-							filesService.ListExtensions(BlogxID, StartPath, "desc", true)
+							filesService.ListExtensions(StartPath, "desc", true)
 						   )
 					, true)
 				);
@@ -152,7 +152,7 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 			ItemXmlRoot.RemoveAll();
 			ItemXmlRoot.AppendChild(
 					ItemXml.ImportNode(
-						_CheckWSResult(filesService.Get(BlogxID, StartPath, FileID))
+						_CheckWSResult(filesService.Get(StartPath, FileID))
 					, true)
 				);
 		}
@@ -161,7 +161,7 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 			ItemXmlRoot.RemoveAll();
 			ItemXmlRoot.AppendChild(
 					ItemXml.ImportNode(
-						_CheckWSResult(filesService.Add(BlogxID, StartPath, FileName, FileExtn, FilePath, FileData))
+						_CheckWSResult(filesService.Add(StartPath, FileName, FileExtn, FilePath, FileData))
 					, true)
 				);
 		}
@@ -170,7 +170,7 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 			ItemXmlRoot.RemoveAll();
 			ItemXmlRoot.AppendChild(
 					ItemXml.ImportNode(
-						_CheckWSResult(filesService.Edit(BlogxID, StartPath, FileID, FileName, FileExtn, FilePath, FileData))
+						_CheckWSResult(filesService.Edit(StartPath, FileID, FileName, FileExtn, FilePath, FileData))
 					, true)
 				);
 		}
@@ -179,7 +179,7 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 			ItemXmlRoot.RemoveAll();
 			ItemXmlRoot.AppendChild(
 					ItemXml.ImportNode(
-						_CheckWSResult(filesService.Delete(BlogxID, StartPath, FileID))
+						_CheckWSResult(filesService.Delete(StartPath, FileID))
 					, true)
 				);
 		}

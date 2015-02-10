@@ -34,13 +34,13 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 
 		/// <summary>Reference to the CmsXProfileX object that invoked the broker</summary>
 		public CmsXProfileX ProfilePage { get; set; }
-		public x_config Config { get; set; }
+		//public x_config Config { get; set; }
 
 		/// <summary>Default constructor</summary>
 		/// <param name="thispage">The web application Page object</param>
 		public CmsXBroker(CmsXProfileX thispage) : base(thispage) {
 			ProfilePage = thispage;
-			Config = thispage.Config;
+			//Config = thispage.Config;
 			_User = thispage.WebsiteUser;
 		}
 
