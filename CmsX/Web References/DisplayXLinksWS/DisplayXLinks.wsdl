@@ -339,6 +339,54 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="AddSEO">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="blogxID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="LinkID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="title" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="desc" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="keywords" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddSEOResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddSEOResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EditSEO">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="blogxID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="LinkID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="title" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="desc" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="keywords" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EditSEOResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EditSEOResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="GetBlogs">
         <s:complexType>
           <s:sequence>
@@ -1077,6 +1125,18 @@
   <wsdl:message name="EditPageSoapOut">
     <wsdl:part name="parameters" element="tns:EditPageResponse" />
   </wsdl:message>
+  <wsdl:message name="AddSEOSoapIn">
+    <wsdl:part name="parameters" element="tns:AddSEO" />
+  </wsdl:message>
+  <wsdl:message name="AddSEOSoapOut">
+    <wsdl:part name="parameters" element="tns:AddSEOResponse" />
+  </wsdl:message>
+  <wsdl:message name="EditSEOSoapIn">
+    <wsdl:part name="parameters" element="tns:EditSEO" />
+  </wsdl:message>
+  <wsdl:message name="EditSEOSoapOut">
+    <wsdl:part name="parameters" element="tns:EditSEOResponse" />
+  </wsdl:message>
   <wsdl:message name="GetBlogsSoapIn">
     <wsdl:part name="parameters" element="tns:GetBlogs" />
   </wsdl:message>
@@ -1395,6 +1455,26 @@
     <wsdl:part name="file" type="s:string" />
   </wsdl:message>
   <wsdl:message name="EditPageHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="AddSEOHttpGetIn">
+    <wsdl:part name="blogxID" type="s:string" />
+    <wsdl:part name="LinkID" type="s:string" />
+    <wsdl:part name="title" type="s:string" />
+    <wsdl:part name="desc" type="s:string" />
+    <wsdl:part name="keywords" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AddSEOHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="EditSEOHttpGetIn">
+    <wsdl:part name="blogxID" type="s:string" />
+    <wsdl:part name="LinkID" type="s:string" />
+    <wsdl:part name="title" type="s:string" />
+    <wsdl:part name="desc" type="s:string" />
+    <wsdl:part name="keywords" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="EditSEOHttpGetOut">
     <wsdl:part name="Body" />
   </wsdl:message>
   <wsdl:message name="GetBlogsHttpGetIn">
@@ -1782,6 +1862,26 @@
   <wsdl:message name="EditPageHttpPostOut">
     <wsdl:part name="Body" />
   </wsdl:message>
+  <wsdl:message name="AddSEOHttpPostIn">
+    <wsdl:part name="blogxID" type="s:string" />
+    <wsdl:part name="LinkID" type="s:string" />
+    <wsdl:part name="title" type="s:string" />
+    <wsdl:part name="desc" type="s:string" />
+    <wsdl:part name="keywords" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AddSEOHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="EditSEOHttpPostIn">
+    <wsdl:part name="blogxID" type="s:string" />
+    <wsdl:part name="LinkID" type="s:string" />
+    <wsdl:part name="title" type="s:string" />
+    <wsdl:part name="desc" type="s:string" />
+    <wsdl:part name="keywords" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="EditSEOHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
   <wsdl:message name="GetBlogsHttpPostIn">
     <wsdl:part name="blogxID" type="s:string" />
     <wsdl:part name="LinkID" type="s:string" />
@@ -2098,6 +2198,16 @@
       <wsdl:input message="tns:EditPageSoapIn" />
       <wsdl:output message="tns:EditPageSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="AddSEO">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Add a Link's SEO prperties (for meta title, description and keywords)</wsdl:documentation>
+      <wsdl:input message="tns:AddSEOSoapIn" />
+      <wsdl:output message="tns:AddSEOSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EditSEO">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Edit a Link's SEO prperties (for meta title, description and keywords)</wsdl:documentation>
+      <wsdl:input message="tns:EditSEOSoapIn" />
+      <wsdl:output message="tns:EditSEOSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="GetBlogs">
       <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a Link's blogs</wsdl:documentation>
       <wsdl:input message="tns:GetBlogsSoapIn" />
@@ -2320,6 +2430,16 @@
       <wsdl:input message="tns:EditPageHttpGetIn" />
       <wsdl:output message="tns:EditPageHttpGetOut" />
     </wsdl:operation>
+    <wsdl:operation name="AddSEO">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Add a Link's SEO prperties (for meta title, description and keywords)</wsdl:documentation>
+      <wsdl:input message="tns:AddSEOHttpGetIn" />
+      <wsdl:output message="tns:AddSEOHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EditSEO">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Edit a Link's SEO prperties (for meta title, description and keywords)</wsdl:documentation>
+      <wsdl:input message="tns:EditSEOHttpGetIn" />
+      <wsdl:output message="tns:EditSEOHttpGetOut" />
+    </wsdl:operation>
     <wsdl:operation name="GetBlogs">
       <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a Link's blogs</wsdl:documentation>
       <wsdl:input message="tns:GetBlogsHttpGetIn" />
@@ -2541,6 +2661,16 @@
       <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Edit a Link's page</wsdl:documentation>
       <wsdl:input message="tns:EditPageHttpPostIn" />
       <wsdl:output message="tns:EditPageHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddSEO">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Add a Link's SEO prperties (for meta title, description and keywords)</wsdl:documentation>
+      <wsdl:input message="tns:AddSEOHttpPostIn" />
+      <wsdl:output message="tns:AddSEOHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EditSEO">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Edit a Link's SEO prperties (for meta title, description and keywords)</wsdl:documentation>
+      <wsdl:input message="tns:EditSEOHttpPostIn" />
+      <wsdl:output message="tns:EditSEOHttpPostOut" />
     </wsdl:operation>
     <wsdl:operation name="GetBlogs">
       <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a Link's blogs</wsdl:documentation>
@@ -2814,6 +2944,24 @@
     </wsdl:operation>
     <wsdl:operation name="EditPage">
       <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/EditPage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddSEO">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/AddSEO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditSEO">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/EditSEO" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -3220,6 +3368,24 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="AddSEO">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/AddSEO" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditSEO">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/EditSEO" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="GetBlogs">
       <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/GetBlogs" style="document" />
       <wsdl:input>
@@ -3619,6 +3785,24 @@
         <mime:content part="Body" type="text/xml" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="AddSEO">
+      <http:operation location="/AddSEO" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditSEO">
+      <http:operation location="/EditSEO" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="GetBlogs">
       <http:operation location="/GetBlogs" />
       <wsdl:input>
@@ -4011,6 +4195,24 @@
     </wsdl:operation>
     <wsdl:operation name="EditPage">
       <http:operation location="/EditPage" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddSEO">
+      <http:operation location="/AddSEO" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditSEO">
+      <http:operation location="/EditSEO" />
       <wsdl:input>
         <mime:content type="application/x-www-form-urlencoded" />
       </wsdl:input>

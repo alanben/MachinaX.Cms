@@ -542,6 +542,7 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 				UserProfile.Add(PROFILE_LINKS_ID, link_id.ToString());
 
 				xLogger.Debug("submit:ItemXml:", _Links.ItemXml.OuterXml);
+				handleSEO(is_new, link_id);
 				handlePage(is_new, link_id);
 				handleBlogs(PROFILE_LINK_BLOGS_ID, link_id, space, is_new);
 				handleFlags(PROFILE_LINK_FLAGS_ID, link_id, is_new);
@@ -578,6 +579,21 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 				_Links.AddLinkPage(link_id, sect, sub, proc, file);
 			} else {
 				_Links.UpdateLinkPage(link_id, sect, sub, proc, file);
+			}
+		}
+
+		/// <summary>Add/Edit a link seo</summary> 
+		private void handleSEO(bool is_new, int link_id) {
+			xLogger.Debug("handleSEO", "::is_new:", is_new.ToString());
+
+			string title = UserProfile.Value("title");
+			string desc = UserProfile.Value("desc");
+			string keywords = UserProfile.Value("keywords");
+
+			if (is_new) {
+				_Links.AddLinkSEO(link_id, title, desc, keywords);
+			} else {
+				_Links.UpdateLinkSEO(link_id, title, desc, keywords);
 			}
 		}
 

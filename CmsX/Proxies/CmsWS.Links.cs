@@ -1,12 +1,10 @@
-﻿using System.Xml;
-
-/*	-----------------------------------------------------------------------	
+﻿/*	-----------------------------------------------------------------------	
 	Copyright:	clickclickBOOM cc
 	Author:		Alan Benington
 	Started:	2010-10-20
 	Status:		release	
-	Version:	4.0.2
-	Build:		20140120
+	Version:	4.0.3
+	Build:		20150320
 	License:	GNU General Public License
 	-----------------------------------------------------------------------	*/
 
@@ -18,9 +16,13 @@
 	20101104:	Modified AddLinkPage / UpdateLinkPage
 	20110429:	Added LinkLinks methods
 	20140120:	Changed constructor to take CmsXProfileX (was displayX)
+	20150320:	Added LinkSEO Methods
 	---------------------------------------------------------------------------	*/
 
 namespace clickclickboom.machinaX.blogX.cmsX {
+
+	using System.Xml;
+
 	/// <summary>This class is a functional wrapper of the DisplayXLinks web service</summary>
 	public class Links : CmsWSSite {
 
@@ -163,7 +165,7 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 
 		#region LinkPage Methods
 		/// <summary>
-		/// Get a list of all link pages
+		/// Add a page to a link
 		/// </summary>
 		public void AddLinkPage(int LinkID, string Section, string Subsect, string Process, string File) {
 			ItemXmlRoot.RemoveAll();
@@ -173,12 +175,39 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 					, true)
 				);
 		}
-
+		/// <summary>
+		/// Edit a page for a link
+		/// </summary>
 		public void UpdateLinkPage(int LinkID, string Section, string Subsect, string Process, string File) {
 			ItemXmlRoot.RemoveAll();
 			ItemXmlRoot.AppendChild(
 				   ItemXml.ImportNode(
 						_CheckWSResult(LinksService.EditPage(BlogxID, LinkID, Section, Subsect, Process, File))
+					, true)
+				);
+		}
+		#endregion
+
+		#region LinkSEO Methods
+		/// <summary>
+		/// Add SEO to a link
+		/// </summary>
+		public void AddLinkSEO(int LinkID, string Title, string Description, string Keywords) {
+			ItemXmlRoot.RemoveAll();
+			ItemXmlRoot.AppendChild(
+				   ItemXml.ImportNode(
+						_CheckWSResult(LinksService.AddSEO(BlogxID, LinkID, Title, Description, Keywords))
+					, true)
+				);
+		}
+		/// <summary>
+		/// Edit SEO for a link
+		/// </summary>
+		public void UpdateLinkSEO(int LinkID, string Title, string Description, string Keywords) {
+			ItemXmlRoot.RemoveAll();
+			ItemXmlRoot.AppendChild(
+				   ItemXml.ImportNode(
+						_CheckWSResult(LinksService.EditSEO(BlogxID, LinkID, Title, Description, Keywords))
 					, true)
 				);
 		}
