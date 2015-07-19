@@ -362,7 +362,7 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 		}
 		#endregion
 
-		#region Public LinkFlags Methods
+		#region Public LinkFiles Methods
 		/// <summary>
 		/// Get a list of all link files
 		/// </summary>

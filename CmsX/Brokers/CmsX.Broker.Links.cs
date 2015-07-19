@@ -268,14 +268,17 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 		
 		/// <summary>Get a link</summary> 
 		private void get() {
-			try {
-				string linkID = _GetQueryID(PROFILE_LINKS_ID);
-				xLogger.Info("get::linkID:", linkID);
+			get(_GetQueryID(PROFILE_LINKS_ID));
 
+		}
+		private void get(string linkID) {
+			xLogger.Info("get::linkID:", linkID);
+			try {
 				_Links.GetLink(Int32.Parse(linkID));
 				UserProfile.Add(PROFILE_LINKS_ID, linkID);
 				xLogger.Info("get::linkxml:", _Links.ItemXmlRootNode.OuterXml);
 				xLogger.Info("get::item:", _Links.Item.OuterXml);
+				
 				string space = String.IsNullOrEmpty(_Links.BlogSpace)? UserProfile.Value(Cms.PROFILE_SITE_SPACE) : _Links.BlogSpace;
 				UserProfile.Add(Cms.PROFILE_TOPICS_BLOGSPACE, space);
 
@@ -549,6 +552,7 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 				handlePages(PROFILE_LINK_PAGES_ID, link_id, is_new);
 				handleLinks(PROFILE_LINK_LINKS_ID, link_id, is_new);
 
+				get(linkid);
 				xLogger.Debug("submit:ok");
 			} catch (x_exception e) {
 				xLogger.Debug("submit:xerror:", e.Code, "::", e.Message);
