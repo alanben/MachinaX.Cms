@@ -60,6 +60,10 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 			base._Initialise();
 			DisplayType = x_displayType.XmlTransform;
 		}
+		protected override void _Initialise(string linkName) {
+			base._Initialise(linkName);
+			DisplayType = x_displayType.XmlTransform;
+		}
 		/// <summary>
 		/// Does the pre-processing of the page request. 
 		///	This method is overriden in order to:

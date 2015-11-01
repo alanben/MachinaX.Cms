@@ -58,6 +58,16 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 			WebsiteUser = new CmsXUser(UserProfile);
 			Cooker = new CmsXCookies(this);
 		}
+		protected override void _Initialise(string linkName) {
+			base._Initialise(linkName);
+			WebsiteUser = new CmsXUser(UserProfile);
+			Cooker = new CmsXCookies(this);
+		}
+		protected override void _ReInitialise(string linkName) {
+			base._ReInitialise(linkName);
+			WebsiteUser = new CmsXUser(UserProfile);
+			Cooker = new CmsXCookies(this);
+		}
 
 		/// <summary>Initialises the page and adds custom arguments to be passed to the xsl processor</summary>
 		protected override void _InitialiseTemplate() {

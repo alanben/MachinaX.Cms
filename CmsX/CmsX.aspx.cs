@@ -74,7 +74,8 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 			_ProcessRequest(false);
 		}
 		protected override void _ProcessRequest(bool CheckPassportToken) {
-			xLogger.Debug("ProcessRequest", "::CheckPassportToken:", CheckPassportToken.ToString(), "::CheckCookieToken:", WebsiteUser.CheckCookieToken.ToString());
+			xLogger.Debug("ProcessRequest", "::CheckPassportToken:", CheckPassportToken);
+			xLogger.Debug("ProcessRequest", "::CheckCookieToken:", WebsiteUser.CheckCookieToken);
 
 			Cooker.Read(WebsiteUser.CheckCookieToken);
 
@@ -175,18 +176,29 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 		///	- Save CSV settings (on lists)
 		/// </summary>
 		protected override void _ProcessContent() {
-			xLogger.Debug("_ProcessContent::Parameters.Broker:", Parameters.Broker);
+			xLogger.Debug("_ProcessContent", "::Parameters.Broker:", Parameters.Broker);
+			//xLogger.Debug("_ProcessContent", "::UserProfile:", (UserProfile== null)? "null" : UserProfile.ProfileXml.OuterXml);
+
 			string siteid = UserProfile.Value(Cms.PROFILE_SITE_ID);
+			xLogger.Debug("_ProcessContent", "::siteid:", siteid);
+
 			switch (Parameters.Broker) {
                 case "list_pages":				Broker = new CmsXBrokerDisplay(this, siteid);	Broker.Process("pages_list");		break;
 				case "csv_settings_save":		Broker = new CmsXBrokerCSV(this);				Broker.Process("settings_save");	break;
 				case "get_blog_comment_view":	Broker = new CmsXBrokerBlogs(this, siteid);		Broker.Process("view_comment");		break;
 			}
+			//xLogger.Debug("_ProcessContent:.");
+			
 			setGridWidth();
+			//xLogger.Debug("_ProcessContent:..");
+
 			setCSVFilters();
+			//xLogger.Debug("_ProcessContent:...");
+			
 
 			Cooker.Token = WebsiteUser.Token;
 			Cooker.Write(!WebsiteUser.Remember);
+			//xLogger.Debug("_ProcessContent:ok.");
 		}
         #endregion
 				
