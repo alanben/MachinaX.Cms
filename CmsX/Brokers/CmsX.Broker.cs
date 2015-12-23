@@ -34,23 +34,21 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 
 		/// <summary>Reference to the CmsXProfileX object that invoked the broker</summary>
 		public CmsXProfileX ProfilePage { get; set; }
-		//public x_config Config { get; set; }
 
 		/// <summary>Default constructor</summary>
 		/// <param name="thispage">The web application Page object</param>
 		public CmsXBroker(CmsXProfileX thispage) : base(thispage) {
 			ProfilePage = thispage;
-			//Config = thispage.Config;
 			_User = thispage.WebsiteUser;
 		}
 
-		private CmsXCSV csvutil;
-		public CmsXCSV CsvUtil {
+		private CmsXExport cmsexport;
+		public CmsXExport CmsExport {
 			get {
-				if (csvutil == null) {
-					csvutil = new CmsXCSV(ProfilePage);
+				if (cmsexport == null) {
+					cmsexport = new CmsXExport(ProfilePage);
 				}
-				return csvutil;
+				return cmsexport;
 			}
 		}
 

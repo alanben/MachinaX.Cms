@@ -11,7 +11,7 @@ using clickclickboom.machinaX.recaptchaX;
 	Started:	2010-07-01
 	Status:		release	
 	Version:	4.0.3
-	Build:		20141023
+	Build:		20151223
 	License:	GNU General Public License
 	-----------------------------------------------------------------------	*/
 
@@ -27,6 +27,7 @@ using clickclickboom.machinaX.recaptchaX;
 	20140102:	Moved LINK_DESTINATION to Cms.LINK_DESTINATION
 	20140112:	Refactored constructor
 	20141023:	Added handling of account on-hold
+	20151223:	Renamed CmsXCSV to CmsXExport 
 	---------------------------------------------------------------------------	*/
 
 namespace clickclickboom.machinaX.blogX.cmsX {
@@ -621,10 +622,10 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 
 		/// <summary>Get _User summary info</summary>
 		private void summary() {
+			xLogger.Debug("_summary:");
 			try {
-				xLogger.Debug("_summary:");
-				CmsXCSV csvutil = new CmsXCSV(UIPage);
-				csvutil.LoadFilters();
+				CmsXExport exportutil = new CmsXExport(UIPage);
+				exportutil.LoadFilters();
 				xLogger.Debug("_summary:ok");
 			}
 			catch (x_exception e) {

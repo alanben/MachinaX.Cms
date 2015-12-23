@@ -1,13 +1,10 @@
-using System;
-using System.Xml;
-
 /*	-----------------------------------------------------------------------	
 	Copyright:	clickclickBOOM cc
 	Author:		Alan Benington
 	Started:	2010-07-01
 	Status:		release	
-	Version:	4.0.1
-	Build:		20120712
+	Version:	4.0.3
+	Build:		20151223
 	License:	GNU General Public License
 	-----------------------------------------------------------------------	*/
 
@@ -23,12 +20,16 @@ using System.Xml;
 	20111117:	Added setCSVFilters method (called in _ProcessContent)
 	20120712:	Changed passportlogin so that summary (ie loading csv filers) is not called
 				Added passportcmslogin (ie summary is called)
+	20151223:	Renamed CmsXCSV to CmsXExport 
 	---------------------------------------------------------------------------	*/
 
 namespace clickclickboom.machinaX.blogX.cmsX {
+	
+	using System;
+	using System.Xml;
+
 	/// <summary>
-	/// Description of the classX class.
-	/// <para>Additional information about the class</para>
+	/// Base class for Cms pages and inclusion in CmsBrokers
 	/// </summary>
 	public class CmsX : CmsXProfileX {
 		#region Invisible properties
@@ -214,8 +215,8 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 
 		private void setCSVFilters() {
 			if (Content.SelectSingleNode("//csvfilter[@type='itemselector']") != null) {
-				CmsXCSV csvutil = new CmsXCSV(this);
-				csvutil.SetFilters();
+				CmsXExport exportutil = new CmsXExport(this);
+				exportutil.SetFilters();
 			}
 		}
 		#endregion

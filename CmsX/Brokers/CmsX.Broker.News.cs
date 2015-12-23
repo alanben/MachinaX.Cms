@@ -1,13 +1,10 @@
-﻿using System;
-using System.Xml;
-
-/*	-----------------------------------------------------------------------	
+﻿/*	-----------------------------------------------------------------------	
 	Copyright:	clickclickBOOM cc
 	Author:		Alan Benington
 	Started:	2011-05-04
 	Status:		release	
-	Version:	2.6.0
-	Build:		20110519
+	Version:	4.0.3
+	Build:		20151223
 	License:	GNU General Public License
 	-----------------------------------------------------------------------	*/
 
@@ -16,12 +13,16 @@ using System.Xml;
 	==================
 	20110504:	Started
 	20110519:	Updated submit(true)
+	20151223:	Updated export to xlsx
 	---------------------------------------------------------------------------	*/
 
 namespace clickclickboom.machinaX.blogX.cmsX {
-    /// <summary>
-    /// Description of the class.
-    /// <para>Additional information about the class</para>
+
+	using System;
+	using System.Xml;
+
+	/// <summary>
+    /// News Broker
     /// </summary>
 	public class CmsXBrokerNews : CmsXBrokerBlogs {
 		#region Invisible properties
@@ -184,7 +185,8 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 
 					// Output list to csv or content page (for rendering to grid)
 					if (is_csv) {
-						CsvUtil.GetColumns(_Blogs.ListItems);
+						CmsExport.ExportType = ExportType.XLSX;
+						CmsExport.GetColumns(_Blogs.ListItems);
 					} else {
 						UIPage.Content.AppendChild(UIPage.Document.ImportNode(_Blogs.ListXmlRoot, true));
 						xLogger.Debug("list:ok");

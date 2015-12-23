@@ -1,13 +1,10 @@
-using System;
-using System.Xml;
-
 /*	-----------------------------------------------------------------------	
 	Copyright:	clickclickBOOM cc
 	Author:		Alan Benington
 	Started:	2010-07-01
 	Status:		release	
-	Version:	4.0.2
-	Build:		20140112
+	Version:	4.0.3
+	Build:		20151223
 	License:	GNU General Public License
 	-----------------------------------------------------------------------	*/
 
@@ -19,9 +16,14 @@ using System.Xml;
 	20110505:	Changed user to _User
 	20140102:	Moved LINK_DESTINATION to common Cms.LINK_DESTINATION
 	20140112:	Refactored constructor
+	20151223:	Renamed CmsXCSV to CmsXExport 
 	---------------------------------------------------------------------------	*/
 
 namespace clickclickboom.machinaX.blogX.cmsX {
+
+	using System;
+	using System.Xml;
+
 	/// <summary>
 	/// The CmsXBrokerAuth class implements an x_broker to connect to the CmsXBrokerAuth service
 	/// </summary>
@@ -367,10 +369,10 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 
 		/// <summary>Get user summary info</summary>
 		private void summary() {
+			xLogger.Debug("summary:");
 			try {
-				xLogger.Debug("summary:");
-				CmsXCSV csvutil = new CmsXCSV(UIPage);
-				csvutil.LoadFilters();
+				CmsXExport exportutil = new CmsXExport(UIPage);
+				exportutil.LoadFilters();
 				xLogger.Debug("summary:ok");
 			}
 			catch (x_exception e) {

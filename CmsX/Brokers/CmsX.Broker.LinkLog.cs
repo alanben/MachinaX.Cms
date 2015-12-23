@@ -156,7 +156,8 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 							dateend.Type, dateend.Val,
 							setting);
 					if (is_csv) {
-						CsvUtil.GetColumns(_LinkLog.ListItems);
+						CmsExport.ExportType = ExportType.XLSX;
+						CmsExport.GetColumns(_LinkLog.ListItems);
 					} else {
 						UIPage.Content.AppendChild(UIPage.Document.ImportNode(_LinkLog.ListXmlRoot, true));
 					}
@@ -167,7 +168,8 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 						int filterPerson = Int32.Parse(UserProfile.Value(PROFILE_FILTER_PERSON_ID, "0"));
 						_LinkLog.ListLinkLogs(filterPerson, setting);
 					if (is_csv) {
-						CsvUtil.GetColumns(_LinkLog.ListItems);
+						CmsExport.ExportType = ExportType.XLSX;
+						CmsExport.GetColumns(_LinkLog.ListItems);
 					} else {
 						UIPage.Content.AppendChild(UIPage.Document.ImportNode(_LinkLog.ListXmlRoot, true));
 						xLogger.Debug("list:ok");

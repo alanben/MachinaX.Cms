@@ -1,15 +1,10 @@
-﻿using System;
-using System.Xml;
-
-using log4net;
-
-/*	-----------------------------------------------------------------------	
+﻿/*	-----------------------------------------------------------------------	
 	Copyright:	clickclickBOOM cc
 	Author:		Alan Benington
 	Started:	2010-07-01
 	Status:		release	
-	Version:	2.5.0
-	Build:		20100701
+	Version:	4.0.3
+	Build:		20151223
 	License:	GNU General Public License
 	-----------------------------------------------------------------------	*/
 
@@ -17,9 +12,14 @@ using log4net;
 	Development Notes:
 	==================
 	20100701:	Refactored from LoeriesAdmin
+	20151223:	Renamed CmsXCsv to CmsXExport
 	---------------------------------------------------------------------------	*/
 
 namespace clickclickboom.machinaX.blogX.cmsX {
+
+	using System;
+	using System.Xml;
+
 	/// <summary>This is a small utility class that represents the page grid
 	/// <para>Additional information about the class...</para>
 	/// </summary>

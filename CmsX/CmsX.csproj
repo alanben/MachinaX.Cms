@@ -69,6 +69,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\bin\Facebook.dll</HintPath>
     </Reference>
+    <Reference Include="GeneratorX">
+      <HintPath>..\..\bin\GeneratorX.dll</HintPath>
+    </Reference>
     <Reference Include="log4net">
       <HintPath>..\..\bin\log4net.dll</HintPath>
     </Reference>
@@ -116,6 +119,9 @@
     <Compile Include="Datatable\CmsX.Output.cs" />
     <Compile Include="Proxies\CmsWS.Base.New.cs" />
     <Compile Include="Settings.cs" />
+    <Compile Include="Utils\CmsX.Export.XLSX.cs" />
+    <Compile Include="Utils\CmsX.Export.Base.cs" />
+    <Compile Include="Utils\CmsX.Export.CSV.cs" />
     <Compile Include="Utils\CmsX.SubItem.cs" />
     <Compile Include="CsvReader\CsvReader.cs" />
     <Compile Include="CsvReader\CsvReader.DataReaderValidations.cs" />
@@ -171,7 +177,7 @@
     <Compile Include="Brokers\CmsX.Broker.Xxxx.cs" />
     <Compile Include="Utils\CmsX.Class.cs" />
     <Compile Include="Utils\CmsX.Cookies.cs" />
-    <Compile Include="Utils\CmsX.CSV.cs" />
+    <Compile Include="Utils\CmsX.Export.cs" />
     <Compile Include="Utils\CmsX.Grid.cs" />
     <Compile Include="Utils\CmsX.Startup.cs" />
     <Compile Include="Utils\CmsX.User.cs" />

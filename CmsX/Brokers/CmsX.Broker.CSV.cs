@@ -1,12 +1,10 @@
-﻿using System;
-
-/*	-----------------------------------------------------------------------	
+﻿/*	-----------------------------------------------------------------------	
 	Copyright:	clickclickBOOM cc
 	Author:		Alan Benington
 	Started:	2010-07-01
 	Status:		release	
-	Version:	4.0.2
-	Build:		20140112
+	Version:	4.0.3
+	Build:		20151223
 	License:	GNU General Public License
 	-----------------------------------------------------------------------	*/
 
@@ -15,16 +13,21 @@
 	==================
 	20100925:	Started from EconoVault
 	20140112:	Refactored constructor
+	20151223:	Refactored  to use CsvUtil
+				Renamed CmsXCSV to CmsXExport 
 	---------------------------------------------------------------------------	*/
 
 namespace clickclickboom.machinaX.blogX.cmsX {
+	
+	using System;
+
 	/// <summary>
 	/// The CmsXBrokerCSV class is a broker class to handle processes related to saving and retrieving of CSV's and settings.
 	/// <para>Additional information about the class</para>
 	/// </summary>
 	public class CmsXBrokerCSV : CmsXBrokerBase {
 		#region Invisible properties
-		private CmsXCSV csvutil;
+		//private CmsXExport CsvUtil;
 		#endregion
 
 		#region Constant name strings
@@ -46,7 +49,7 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 		/// <summary>Default constructor</summary>
 		/// <param name="thispage">The web application Page object</param>
 		public CmsXBrokerCSV(CmsX thispage) : base(thispage, typeof(CmsXBrokerCSV), logid) {
-			csvutil = new CmsXCSV(thispage);
+			//CsvUtil = new CmsXExport(thispage);
 		}
 		#endregion
 
@@ -66,9 +69,10 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 		#region Private methods
 		/// <summary>Save CSV settings</summary>
 		private void savesettings() {
+			xLogger.Info("savesettings:");
+			
 			try {
-				xLogger.Info("savesettings:");
-				csvutil.SaveFilters(true);
+				CmsExport.SaveFilters(true);
 				xLogger.Debug("savesettings::finished:ok");
 			} catch (x_exception e) {
 				throw e;

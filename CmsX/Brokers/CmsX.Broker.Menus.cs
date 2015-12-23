@@ -1,12 +1,10 @@
-﻿using System;
-
-/*	-----------------------------------------------------------------------	
+﻿/*	-----------------------------------------------------------------------	
 	Copyright:	clickclickBOOM cc
 	Author:		Alan Benington
 	Started:	2010-12-06
 	Status:		release	
-	Version:	4.0.2
-	Build:		20140112
+	Version:	4.0.3
+	Build:		20151223
 	License:	GNU General Public License
 	-----------------------------------------------------------------------	*/
 
@@ -21,12 +19,16 @@
 				(needed for Loeries as it does not use the same passport web service)
 	20130513:	Added _IsDefault as test for DEFAULT_SUBITEM
 	20140112:	Refactored constructor
+	20151223:	Updated export to xlsx
 	---------------------------------------------------------------------------	*/
 
 namespace clickclickboom.machinaX.blogX.cmsX {
-    /// <summary>
-    /// Description of the class.
-    /// <para>Additional information about the class</para>
+
+	using System;
+	using System.Xml;
+
+	/// <summary>
+    /// Menus Broker
     /// </summary>
 	public class CmsXBrokerMenus : CmsXBrokerBase {
 		#region Invisible properties
@@ -201,7 +203,8 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 
 					// Output list to csv or content page (for rendering to grid)
 					if (is_csv) {
-						CsvUtil.GetColumns(_Menus.ListItems);
+						CmsExport.ExportType = ExportType.XLSX;
+						CmsExport.GetColumns(_Menus.ListItems);
 					} else {
 						UIPage.Content.AppendChild(UIPage.Document.ImportNode(_Menus.ListXmlRoot, true));
 						xLogger.Debug("list:ok");

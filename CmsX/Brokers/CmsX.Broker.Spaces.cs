@@ -1,13 +1,10 @@
-﻿using System;
-using System.Xml;
-
-/*	-----------------------------------------------------------------------	
+﻿/*	-----------------------------------------------------------------------	
 	Copyright:	clickclickBOOM cc
 	Author:		Alan Benington
 	Started:	2010-09-27
 	Status:		release	
-	Version:	4.0.2
-	Build:		20140112
+	Version:	4.0.3
+	Build:		20151223
 	License:	GNU General Public License
 	-----------------------------------------------------------------------	*/
 
@@ -19,12 +16,16 @@ using System.Xml;
 	20101227:	Updated contructor, Activated delete process
 	20130513:	Added _IsDefault as test for DEFAULT_SUBITEM
 	20140112:	Refactored constructor
+	20151223:	Updated export to xlsx
 	---------------------------------------------------------------------------	*/
 
 namespace clickclickboom.machinaX.blogX.cmsX {
-    /// <summary>
-    /// Description of the class.
-    /// <para>Additional information about the class</para>
+
+	using System;
+	using System.Xml;
+
+	/// <summary>
+    /// Spaces Broker
     /// </summary>
 	public class CmsXBrokerSpaces : CmsXBrokerBase {
 		#region Invisible properties
@@ -197,7 +198,8 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 					_Spaces.List(filterType, setting);
 					
 					if (is_csv) {
-						CsvUtil.GetColumns(_Spaces.ListItems);
+						CmsExport.ExportType = ExportType.XLSX;
+						CmsExport.GetColumns(_Spaces.ListItems);
 					} else {
 						UIPage.Content.AppendChild(UIPage.Document.ImportNode(_Spaces.ListXmlRoot, true));
 						xLogger.Debug("list:ok");
