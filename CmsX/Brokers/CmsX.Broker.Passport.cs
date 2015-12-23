@@ -171,6 +171,9 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 				case "recaptcha":
 					recaptcha();
 					break;
+				case "recaptcha2":
+					recaptcha2();
+					break;
 				case "change":
 					change();
 					break;
@@ -478,6 +481,26 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 				throw (new x_exception("error_passport_recaptcha", String.Concat(error_passport_recaptcha, e.Message, " - ", e.StackTrace)));
 			}
 		}
+
+		/// <summary>Check recaptcha and challenge-response</summary>
+		private void recaptcha2() {
+			xLogger.Info("_recaptcha2:");
+			try {
+				if (_User.WantRecaptcha) {
+					string response = UserProfile.Value("g-recaptcha-response");
+					xLogger.Info("_recaptcha", "::response:", response);
+
+					Recaptcha2X recapx = new Recaptcha2X();
+					recapx.Check(response);
+				}
+			} catch (x_exception e) {
+				xLogger.Info("_recaptcha2", "::error:", e.Message);
+				throw (new displayException(LINK_RECAPTCHA));
+			} catch (Exception e) {
+				throw (new x_exception("error_passport_recaptcha", String.Concat(error_passport_recaptcha, e.Message, " - ", e.StackTrace)));
+			}
+		}
+		
 		/// <summary>Register _User (ie account holder)</summary>
 		private void register() {
 			//xLogger.Info("_register:", UIPage.UserProfile.ProfileXml.OuterXml);

@@ -57,6 +57,10 @@
     <Reference Include="MachinaX">
       <HintPath>..\..\bin\MachinaX.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\bin\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Web" />
@@ -67,6 +71,7 @@
     <Compile Include="Recaptcha.aspx.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="Recaptcha2X.cs" />
     <Compile Include="RecaptchaResponse.cs" />
     <Compile Include="RecaptchaValidator.cs" />
     <Compile Include="RecaptchaX.cs" />

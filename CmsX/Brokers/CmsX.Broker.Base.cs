@@ -358,6 +358,9 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 		protected string _GetQueryID(string ProfileID) {
 			return _GetQuery("id", ProfileID, "0");
 		}
+		protected int _GetQueryIID(string ProfileID) {
+			return _GetQuery("id", ProfileID, 0);
+		}
 
 		/// <summary>
 		/// Gets the value of the query string and assigns it to a profile field
@@ -378,8 +381,28 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 		protected string _GetQuery(string QueryID, string ProfileID, string Default) {
 			string queryID = UIPage.QueryParam(QueryID, Default);
 			xLogger.Debug("GetQueryID", "::queryID:", queryID);
+
 			queryID = (queryID == Default) ? UserProfile.Value(ProfileID, queryID) : queryID;
 			xLogger.Debug("GetQueryID", "::queryID:", queryID);
+
+			UserProfile.Add(ProfileID, queryID);
+			return queryID;
+		}
+
+		/// <summary>
+		/// Gets the value of the query string and assigns it to a profile field
+		/// </summary>
+		/// <param name="QueryID">The name of the query parameter</param>
+		/// <param name="ProfileID">The name of the profile field to contain the id</param>
+		/// <param name="Default">The default value of the query parameter (if '')</param>
+		/// <returns>the value of the query parameter or default</returns>
+		protected int _GetQuery(string QueryID, string ProfileID, int Default) {
+			int queryID = UIPage.QueryParam(QueryID, Default);
+			xLogger.Debug("GetQueryID", "::queryID:", queryID);
+
+			queryID = (queryID == Default) ? UserProfile.Value(ProfileID, queryID) : queryID;
+			xLogger.Debug("GetQueryID", "::queryID:", queryID);
+
 			UserProfile.Add(ProfileID, queryID);
 			return queryID;
 		}
