@@ -34,7 +34,9 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 	/// </summary>
 	public class CmsXExport {
 
-		private string id = "exportX";
+		private string id;
+		private const string DEFAULT_FILTER_PREFIX = "csv";
+		private const ExportType DEFAULT_EXPORTTYPE = ExportType.XLSX;
 		private const string logid = "CmsXExport.";
 
 		protected x_logger xLogger;
@@ -88,14 +90,17 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 		/// <summary>Default constructor</summary>
 		/// <param name="thispage">The web application Page object</param>
 		public CmsXExport(displayX thispage) {
-			xLogger = new x_logger(typeof(CmsXExport), logid, false, true);
-			UIPage = thispage;
-			log4net.Config.XmlConfigurator.Configure();
+			inititalise(thispage, DEFAULT_FILTER_PREFIX, logid, typeof(CmsXExport), DEFAULT_EXPORTTYPE);
 		}
-		public CmsXExport(displayX thispage, string prefix, string logId, Type logtype) {
+		public CmsXExport(displayX thispage, string filterPrefix, string logId, Type logtype) {
+			inititalise(thispage, filterPrefix, logId, logtype, DEFAULT_EXPORTTYPE);
+		}
+
+		private void inititalise(displayX thispage, string filterPrefix, string logId, Type logtype, ExportType exportType) {
 			xLogger = new x_logger(logtype, logId, false, true);
-			id = prefix;
+			id = filterPrefix;
 			UIPage = thispage;
+			ExportType = exportType;
 			log4net.Config.XmlConfigurator.Configure();
 		}
 		#endregion

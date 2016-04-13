@@ -1,16 +1,10 @@
-﻿using System;
-using System.Xml;
-
-using Newtonsoft.Json;
-using log4net;
-
-/*	-----------------------------------------------------------------------	
+﻿/*	-----------------------------------------------------------------------	
 	Copyright:	clickclickBOOM cc
 	Author:		Alan Benington
 	Started:	2009-05-05
 	Status:		release	
-	Version:	4.0.2
-	Build:		20140112
+	Version:	4.0.3
+	Build:		20160106
 	License:	GNU General Public License
 	-----------------------------------------------------------------------	*/
 
@@ -22,9 +16,15 @@ using log4net;
 	20100223:	Added _GetTimeout
 	20100927:	Added _CheckWSResult overrides and _CheckAdminXResult
 	20140302:	Refactored
+	20160106:	Added Construtor so that class can be used outside of brokers
 	---------------------------------------------------------------------------	*/
 
 namespace clickclickboom.machinaX.blogX.cmsX {
+
+	using log4net;
+	using System;
+	using System.Xml;
+
 	public class CmsWSBase : x_actor {
 
 		#region Constants
@@ -162,6 +162,13 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 		}
 		/// <summary>Default constructor</summary>
 		public CmsWSBase(displayX thispage, string root_name, Type type, string loggerID) : base(thispage) {
+			initialise(type, loggerID);
+			name = root_name;
+			initialize();
+		}
+		/// <summary>Default constructor</summary>
+		/// <remarks>NB: When deriving from this base overload the UIPage, UserProfile etc will be null</remarks>
+		public CmsWSBase(string root_name, Type type, string loggerID) : base() {
 			initialise(type, loggerID);
 			name = root_name;
 			initialize();
