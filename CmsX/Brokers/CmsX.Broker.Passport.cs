@@ -1,9 +1,3 @@
-using System;
-using System.Xml;
-
-using log4net;
-using clickclickboom.machinaX.emailX;
-using clickclickboom.machinaX.recaptchaX;
 
 /*	-----------------------------------------------------------------------	
 	Copyright:	clickclickBOOM cc
@@ -28,9 +22,16 @@ using clickclickboom.machinaX.recaptchaX;
 	20140112:	Refactored constructor
 	20141023:	Added handling of account on-hold
 	20151223:	Renamed CmsXCSV to CmsXExport 
+	20160601:	Updated send to get default Email values from Config
 	---------------------------------------------------------------------------	*/
 
 namespace clickclickboom.machinaX.blogX.cmsX {
+
+	using clickclickboom.machinaX.emailX;
+	using clickclickboom.machinaX.recaptchaX;
+	using System;
+	using System.Xml;
+
 	/// <summary>
 	/// The CmsXBrokerPassport class implements an x_broker to connect to the CmsXBrokerPassport service
 	/// </summary>
@@ -276,8 +277,9 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 				throw e;
 			}
 			catch (WebsiteXPassportException e) {
-				//throw (new x_exception("error_passport_login", String.Concat(error_passport_login, "::", e.Code, ": '", e.Message, "'")));
-				throw (new x_exception(e.Code, e.Message));
+				//throw (new x_exception(e.Code, e.Message));
+				// Rather throw more specific so this can be handled by pages that call the base ProcessRequest and need to handle passport exceptions their own way - eg account on hold
+				throw e;
 			}
 			catch (Exception e) {
 				throw (new x_exception("error_passport_login", String.Concat(error_passport_login, "::", e.Message, " - ", e.StackTrace)));
@@ -841,8 +843,17 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 			string sendtext = "";
 			x_email thisemail = new x_email();
 			try {
+				/* originally...
 				thisemail.Bcc = "alan@clickclickBOOM.co.za";
 				thisemail.To = email;
+				*/
+				thisemail.To = String.IsNullOrEmpty(email) ? Config.EmailTo : email;
+				if (!String.IsNullOrEmpty(Config.EmailBcc)) {
+					thisemail.Bcc = Config.EmailBcc;
+				}
+				if (!String.IsNullOrEmpty(Config.EmailFrom)) {
+					thisemail.From = Config.EmailFrom;
+				}
 				thisemail.Type = x_emailtype.html;
 				xLogger.Debug("_send", "::result:", result.OuterXml);
 				xLogger.Debug("_send", "::ResultDoc:", ResultDoc.OuterXml);
