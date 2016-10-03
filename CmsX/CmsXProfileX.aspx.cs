@@ -1,13 +1,10 @@
-using System;
-using System.Xml;
-
 /*	-----------------------------------------------------------------------	
 	Copyright:	clickclickBOOM cc
 	Author:		Alan Benington
 	Started:	2010-07-01
 	Status:		release	
-	Version:	4.0.2
-	Build:		20130418
+	Version:	4.0.3
+	Build:		20160822
 	License:	GNU General Public License
 	-----------------------------------------------------------------------	*/
 
@@ -17,9 +14,14 @@ using System.Xml;
 	20100701:	Refactored from LoeriesAdmin
 	20110905:	Replaced Debugger.Spoor with xLogger.Debug
 	20130418:	Added Authenticate property to manage authentication
+	20160822:	Refactor (minor)
 	---------------------------------------------------------------------------	*/
 
 namespace clickclickboom.machinaX.blogX.cmsX {
+	
+	using System;
+	using System.Xml;
+
 	/// <summary>
 	/// Description of the classX class.
 	/// <para>Additional information about the class</para>
@@ -34,7 +36,7 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 		public CmsXCookies Cooker { get; set; }
 		public CmsXUser WebsiteUser { get; set; }
 		public bool Authenticate { get; set; }
-		
+
 		/// <summary>Determines how the list data is output</summary>
 		public ListOutputStyle ListStyle { get; set; }
 

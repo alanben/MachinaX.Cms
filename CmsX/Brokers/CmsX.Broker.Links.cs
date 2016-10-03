@@ -419,6 +419,7 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 
 				bloghtml = processTinymceHtml(bloghtml);
 				xLogger.Debug("saveblog: Bloghtml::", bloghtml);
+
 				_AdminX.EditBlogHtml(space, topic, blog, title, bloghtml);
 				xLogger.Debug("saveblog::finished:ok");
 

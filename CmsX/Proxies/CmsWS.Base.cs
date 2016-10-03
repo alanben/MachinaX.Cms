@@ -32,9 +32,9 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 		private const int DEFAULT_WSTIMEOUT = 100000;	// 100000 is sytem default
 		
 		protected const int SEARCH_PAGE_VALUE = 0;
-		protected const string SELECT_RESULT = "/Result";
-		protected const string SELECT_RESULT_CODE = "/Result/Result_Code";
-		protected const string SELECT_RESULT_DESC = "/Result/Description";
+		protected const string SELECT_RESULT = "//Result";
+		protected const string SELECT_RESULT_CODE = "//Result/Result_Code";
+		protected const string SELECT_RESULT_DESC = "//Result/Description";
 
 		protected const string SELECT_PASSPORT_RESULT = "//Result";
 		protected const string SELECT_PASSPORT_RESULT_CODE = "//Result/ResultCode";
@@ -212,9 +212,11 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 		}
 		/// <summary>check WS result</summary>
 		private XmlElement checkResult(bool isPassport, XmlNode result, bool throwException, bool throwCode) {
-			xLogger.Debug("CheckResult", "::isPassport:", isPassport.ToString(), "::result:", result.OuterXml);
+			xLogger.Debug("CheckResult", "::isPassport:", isPassport, "::throwException:", throwException, "::throwCode:", throwCode, "::result:", result.OuterXml);
 
 			XmlElement codeEl = result.SelectSingleNode(isPassport ? SELECT_PASSPORT_RESULT_CODE  : SELECT_RESULT_CODE) as XmlElement;
+			xLogger.Debug("CheckResult", "::codeEl:", (codeEl == null) ? "null" : codeEl.OuterXml);
+			
 			string code = codeEl.InnerText;
 			string desc = result.SelectSingleNode(isPassport ? SELECT_PASSPORT_RESULT_DESC : SELECT_RESULT_DESC).InnerText;
 			XmlElement resultEl = result.SelectSingleNode(isPassport ? SELECT_PASSPORT_RESULT : SELECT_RESULT) as XmlElement;
@@ -233,6 +235,9 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 				resultEl.RemoveChild(codeEl);
 				resultEl.AppendChild(ext_success);
 			}
+			xLogger.Debug("CheckResult:ok");
+			xLogger.Debug("CheckResult", "::result:", (result == null) ? "null" : result.OuterXml);
+			
 			return result as XmlElement;
 		}
 		/// <summary>get the WS config URL</summary>
@@ -264,6 +269,9 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 		#region Write Methods
 		// NB These are intermediate methods to brdge the gap for some code written based on (incomplete) methods of CmsWSBaseNew
 		// Actually equivalent to GetServiceList / GetServiceItem
+		protected void _WriteList(XmlDocument resultdoc) {
+			_WriteList(resultdoc.DocumentElement);
+		}
 		protected void _WriteList(XmlNode result) {
 			//xLogger.Debug("_WriteList", "::ListStyle:", ListStyle.ToString());
 
@@ -292,6 +300,9 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 		#region Service List / Item methods
 		/// <summary>Appends the list of items to the ListXmlRoot</summary>
 		/// <param name="ServiceList"></param>
+		public void GetServiceList(XmlDocument ServiceListDoc) {
+			GetServiceList(ServiceListDoc.DocumentElement);
+		}
 		public void GetServiceList(XmlNode ServiceList) {
 			writeServiceList(ServiceList);
 		}

@@ -520,6 +520,8 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 		}
 		/// <summary>Massages the html returned from the tiny_mce editor</summary>
 		protected string processTinymceHtml(string html) {
+			xLogger.Debug("processTinymceHtml: html::", html);
+			
 			html = html.Replace("<br>", "<br />");
 			html = html.Replace("<BR>", "<BR />");
 			string[] nodes = html.Split(new char[] { '<' });
