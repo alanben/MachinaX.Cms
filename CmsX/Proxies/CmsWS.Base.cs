@@ -283,6 +283,9 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 				writeServiceList(result);
 			//}
 		}
+		protected void _WriteItem(XmlDocument resultdoc) {
+			_WriteItem(resultdoc.DocumentElement);
+		}
 		protected void _WriteItem(XmlNode result) {
 			//xLogger.Debug("_WriteItem", "::ListStyle:", ListStyle.ToString());
 
