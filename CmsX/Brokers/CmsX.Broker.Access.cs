@@ -212,6 +212,8 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 				Logger.Debug(String.Concat(logid, "_user_add:username:", username));
 
 				_Access.AddAdminUser(username, password, firstname, surname, email, telno, cellphone);
+				UIPage.Content.AppendChild(UIPage.Document.ImportNode(_Access.ItemXmlRootNode, true));
+				
 				//Logger.Debug(String.Concat(logid, "_user_admin_add:", _Users.ItemID));
 
 				//_Access.AddUser(Int32.Parse(_Users.ItemID));
@@ -242,6 +244,7 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 				string telno = UserProfile.Value("telno");
 				string statusID = UserProfile.Value("personstatus_id");
 				_Access.UpdateAdminUser(Int32.Parse(userID), username, password, firstname, surname, email, telno, cellphone, Int32.Parse(statusID));
+				UIPage.Content.AppendChild(UIPage.Document.ImportNode(_Access.ItemXmlRootNode, true));
 
 				user_profiles("0_record_", userID);
 
@@ -341,6 +344,7 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 
 				_Access.AddGroup(name);
 				//profile_users("0_record_", profileID, true);
+				UIPage.Content.AppendChild(UIPage.Document.ImportNode(_Access.ItemXmlRootNode, true));
 
 				Logger.Debug(String.Concat(logid, "_group_add::finished:group:", _Access.ItemID));
 			} catch (x_exception e) {
@@ -363,6 +367,7 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 				Logger.Debug(String.Concat(logid, "_group_edit", "::group_id:", group_id.ToString(), ":name:", name));
 
 				_Access.UpdateGroup(group_id, name);
+				UIPage.Content.AppendChild(UIPage.Document.ImportNode(_Access.ItemXmlRootNode, true));
 
 				// remove all users from the group and puts them into the default group
 				_Access.DeleteGroupUsers(group_id);

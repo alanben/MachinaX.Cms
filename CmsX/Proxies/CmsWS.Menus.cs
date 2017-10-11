@@ -138,21 +138,21 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 				);
 		}
 
-		public void AddMenu(string Name, string Label, string Profile, string Display, string ParentID, string Logo) {
+		public void AddMenu(string Name, string Label, string Profile, string Display, string ParentID, string Logo, string Link) {
 			ItemXmlRoot.RemoveAll();
 			ItemXmlRoot.AppendChild(
 				   ItemXml.ImportNode(
-						_CheckWSResult(menusService.Add(BlogxID, Name, Label, Profile, Display, ParentID, Logo))
+						_CheckWSResult(menusService.Add(BlogxID, Name, Label, Profile, Display, ParentID, Logo, Link))
 					, true)
 				);
 		}
 
-		public void UpdateMenu(int MenuID, string Name, string Label, string Profile, string Display, string ParentID, string Logo) {
-			xLogger.Debug("UpdateMenu", "::BlogxID:", BlogxID, "::Profile:", Profile);
+		public void UpdateMenu(int MenuID, string Name, string Label, string Profile, string Display, string ParentID, string Logo, string Link) {
+			xLogger.Debug("UpdateMenu", "::BlogxID:", BlogxID, "::Profile:", Profile, "::Logo:", Logo, "::Link:", Link);
 			ItemXmlRoot.RemoveAll();
 			ItemXmlRoot.AppendChild(
 				   ItemXml.ImportNode(
-						_CheckWSResult(menusService.Edit(BlogxID, MenuID, Name, Label, Profile, Display, ParentID, Logo))
+						_CheckWSResult(menusService.Edit(BlogxID, MenuID, Name, Label, Profile, Display, ParentID, Logo, Link))
 					, true)
 				);
 		}
@@ -223,20 +223,20 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 				);
 		}
 
-		public void AddMenuItem(int MenuID, string Label, string Link, string Display, int Order, string Logo) {
+		public void AddMenuItem(int MenuID, string Label, string Link, string Display, int Order, string Logo, string Extra) {
 			ItemXmlRoot.RemoveAll();
 			ItemXmlRoot.AppendChild(
 				   ItemXml.ImportNode(
-						_CheckWSResult(menusService.AddMenuItem(BlogxID, MenuID, Label, Link, Display, Order, Logo))
+						_CheckWSResult(menusService.AddMenuItem(BlogxID, MenuID, Label, Link, Display, Order, Logo, Extra))
 					, true)
 				);
 		}
 
-		public void UpdateMenuItem(int MenuID, int MenuItemID, string Label, string Link, string Display, int Order, string Logo) {
+		public void UpdateMenuItem(int MenuID, int MenuItemID, string Label, string Link, string Display, int Order, string Logo, string Extra) {
 			ItemXmlRoot.RemoveAll();
 			ItemXmlRoot.AppendChild(
 				   ItemXml.ImportNode(
-						_CheckWSResult(menusService.EditMenuItem(BlogxID, MenuID, MenuItemID, Label, Link, Display, Order, Logo))
+						_CheckWSResult(menusService.EditMenuItem(BlogxID, MenuID, MenuItemID, Label, Link, Display, Order, Logo, Extra))
 					, true)
 				);
 		}

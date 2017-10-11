@@ -144,6 +144,7 @@
             <s:element minOccurs="0" maxOccurs="1" name="display" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="parentID" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="logo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="link" type="s:string" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -171,6 +172,7 @@
             <s:element minOccurs="0" maxOccurs="1" name="display" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="parentID" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="logo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="link" type="s:string" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -325,6 +327,7 @@
             <s:element minOccurs="0" maxOccurs="1" name="Display" type="s:string" />
             <s:element minOccurs="1" maxOccurs="1" name="Order" type="s:int" />
             <s:element minOccurs="0" maxOccurs="1" name="Logo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Extra" type="s:string" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -352,6 +355,7 @@
             <s:element minOccurs="0" maxOccurs="1" name="Display" type="s:string" />
             <s:element minOccurs="1" maxOccurs="1" name="Order" type="s:int" />
             <s:element minOccurs="0" maxOccurs="1" name="Logo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Extra" type="s:string" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -689,6 +693,7 @@
     <wsdl:part name="display" type="s:string" />
     <wsdl:part name="parentID" type="s:string" />
     <wsdl:part name="logo" type="s:string" />
+    <wsdl:part name="link" type="s:string" />
   </wsdl:message>
   <wsdl:message name="AddHttpGetOut">
     <wsdl:part name="Body" />
@@ -702,6 +707,7 @@
     <wsdl:part name="display" type="s:string" />
     <wsdl:part name="parentID" type="s:string" />
     <wsdl:part name="logo" type="s:string" />
+    <wsdl:part name="link" type="s:string" />
   </wsdl:message>
   <wsdl:message name="EditHttpGetOut">
     <wsdl:part name="Body" />
@@ -758,6 +764,7 @@
     <wsdl:part name="Display" type="s:string" />
     <wsdl:part name="Order" type="s:string" />
     <wsdl:part name="Logo" type="s:string" />
+    <wsdl:part name="Extra" type="s:string" />
   </wsdl:message>
   <wsdl:message name="AddMenuItemHttpGetOut">
     <wsdl:part name="Body" />
@@ -771,6 +778,7 @@
     <wsdl:part name="Display" type="s:string" />
     <wsdl:part name="Order" type="s:string" />
     <wsdl:part name="Logo" type="s:string" />
+    <wsdl:part name="Extra" type="s:string" />
   </wsdl:message>
   <wsdl:message name="EditMenuItemHttpGetOut">
     <wsdl:part name="Body" />
@@ -871,6 +879,7 @@
     <wsdl:part name="display" type="s:string" />
     <wsdl:part name="parentID" type="s:string" />
     <wsdl:part name="logo" type="s:string" />
+    <wsdl:part name="link" type="s:string" />
   </wsdl:message>
   <wsdl:message name="AddHttpPostOut">
     <wsdl:part name="Body" />
@@ -884,6 +893,7 @@
     <wsdl:part name="display" type="s:string" />
     <wsdl:part name="parentID" type="s:string" />
     <wsdl:part name="logo" type="s:string" />
+    <wsdl:part name="link" type="s:string" />
   </wsdl:message>
   <wsdl:message name="EditHttpPostOut">
     <wsdl:part name="Body" />
@@ -940,6 +950,7 @@
     <wsdl:part name="Display" type="s:string" />
     <wsdl:part name="Order" type="s:string" />
     <wsdl:part name="Logo" type="s:string" />
+    <wsdl:part name="Extra" type="s:string" />
   </wsdl:message>
   <wsdl:message name="AddMenuItemHttpPostOut">
     <wsdl:part name="Body" />
@@ -953,6 +964,7 @@
     <wsdl:part name="Display" type="s:string" />
     <wsdl:part name="Order" type="s:string" />
     <wsdl:part name="Logo" type="s:string" />
+    <wsdl:part name="Extra" type="s:string" />
   </wsdl:message>
   <wsdl:message name="EditMenuItemHttpPostOut">
     <wsdl:part name="Body" />

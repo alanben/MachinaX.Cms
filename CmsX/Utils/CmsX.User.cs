@@ -1,13 +1,11 @@
-﻿using System;
-using System.Xml;
-
+﻿
 /*	-----------------------------------------------------------------------	
 	Copyright:	clickclickBOOM cc
 	Author:		Alan Benington
 	Started:	2010-07-01
 	Status:		release	
-	Version:	4.0.1
-	Build:		20120716
+	Version:	4.0.3
+	Build:		20161018
 	License:	GNU General Public License
 	-----------------------------------------------------------------------	*/
 
@@ -17,10 +15,15 @@ using System.Xml;
 	20100701:	Refactored from LoeriesAdmin
 	20120716:	Added Telephone, changed Cellno to Cellphone
 				Added Set (from Passport Login)
+	20161018:	Trim Username and Password when setting
 	---------------------------------------------------------------------------	*/
 
 namespace clickclickboom.machinaX.blogX.cmsX {
-    /// <summary>
+
+	using System;
+	using System.Xml;
+	
+	/// <summary>
     /// This is a utility class to encapsulte profile and other functionality related to a user.
     /// Typically this class is created within brokers and the display classes
     /// </summary>
@@ -94,11 +97,11 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 
 		public string Username {
             get { return (Profile.Get(PROPERTY_USERNAME) == null) ? "" : Profile.Get(PROPERTY_USERNAME).InnerText; }
-            set { Profile.Add(PROPERTY_USERNAME, value); }
+			set { Profile.Add(PROPERTY_USERNAME, value.Trim()); }
         }
         public string Password {
             get { return (Profile.Get(PROPERTY_PASSWORD) == null) ? "" : Profile.Get(PROPERTY_PASSWORD).InnerText; }
-            set { Profile.Add(PROPERTY_PASSWORD, value); }
+            set { Profile.Add(PROPERTY_PASSWORD, value.Trim()); }
         }
         public string Firstname {
             get { return (Profile.Get(PROPERTY_FIRSTNAME) == null) ? "" : Profile.Get(PROPERTY_FIRSTNAME).InnerText; }

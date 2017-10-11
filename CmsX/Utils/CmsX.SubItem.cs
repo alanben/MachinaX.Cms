@@ -1,13 +1,11 @@
-﻿using System;
-using System.Xml;
-
+﻿
 /*	-----------------------------------------------------------------------	
 	Copyright:	clickclickBOOM cc
 	Author:		Alan Benington
 	Started:	2010-07-01
 	Status:		release	
-	Version:	4.0.2
-	Build:		20131028
+	Version:	4.0.3
+	Build:		20161005
 	License:	GNU General Public License
 	-----------------------------------------------------------------------	*/
 
@@ -17,10 +15,16 @@ using System.Xml;
 	20111016:	Started
 	20111116:	Added _GetValue override and _GetCheck
 	20131028:	Added IID
+	20161005:	Try make _GetValue for decimal and double more forgiving
 	---------------------------------------------------------------------------	*/
 
 namespace clickclickboom.machinaX.blogX.cmsX {
-    /// <summary>
+
+	using System;
+	using System.Globalization;
+	using System.Xml;
+	
+	/// <summary>
     /// This is a utility class to encapsulte profile and other functionality related to a xxxx.
     /// Typically this class is created within brokers and the display classes
     /// </summary>
@@ -30,13 +34,13 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 		#endregion
 
         #region Private constants
-		private const char SEPARATOR = '|';
-		private const char SEPARATOR_PAIR = '~';
-		private const string FIELD_SYS = "sys";
-		private const string FIELD_ID = "id";
-		private const string FIELD_REMOVE = "remove";
-		private const string PROFILE_PREFIX = "_record_";
-		private const int MAX_RECORDS = 1000;
+		protected const char SEPARATOR = '|';
+		protected const char SEPARATOR_PAIR = '~';
+		protected const string FIELD_SYS = "sys";
+		protected const string FIELD_ID = "id";
+		protected const string FIELD_REMOVE = "remove";
+		protected const string PROFILE_PREFIX = "_record_";
+		protected const int MAX_RECORDS = 1000;
 		#endregion
 
         #region Public constants
@@ -181,11 +185,19 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 		}
 		protected decimal _GetValue(string id, decimal defval) {
 			decimal result = 0M;
-			return (Decimal.TryParse(getValue(id), out result)) ? result : defval;
+			bool success = Decimal.TryParse(getValue(id), out result);
+			if (!success) {
+				success = Decimal.TryParse(getValue(id), NumberStyles.Any, CultureInfo.InvariantCulture, out result);
+			}
+			return (success) ? result : defval;
 		}
 		protected double _GetValue(string id, double defval) {
 			double result = 0.0;
-			return (Double.TryParse(getValue(id), out result)) ? result : defval;
+			bool success = Double.TryParse(getValue(id), out result);
+			if (!success) {
+				success = Double.TryParse(getValue(id), NumberStyles.Any, CultureInfo.InvariantCulture, out result);
+			}
+			return (success) ? result : defval;
 		}
 		protected bool _GetCheck(string id) {
 			string val = getValue(id);
@@ -203,11 +215,17 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 		protected virtual void _Delete() {
 
 		}
+
+
 		#endregion
 
         #region Private methods
 		private void initialise(string BlankField, string Record) {
 			blankfield = BlankField;
+			initialise(Record);
+		}
+		protected virtual void _Initialise(string Record) {
+			initialise(Record);
 		}
 		private void initialise(string Record) {
 			//xLogger.Debug("initialise");

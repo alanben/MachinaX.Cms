@@ -31,6 +31,7 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 	using clickclickboom.machinaX.recaptchaX;
 	using System;
 	using System.Xml;
+	using System.Xml.Xsl;
 
 	/// <summary>
 	/// The CmsXBrokerPassport class implements an x_broker to connect to the CmsXBrokerPassport service
@@ -178,6 +179,7 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 					break;
 				case "change":
 					change();
+					forgot();
 					break;
 				case "forgot":
 					forgot();
@@ -536,8 +538,16 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 
 		/// <summary>Change password</summary>
 		private void change() {
+			xLogger.Info("_change:");
 			try {
-				xLogger.Info("_change:");
+				xLogger.Debug("_change:", "::PersonIID:", _User.PersonIID, "::Password:", _User.Password, "::Username:", _User.Username);
+
+				result = _AdminWS.UpdateUserPassword(_User.PersonIID, _User.Password);
+				verify();
+				result = _CustomerWS.GetUserID(_User.PersonIID);
+				if (verify() == VERIFY_OK) {
+					_User.Set(Root);
+				}
 			}
 			catch (x_exception e) {
 				throw (new x_exception("error_passport_change", String.Concat(error_passport_change, e.Message)));
@@ -857,8 +867,9 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 				thisemail.Type = x_emailtype.html;
 				xLogger.Debug("_send", "::result:", result.OuterXml);
 				xLogger.Debug("_send", "::ResultDoc:", ResultDoc.OuterXml);
+				xLogger.Debug("_send", "::To:", thisemail.To, "::From:", thisemail.From, "::Bcc:", thisemail.Bcc);
 
-				thisemail.Send(ResultDoc, _GetTemplate(EMAILTEMPLATE));
+				thisemail.Send(UIPage.Request, ResultDoc.DocumentElement, _GetTemplate(EMAILTEMPLATE), getEmailTemplateParameters());
 				sendtext = thisemail.Message;
 				xLogger.Debug("_send", "::sendtext:", sendtext);
 			}
@@ -868,6 +879,28 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 				throw(new WebsiteXPassportException("error_passport_email", msg));
 			}
 			return sendtext;
+		}
+
+		private XsltArgumentList getEmailTemplateParameters() {
+			//	Add xsl Parameters.
+			XsltArgumentList templateArgs = new XsltArgumentList();
+			templateArgs.AddParam("tick", "", DateTime.Now.Ticks.ToString());
+			templateArgs.AddParam("id", "", UIPage.Config.ID);
+			templateArgs.AddParam("host", "", UIPage.Config.Host);
+			//templateArgs.AddParam("userprofile", "", UserProfile.Fields);
+			//templateArgs.AddParam("password", "", UserProfile.Value("Password"));
+			//templateArgs.AddParam("site", "", String.Concat(protocol, Request.Url.Host, Config.Path));
+			//templateArgs.AddParam("name", "", Parameters.Name);
+			//templateArgs.AddParam("spaces", "", Parameters.Spaces);
+			//templateArgs.AddParam("topic", "", Parameters.Topic);
+			//templateArgs.AddParam("topics", "", Parameters.Topics);
+			//templateArgs.AddParam("blogs", "", Parameters.Blogs);
+			//templateArgs.AddParam("broker", "", Parameters.Broker);
+			//templateArgs.AddParam("link", "", Parameters.LinkName);
+			//templateArgs.AddParam("linknode", "", Parameters.Link);
+			//templateArgs.AddParam("device", "", Parameters.Device);
+			//templateArgs.AddParam("secure", "", (Parameters.Secure) ? "yes" : "no");
+			return templateArgs;
 		}
 
 		// Not required - use _User.Remember

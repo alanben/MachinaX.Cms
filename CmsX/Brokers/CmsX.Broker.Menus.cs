@@ -300,16 +300,17 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 				string order = UserProfile.Value("order");
 				string position = UserProfile.Value("position");
 				string logo = UserProfile.Value("logo");
+				string link = UserProfile.Value("link");
 
-				xLogger.Debug("submit::profile:", profile, "::display:", display, "::logo:", logo);
+				xLogger.Debug("submit::profile:", profile, "::display:", display, "::logo:", logo, "::link:", link);
 				int menu_id = Int32.Parse(menuid);
 				if (is_new) {
-					_Menus.AddMenu(name, label, profile, display, parentid, logo);
+					_Menus.AddMenu(name, label, profile, display, parentid, logo, link);
 					menuid = _Menus.ItemXml.SelectSingleNode("//menu/@id").InnerText;
 					xLogger.Debug("submit:menuid:", menuid);
 					menu_id = Int32.Parse(menuid);
 				} else {
-					_Menus.UpdateMenu(menu_id, name, label, profile, display, parentid, logo);
+					_Menus.UpdateMenu(menu_id, name, label, profile, display, parentid, logo, link);
 					_Menus.MoveMenu(menu_id, Int32.Parse(order));
 				}
 				xLogger.Debug("submit:menu_id:", menu_id.ToString());
@@ -400,10 +401,11 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 						string this_dsp = menuitems[4];
 						string this_ord = menuitems[5];
 						string this_lgo = menuitems[6];
+						string this_xtr = menuitems[7];
 						// Used to have menuitem/menuitem, but now only menu/menuitem, so parent not relevant, but add order for ordering
 						//string this_parid = menuitems[5];
 						//string this_parnt = menuitems[6];
-						string this_remove = menuitems[7];
+						string this_remove = menuitems[8];
 						xLogger.Debug("addeditMenuItems::thismenuitems_id:", thismenuitems_id, "::this_id:", this_id, "::this_lbl:", this_lbl, "::this_lnk:", this_lnk, "::this_dsp:", this_dsp, "::this_ord:", this_ord, "::this_lgo:", this_lgo);
 						xLogger.Debug("addeditMenuItems::this_remove:", this_remove);
 						//string parid = (this_parid == "Select parent ID...") ? "" : this_parid;
@@ -415,11 +417,11 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 						} else {
 							if (_IsDefault(thismenuitems_id) || is_new) {
 								xLogger.Debug("addeditMenuItems::add:");
-								_Menus.AddMenuItem(menu_id, lbl, this_lnk, this_dsp, order, this_lgo);
+								_Menus.AddMenuItem(menu_id, lbl, this_lnk, this_dsp, order, this_lgo, this_xtr);
 							} else {
 								xLogger.Debug("addeditMenuItems::update:");
 								int id = Int32.Parse(this_id);
-								_Menus.UpdateMenuItem(menu_id, id, lbl, this_lnk, this_dsp, order, this_lgo);
+								_Menus.UpdateMenuItem(menu_id, id, lbl, this_lnk, this_dsp, order, this_lgo, this_xtr);
 							}
 						}
 

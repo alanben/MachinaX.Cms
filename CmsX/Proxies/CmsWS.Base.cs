@@ -137,6 +137,12 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 		public XmlNodeList ListItemsList {
 			get { return ListXml.DocumentElement.SelectNodes(Cms.SELECT_ITEMSITEM); }
 		}
+
+		private bool isAdmin = true;
+		public bool IsAdmin {
+			get { return isAdmin; }
+			set { isAdmin = value; }
+		}
 		#endregion
 
 		#region Constructors/Destructors
@@ -154,6 +160,12 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 			name = root_name;
 			initialize();
 		}
+		public CmsWSBase(displayX thispage, string config_id, string root_name, Type type, string loggerID, bool wantuserprofile) : base(thispage, wantuserprofile) {
+			initialise(type, loggerID);
+			ConfigID = config_id;
+			name = root_name;
+			initialize();
+		}
 		/// <summary>Default constructor</summary>
 		public CmsWSBase(displayX thispage, string root_name) : base(thispage) {
 			initialise(null, null);
@@ -162,6 +174,11 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 		}
 		/// <summary>Default constructor</summary>
 		public CmsWSBase(displayX thispage, string root_name, Type type, string loggerID) : base(thispage) {
+			initialise(type, loggerID);
+			name = root_name;
+			initialize();
+		}
+		public CmsWSBase(displayX thispage, string root_name, Type type, string loggerID, bool wantuserprofile) : base(thispage, wantuserprofile) {
 			initialise(type, loggerID);
 			name = root_name;
 			initialize();
@@ -212,10 +229,11 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 		}
 		/// <summary>check WS result</summary>
 		private XmlElement checkResult(bool isPassport, XmlNode result, bool throwException, bool throwCode) {
-			xLogger.Debug("CheckResult", "::isPassport:", isPassport, "::throwException:", throwException, "::throwCode:", throwCode, "::result:", result.OuterXml);
+			xLogger.Debug("CheckResult", "::isPassport:", isPassport, "::throwException:", throwException, "::throwCode:", throwCode);
+			//xLogger.Debug("CheckResult", "::result:", (result == null) ? "null" : result.OuterXml);
 
 			XmlElement codeEl = result.SelectSingleNode(isPassport ? SELECT_PASSPORT_RESULT_CODE  : SELECT_RESULT_CODE) as XmlElement;
-			xLogger.Debug("CheckResult", "::codeEl:", (codeEl == null) ? "null" : codeEl.OuterXml);
+			//xLogger.Debug("CheckResult", "::codeEl:", (codeEl == null) ? "null" : codeEl.OuterXml);
 			
 			string code = codeEl.InnerText;
 			string desc = result.SelectSingleNode(isPassport ? SELECT_PASSPORT_RESULT_DESC : SELECT_RESULT_DESC).InnerText;
@@ -229,14 +247,15 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 					throw (new x_exception("error_service", String.Concat(logid, "::code:", code, "::description:", desc)));
 				}
 			}
-			if (throwException) {	// ie configure for extjs handler
+			//if (throwException) {	// ie configure for extjs handler
+			if (IsAdmin) {
 				XmlNode ext_success = codeEl.CloneNode(true);
 				ext_success.InnerText = isOK.ToString().ToLower();
 				resultEl.RemoveChild(codeEl);
 				resultEl.AppendChild(ext_success);
 			}
 			xLogger.Debug("CheckResult:ok");
-			xLogger.Debug("CheckResult", "::result:", (result == null) ? "null" : result.OuterXml);
+			//xLogger.Debug("CheckResult", "::result:", (result == null) ? "null" : result.OuterXml);
 			
 			return result as XmlElement;
 		}
@@ -297,6 +316,15 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 			//} else {
 				writeServiceItem(result);
 			//}
+		}
+		protected void _WriteItem(XmlNode result, string errorLink) {
+			try {
+				_WriteItem(result);
+			} catch (x_exception e) {
+				xLogger.Debug("_WriteItem", "::e:", e.Message);
+
+				throw new displayException(errorLink, e.Message);
+			}
 		}
 		#endregion
 

@@ -1,16 +1,11 @@
-﻿using System;
-using System.Web;
-using System.Xml;
-
-using clickclickboom.machinaX.blogX.templateX;
-
+﻿
 /*	-----------------------------------------------------------------------	
 	Copyright:	clickclickBOOM cc
 	Author:		Alan Benington
 	Started:	2010-07-01
 	Status:		release	
-	Version:	4.0.2
-	Build:		20130926
+	Version:	4.0.3
+	Build:		20161017
 	License:	GNU General Public License
 	-----------------------------------------------------------------------	*/
 
@@ -19,15 +14,20 @@ using clickclickboom.machinaX.blogX.templateX;
 	==================
 	20100701:	Refactored from LoeriesAdmin
 	20130926:	Updated to use reference to web service class
+	20161017:	Added virtual to Start methods
 	---------------------------------------------------------------------------	*/
 
 namespace clickclickboom.machinaX.blogX.cmsX {
+
+	using System;
+	using System.Web;
+	using System.Xml;
+	using clickclickboom.machinaX.blogX.templateX;
+	
 	public class CmsXStartup {
 
 		#region Invisible properties
 		public x_logger xLogger;
-		private HttpApplicationState Application;
-		private x_siteprofile siteprofile;
 		private x_config webconfig;
 		#endregion
 
@@ -37,12 +37,12 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 		private const string CONFIG_ROOT = "CmsX";
 		private const string SELECT_ITEMS = "//items";
 		private const string SELECT_ITEMSITEM = "//items/item";
-		#endregion
 
-		#region Constant error strings
-		#endregion
 
-		#region Visible properties
+
+		public HttpApplicationState Application { get; set; }
+		public x_siteprofile SiteProfile { get; set; }
+
 		private DisplayXSiteWS.SiteDisplayxServiceX siteServiceWS;
 		public DisplayXSiteWS.SiteDisplayxServiceX SiteServiceWS {
 			get {
@@ -73,6 +73,11 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 		}
 
 		/// <summary>Normal constructor</summary>
+		public CmsXStartup(HttpApplicationState application, string configID, x_siteprofile siteProfile) {
+			initialise(application, new x_config(configID), siteProfile);
+		}
+
+		/// <summary>Normal constructor</summary>
 		public CmsXStartup(HttpApplicationState application, x_config config) {
 			initialise(application, config, (x_siteprofile)application.Get(BlogTemplateX.SITEPROFILE));
 		}
@@ -94,7 +99,7 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 			xLogger = new x_logger(typeof(CmsXStartup), logid, false, true);
 
 			Application = application;
-			siteprofile = siteProfile;
+			SiteProfile = siteProfile;
 			webconfig = config;
 		}
 
@@ -102,7 +107,7 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 		private string getUrl(string config_id) {
 			xLogger.Debug("getUrl", "::config_id:", config_id);
 
-			string url = webconfig.Value(String.Concat(CONFIG_ROOT, "/", "Url[@id='", config_id, "']"));
+			string url = webconfig.Value(String.Concat(Cms.CONFIG_ROOT, "/", "Url[@id='", config_id, "']"));
 			xLogger.Debug("getUrl", "::url:", url);
 			
 			return url;
@@ -112,12 +117,12 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 		#region Public methods
 		/// <summary>Start the entire application - typically called from global.asax's Application OnStart event</summary>
 		/// <remarks>Use for backward compatibility for sites that have admin/control separate from www</remarks>
-		public void Start() {
+		public virtual void Start() {
 			Start(true);
 		}
 		/// <summary>Start the entire application - typically called from global.asax's Application OnStart event</summary>
 		/// <param name="WantSiteWS">Flag to indicate use of web service or internal reference</param>
-		public void Start(bool WantSiteWS) {
+		public virtual void Start(bool WantSiteWS) {
 			loadSites(WantSiteWS);
 		}
 		#endregion
@@ -133,11 +138,20 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 				sites = SiteService.GetSites();
 			}
 			xLogger.Debug("loadSites::sites:", sites.OuterXml);
-			
-			XmlElement profileSites = siteprofile.AddNode(Cms.PROFILE_SITES_ALL, true);
-			profileSites.AppendChild(siteprofile.ProfileXml.ImportNode(sites.SelectSingleNode(SELECT_ITEMS), true));
+
+			XmlElement profileSites = SiteProfile.AddNode(Cms.PROFILE_SITES_ALL, true);
+			profileSites.AppendChild(SiteProfile.ProfileXml.ImportNode(sites.SelectSingleNode(SELECT_ITEMS), true));
 		}
 		#endregion
+
+		/// <summary>get the WS config URL</summary>
+		protected string _GetUrl(string ConfigID) {
+			return getUrl(ConfigID);
+		}
+		protected string _GetUrl(string ConfigRoot, string ConfigID) {
+			return webconfig.Value(String.Concat(ConfigRoot, "/", "Url[@id='", ConfigID, "']"));
+		}
+
 
 	}
 }
