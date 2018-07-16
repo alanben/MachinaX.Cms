@@ -115,6 +115,7 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 				case "get_link_flags":				Broker = new CmsXBrokerLinks(this, siteid);		Broker.Process("getflags");				break;
 				case "get_link_blogs":				Broker = new CmsXBrokerLinks(this, siteid);		Broker.Process("getblogs");				break;
 				case "get_link_links":				Broker = new CmsXBrokerLinks(this, siteid);		Broker.Process("getlinks");				break;
+				case "get_link_hints":				Broker = new CmsXBrokerLinks(this, siteid);		Broker.Process("gethints");				break;
 				case "get_link_pages":				Broker = new CmsXBrokerLinks(this, siteid);		Broker.Process("getpages");				break;
 				case "select_link":        			Broker = new CmsXBrokerLinks(this, siteid);		Broker.Process("select");				break;
 				case "add_link":           			Broker = new CmsXBrokerLinks(this, siteid);		Broker.Process("add");					break;

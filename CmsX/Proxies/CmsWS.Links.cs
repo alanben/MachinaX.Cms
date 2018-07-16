@@ -360,6 +360,46 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 					, true)
 				);
 		}
+
+		/// <summary>
+		/// Get the link's hints
+		/// </summary>
+		public void GetLinkHints(int LinkID) {
+			xLogger.Debug("GetLinkHints", "::BlogxID:", BlogxID, "::LinkID:", LinkID);
+			ItemXmlRoot.RemoveAll();
+			ItemXmlRoot.AppendChild(
+				   ItemXml.ImportNode(
+						_CheckWSResult(LinksService.GetLinkHints(BlogxID, LinkID))
+					, true)
+				);
+		}
+
+		public void DeleteLinkHint(int LinkID, string File, string HintID) {
+			ItemXmlRoot.RemoveAll();
+			ItemXmlRoot.AppendChild(
+				   ItemXml.ImportNode(
+						_CheckWSResult(LinksService.DeleteLinkHint(BlogxID, LinkID, File, HintID))
+					, true)
+				);
+		}
+
+		public void AddLinkHint(int LinkID, string File, string Type, string Hint) {
+			ItemXmlRoot.RemoveAll();
+			ItemXmlRoot.AppendChild(
+				   ItemXml.ImportNode(
+						_CheckWSResult(LinksService.AddLinkHint(BlogxID, LinkID, File, Type, Hint))
+					, true)
+				);
+		}
+
+		public void UpdateLinkHint(int LinkID, string File, string HintID, string Type, string Hint) {
+			ItemXmlRoot.RemoveAll();
+			ItemXmlRoot.AppendChild(
+				   ItemXml.ImportNode(
+						_CheckWSResult(LinksService.EditLinkHint(BlogxID, LinkID, File, HintID, Type, Hint))
+					, true)
+				);
+		}
 		#endregion
 
 		#region Public LinkFiles Methods

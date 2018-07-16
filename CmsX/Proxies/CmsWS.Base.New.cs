@@ -1,9 +1,4 @@
-﻿using System;
-using System.Xml;
-
-using Newtonsoft.Json;
-using log4net;
-
+﻿
 /*	-----------------------------------------------------------------------	
 	Copyright:	clickclickBOOM cc
 	Author:		Alan Benington
@@ -26,6 +21,12 @@ using log4net;
 	---------------------------------------------------------------------------	*/
 
 namespace clickclickboom.machinaX.blogX.cmsX {
+
+	using System;
+	using System.Xml;
+
+	using log4net;
+
 	public class CmsWSBaseNew : x_actor {
 
 		#region Constants

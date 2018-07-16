@@ -21,6 +21,7 @@
 	20130513:	Added _IsDefault as test for DEFAULT_SUBITEM
 	20140112:	Refactored constructor
 	20151223:	Updated export to xlsx
+	20180223:	Added Hints
 	---------------------------------------------------------------------------	*/
 
 namespace clickclickboom.machinaX.blogX.cmsX {
@@ -47,7 +48,8 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 		private const string PROFILE_LINK_FLAGS_ID = "0_record_";
 		private const string PROFILE_LINK_BLOGS_ID = "1_record_";
 		private const string PROFILE_LINK_PAGES_ID = "2_record_";
-		private const string PROFILE_LINK_LINKS_ID = "3_record_";
+		private const string PROFILE_LINK_HINTS_ID = "3_record_";
+		private const string PROFILE_LINK_LINKS_ID = "4_record_";
 		// NB these also set in page xml
 		protected const string DEFAULT_POSITION = "Select position...";
 		protected const string DEFAULT_TITLE = "Enter title...";
@@ -123,6 +125,9 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 					break;
 				case "getlinks":
 					getlinks();
+					break;
+				case "gethints":
+					gethints();
 					break;
 				case "getpages":
 					getpages();
@@ -357,6 +362,22 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 			}
 		}
 
+		/// <summary>Get a link's hints</summary> 
+		private void gethints() {
+			try {
+				string linkID = _GetQueryID(PROFILE_LINKS_ID);
+				xLogger.Debug("gethints::linkID:", linkID);
+				_Links.GetLinkHints(Int32.Parse(linkID));
+
+				UIPage.Content.AppendChild(UIPage.Document.ImportNode(_Links.ItemXmlRootNode, true));
+				xLogger.Debug("gethints:ok");
+			} catch (x_exception e) {
+				throw e;
+			} catch (Exception e) {
+				throw (new x_exception("error_link_get", String.Concat(error_link_get, e.Message)));
+			}
+		}
+
 		/// <summary>Get a link's pages</summary> 
 		private void getpages() {
 			try {
@@ -554,6 +575,7 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 				handleBlogs(PROFILE_LINK_BLOGS_ID, link_id, space, is_new);
 				handleFlags(PROFILE_LINK_FLAGS_ID, link_id, is_new);
 				handlePages(PROFILE_LINK_PAGES_ID, link_id, is_new);
+				handleHints(PROFILE_LINK_HINTS_ID, link_id, is_new);
 				handleLinks(PROFILE_LINK_LINKS_ID, link_id, is_new);
 
 				get(linkid);
@@ -699,6 +721,50 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 							} else {
 								xLogger.Debug("handleFlags::update:");
 								_Links.UpdateLinkFlag(link_id, this_name, this_value);
+							}
+						}
+					}
+				}
+			}
+		}
+
+		/// <summary>Add, update, remove links</summary>
+		private void handleHints(string profilePrefix, int link_id, bool is_new) {
+			for (int i = 0; i < MAX_HANDLE; i++) {
+				string prof = String.Concat(profilePrefix, i.ToString());
+				string hintsCSV = UserProfile.Value(prof, "");
+				UserProfile.Clear(prof);
+
+				if (!String.IsNullOrEmpty(hintsCSV)) {
+					string[] links = hintsCSV.Split(new char[] { '|' });
+					xLogger.Debug("handleHints:", prof, ":", hintsCSV);
+					// ie handleHints:1_record_3:4|4|testimonial|yes||; link_id:5
+
+					string thishints_id = links[0];
+					if (thishints_id == "")
+						break;
+					else {
+						string this_hintid = links[1];
+						string this_file = links[2];
+						string this_type = links[3];
+						string this_hint = links[4].Replace(";", ",");	// Replace since commas get replaced in javascript before submission
+						string this_remove = links[5];
+						xLogger.Debug("handleHints::thishints_id:", thishints_id, "::this_hintid:", this_hintid, "::this_file:", this_file, "::this_type:", this_type, "::this_hint:", this_hint, "::this_remove:", this_remove);
+
+						if (this_remove == "true") {
+							if (!(_IsDefault(thishints_id) || is_new)) {
+								xLogger.Debug("handleHints::delete:");
+								_Links.DeleteLinkHint(link_id, this_file, this_hintid);
+							}
+						} else if (_IsDefault(this_file) || _IsDefault(this_type)) {
+							// ignore this
+						} else {
+							if (_IsDefault(thishints_id) || is_new) {
+								xLogger.Debug("handleHints::add:");
+								_Links.AddLinkHint(link_id, this_file, this_type, this_hint);
+							} else {
+								xLogger.Debug("handleHints::update:");
+								_Links.UpdateLinkHint(link_id, this_file, this_hintid, this_type, this_hint);
 							}
 						}
 					}

@@ -730,6 +730,122 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="GetLinkHints">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="blogxID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="LinkID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLinkHintsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetLinkHintsResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLinkHint">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="blogxID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="LinkID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="File" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="HintID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLinkHintResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetLinkHintResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteLinkHint">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="blogxID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="LinkID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="File" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="HintID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteLinkHintResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DeleteLinkHintResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddLinkHint">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="blogxID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="LinkID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="File" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Type" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Hint" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddLinkHintResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddLinkHintResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EditLinkHint">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="blogxID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="LinkID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="File" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="HintID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Type" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Hint" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EditLinkHintResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EditLinkHintResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="ListFilesDD">
         <s:complexType>
           <s:sequence>
@@ -1227,6 +1343,36 @@
   <wsdl:message name="DeleteLinkLinkSoapOut">
     <wsdl:part name="parameters" element="tns:DeleteLinkLinkResponse" />
   </wsdl:message>
+  <wsdl:message name="GetLinkHintsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetLinkHints" />
+  </wsdl:message>
+  <wsdl:message name="GetLinkHintsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetLinkHintsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetLinkHintSoapIn">
+    <wsdl:part name="parameters" element="tns:GetLinkHint" />
+  </wsdl:message>
+  <wsdl:message name="GetLinkHintSoapOut">
+    <wsdl:part name="parameters" element="tns:GetLinkHintResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteLinkHintSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteLinkHint" />
+  </wsdl:message>
+  <wsdl:message name="DeleteLinkHintSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteLinkHintResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddLinkHintSoapIn">
+    <wsdl:part name="parameters" element="tns:AddLinkHint" />
+  </wsdl:message>
+  <wsdl:message name="AddLinkHintSoapOut">
+    <wsdl:part name="parameters" element="tns:AddLinkHintResponse" />
+  </wsdl:message>
+  <wsdl:message name="EditLinkHintSoapIn">
+    <wsdl:part name="parameters" element="tns:EditLinkHint" />
+  </wsdl:message>
+  <wsdl:message name="EditLinkHintSoapOut">
+    <wsdl:part name="parameters" element="tns:EditLinkHintResponse" />
+  </wsdl:message>
   <wsdl:message name="ListFilesDDSoapIn">
     <wsdl:part name="parameters" element="tns:ListFilesDD" />
   </wsdl:message>
@@ -1608,6 +1754,52 @@
     <wsdl:part name="RelLink" type="s:string" />
   </wsdl:message>
   <wsdl:message name="DeleteLinkLinkHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="GetLinkHintsHttpGetIn">
+    <wsdl:part name="blogxID" type="s:string" />
+    <wsdl:part name="LinkID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetLinkHintsHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="GetLinkHintHttpGetIn">
+    <wsdl:part name="blogxID" type="s:string" />
+    <wsdl:part name="LinkID" type="s:string" />
+    <wsdl:part name="File" type="s:string" />
+    <wsdl:part name="HintID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetLinkHintHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="DeleteLinkHintHttpGetIn">
+    <wsdl:part name="blogxID" type="s:string" />
+    <wsdl:part name="LinkID" type="s:string" />
+    <wsdl:part name="File" type="s:string" />
+    <wsdl:part name="HintID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DeleteLinkHintHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="AddLinkHintHttpGetIn">
+    <wsdl:part name="blogxID" type="s:string" />
+    <wsdl:part name="LinkID" type="s:string" />
+    <wsdl:part name="File" type="s:string" />
+    <wsdl:part name="Type" type="s:string" />
+    <wsdl:part name="Hint" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AddLinkHintHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="EditLinkHintHttpGetIn">
+    <wsdl:part name="blogxID" type="s:string" />
+    <wsdl:part name="LinkID" type="s:string" />
+    <wsdl:part name="File" type="s:string" />
+    <wsdl:part name="HintID" type="s:string" />
+    <wsdl:part name="Type" type="s:string" />
+    <wsdl:part name="Hint" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="EditLinkHintHttpGetOut">
     <wsdl:part name="Body" />
   </wsdl:message>
   <wsdl:message name="ListFilesDDHttpGetIn">
@@ -2015,6 +2207,52 @@
   <wsdl:message name="DeleteLinkLinkHttpPostOut">
     <wsdl:part name="Body" />
   </wsdl:message>
+  <wsdl:message name="GetLinkHintsHttpPostIn">
+    <wsdl:part name="blogxID" type="s:string" />
+    <wsdl:part name="LinkID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetLinkHintsHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="GetLinkHintHttpPostIn">
+    <wsdl:part name="blogxID" type="s:string" />
+    <wsdl:part name="LinkID" type="s:string" />
+    <wsdl:part name="File" type="s:string" />
+    <wsdl:part name="HintID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetLinkHintHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="DeleteLinkHintHttpPostIn">
+    <wsdl:part name="blogxID" type="s:string" />
+    <wsdl:part name="LinkID" type="s:string" />
+    <wsdl:part name="File" type="s:string" />
+    <wsdl:part name="HintID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DeleteLinkHintHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="AddLinkHintHttpPostIn">
+    <wsdl:part name="blogxID" type="s:string" />
+    <wsdl:part name="LinkID" type="s:string" />
+    <wsdl:part name="File" type="s:string" />
+    <wsdl:part name="Type" type="s:string" />
+    <wsdl:part name="Hint" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AddLinkHintHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="EditLinkHintHttpPostIn">
+    <wsdl:part name="blogxID" type="s:string" />
+    <wsdl:part name="LinkID" type="s:string" />
+    <wsdl:part name="File" type="s:string" />
+    <wsdl:part name="HintID" type="s:string" />
+    <wsdl:part name="Type" type="s:string" />
+    <wsdl:part name="Hint" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="EditLinkHintHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
   <wsdl:message name="ListFilesDDHttpPostIn">
     <wsdl:part name="blogxID" type="s:string" />
   </wsdl:message>
@@ -2283,6 +2521,31 @@
       <wsdl:input message="tns:DeleteLinkLinkSoapIn" />
       <wsdl:output message="tns:DeleteLinkLinkSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="GetLinkHints">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a Link's hints</wsdl:documentation>
+      <wsdl:input message="tns:GetLinkHintsSoapIn" />
+      <wsdl:output message="tns:GetLinkHintsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLinkHint">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a Link's hint</wsdl:documentation>
+      <wsdl:input message="tns:GetLinkHintSoapIn" />
+      <wsdl:output message="tns:GetLinkHintSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteLinkHint">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Delete a Link's hint</wsdl:documentation>
+      <wsdl:input message="tns:DeleteLinkHintSoapIn" />
+      <wsdl:output message="tns:DeleteLinkHintSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddLinkHint">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Add a Link's hint</wsdl:documentation>
+      <wsdl:input message="tns:AddLinkHintSoapIn" />
+      <wsdl:output message="tns:AddLinkHintSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EditLinkHint">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Edit a Link's hint</wsdl:documentation>
+      <wsdl:input message="tns:EditLinkHintSoapIn" />
+      <wsdl:output message="tns:EditLinkHintSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="ListFilesDD">
       <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a list of all Link files</wsdl:documentation>
       <wsdl:input message="tns:ListFilesDDSoapIn" />
@@ -2515,6 +2778,31 @@
       <wsdl:input message="tns:DeleteLinkLinkHttpGetIn" />
       <wsdl:output message="tns:DeleteLinkLinkHttpGetOut" />
     </wsdl:operation>
+    <wsdl:operation name="GetLinkHints">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a Link's hints</wsdl:documentation>
+      <wsdl:input message="tns:GetLinkHintsHttpGetIn" />
+      <wsdl:output message="tns:GetLinkHintsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLinkHint">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a Link's hint</wsdl:documentation>
+      <wsdl:input message="tns:GetLinkHintHttpGetIn" />
+      <wsdl:output message="tns:GetLinkHintHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteLinkHint">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Delete a Link's hint</wsdl:documentation>
+      <wsdl:input message="tns:DeleteLinkHintHttpGetIn" />
+      <wsdl:output message="tns:DeleteLinkHintHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddLinkHint">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Add a Link's hint</wsdl:documentation>
+      <wsdl:input message="tns:AddLinkHintHttpGetIn" />
+      <wsdl:output message="tns:AddLinkHintHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EditLinkHint">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Edit a Link's hint</wsdl:documentation>
+      <wsdl:input message="tns:EditLinkHintHttpGetIn" />
+      <wsdl:output message="tns:EditLinkHintHttpGetOut" />
+    </wsdl:operation>
     <wsdl:operation name="ListFilesDD">
       <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a list of all Link files</wsdl:documentation>
       <wsdl:input message="tns:ListFilesDDHttpGetIn" />
@@ -2746,6 +3034,31 @@
       <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Delete a Link's link</wsdl:documentation>
       <wsdl:input message="tns:DeleteLinkLinkHttpPostIn" />
       <wsdl:output message="tns:DeleteLinkLinkHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLinkHints">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a Link's hints</wsdl:documentation>
+      <wsdl:input message="tns:GetLinkHintsHttpPostIn" />
+      <wsdl:output message="tns:GetLinkHintsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLinkHint">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a Link's hint</wsdl:documentation>
+      <wsdl:input message="tns:GetLinkHintHttpPostIn" />
+      <wsdl:output message="tns:GetLinkHintHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteLinkHint">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Delete a Link's hint</wsdl:documentation>
+      <wsdl:input message="tns:DeleteLinkHintHttpPostIn" />
+      <wsdl:output message="tns:DeleteLinkHintHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddLinkHint">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Add a Link's hint</wsdl:documentation>
+      <wsdl:input message="tns:AddLinkHintHttpPostIn" />
+      <wsdl:output message="tns:AddLinkHintHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EditLinkHint">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Edit a Link's hint</wsdl:documentation>
+      <wsdl:input message="tns:EditLinkHintHttpPostIn" />
+      <wsdl:output message="tns:EditLinkHintHttpPostOut" />
     </wsdl:operation>
     <wsdl:operation name="ListFilesDD">
       <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a list of all Link files</wsdl:documentation>
@@ -3097,6 +3410,51 @@
     </wsdl:operation>
     <wsdl:operation name="DeleteLinkLink">
       <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/DeleteLinkLink" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLinkHints">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/GetLinkHints" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLinkHint">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/GetLinkHint" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteLinkHint">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/DeleteLinkHint" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddLinkHint">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/AddLinkHint" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditLinkHint">
+      <soap:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/EditLinkHint" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -3521,6 +3879,51 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetLinkHints">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/GetLinkHints" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLinkHint">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/GetLinkHint" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteLinkHint">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/DeleteLinkHint" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddLinkHint">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/AddLinkHint" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditLinkHint">
+      <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/EditLinkHint" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="ListFilesDD">
       <soap12:operation soapAction="http://www.clickclickBOOM.com/MachinaX/DisplayX/ListFilesDD" style="document" />
       <wsdl:input>
@@ -3938,6 +4341,51 @@
         <mime:content part="Body" type="text/xml" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetLinkHints">
+      <http:operation location="/GetLinkHints" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLinkHint">
+      <http:operation location="/GetLinkHint" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteLinkHint">
+      <http:operation location="/DeleteLinkHint" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddLinkHint">
+      <http:operation location="/AddLinkHint" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditLinkHint">
+      <http:operation location="/EditLinkHint" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="ListFilesDD">
       <http:operation location="/ListFilesDD" />
       <wsdl:input>
@@ -4348,6 +4796,51 @@
     </wsdl:operation>
     <wsdl:operation name="DeleteLinkLink">
       <http:operation location="/DeleteLinkLink" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLinkHints">
+      <http:operation location="/GetLinkHints" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLinkHint">
+      <http:operation location="/GetLinkHint" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteLinkHint">
+      <http:operation location="/DeleteLinkHint" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddLinkHint">
+      <http:operation location="/AddLinkHint" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditLinkHint">
+      <http:operation location="/EditLinkHint" />
       <wsdl:input>
         <mime:content type="application/x-www-form-urlencoded" />
       </wsdl:input>

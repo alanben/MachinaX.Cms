@@ -1,11 +1,4 @@
-﻿using System;
-using System.Text;
-using System.Web;
-using System.Xml;
-using System.Xml.XPath;
-
-using log4net;
-
+﻿
 /*	-----------------------------------------------------------------------	
 	Copyright:	clickclickBOOM cc
 	Author:		Alan Benington
@@ -39,6 +32,15 @@ using log4net;
 	---------------------------------------------------------------------------	*/
 
 namespace clickclickboom.machinaX.blogX.cmsX {
+
+	using System;
+	using System.Text;
+	using System.Web;
+	using System.Xml;
+	using System.Xml.XPath;
+
+	using log4net;
+
 	/// <summary>
 	/// The base class for all brokers that deal with general content management processes
 	public class CmsXBrokerBase : CmsXBrokerTemplate {

@@ -96,11 +96,11 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 		public int PersonIID { get { return Convert.ToInt32(PersonID); } set { Profile.Add(PROPERTY_PERSONID, value.ToString()); } }
 
 		public string Username {
-            get { return (Profile.Get(PROPERTY_USERNAME) == null) ? "" : Profile.Get(PROPERTY_USERNAME).InnerText; }
+            get { return Profile.Value(PROPERTY_USERNAME).Trim(); }
 			set { Profile.Add(PROPERTY_USERNAME, value.Trim()); }
         }
         public string Password {
-            get { return (Profile.Get(PROPERTY_PASSWORD) == null) ? "" : Profile.Get(PROPERTY_PASSWORD).InnerText; }
+            get { return Profile.Value(PROPERTY_PASSWORD).Trim(); }
             set { Profile.Add(PROPERTY_PASSWORD, value.Trim()); }
         }
         public string Firstname {

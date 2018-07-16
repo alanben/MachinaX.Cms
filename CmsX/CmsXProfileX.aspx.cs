@@ -15,6 +15,7 @@
 	20110905:	Replaced Debugger.Spoor with xLogger.Debug
 	20130418:	Added Authenticate property to manage authentication
 	20160822:	Refactor (minor)
+	20170716:	Added aspx as template parameter
 	---------------------------------------------------------------------------	*/
 
 namespace clickclickboom.machinaX.blogX.cmsX {
@@ -78,7 +79,8 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 
 			TemplateArguments.AddParam("skin", "", Cooker.Skin);
 			TemplateArguments.AddParam("user", "", WebsiteUser.Username);
-			TemplateArguments.AddParam("person", "", WebsiteUser.Fullname);            
+			TemplateArguments.AddParam("person", "", WebsiteUser.Fullname);
+			TemplateArguments.AddParam("aspx", "", Config.Aspx);
 		}
 
 		/// <summary>
@@ -88,6 +90,7 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 		protected override void _PostProcessContent() {
 			base._PostProcessContent();
 			xLogger.Debug("PostProcessContent");
+
 			if (UserProfile.LoginPattern != "") {
 				xLogger.Debug("_PostProcessContent", "fields[pattern]");
 				foreach (XmlNode fieldsNode in Content.SelectNodes("//content/page/fields[pattern]")) {
