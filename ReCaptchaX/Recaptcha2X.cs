@@ -4,7 +4,7 @@
 	Started:	2015-11-24
 	Status:		release	
 	Version:	4.0.3
-	Build:		20151124
+	Build:		20180817
 	License:	GNU General Public License
 	-----------------------------------------------------------------------	*/
 
@@ -12,6 +12,7 @@
 	Development Notes:
 	==================
 	20151124:	Starting point RecaptchaX
+	20180817:	Changed default keys to non-valid key for error checking of config
 	-----------------------------------------------------------------------	*/
 
 namespace clickclickboom.machinaX.recaptchaX {
@@ -25,11 +26,12 @@ namespace clickclickboom.machinaX.recaptchaX {
 	/// <summary>This class encapsulates the recaptcha into a simple utility object</summary>
 	public class Recaptcha2X {
 
-		private const string DEFAULT_PRIVATE_KEY = "6Ld_lgoAAAAAAEUFoNlhny5LI8CfoqPp-tsIGQtG";
-		private const string DEFAULT_PUBLIC_KEY = "6Ld_lgoAAAAAABrml78WDjqgtVxHBlbJIcmlyujR";
-		private const string error_recaptcha = "ReCaptcha error: general error -";
-		private const string error_incorrect = "ReCaptcha error: incorrect words";
-		private const string error_unavailable = "ReCaptcha error: api unavailable";
+		private const string DEFAULT_PRIVATE_KEY	= "Private_Key_not_configured";	//"6Ld_lgoAAAAAAEUFoNlhny5LI8CfoqPp-tsIGQtG";
+		private const string DEFAULT_PUBLIC_KEY		= "Public_Key_not_configured";	//"6Ld_lgoAAAAAABrml78WDjqgtVxHBlbJIcmlyujR";
+
+		private const string error_recaptcha	= "ReCaptcha error: general error -";
+		private const string error_incorrect	= "ReCaptcha error: incorrect words";
+		private const string error_unavailable	= "ReCaptcha error: api unavailable";
 
 		private x_config config;
 		/// <summary>Configuration object</summary>
@@ -55,8 +57,8 @@ namespace clickclickboom.machinaX.recaptchaX {
 			config = new x_config();
 			xLogger = new x_logger(typeof(Recaptcha2X), "Recaptcha2X", false, ":");
 
-			PrivateKey = config.Value("ReCaptchaX/version2/Key[@id='private']", DEFAULT_PRIVATE_KEY);
-			PublicKey = config.Value("ReCaptchaX/version2/Key[@id='public']", DEFAULT_PUBLIC_KEY);
+			PrivateKey = config.Value("ReCaptchaX/Key[@id='private']", DEFAULT_PRIVATE_KEY);
+			PublicKey = config.Value("ReCaptchaX/Key[@id='public']", DEFAULT_PUBLIC_KEY);
 		}
 
 		/// <summary>Recaptcha check</summary>
@@ -71,6 +73,9 @@ namespace clickclickboom.machinaX.recaptchaX {
 
 				if (result.SelectSingleNode("//success").InnerText != "true") {
 					// Actually test error codes... but for now...
+					xLogger.Debug("Check:", "::PublicKey:", PublicKey);
+					//xLogger.Debug("Check:", "::PrivateKey:", PrivateKey);
+
 					XmlNode errorcodes = result.SelectSingleNode("//error-codes");
 					if (errorcodes != null) {
 						string code = errorcodes.InnerText;
