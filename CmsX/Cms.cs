@@ -10,7 +10,7 @@ using clickclickboom.machinaX.blogX;
 	Started:	2010-07-06
 	Status:		release	
 	Version:	4.0.2
-	Build:		20140112
+	Build:		20180903
 	License:	GNU General Public License
 	-----------------------------------------------------------------------	*/
 
@@ -21,6 +21,7 @@ using clickclickboom.machinaX.blogX;
 	20111213:	Added SERVICEX
 	20140102:	Added LINK_DESTINATION
 	20140112:	Added ListOutputStyle
+	20180903:	Added link constants, some from local broker
 	---------------------------------------------------------------------------	*/
 
 namespace clickclickboom.machinaX.blogX.cmsX {
@@ -85,8 +86,13 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 		public const string PROFILE_TOKEN = "PXToken";
 		public const string PROFILE_TOPICS_BLOGSPACE = "blogSpace";	// space for topics drop-down / selection
 
-		public const string LINK_DESTINATION = "DestinationLink";
-		
+		public const string PROFILE_LINK_DESTINATION = "DestinationLink";
+		public const string PROFILE_LINK_START = "StartingLink";
+		public const string LINK_HOME = "site_home";
+		public const string LINK_STARTUP = "pick_site";
+		public const string LINK_CONTENT = "content_links";
+		public const string LINK_START = LINK_CONTENT;
+
 		// Profile patterns
 		public const string PATTERN_PUBLIC = "public";
 		public const string PATTERN_CUSTOMER = "customer";

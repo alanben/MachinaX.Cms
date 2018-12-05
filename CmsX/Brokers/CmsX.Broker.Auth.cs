@@ -96,7 +96,7 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 		public override void Process(string type) {
 			switch (type) {
 				case "login":
-					login(UserProfile.Value(Cms.LINK_DESTINATION));
+					login(UserProfile.Value(Cms.PROFILE_LINK_DESTINATION));
 					break;
 				case "logout":
 					logout();
@@ -145,7 +145,7 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 			login();
             summary();
 			if (link != "" && link != null) {
-				UserProfile.Clear(Cms.LINK_DESTINATION);
+				UserProfile.Clear(Cms.PROFILE_LINK_DESTINATION);
 				throw (new displayException(link));
 			}
 		}

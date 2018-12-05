@@ -70,9 +70,6 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 		protected const string SELECT_PASSPORT_RESULT_CODE = "/Result/ResultCode";
 		protected const string SELECT_PASSPORT_RESULT_DESC = "/Result/Description";
 		protected const string LINK_LOGOUT = "passport_logout";
-		protected const string LINK_HOME = "site_home";
-		protected const string LINK_STARTUP = "pick_site";
-		protected const string LINK_ONSTART = "content_links";	//"pages_menus";
 		// The default value for an item field in a editable grid (ie set in the extjs script)
 		protected const int MAX_HANDLE = 1000;
 		#endregion

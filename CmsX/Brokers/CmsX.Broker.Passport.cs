@@ -148,13 +148,13 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 		public override void Process(string type) {
 			switch (type) {
 				case "cmslogin":
-					login(UserProfile.Value(Cms.LINK_DESTINATION), true);
+					login(UserProfile.Value(Cms.PROFILE_LINK_DESTINATION), true);
 					break;
 				case "login":
-					login(UserProfile.Value(Cms.LINK_DESTINATION), false);
+					login(UserProfile.Value(Cms.PROFILE_LINK_DESTINATION), false);
 					break;
 				case "loginemail":
-					login(UserProfile.Value(Cms.LINK_DESTINATION), false, true);
+					login(UserProfile.Value(Cms.PROFILE_LINK_DESTINATION), false, true);
 					break;
 				case "loginonly":
 					login();
@@ -227,7 +227,7 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 			}
 			xLogger.Debug("login::link:", link);
 			if (!String.IsNullOrEmpty(link)) {
-				UserProfile.Clear(Cms.LINK_DESTINATION);
+				UserProfile.Clear(Cms.PROFILE_LINK_DESTINATION);
 				throw (new displayException(link));
 			}
 		}
@@ -443,11 +443,11 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 					getLoginProfile();
 					xLogger.Info("_token:", _User.Token, "/", _User.UserID);
 
-					string link = UserProfile.Value(Cms.LINK_DESTINATION);
+					string link = UserProfile.Value(Cms.PROFILE_LINK_DESTINATION);
 					xLogger.Debug("_token:", ":link:", link);
 
 					if (!String.IsNullOrEmpty(link)) {
-						UserProfile.Clear(Cms.LINK_DESTINATION);
+						UserProfile.Clear(Cms.PROFILE_LINK_DESTINATION);
 						throw (new displayException(link));
 					}
 				} else if (verifyResult == VERIFY_TOKEN_INVALID) {	// token invalid

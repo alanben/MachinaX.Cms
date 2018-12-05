@@ -133,7 +133,7 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 
 				get_site();
 				if (isStartup) {
-					throw (new displayException(LINK_STARTUP));
+					throw (new displayException(Cms.LINK_STARTUP));
 				}
 			}
 		}
@@ -163,15 +163,18 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 
 		/// <summary>Select an site show</summary>
 		private void select_site() {
+			xLogger.Info("select_site:");
 			try {
-				xLogger.Info("select_site:");
 				string site = UserProfile.Value(Cms.PROFILE_SITES);
 				xLogger.Info("select_site::site:", site);
-				UserProfile.Add(Cms.PROFILE_SITE_ID, site);
 
+				UserProfile.Add(Cms.PROFILE_SITE_ID, site);
 				get_site();
-				xLogger.Debug("select_site:ok");
-				throw (new displayException(LINK_ONSTART));
+
+				string linkStart = UserProfile.Value(Cms.PROFILE_LINK_START, Cms.LINK_START);
+				xLogger.Debug("select_site", "::linkStart:", linkStart);
+
+				throw (new displayException(linkStart));
 			} catch (displayException e) {
 				throw e;
 			} catch (x_exception e) {
