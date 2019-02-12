@@ -604,7 +604,8 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 			string sub = UserProfile.Value("sub");
 			string proc = UserProfile.Value("proc");
 			string file = UserProfile.Value("file");
-			
+			xLogger.Debug("handlePage", "::sect:", sect, "::sub:", sub, "::proc:", proc, "::file:", file);
+
 			if (is_new) {
 				_Links.AddLinkPage(link_id, sect, sub, proc, file);
 			} else {
@@ -744,11 +745,12 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 					if (thishints_id == "")
 						break;
 					else {
-						string this_hintid = links[1];
-						string this_file = links[2];
-						string this_type = links[3];
-						string this_hint = links[4].Replace(";", ",");	// Replace since commas get replaced in javascript before submission
-						string this_remove = links[5];
+						string this_hintcid = links[1];
+						string this_hintid = links[2];
+						string this_file = links[3];
+						string this_type = links[4];
+						string this_hint = links[5].Replace(";", ",");	// Replace since commas get replaced in javascript before submission
+						string this_remove = links[6];
 						xLogger.Debug("handleHints::thishints_id:", thishints_id, "::this_hintid:", this_hintid, "::this_file:", this_file, "::this_type:", this_type, "::this_hint:", this_hint, "::this_remove:", this_remove);
 
 						if (this_remove == "true") {

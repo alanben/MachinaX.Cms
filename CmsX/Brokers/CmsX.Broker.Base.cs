@@ -41,6 +41,13 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 
 	using log4net;
 
+	/// <summary>DropDownType</summary>
+	public enum DropDownType {
+		Drop = 1
+		, Filter = 2
+		, Select = 3
+	}
+
 	/// <summary>
 	/// The base class for all brokers that deal with general content management processes
 	public class CmsXBrokerBase : CmsXBrokerTemplate {
