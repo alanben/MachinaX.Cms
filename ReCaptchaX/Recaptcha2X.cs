@@ -59,15 +59,23 @@ namespace clickclickboom.machinaX.recaptchaX {
 
 			PrivateKey = config.Value("ReCaptchaX/Key[@id='private']", DEFAULT_PRIVATE_KEY);
 			PublicKey = config.Value("ReCaptchaX/Key[@id='public']", DEFAULT_PUBLIC_KEY);
+			//xLogger.Debug("initialise:", "::PublicKey:", PublicKey);    //, "::PrivateKey:", PrivateKey
 		}
 
 		/// <summary>Recaptcha check</summary>
 		public void Check(string EncodedResponse) {
 			xLogger.Info("Check:");
 
-			try { 
-				WebClient client = new WebClient();
-				string googleReply = client.DownloadString(string.Format("https://www.google.com/recaptcha/api/siteverify?secret={0}&response={1}", PrivateKey, EncodedResponse));
+			try {
+				string googleReply = "", googleURI = "https://www.google.com/recaptcha/api/siteverify";
+				string parameters = string.Format("secret={0}&response={1}", PrivateKey, EncodedResponse);
+				using (WebClient client = new WebClient()) {
+					client.Headers[HttpRequestHeader.ContentType] = "application/x-www-form-urlencoded";
+					googleReply = client.UploadString(googleURI, parameters);
+				}
+				//string googleReply = client.DownloadString(string.Format("https://www.google.com/recaptcha/api/siteverify?secret={0}&response={1}", PrivateKey, EncodedResponse));
+				xLogger.Info("Check:", "::googleReply:", googleReply);
+
 				XmlDocument result = JsonConvert.DeserializeXmlNode(googleReply, "Result");
 				xLogger.Debug("Check:", "::result:", result.OuterXml);
 

@@ -268,6 +268,7 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 			return Config.Value(String.Concat(Cms.CONFIG_ROOT, "/", "Url[@id='", ConfigID, "']"));
 		}
 		protected string _GetUrl(string ConfigRoot, string ConfigID) {
+			xLogger.Debug("_GetUrl", "::ConfigRoot:", ConfigRoot, "::ConfigID:", ConfigID);
 			return Config.Value(String.Concat(ConfigRoot, "/", "Url[@id='", ConfigID, "']"));
 		}
 		/// <summary>Returns a int equivalent of a string - or default value if conversion fails</summary>
