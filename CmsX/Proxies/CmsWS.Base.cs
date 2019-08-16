@@ -110,6 +110,12 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 		/// <summary>
 		/// 
 		/// </summary>
+		public long ItemIIID {
+			get { return Convert.ToInt64(Item.GetAttribute("id")); }
+		}
+		/// <summary>
+		/// 
+		/// </summary>
 		public XmlElement Items {
 			get { return ItemXml.DocumentElement.SelectSingleNode(Cms.SELECT_ITEMS) as XmlElement; }
 		}
@@ -268,6 +274,7 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 			return Config.Value(String.Concat(Cms.CONFIG_ROOT, "/", "Url[@id='", ConfigID, "']"));
 		}
 		protected string _GetUrl(string ConfigRoot, string ConfigID) {
+			xLogger.Debug("_GetUrl", "::Config:", (Config == null) ? "null" : Config.ID);
 			xLogger.Debug("_GetUrl", "::ConfigRoot:", ConfigRoot, "::ConfigID:", ConfigID);
 			return Config.Value(String.Concat(ConfigRoot, "/", "Url[@id='", ConfigID, "']"));
 		}
