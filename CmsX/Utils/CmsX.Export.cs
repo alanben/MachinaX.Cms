@@ -267,10 +267,10 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 		/// <param name="param">A list of selected field parameters</param>
 		public void GetColumns(XmlElement Data, string csvFileName, string param) {
 			XmlDocument csvDoc = getPageXml();
-			//xLogger.Debug("GetColumns::csvDoc:", csvDoc.OuterXml));
+			//xLogger.Debug("GetColumns", "::csvDoc:", (csvDoc == null)? "null" : csvDoc.OuterXml);
 
 			XmlDocument csvParamDoc = getParamXml(param, csvDoc);
-			//xLogger.Debug("GetColumns::csvParamDoc:", csvParamDoc.OuterXml));
+			//xLogger.Debug("GetColumns", "::csvParamDoc:", (csvParamDoc == null) ? "null" : csvParamDoc.OuterXml);
 
 			XmlNodeList entriesColumns = csvParamDoc.SelectNodes("//subwf_obj");
 			_XmlToOutput(Data, entriesColumns, csvFileName);

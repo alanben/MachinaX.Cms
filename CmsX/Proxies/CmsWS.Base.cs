@@ -215,26 +215,26 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 		#region Protected Methods
 		/// <summary>check WS result</summary>
 		protected XmlElement _CheckAdminXResult(XmlNode result) {
-			return checkResult(false, result, true, true);
+			return _CheckResult(false, result, true, true);
 		}
 		/// <summary>check WS result</summary>
 		protected XmlElement _CheckWSResult(XmlNode result) {
-			return checkResult(false, result, true, false);
+			return _CheckResult(false, result, true, false);
 		}
 		/// <summary>check WS result</summary>
 		protected XmlElement _CheckWSResult(XmlNode result, bool throwException) {
-			return checkResult(false, result, throwException, false);
+			return _CheckResult(false, result, throwException, false);
 		}
 		/// <summary>check WS result</summary>
 		protected XmlElement _CheckWSResult(XmlNode result, bool throwException, bool throwCode) {
-			return checkResult(false, result, throwException, throwCode);
+			return _CheckResult(false, result, throwException, throwCode);
 		}
 		/// <summary>check Passport WS result</summary>
 		protected XmlElement _CheckPassportResult(XmlNode result, bool throwException) {
-			return checkResult(true, result, throwException, false);
+			return _CheckResult(true, result, throwException, false);
 		}
 		/// <summary>check WS result</summary>
-		private XmlElement checkResult(bool isPassport, XmlNode result, bool throwException, bool throwCode) {
+		protected virtual XmlElement _CheckResult(bool isPassport, XmlNode result, bool throwException, bool throwCode) {
 			xLogger.Debug("CheckResult", "::isPassport:", isPassport, "::throwException:", throwException, "::throwCode:", throwCode);
 			//xLogger.Debug("CheckResult", "::result:", (result == null) ? "null" : result.OuterXml);
 
