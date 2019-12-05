@@ -138,6 +138,21 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 			get { return ListXml.DocumentElement.SelectSingleNode(Cms.SELECT_ITEMS) as XmlElement; }
 		}
 		/// <summary>
+		/// Pages in a List
+		/// </summary>
+		public int ListPages {
+			get { return (ListItems.ParentNode as XmlElement).Get("pages", 0); }
+		}
+		/// <summary>
+		/// Rows in a List
+		/// </summary>
+		public int ListRows {
+			get { return (ListItems.ParentNode as XmlElement).Get("rows", 0); }
+		}
+
+
+
+		/// <summary>
 		/// 
 		/// </summary>
 		public XmlNodeList ListItemsList {
