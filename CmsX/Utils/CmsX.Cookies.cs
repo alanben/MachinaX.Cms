@@ -6,8 +6,8 @@ using System.Web;
 	Author:		Alan Benington
 	Started:	2010-07-01
 	Status:		release	
-	Version:	4.0.1
-	Build:		20121116
+	Version:	4.0.3
+	Build:		20200218
 	License:	GNU General Public License
 	-----------------------------------------------------------------------	*/
 
@@ -16,6 +16,7 @@ using System.Web;
 	==================
 	20100701:	Refactored from WebMail
 	20121116:	Refactored and updated
+	20200218:	Renamed checkToken to _CheckToken and make protected, virtual
 	---------------------------------------------------------------------------	*/
 
 namespace clickclickboom.machinaX.blogX.cmsX {
@@ -59,7 +60,7 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 			readWizardCookie();
 			if (check) {
 				if (readTokenCookie()) {
-					checkToken();
+					_CheckToken();
 				}
 			}
 		}
@@ -143,7 +144,7 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 			xLogger.Debug(logid, "readWizardCookie::", "wizard:", Wizard);
 		}
 
-		private void checkToken() {
+		protected virtual void _CheckToken() {
 			CmsXBrokerPassport broker = new CmsXBrokerPassport(UIPage); 
 			broker.Process("token");
 		}
