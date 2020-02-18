@@ -16,7 +16,8 @@ using System.Web;
 	==================
 	20100701:	Refactored from WebMail
 	20121116:	Refactored and updated
-	20200218:	Renamed checkToken to _CheckToken and make protected, virtual
+	20200218:	Renamed checkToken to _CheckToken and readTokenCookie to _ReadTokenCookie
+				+ make protected, virtual ie overridable
 	---------------------------------------------------------------------------	*/
 
 namespace clickclickboom.machinaX.blogX.cmsX {
@@ -24,11 +25,12 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 	/// The CmsXCookies class is a utility class for handling cookies on Website
 	/// </summary>
 	public class CmsXCookies {
-		
-		private CmsXProfileX UIPage;
-		private CmsXUser WebsiteUser;
+
 		private const string logid = "CmsXCookies";
-		private x_logger xLogger;
+
+		public CmsXProfileX UIPage;
+		public CmsXUser WebsiteUser;
+		public x_logger xLogger;
 
 		public string Skin		{ get; set; }
 		public string Token		{ get; set; }
@@ -59,7 +61,7 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 			readSkinCookie();
 			readWizardCookie();
 			if (check) {
-				if (readTokenCookie()) {
+				if (_ReadTokenCookie()) {
 					_CheckToken();
 				}
 			}
@@ -124,7 +126,7 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 			xLogger.Debug(logid, "readSkinCookie::", "Skin:", Skin);
 		}
 
-		private bool readTokenCookie() {
+		protected virtual bool _ReadTokenCookie() {
 			//xLogger.Debug(logid, "readTokenCookie::", "IsCookies:", IsCookies.ToString(), "::IsToken:", IsToken.ToString());
 			if (IsCookies && IsToken) {
 				Token = UIPage.Request.Cookies[Cms.COOKIE_TOKEN].Value;
