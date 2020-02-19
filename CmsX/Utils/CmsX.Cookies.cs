@@ -32,6 +32,7 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 		public CmsXUser WebsiteUser;
 		public x_logger xLogger;
 
+		public bool Active	{ get; set; }
 		public string Skin		{ get; set; }
 		public string Token		{ get; set; }
 		public string Wizard	{ get; set; }
@@ -49,6 +50,7 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 			WebsiteUser = thispage.WebsiteUser;
 			Skin = Cms.DEFAULT_SKIN;
 			Wizard = Cms.DEFAULT_WIZARD;
+			Active = true;
 		}
 		#endregion
 
@@ -57,7 +59,12 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 		/// </summary>
 		/// <param name="check">Flag to indicate if token cookie check is to be done</param>
 		public void Read(bool check) {
-			xLogger.Debug(logid, "Read", IsCookies.ToString());
+			xLogger.Debug("Read", "::Active:", Active, "::IsCookies:", IsCookies);
+
+			if (!Active) {
+				return;
+			}
+
 			readSkinCookie();
 			readWizardCookie();
 			if (check) {
@@ -78,7 +85,11 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 		/// Writes the cookies to the response
 		/// </summary>
 		public void Write(bool resetToken) {
-			xLogger.Debug(logid, "Write", "::resetToken:", resetToken.ToString());
+			xLogger.Debug("Write", "::Active:", Active, "::resetToken:", resetToken);
+
+			if (!Active) {
+				return;
+			}
 			if (resetToken) {
 				Token = "";
 			}
@@ -88,6 +99,12 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 		/// Writes the cookies to the response
 		/// </summary>
 		public void Write() {
+			xLogger.Debug("Write", "::Active:", Active);
+
+			if (!Active) {
+				return;
+			}
+
 			HttpCookie cmsXcookie = new HttpCookie(Cms.COOKIES);
 			cmsXcookie.Value = UIPage.Label;
 			cmsXcookie.Expires = DateTime.Now.AddYears(Cms.COOKIE_EXPIRY_YEARS);
