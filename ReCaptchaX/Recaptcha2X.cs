@@ -69,6 +69,10 @@ namespace clickclickboom.machinaX.recaptchaX {
 			try {
 				string googleReply = "", googleURI = "https://www.google.com/recaptcha/api/siteverify";
 				string parameters = string.Format("secret={0}&response={1}", PrivateKey, EncodedResponse);
+				xLogger.Info("Check:", "::parameters:", parameters);
+
+				ServicePointManager.SecurityProtocol = (SecurityProtocolType)3072;
+
 				using (WebClient client = new WebClient()) {
 					client.Headers[HttpRequestHeader.ContentType] = "application/x-www-form-urlencoded";
 					googleReply = client.UploadString(googleURI, parameters);
