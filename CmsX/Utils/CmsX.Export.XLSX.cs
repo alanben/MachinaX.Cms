@@ -4,7 +4,7 @@
 	Started:	2015-12-23
 	Status:		release	
 	Version:	4.0.3
-	Build:		20151223
+	Build:		20201012
 	License:	GNU General Public License
 	-----------------------------------------------------------------------	*/
 
@@ -12,6 +12,7 @@
 	Development Notes:
 	==================
 	20151223:	Refactored from CmsXCSV
+	20201012:	Added false parameter to generator.XmlToExcel
 	---------------------------------------------------------------------------	*/
 
 namespace clickclickboom.machinaX.blogX.cmsX {
@@ -49,7 +50,7 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 				throw new x_exception("error_xlsx_nodata", String.Concat(error_xlsx, error_xlsx_nodata, exportFileName));
 			}
 			GenerateExcel generator = new GenerateExcel();
-			generator.XmlToExcel(Data, columns, exportFileName, _UIPage.Response);
+			generator.XmlToExcel(Data, columns, exportFileName, _UIPage.Response, false);
 		}
 	}
 }
