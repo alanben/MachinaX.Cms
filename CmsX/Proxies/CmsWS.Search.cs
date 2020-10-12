@@ -13,7 +13,7 @@
 	Development Notes:
 	==================
 	20100701:	Refactored from LoeriesAdmin
-	20201012:	Added constructor with no Logger or Userprofile
+	20201012:	Added empty + constructor with no Logger or Userprofile
 	---------------------------------------------------------------------------	*/
 
 namespace clickclickboom.machinaX.blogX.cmsX {
@@ -298,6 +298,14 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 			set { limit = (value) ? MAX_ROWS : limit; }
 		}
 
+		/// <summary>Default Constructor</summary>
+		public SearchSettings() {
+			int defaultPage = 1;
+			string defaultSortCol = "";
+			bool isDescending = false;
+			initialise(defaultPage, defaultSortCol, isDescending);
+			MaxRows = true;
+		}
 		/// <summary>Constructor</summary>
 		public SearchSettings(x_userprofile UserProfile) {
 			initialise(UserProfile, null as ILog);
