@@ -75,10 +75,15 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 			_ProcessRequest(false);
 		}
 		protected override void _ProcessRequest(bool CheckPassportToken) {
-			xLogger.Debug("ProcessRequest", "::CheckPassportToken:", CheckPassportToken);
+			_ProcessRequest(CheckPassportToken, true);
+		}
+		protected void _ProcessRequest(bool CheckPassportToken, bool CheckCookieToken) {
+			xLogger.Debug("ProcessRequest", "::CheckPassportToken:", CheckPassportToken, "::CheckCookieToken:", CheckCookieToken);
 			xLogger.Debug("ProcessRequest", "::CheckCookieToken:", WebsiteUser.CheckCookieToken);
 
-			Cooker.Read(WebsiteUser.CheckCookieToken);
+			if (CheckCookieToken) {
+				Cooker.Read(WebsiteUser.CheckCookieToken);
+			}
 
 			_CheckPattern(true, true);
 			if (CheckPassportToken) {
