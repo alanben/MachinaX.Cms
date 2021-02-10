@@ -32,23 +32,17 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 	/// Base class for Cms pages and inclusion in CmsBrokers
 	/// </summary>
 	public class CmsX : CmsXProfileX {
-		#region Invisible properties
-		#endregion
 
-		#region Constants
 		private const string CONFIG_ROOT = "CmsX";
 		private const string logid = "CmsX.";
 		private const string DEFAULT_GRID_WIDTH = "970";
-		#endregion
 
-		#region Visible properties
 		private x_broker broker;
 		/// <summary>The broker to be used to process request and content</summary>
 		public x_broker Broker {
 			get { return broker; }
 			set { broker = value; }
 		}
-		#endregion
 
 		#region Constructors/Destructors
 		/// <summary>Default constructor</summary>
@@ -62,10 +56,6 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 		}
 		#endregion
 
-		#region Public methods
-		#endregion
-
-		#region Protected methods
 		/// <summary>
 		/// Does the pre-processing of the page request. 
 		///	This method is overriden in order to:
@@ -77,13 +67,14 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 		protected override void _ProcessRequest(bool CheckPassportToken) {
 			_ProcessRequest(CheckPassportToken, true);
 		}
-		protected void _ProcessRequest(bool CheckPassportToken, bool CheckCookieToken) {
-			xLogger.Debug("ProcessRequest", "::CheckPassportToken:", CheckPassportToken, "::CheckCookieToken:", CheckCookieToken);
+		protected void _ProcessRequest(bool CheckPassportToken, bool ReadCookieToken) {
+			xLogger.Debug("ProcessRequest", "::ReadCookieToken:", ReadCookieToken);
 			xLogger.Debug("ProcessRequest", "::CheckCookieToken:", WebsiteUser.CheckCookieToken);
 
-			if (CheckCookieToken) {
+			if (ReadCookieToken) {
 				Cooker.Read(WebsiteUser.CheckCookieToken);
 			}
+			xLogger.Debug("ProcessRequest", "::CheckPassportToken:", CheckPassportToken);
 
 			_CheckPattern(true, true);
 			if (CheckPassportToken) {
@@ -206,9 +197,7 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 			Cooker.Write(!WebsiteUser.Remember);
 			//xLogger.Debug("_ProcessContent:ok.");
 		}
-        #endregion
-				
-		#region Private methods
+
 		private void setGridWidth() {
 			XmlElement gridconfig = Content.SelectSingleNode("//grid/config") as XmlElement;
 			if (gridconfig != null) {
@@ -224,6 +213,5 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 				exportutil.SetFilters();
 			}
 		}
-		#endregion
 	}
 }

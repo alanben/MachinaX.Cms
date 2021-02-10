@@ -1,14 +1,11 @@
-﻿using System;
-
-using log4net;
-
+﻿
 /*	-----------------------------------------------------------------------	
 	Copyright:	clickclickBOOM cc
 	Author:		Alan Benington
 	Started:	2010-07-01
 	Status:		release	
-	Version:	2.5.0
-	Build:		20100701
+	Version:	4.0.3
+	Build:		20201012
 	License:	GNU General Public License
 	-----------------------------------------------------------------------	*/
 
@@ -16,9 +13,14 @@ using log4net;
 	Development Notes:
 	==================
 	20100701:	Refactored from LoeriesAdmin
+	20201012:	Added empty + constructor with no Logger or Userprofile
 	---------------------------------------------------------------------------	*/
 
 namespace clickclickboom.machinaX.blogX.cmsX {
+
+	using System;
+	using log4net;
+
 	/// <summary>This is a small utility class for the Search Parameters
 	/// <para>Additional information about the class</para>
 	/// </summary>
@@ -296,6 +298,14 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 			set { limit = (value) ? MAX_ROWS : limit; }
 		}
 
+		/// <summary>Default Constructor</summary>
+		public SearchSettings() {
+			int defaultPage = 1;
+			string defaultSortCol = "";
+			bool isDescending = false;
+			initialise(defaultPage, defaultSortCol, isDescending);
+			MaxRows = true;
+		}
 		/// <summary>Constructor</summary>
 		public SearchSettings(x_userprofile UserProfile) {
 			initialise(UserProfile, null as ILog);
@@ -341,13 +351,18 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 		}
 		/// <summary>Constructor</summary>
 		public SearchSettings(x_userprofile UserProfile, ILog Logger, int DefaultPage, string DefaultSortCol, bool IsDescending) {
-			initialise(UserProfile, DefaultPage, DefaultSortCol, IsDescending);
+			initialise(DefaultPage, DefaultSortCol, IsDescending);
 		}
 		/// <summary>Constructor</summary>
 		public SearchSettings(x_userprofile UserProfile, ILog Logger, int DefaultPage, string DefaultSortCol, bool IsDescending, bool IsMaxRows) {
-			initialise(UserProfile, DefaultPage, DefaultSortCol, IsDescending);
+			initialise(DefaultPage, DefaultSortCol, IsDescending);
 			MaxRows = IsMaxRows;
 			Logger.Debug(String.Concat(":SortDesc:", sort_desc.ToString(), ":SortCol:", sort_col, ":Page:", page));
+		}
+		/// <summary>Constructor</summary>
+		public SearchSettings(int DefaultPage, string DefaultSortCol, bool IsDescending, bool IsMaxRows) {
+			initialise(DefaultPage, DefaultSortCol, IsDescending);
+			MaxRows = IsMaxRows;
 		}
 
 		private void initialise(x_userprofile userProfile, ILog logger) {
@@ -390,7 +405,7 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 				logger.Debug(String.Concat(":initialise:page:", page.ToString()));
 			}
 		}
-		private void initialise(x_userprofile userProfile, int defaultPage, string defaultSortCol, bool isDescending) {
+		private void initialise(int defaultPage, string defaultSortCol, bool isDescending) {
 			sort_desc = isDescending;
 			sort_col = defaultSortCol;
 			def_sort = false;
