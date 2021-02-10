@@ -574,7 +574,6 @@
   -->
   <PropertyGroup>
     <PostBuildEvent>Copy $(TargetPath) $(SolutionDir)..\bin\$(TargetFileName)
-Copy $(TargetPath) E:\clickclickBOOM\Loeries\LoeriesControl\bin\$(TargetFileName)
 </PostBuildEvent>
   </PropertyGroup>
 </Project>
