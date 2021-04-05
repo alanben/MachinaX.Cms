@@ -315,30 +315,19 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 			_WriteList(resultdoc.DocumentElement);
 		}
 		protected void _WriteList(XmlNode result) {
-			//xLogger.Debug("_WriteList", "::ListStyle:", ListStyle.ToString());
-
-			//if (ListStyle == ListOutputStyle.Datatable) {
-			//	writeDatatableList(result);
-			//} else if (ListStyle == ListOutputStyle.XmlDirect) {
-			//	writeDirectList(result);
-			//} else {
-				writeServiceList(result);
-			//}
+			writeServiceList(result);
+		}
+		protected void _WriteList(XmlNode result, bool throwcode) {
+			writeServiceList(result, throwcode);
 		}
 		protected void _WriteItem(XmlDocument resultdoc) {
 			_WriteItem(resultdoc.DocumentElement);
 		}
 		protected void _WriteItem(XmlNode result) {
-			//xLogger.Debug("_WriteItem", "::ListStyle:", ListStyle.ToString());
-
-			//if (ListStyle == ListOutputStyle.Datatable) {
-			//	//writeDatatableItem(result);
-			//	writeDirectItem(result);
-			//} else if (ListStyle == ListOutputStyle.XmlDirect) {
-			//	writeDirectItem(result);
-			//} else {
-				writeServiceItem(result);
-			//}
+			writeServiceItem(result);
+		}
+		protected void _WriteItem(XmlNode result, bool throwcode) {
+			writeServiceItem(result, throwcode);
 		}
 		protected void _WriteItem(XmlNode result, string errorLink) {
 			try {
@@ -361,8 +350,11 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 			writeServiceList(ServiceList);
 		}
 		protected void writeServiceList(XmlNode ServiceList) {
+			writeServiceList(ServiceList, false);
+		}
+		protected void writeServiceList(XmlNode ServiceList, bool throwcode) {
 			ListXmlRoot.RemoveAll();
-			ListXmlRoot.AppendChild(ListXml.ImportNode(_CheckWSResult(ServiceList), true));
+			ListXmlRoot.AppendChild(ListXml.ImportNode(_CheckWSResult(ServiceList, true, throwcode), true));
 		}
 
 		/// <summary>Appends the item to the ItemXmlRoot</summary>
@@ -371,8 +363,11 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 			writeServiceItem(ServiceList);
 		}
 		protected void writeServiceItem(XmlNode ServiceItem) {
+			writeServiceItem(ServiceItem, false);
+		}
+		protected void writeServiceItem(XmlNode ServiceItem, bool throwcode) {
 			ItemXmlRoot.RemoveAll();
-			ItemXmlRoot.AppendChild(ItemXml.ImportNode(_CheckWSResult(ServiceItem), true));
+			ItemXmlRoot.AppendChild(ItemXml.ImportNode(_CheckWSResult(ServiceItem, true, throwcode), true));
 		}
 		#endregion
 
@@ -383,8 +378,6 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 		}
 		/// <summary>Initiate properties</summary>
 		private void initialize() {
-			//Config = new clickclickboom.machinaX.blogX.x_config();
-
 			ItemXml = new XmlDocument();
 			ItemXml.LoadXml(String.Format("<{0}/>", name));
 			ListXml = new XmlDocument();
