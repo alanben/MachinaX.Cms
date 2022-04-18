@@ -225,6 +225,9 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 		public void MoveItemsToRoot() {
 			ItemXmlRootNode.FirstChild.AppendChild(Items);
 		}
+		public string Url(string ConfigRoot, string ConfigID) {
+			return _GetUrl(ConfigRoot, ConfigID);
+		}
 		#endregion
 
 		#region Protected Methods
