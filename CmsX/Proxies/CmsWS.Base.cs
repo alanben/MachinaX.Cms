@@ -343,6 +343,15 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 		}
 		#endregion
 
+		#region Get Methods (Scalar values)
+		protected bool _GetFlag(XmlNode result) {
+			return _GetFlag(result, "value", true);
+		}
+		protected bool _GetFlag(XmlNode result, string FlagName, bool throwcode) {
+			return bool.Parse(_CheckWSResult(result, true, throwcode).SelectSingleNode(FlagName).InnerText);
+		}
+		#endregion
+
 		#region Service List / Item methods
 		/// <summary>Appends the list of items to the ListXmlRoot</summary>
 		/// <param name="ServiceList"></param>
