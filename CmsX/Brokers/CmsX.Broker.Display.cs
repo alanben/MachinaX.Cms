@@ -26,7 +26,7 @@ using System.Xml;
 	20130513:	Added _IsDefault as test for DEFAULT_SUBITEM
 	---------------------------------------------------------------------------	*/
 
-namespace clickclickboom.machinaX.blogX.cmsX {
+namespace XXBoom.MachinaX.BlogX.CmsX {
 	/// <summary>
 	/// Broker class to manage displayx for show.
 	/// <para>Management of menus</para>

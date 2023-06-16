@@ -13,7 +13,7 @@
 // 
 #pragma warning disable 1591
 
-namespace clickclickboom.machinaX.blogX.cmsX.UserWS {
+namespace XXBoom.MachinaX.BlogX.CmsX.UserWS {
     using System;
     using System.Web.Services;
     using System.Diagnostics;
@@ -55,7 +55,7 @@ namespace clickclickboom.machinaX.blogX.cmsX.UserWS {
         
         /// <remarks/>
         public UserServiceX() {
-            this.Url = global::clickclickboom.machinaX.blogX.cmsX.Properties.Settings.Default.CmsX_2_6_0_UserWS_UserServiceX;
+            this.Url = global::XXBoom.MachinaX.BlogX.CmsX.Properties.Settings.Default.CmsX_2_6_0_UserWS_UserServiceX;
             if ((this.IsLocalFileSystemWebService(this.Url) == true)) {
                 this.UseDefaultCredentials = true;
                 this.useDefaultCredentialsSetExplicitly = false;

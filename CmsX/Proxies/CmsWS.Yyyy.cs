@@ -1,7 +1,7 @@
 ﻿using System.Xml;
 
 //using clickclickboom.machinaX;
-//using clickclickboom.machinaX.blogX.cmsX;
+//using XXBoom.MachinaX.BlogX.CmsX;
 
 /*	-----------------------------------------------------------------------	
 	Copyright:	clickclickBOOM cc
@@ -19,7 +19,7 @@
 	20111003:	Started
 	---------------------------------------------------------------------------	*/
 
-namespace clickclickboom.machinaX.blogX.cmsX {
+namespace XXBoom.MachinaX.BlogX.CmsX {
 	/// <summary>This class is a functional wrapper of the DisplayXYyyys web service</summary>
 	public class Yyyys : CmsWSBase {
 		#region Private properties

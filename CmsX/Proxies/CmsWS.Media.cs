@@ -17,7 +17,7 @@
 	20140120:	Changed constructor to take CmsXProfileX (was displayX)
 	---------------------------------------------------------------------------	*/
 
-namespace clickclickboom.machinaX.blogX.cmsX {
+namespace XXBoom.MachinaX.BlogX.CmsX {
 	/// <summary>This class is a functional wrapper of the DisplayXMedia web service</summary>
 	public class Media : CmsWSSite {
 		#region Private properties

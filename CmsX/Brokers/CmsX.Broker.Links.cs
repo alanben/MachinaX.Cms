@@ -24,7 +24,7 @@
 	20180223:	Added Hints
 	---------------------------------------------------------------------------	*/
 
-namespace clickclickboom.machinaX.blogX.cmsX {
+namespace XXBoom.MachinaX.BlogX.CmsX {
 
 	using System;
 	using System.Xml;

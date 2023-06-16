@@ -18,7 +18,7 @@
 	20170716:	Added aspx as template parameter
 	---------------------------------------------------------------------------	*/
 
-namespace clickclickboom.machinaX.blogX.cmsX {
+namespace XXBoom.MachinaX.BlogX.CmsX {
 	
 	using System;
 	using System.Xml;

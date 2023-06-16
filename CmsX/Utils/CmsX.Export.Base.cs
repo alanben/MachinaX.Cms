@@ -14,7 +14,7 @@
 	20151223:	Refactored from CmsXCSV
 	---------------------------------------------------------------------------	*/
 
-namespace clickclickboom.machinaX.blogX.cmsX {
+namespace XXBoom.MachinaX.BlogX.CmsX {
 
 	/// <summary>
     /// Base class for utility conversion classes

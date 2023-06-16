@@ -22,7 +22,7 @@ using LumenWorks.Framework.IO.Csv;
 	20111116:	Started from FoundationX.Admin
 	---------------------------------------------------------------------------	*/
 
-namespace clickclickboom.machinaX.blogX.cmsX {
+namespace XXBoom.MachinaX.BlogX.CmsX {
 	/// <summary>
 	/// This is the parent class of AdminReader and AdminImporter
     /// </summary>

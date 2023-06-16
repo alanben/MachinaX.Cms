@@ -17,7 +17,7 @@ using System.Xml;
 	20100925:	Started from EconoVault
 	---------------------------------------------------------------------------	*/
 
-namespace clickclickboom.machinaX.blogX.cmsX {
+namespace XXBoom.MachinaX.BlogX.CmsX {
 	/// <summary>
 	/// This class is a functional wrapper of the access web service
 	/// </summary>

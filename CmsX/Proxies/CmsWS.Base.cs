@@ -19,7 +19,7 @@
 	20160106:	Added Construtor so that class can be used outside of brokers
 	---------------------------------------------------------------------------	*/
 
-namespace clickclickboom.machinaX.blogX.cmsX {
+namespace XXBoom.MachinaX.BlogX.CmsX {
 
 	using log4net;
 	using System;

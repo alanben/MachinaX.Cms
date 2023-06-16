@@ -26,7 +26,7 @@ using System.Net.Sockets;
 using System.Text;
 using System.Web;
 
-namespace clickclickboom.machinaX.recaptchaX {
+namespace XXBoom.MachinaX.ReCaptchaX {
 	/// <summary>
 	/// Calls the reCAPTCHA server to validate the answer to a reCAPTCHA challenge. Normally,
 	/// you will use the RecaptchaControl class to insert a web control on your page. However
@@ -118,9 +118,9 @@ namespace clickclickboom.machinaX.recaptchaX {
 						results = readStream.ReadToEnd().Split();
 					}
 				}
-			} catch (WebException ex) {
-				EventLog.WriteEntry("Application", ex.Message, EventLogEntryType.Error);
-				return RecaptchaResponse.RecaptchaNotReachable;
+			} catch { //(WebException ex)
+                      //EventLog.WriteEntry("Application", ex.Message, EventLogEntryType.Error);
+                return RecaptchaResponse.RecaptchaNotReachable;
 			}
 
 			switch (results[0]) {

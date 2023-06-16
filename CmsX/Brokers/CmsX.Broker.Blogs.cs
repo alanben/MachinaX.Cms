@@ -18,7 +18,7 @@
 	20151223:	Updated Blog export to xlsx
 	---------------------------------------------------------------------------	*/
 
-namespace clickclickboom.machinaX.blogX.cmsX {
+namespace XXBoom.MachinaX.BlogX.CmsX {
 
 	using System;
 	using System.Xml;

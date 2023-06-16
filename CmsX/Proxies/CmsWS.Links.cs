@@ -19,7 +19,7 @@
 	20150320:	Added LinkSEO Methods
 	---------------------------------------------------------------------------	*/
 
-namespace clickclickboom.machinaX.blogX.cmsX {
+namespace XXBoom.MachinaX.BlogX.CmsX {
 
 	using System.Xml;
 

@@ -20,7 +20,7 @@ using System.Web;
 				+ make protected, virtual ie overridable
 	---------------------------------------------------------------------------	*/
 
-namespace clickclickboom.machinaX.blogX.cmsX {
+namespace XXBoom.MachinaX.BlogX.CmsX {
 	/// <summary>
 	/// The CmsXCookies class is a utility class for handling cookies on Website
 	/// </summary>

@@ -20,7 +20,7 @@
 				Added _WriteServiceList, _WriteServiceItem, _WriteDatatableList
 	---------------------------------------------------------------------------	*/
 
-namespace clickclickboom.machinaX.blogX.cmsX {
+namespace XXBoom.MachinaX.BlogX.CmsX {
 
 	using System;
 	using System.Xml;

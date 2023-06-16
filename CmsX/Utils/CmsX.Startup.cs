@@ -17,12 +17,12 @@
 	20161017:	Added virtual to Start methods
 	---------------------------------------------------------------------------	*/
 
-namespace clickclickboom.machinaX.blogX.cmsX {
+namespace XXBoom.MachinaX.BlogX.CmsX {
 
 	using System;
 	using System.Web;
 	using System.Xml;
-	using clickclickboom.machinaX.blogX.templateX;
+	using XXBoom.MachinaX.BlogX.TemplateX;
 	
 	public class CmsXStartup {
 

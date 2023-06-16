@@ -17,7 +17,7 @@ using System.Xml;
 	20121106:	Started
 	---------------------------------------------------------------------------	*/
 
-namespace clickclickboom.machinaX.blogX.cmsX {
+namespace XXBoom.MachinaX.BlogX.CmsX {
     /// <summary>
     /// This is a utility class to encapsulte profile and other functionality related to a user.
     /// Typically this class is created within brokers and the display classes

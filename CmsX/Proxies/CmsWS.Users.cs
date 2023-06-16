@@ -17,7 +17,7 @@
 	20111025:	Renamed to Users
 	---------------------------------------------------------------------------	*/
 
-namespace clickclickboom.machinaX.blogX.cmsX {
+namespace XXBoom.MachinaX.BlogX.CmsX {
 	/// <summary>
 	/// This class is a functional wrapper of the judging web service
 	/// </summary>

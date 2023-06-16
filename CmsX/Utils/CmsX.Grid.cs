@@ -15,7 +15,7 @@
 	20151223:	Renamed CmsXCsv to CmsXExport
 	---------------------------------------------------------------------------	*/
 
-namespace clickclickboom.machinaX.blogX.cmsX {
+namespace XXBoom.MachinaX.BlogX.CmsX {
 
 	using System;
 	using System.Xml;

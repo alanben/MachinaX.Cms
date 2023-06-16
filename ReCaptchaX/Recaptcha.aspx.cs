@@ -2,7 +2,7 @@
 using System.Web;
 using System.Xml;
 
-using clickclickboom.machinaX;
+using XXBoom.MachinaX;
 
 /*	-----------------------------------------------------------------------	
 	Copyright:	clickclickBOOM cc
@@ -20,11 +20,11 @@ using clickclickboom.machinaX;
 	20100118:	Starting point from SpoefRecaptchaX
 	-----------------------------------------------------------------------	*/
 
-namespace clickclickboom.machinaX.recaptchaX {
+namespace XXBoom.MachinaX.ReCaptchaX {
 	/// <summary>This class provides the code-behind for an ajax aspx page returning an xml result</summary>
 	public class RecaptchaAjaxX : System.Web.UI.Page {
-		#region Invisible properties
-		private XmlDocument recaptchaXml;
+        #region Invisible properties
+        private XmlDocument recaptchaXml;
 		private x_logger logger;
 		#endregion
 

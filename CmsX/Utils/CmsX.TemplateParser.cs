@@ -14,7 +14,7 @@
 	20160822:	Refactored from LoeriesX
 	---------------------------------------------------------------------------	*/
 
-namespace clickclickboom.machinaX.blogX.cmsX {
+namespace XXBoom.MachinaX.BlogX.CmsX {
 
 	using System;
 	using System.Collections;

@@ -18,7 +18,7 @@
 	20161005:	Try make _GetValue for decimal and double more forgiving
 	---------------------------------------------------------------------------	*/
 
-namespace clickclickboom.machinaX.blogX.cmsX {
+namespace XXBoom.MachinaX.BlogX.CmsX {
 
 	using System;
 	using System.Globalization;

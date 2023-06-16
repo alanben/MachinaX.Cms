@@ -15,9 +15,9 @@
 	20180817:	Changed default keys to non-valid key for error checking of config
 	-----------------------------------------------------------------------	*/
 
-namespace clickclickboom.machinaX.recaptchaX {
+namespace XXBoom.MachinaX.ReCaptchaX {
 
-	using clickclickboom.machinaX;
+	using XXBoom.MachinaX;
 	using Newtonsoft.Json;
 	using System;
 	using System.Net;

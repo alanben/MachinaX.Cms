@@ -20,7 +20,7 @@ using System.Xml.Xsl;
 	20120316:	Refactored from LoeriesAdmin
 	---------------------------------------------------------------------------	*/
 
-namespace clickclickboom.machinaX.blogX.cmsX {
+namespace XXBoom.MachinaX.BlogX.CmsX {
 	/// <summary>
 	/// This class is a functional wrapper of the PassportX web service
 	/// </summary>

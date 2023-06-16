@@ -3,8 +3,8 @@ using System.Xml;
 using Facebook;
 using Microsoft.CSharp.RuntimeBinder;
 
-using clickclickboom.machinaX.emailX;
-using clickclickboom.machinaX.recaptchaX;
+using XXBoom.MachinaX.EmailX;
+using XXBoom.MachinaX.ReCaptchaX;
 
 /*	-----------------------------------------------------------------------	
 	Copyright:	clickclickBOOM cc
@@ -23,7 +23,7 @@ using clickclickboom.machinaX.recaptchaX;
 	20140112:	Refactored constructor
 	---------------------------------------------------------------------------	*/
 
-namespace clickclickboom.machinaX.blogX.cmsX {
+namespace XXBoom.MachinaX.BlogX.CmsX {
     /// <summary>
     /// Description of the class.
     /// <para>Additional information about the class</para>

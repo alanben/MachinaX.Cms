@@ -16,7 +16,7 @@
 	20201012:	Added empty + constructor with no Logger or Userprofile
 	---------------------------------------------------------------------------	*/
 
-namespace clickclickboom.machinaX.blogX.cmsX {
+namespace XXBoom.MachinaX.BlogX.CmsX {
 
 	using System;
 	using log4net;

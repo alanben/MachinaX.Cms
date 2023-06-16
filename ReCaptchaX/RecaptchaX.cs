@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-using clickclickboom.machinaX;
+using XXBoom.MachinaX;
 
 /*	-----------------------------------------------------------------------	
 	Copyright:	clickclickBOOM cc
@@ -20,7 +20,7 @@ using clickclickboom.machinaX;
 	20100118:	Starting point from SpoefRecaptchaX
 	-----------------------------------------------------------------------	*/
 
-namespace clickclickboom.machinaX.recaptchaX {
+namespace XXBoom.MachinaX.ReCaptchaX {
 	/// <summary>This class encapsulates the recaptcha into a simple utility object</summary>
 	public class RecaptchaX {
 		#region Invisible properties

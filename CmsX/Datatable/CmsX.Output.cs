@@ -19,7 +19,7 @@ using Newtonsoft.Json;
 	20140120:	Started
 	---------------------------------------------------------------------------	*/
 
-namespace clickclickboom.machinaX.blogX.cmsX.datatable {
+namespace XXBoom.MachinaX.BlogX.CmsX.datatable {
     /// <summary>
     /// This is a utility class that handles the output of data for jquery.dataTables plugin
     /// </summary>

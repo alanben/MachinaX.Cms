@@ -2,7 +2,7 @@
 using System.Xml;
 
 //using clickclickboom.machinaX;
-//using clickclickboom.machinaX.blogX.cmsX;
+//using XXBoom.MachinaX.BlogX.CmsX;
 
 /*	-----------------------------------------------------------------------	
 	Copyright:	clickclickBOOM cc
@@ -20,7 +20,7 @@ using System.Xml;
 	20111012:	Started
 	---------------------------------------------------------------------------	*/
 
-namespace clickclickboom.machinaX.blogX.cmsX {
+namespace XXBoom.MachinaX.BlogX.CmsX {
     /// <summary>
     /// Class to handle add, edit and delete of Client Defaults.
     /// </summary>

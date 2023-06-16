@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace clickclickboom.machinaX.blogX.cmsX.Properties {
+namespace XXBoom.MachinaX.BlogX.CmsX.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]

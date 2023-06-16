@@ -16,7 +16,7 @@
 	20101218:	Started.
 	---------------------------------------------------------------------------	*/
 
-namespace clickclickboom.machinaX.blogX.cmsX {
+namespace XXBoom.MachinaX.BlogX.CmsX {
 	/// <summary>This class is a functional wrapper of the DisplayXTopics web service</summary>
 	public class Topics : CmsWSBase {
 		#region Private properties

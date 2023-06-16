@@ -20,7 +20,7 @@ using System.Xml.Xsl;
 	20100927:	Renamed to AdminX from Thoughtspacex
 	---------------------------------------------------------------------------	*/
 
-namespace clickclickboom.machinaX.blogX.cmsX {
+namespace XXBoom.MachinaX.BlogX.CmsX {
 	/// <summary>
 	/// This class is a functional wrapper of the AdminX web service
 	/// </summary>

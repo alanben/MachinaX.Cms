@@ -15,9 +15,9 @@
 	20201012:	Added false parameter to generator.XmlToExcel
 	---------------------------------------------------------------------------	*/
 
-namespace clickclickboom.machinaX.blogX.cmsX {
+namespace XXBoom.MachinaX.BlogX.CmsX {
 
-	using clickclickboom.machinaX.generatorX;
+	using XXBoom.MachinaX.GeneratorX;
 	using System;
 	using System.Xml;
 
@@ -29,6 +29,7 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 
 		private const string error_no_error		= "Not an error";
 		private const string error_xlsx			= "CmsXExportXLSX error::";
+
 		private const string error_xlsx_nodata	= " no data supplied: ";
 
 		#region Constructors/Destructors

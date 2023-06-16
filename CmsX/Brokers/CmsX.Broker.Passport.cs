@@ -25,10 +25,10 @@
 	20160601:	Updated send to get default Email values from Config
 	---------------------------------------------------------------------------	*/
 
-namespace clickclickboom.machinaX.blogX.cmsX {
+namespace XXBoom.MachinaX.BlogX.CmsX {
 
-	using clickclickboom.machinaX.emailX;
-	using clickclickboom.machinaX.recaptchaX;
+	using XXBoom.MachinaX.EmailX;
+	using XXBoom.MachinaX.ReCaptchaX;
 	using System;
 	using System.Xml;
 	using System.Xml.Xsl;
@@ -851,7 +851,7 @@ namespace clickclickboom.machinaX.blogX.cmsX {
 		/// <summary>Emails the _User details, including password</summary>
 		private string send(string email) {
 			string sendtext = "";
-			x_email thisemail = new x_email();
+			Utils.x_email thisemail = new Utils.x_email();
 			try {
 				/* originally...
 				thisemail.Bcc = "alan@clickclickBOOM.co.za";

@@ -21,7 +21,7 @@ using System.Xml;
 	20110905:	Replaced Debugger.Spoor with xLogger.Debug
 	---------------------------------------------------------------------------	*/
 
-namespace clickclickboom.machinaX.blogX.cmsX {
+namespace XXBoom.MachinaX.BlogX.CmsX {
 	/// <summary>
 	/// Description of the classX class.
 	/// <para>Additional information about the class</para>

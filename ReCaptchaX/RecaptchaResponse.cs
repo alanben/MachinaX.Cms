@@ -18,7 +18,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-namespace clickclickboom.machinaX.recaptchaX {
+namespace XXBoom.MachinaX.ReCaptchaX {
 	/// <summary>
 	/// Encapsulates a response from reCAPTCHA web service.
 	/// </summary>

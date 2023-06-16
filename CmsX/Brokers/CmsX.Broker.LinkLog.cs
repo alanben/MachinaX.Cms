@@ -17,7 +17,7 @@
 	20140112:	Refactored constructor
 	---------------------------------------------------------------------------	*/
 
-namespace clickclickboom.machinaX.blogX.cmsX {
+namespace XXBoom.MachinaX.BlogX.CmsX {
     /// <summary>
     /// Description of the LoerieAdminCategories class.
     /// <para>Additional information about the class</para>

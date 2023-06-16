@@ -18,7 +18,7 @@ using System.Xml;
 	20140112:	Refactored to derive from CmsXBroker
 	---------------------------------------------------------------------------	*/
 
-namespace clickclickboom.machinaX.blogX.cmsX {
+namespace XXBoom.MachinaX.BlogX.CmsX {
 	/// <summary>
 	/// Base class for brokers that use templates and data in Application / Session memory.
 	/// <para></para>

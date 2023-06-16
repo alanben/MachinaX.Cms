@@ -17,7 +17,7 @@
 	20151223:	Renamed CmsXExport and Refactored for Excel exports
 	-----------------------------------------------------------------------	*/
 
-namespace clickclickboom.machinaX.blogX.cmsX {
+namespace XXBoom.MachinaX.BlogX.CmsX {
 
 	using System;
 	using System.Xml;

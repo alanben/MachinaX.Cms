@@ -13,7 +13,7 @@
 // 
 #pragma warning disable 1591
 
-namespace clickclickboom.machinaX.blogX.cmsX.PassportWS {
+namespace XXBoom.MachinaX.BlogX.CmsX.PassportWS {
     using System;
     using System.Web.Services;
     using System.Diagnostics;
@@ -49,7 +49,7 @@ namespace clickclickboom.machinaX.blogX.cmsX.PassportWS {
         
         /// <remarks/>
         public PassportXPassportServices() {
-            this.Url = global::clickclickboom.machinaX.blogX.cmsX.Properties.Settings.Default.CmsX_2_6_0_PassportWS_PassportX_x0020_Passport_x0020_Services;
+            this.Url = global::XXBoom.MachinaX.BlogX.CmsX.Properties.Settings.Default.CmsX_2_6_0_PassportWS_PassportX_x0020_Passport_x0020_Services;
             if ((this.IsLocalFileSystemWebService(this.Url) == true)) {
                 this.UseDefaultCredentials = true;
                 this.useDefaultCredentialsSetExplicitly = false;

@@ -22,7 +22,7 @@ using System.Xml;
 	20140112:	Refactored constructor
 	---------------------------------------------------------------------------	*/
 
-namespace clickclickboom.machinaX.blogX.cmsX {
+namespace XXBoom.MachinaX.BlogX.CmsX {
 	/// <summary>
 	/// This is the parent class of AdminReader and AdminImporter
     /// </summary>

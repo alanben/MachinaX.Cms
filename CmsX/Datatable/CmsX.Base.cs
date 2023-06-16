@@ -17,7 +17,7 @@ using System.Xml;
 	20140120:	Started
 	---------------------------------------------------------------------------	*/
 
-namespace clickclickboom.machinaX.blogX.cmsX.datatable {
+namespace XXBoom.MachinaX.BlogX.CmsX.datatable {
     /// <summary>
     /// This is the base class to handle data for jquery.dataTables plugin
     /// </summary>

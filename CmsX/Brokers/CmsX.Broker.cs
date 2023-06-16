@@ -17,7 +17,7 @@ using System.Xml;
 	20140112:	Refactored from CmsXBrokerBase
 	---------------------------------------------------------------------------	*/
 
-namespace clickclickboom.machinaX.blogX.cmsX {
+namespace XXBoom.MachinaX.BlogX.CmsX {
 	/// <summary>
 	/// Base class for CmsXBrokers.
 	/// <para></para>

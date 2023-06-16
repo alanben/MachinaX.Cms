@@ -22,7 +22,7 @@ using System.Xml;
 	20140112:	Refactored constructor
 	---------------------------------------------------------------------------	*/
 
-namespace clickclickboom.machinaX.blogX.cmsX {
+namespace XXBoom.MachinaX.BlogX.CmsX {
 	/// <summary>
 	/// Broker class to manage user access to sytem.
 	/// <para>Management of users, profiles and rights</para>

@@ -17,7 +17,7 @@ using System.Xml;
 	20111116:	Started from FoundationX.Admin
 	---------------------------------------------------------------------------	*/
 
-namespace clickclickboom.machinaX.blogX.cmsX {
+namespace XXBoom.MachinaX.BlogX.CmsX {
 	/// <summary>
 	/// Class to handle add, edit and delete of Yyyy SubItems.
 	/// </summary>

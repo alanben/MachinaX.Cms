@@ -5,7 +5,7 @@ using System.Xml;
 
 using log4net;
 //using clickclickboom.machinaX.blogX;
-//using clickclickboom.machinaX.blogX.cmsX;
+//using XXBoom.MachinaX.BlogX.CmsX;
 
 /*	-----------------------------------------------------------------------	
 	Copyright:	clickclickBOOM cc
@@ -23,7 +23,7 @@ using log4net;
 	20111012:	Started
 	---------------------------------------------------------------------------	*/
 
-namespace clickclickboom.machinaX.blogX.cmsX {
+namespace XXBoom.MachinaX.BlogX.CmsX {
 	/// <summary>
     /// This is a utility class to encapsulte functionality related to reading import file contents.
     /// Typically this class is created within brokers and the display classes

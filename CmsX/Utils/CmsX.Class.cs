@@ -14,7 +14,7 @@
 	20100701:	Refactored from LoeriesAdmin
 	---------------------------------------------------------------------------	*/
 
-namespace clickclickboom.machinaX.blogX.cmsX {
+namespace XXBoom.MachinaX.BlogX.CmsX {
     /// <summary>
     /// This is a utility class to encapsulte profile and other functionality related to a xxxx.
     /// Typically this class is created within brokers and the display classes

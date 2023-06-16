@@ -18,7 +18,7 @@ using System.Xml;
 	20140112:	Refactored
 	---------------------------------------------------------------------------	*/
 
-namespace clickclickboom.machinaX.blogX.cmsX {
+namespace XXBoom.MachinaX.BlogX.CmsX {
 	/// <summary>This class is a functional wrapper of the DisplayXLinks web service</summary>
 	public class CmsWSSite : CmsWSBase {
 

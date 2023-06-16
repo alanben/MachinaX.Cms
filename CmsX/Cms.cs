@@ -24,7 +24,7 @@ using clickclickboom.machinaX.blogX;
 	20180903:	Added link constants, some from local broker
 	---------------------------------------------------------------------------	*/
 
-namespace clickclickboom.machinaX.blogX.cmsX {
+namespace XXBoom.MachinaX.BlogX.CmsX {
 
 	/// <summary>Enumeration for style used for list output in proxies</summary>
 	public enum ListOutputStyle {

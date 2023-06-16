@@ -22,7 +22,7 @@ using System.Xml.XPath;
 	20111012:	Started
 	---------------------------------------------------------------------------	*/
 
-namespace clickclickboom.machinaX.blogX.cmsX {
+namespace XXBoom.MachinaX.BlogX.CmsX {
 	/// <summary>
     /// This is a utility class to encapsulte functionality related to the importation of series and data.
     /// Typically this class is created within brokers and the display classes

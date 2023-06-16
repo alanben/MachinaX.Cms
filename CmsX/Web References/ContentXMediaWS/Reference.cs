@@ -13,7 +13,7 @@
 // 
 #pragma warning disable 1591
 
-namespace clickclickboom.machinaX.blogX.cmsX.ContentXMediaWS {
+namespace XXBoom.MachinaX.BlogX.CmsX.ContentXMediaWS {
     using System;
     using System.Web.Services;
     using System.Diagnostics;
@@ -63,7 +63,7 @@ namespace clickclickboom.machinaX.blogX.cmsX.ContentXMediaWS {
         
         /// <remarks/>
         public ContentXMedia() {
-            this.Url = global::clickclickboom.machinaX.blogX.cmsX.Properties.Settings.Default.CmsX_2_6_0_ContentXMediaWS_ContentXMedia;
+            this.Url = global::XXBoom.MachinaX.BlogX.CmsX.Properties.Settings.Default.CmsX_2_6_0_ContentXMediaWS_ContentXMedia;
             if ((this.IsLocalFileSystemWebService(this.Url) == true)) {
                 this.UseDefaultCredentials = true;
                 this.useDefaultCredentialsSetExplicitly = false;
