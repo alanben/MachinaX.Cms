@@ -67,7 +67,7 @@ namespace XXBoom.MachinaX.GeneratorX {
 				//generateXxxxZip(zipname, _CheckWSResult(Service.ListXxxxs(TypeID, Sorting, Descending)), Template);
 
 				xLogger.Debug("GenerateXxxxZipWS:ok");
-			} catch (x_exception e) {
+			} catch (XException e) {
 				_AddError(e);
 			} catch (System.Exception e) {
 				_AddError(e);
@@ -91,7 +91,7 @@ namespace XXBoom.MachinaX.GeneratorX {
 				generateXxxxZip(tok.ToString(), xxxxdoc, Template);
 
 				xLogger.Debug("GenerateXxxxZip:ok");
-			} catch (x_exception e) {
+			} catch (XException e) {
 				_AddError(e);
 			} catch (System.Exception e) {
 				_AddError(e);

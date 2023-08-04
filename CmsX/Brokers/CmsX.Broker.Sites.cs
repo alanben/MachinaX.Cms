@@ -154,10 +154,10 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 				//UserProfile.Add("siteid", site_id);
 				//UIPage.Content.AppendChild(UIPage.Document.ImportNode(_Categories.ItemXmlRootNode, true));
 				Logger.Debug(String.Concat(logid, "get_site:ok"));
-			} catch (x_exception e) {
+			} catch (XException e) {
 				throw e;
 			} catch (Exception e) {
-				throw (new x_exception("error_sites_get", String.Concat(error_sites_get, e.Message)));
+				throw (new XException("error_sites_get", String.Concat(error_sites_get, e.Message)));
 			}
 		}
 
@@ -177,10 +177,10 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 				throw (new displayException(linkStart));
 			} catch (displayException e) {
 				throw e;
-			} catch (x_exception e) {
-				throw (new x_exception("error_site_select", String.Concat(error_site_select, e.Code, " - ", e.Message)));
+			} catch (XException e) {
+				throw (new XException("error_site_select", String.Concat(error_site_select, e.Code, " - ", e.Message)));
 			} catch (Exception e) {
-				throw (new x_exception("error_site_select", String.Concat(error_site_select, e.Message)));
+				throw (new XException("error_site_select", String.Concat(error_site_select, e.Message)));
 			}
 		}
 
@@ -242,12 +242,12 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 				UIPage.Content.AppendChild(UIPage.Document.ImportNode(_Categories.ItemXmlRootNode, true));
 */
 				Logger.Debug(String.Concat(logid, "submit_site:ok"));
-			} catch (x_exception e) {
+			} catch (XException e) {
 				Logger.Debug(String.Concat(logid, "submit_site:xerror:", e.Code, "::", e.Message));
 				throw e;
 			} catch (Exception e) {
 				Logger.Debug(String.Concat(logid, "submit_site:error:", e.Message));
-				throw (new x_exception("error_sites_get", String.Concat(error_sites_get, e.Message)));
+				throw (new XException("error_sites_get", String.Concat(error_sites_get, e.Message)));
 			} finally {
 				UserProfile.Add("site_actions", "");
 			}
@@ -268,10 +268,10 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 				//UserProfile.Add("siteid", site_id);
 				//UIPage.Content.AppendChild(UIPage.Document.ImportNode(_Categories.ItemXmlRootNode, true));
 				Logger.Debug(String.Concat(logid, "delete_site:ok"));
-			} catch (x_exception e) {
+			} catch (XException e) {
 				throw e;
 			} catch (Exception e) {
-				throw (new x_exception("error_sites_get", String.Concat(error_sites_get, e.Message)));
+				throw (new XException("error_sites_get", String.Concat(error_sites_get, e.Message)));
 			}
 		}
 		#endregion

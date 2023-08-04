@@ -161,7 +161,7 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 				case "edit_news_blog_update":	broker = new CmsXBrokerNews(this, siteid);		broker.Process("saveblog");			break;
 				
 				// Tests
-				case "errortest":				throw new x_exception("error_test", "This is an error test");
+				case "errortest":				throw new XException("error_test", "This is an error test");
 				case null:
 				case "": break;
 				// use base broker for default (ie sends email on submission)

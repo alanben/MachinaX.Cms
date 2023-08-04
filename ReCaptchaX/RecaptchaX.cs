@@ -78,18 +78,18 @@ namespace XXBoom.MachinaX.ReCaptchaX {
 				RecaptchaResponse result = validator.Validate();
 
 				if (result.ErrorCode == "incorrect-captcha-sol")
-					throw (new x_exception("error_incorrect", error_incorrect));
+					throw (new XException("error_incorrect", error_incorrect));
 
 				if (result.ErrorCode == "recaptcha-not-reachable")
-					throw (new x_exception("error_unavailable", error_unavailable));
+					throw (new XException("error_unavailable", error_unavailable));
 
 				if (!result.IsValid)
 					throw (new Exception(result.ErrorCode));
 
-			} catch (x_exception e) {
+			} catch (XException e) {
 				throw e;
 			} catch (Exception e) {
-				throw (new x_exception("error_recaptcha", String.Concat(error_recaptcha, e.Message)));
+				throw (new XException("error_recaptcha", String.Concat(error_recaptcha, e.Message)));
 			}
 		}
 		#endregion

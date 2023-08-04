@@ -201,11 +201,11 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 				_Links.List();
 				UIPage.Content.AppendChild(UIPage.Document.ImportNode(_Links.ListXmlRoot, true));
 				xLogger.Debug("list_admin:ok");
-			} catch (x_exception e) {
+			} catch (XException e) {
 				throw e;
 			} catch (Exception e) {
 				xLogger.Debug("list_admin::error_links_list:", e.Message);
-				throw (new x_exception("error_links_list", String.Concat(error_links_list, e.Message)));
+				throw (new XException("error_links_list", String.Concat(error_links_list, e.Message)));
 			}
 		}
 
@@ -266,11 +266,11 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 						xLogger.Debug("list:ok");
 					}
 				}
-			} catch (x_exception e) {
+			} catch (XException e) {
 				throw e;
 			} catch (Exception e) {
 				xLogger.Debug("list::error_links_list:", e.Message);
-				throw (new x_exception("error_links_list", String.Concat(error_links_list, e.Message)));
+				throw (new XException("error_links_list", String.Concat(error_links_list, e.Message)));
 			}
 		}
 		
@@ -292,10 +292,10 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 
 				UIPage.Content.AppendChild(UIPage.Document.ImportNode(_Links.ItemXmlRootNode, true));
 				xLogger.Debug("get:ok");
-			} catch (x_exception e) {
+			} catch (XException e) {
 				throw e;
 			} catch (Exception e) {
-				throw (new x_exception("error_link_get", String.Concat(error_link_get, e.Message)));
+				throw (new XException("error_link_get", String.Concat(error_link_get, e.Message)));
 			}
 		}
 
@@ -308,10 +308,10 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 
 				UIPage.Content.AppendChild(UIPage.Document.ImportNode(_Links.ItemXmlRootNode, true));
 				xLogger.Debug("getflags:ok");
-			} catch (x_exception e) {
+			} catch (XException e) {
 				throw e;
 			} catch (Exception e) {
-				throw (new x_exception("error_link_get", String.Concat(error_link_get, e.Message)));
+				throw (new XException("error_link_get", String.Concat(error_link_get, e.Message)));
 			}
 		}
 
@@ -339,10 +339,10 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 
 				UIPage.Content.AppendChild(UIPage.Document.ImportNode(_Links.ItemXmlRootNode, true));
 				xLogger.Debug("getblogs:ok");
-			} catch (x_exception e) {
+			} catch (XException e) {
 				throw e;
 			} catch (Exception e) {
-				throw (new x_exception("error_link_get", String.Concat(error_link_get, e.Message)));
+				throw (new XException("error_link_get", String.Concat(error_link_get, e.Message)));
 			}
 		}
 
@@ -355,10 +355,10 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 
 				UIPage.Content.AppendChild(UIPage.Document.ImportNode(_Links.ItemXmlRootNode, true));
 				xLogger.Debug("getlinks:ok");
-			} catch (x_exception e) {
+			} catch (XException e) {
 				throw e;
 			} catch (Exception e) {
-				throw (new x_exception("error_link_get", String.Concat(error_link_get, e.Message)));
+				throw (new XException("error_link_get", String.Concat(error_link_get, e.Message)));
 			}
 		}
 
@@ -371,10 +371,10 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 
 				UIPage.Content.AppendChild(UIPage.Document.ImportNode(_Links.ItemXmlRootNode, true));
 				xLogger.Debug("gethints:ok");
-			} catch (x_exception e) {
+			} catch (XException e) {
 				throw e;
 			} catch (Exception e) {
-				throw (new x_exception("error_link_get", String.Concat(error_link_get, e.Message)));
+				throw (new XException("error_link_get", String.Concat(error_link_get, e.Message)));
 			}
 		}
 
@@ -387,10 +387,10 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 
 				UIPage.Content.AppendChild(UIPage.Document.ImportNode(_Links.ItemXmlRootNode, true));
 				xLogger.Debug("getpages:ok");
-			} catch (x_exception e) {
+			} catch (XException e) {
 				throw e;
 			} catch (Exception e) {
-				throw (new x_exception("error_link_get", String.Concat(error_link_get, e.Message)));
+				throw (new XException("error_link_get", String.Concat(error_link_get, e.Message)));
 			}
 		}
 
@@ -421,10 +421,10 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 				}
 
 				xLogger.Debug("getblog:ok");
-			} catch (x_exception e) {
+			} catch (XException e) {
 				throw e;
 			} catch (Exception e) {
-				throw (new x_exception("error_link_blog", String.Concat(error_link_blog, e.Message)));
+				throw (new XException("error_link_blog", String.Concat(error_link_blog, e.Message)));
 			}
 		}
 
@@ -445,10 +445,10 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 				xLogger.Debug("saveblog::finished:ok");
 
 				xLogger.Debug("saveblog:ok");
-			} catch (x_exception e) {
+			} catch (XException e) {
 				throw e;
 			} catch (Exception e) {
-				throw (new x_exception("error_link_blog", String.Concat(error_link_blog, e.Message)));
+				throw (new XException("error_link_blog", String.Concat(error_link_blog, e.Message)));
 			}
 		}
 
@@ -484,10 +484,10 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 				}
 
 				xLogger.Debug("getpage:ok");
-			} catch (x_exception e) {
+			} catch (XException e) {
 				throw e;
 			} catch (Exception e) {
-				throw (new x_exception("error_link_page", String.Concat(error_link_page, e.Message)));
+				throw (new XException("error_link_page", String.Concat(error_link_page, e.Message)));
 			}
 		}
 
@@ -511,10 +511,10 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 
 				_Links.SaveLinkFileXml(linkid, pgid, xml);
 				xLogger.Debug("savepage::finished:ok");
-			} catch (x_exception e) {
+			} catch (XException e) {
 				throw e;
 			} catch (Exception e) {
-				throw (new x_exception("error_link_page", String.Concat(error_link_page, e.Message)));
+				throw (new XException("error_link_page", String.Concat(error_link_page, e.Message)));
 			}
 		}
 
@@ -524,10 +524,10 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 				xLogger.Info("select:");
 
 				xLogger.Debug("select:ok");
-			} catch (x_exception e) {
-				throw (new x_exception("error_link_select", String.Concat(error_link_select, e.Code, " - ", e.Message)));
+			} catch (XException e) {
+				throw (new XException("error_link_select", String.Concat(error_link_select, e.Code, " - ", e.Message)));
 			} catch (Exception e) {
-				throw (new x_exception("error_link_select", String.Concat(error_link_select, e.Message)));
+				throw (new XException("error_link_select", String.Concat(error_link_select, e.Message)));
 			}
 		}
 
@@ -580,12 +580,12 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 
 				get(linkid);
 				xLogger.Debug("submit:ok");
-			} catch (x_exception e) {
+			} catch (XException e) {
 				xLogger.Debug("submit:xerror:", e.Code, "::", e.Message);
 				throw e;
 			} catch (Exception e) {
 				xLogger.Debug("submit:error:", e.Message);
-				throw (new x_exception("error_link_submit", String.Concat(error_link_submit, e.Message)));
+				throw (new XException("error_link_submit", String.Concat(error_link_submit, e.Message)));
 			} finally {
 				UserProfile.Add("link_actions", "");
 			}
@@ -891,10 +891,10 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 				_Links.DeleteLink(link_id);
 				
 				xLogger.Debug("delete_link:ok");
-			} catch (x_exception e) {
+			} catch (XException e) {
 				throw e;
 			} catch (Exception e) {
-				throw (new x_exception("error_link_delete", String.Concat(error_link_delete, e.Message)));
+				throw (new XException("error_link_delete", String.Concat(error_link_delete, e.Message)));
 			}
 		}
 		#endregion
@@ -907,11 +907,11 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 				_Links.ListGroups();
 				UIPage.Content.AppendChild(UIPage.Document.ImportNode(_Links.ListXmlRoot, true));
 				xLogger.Debug("groups:ok");
-			} catch (x_exception e) {
+			} catch (XException e) {
 				throw e;
 			} catch (Exception e) {
 				xLogger.Debug("groups::error_links_list:", e.Message);
-				throw (new x_exception("error_links_list", String.Concat(error_links_list, e.Message)));
+				throw (new XException("error_links_list", String.Concat(error_links_list, e.Message)));
 			}
 		}
 		/// <summary>Get list of flags</summary>
@@ -921,11 +921,11 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 				_Links.ListFlags();
 				UIPage.Content.AppendChild(UIPage.Document.ImportNode(_Links.ListXmlRoot, true));
 				xLogger.Debug("flags:ok");
-			} catch (x_exception e) {
+			} catch (XException e) {
 				throw e;
 			} catch (Exception e) {
 				xLogger.Debug("list::error_links_list:", e.Message);
-				throw (new x_exception("error_links_list", String.Concat(error_links_list, e.Message)));
+				throw (new XException("error_links_list", String.Concat(error_links_list, e.Message)));
 			}
 		}
 		/// <summary>Get list of pages</summary>
@@ -935,11 +935,11 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 				_Links.ListFiles();
 				UIPage.Content.AppendChild(UIPage.Document.ImportNode(_Links.ListXmlRoot, true));
 				xLogger.Debug("pages:ok");
-			} catch (x_exception e) {
+			} catch (XException e) {
 				throw e;
 			} catch (Exception e) {
 				xLogger.Debug("list::error_links_list:", e.Message);
-				throw (new x_exception("error_links_list", String.Concat(error_links_list, e.Message)));
+				throw (new XException("error_links_list", String.Concat(error_links_list, e.Message)));
 			}
 		}
 		#endregion

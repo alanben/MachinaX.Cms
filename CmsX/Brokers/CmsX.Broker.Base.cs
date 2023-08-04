@@ -293,7 +293,7 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
                         clientFileExt = clientFileName.Substring(clientFileName.LastIndexOf("."));
                         //logger.Debug(String.Concat(logid, "_fileUpload::clientFileExt", clientFileExt));
                         if (validFileExtensions.IndexOf(clientFileExt) < 0)
-                            throw (new x_exception("error_fileup", String.Concat("error_fileup: fileUpload(): Invalid file extension ")));
+                            throw (new XException("error_fileup", String.Concat("error_fileup: fileUpload(): Invalid file extension ")));
                     }
                     // Create a new file name.
                     filename = UIPage.Server.MapPath(String.Concat("temp/", Guid.NewGuid().ToString(), "-", DateTime.Now.Ticks.ToString(), ".txt"));
@@ -306,7 +306,7 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
                 }
                 xLogger.Debug("fileUpload:", files[0]);
             } catch (Exception e) {
-                throw (new x_exception("error_fileup", String.Concat("error_fileup", e.Message, " - ", e.StackTrace)));
+                throw (new XException("error_fileup", String.Concat("error_fileup", e.Message, " - ", e.StackTrace)));
                 //return null;
             }
             return files;
@@ -522,13 +522,13 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 						delete(); 
 						break;
 				}
-			} catch (x_exception e) {
+			} catch (XException e) {
 				throw e;
 			} catch (Exception e) {
 				XmlNode entry = UIPage.Document.CreateElement(Cms.SERVICEX) as XmlNode;
 				entry.InnerText = e.Message;
 				UIPage.Content.AppendChild(entry);
-				throw (new x_exception("error_grid_edit", String.Concat(error_grid_edit, e.Message)));
+				throw (new XException("error_grid_edit", String.Concat(error_grid_edit, e.Message)));
 			}
 		}
 		/// <summary>NB: Override in implementaiton broker</summary>
@@ -674,7 +674,7 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 
 			try {
 				if (String.IsNullOrEmpty(token)) {
-					throw (new x_exception("error_token_null", "Token is null"));
+					throw (new XException("error_token_null", "Token is null"));
 				} else {
 					if (WantCmsAuth) {
 						_AdminX.Validate(token);
@@ -683,7 +683,7 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 						_PassportX.ValidateToken(token, _User.Remember);
 					}
 				}
-			} catch (x_exception e) {
+			} catch (XException e) {
 				xLogger.Info("_doValidation:", Cms.PROFILE_TOKEN, ":", UserProfile.Value(Cms.PROFILE_TOKEN), ":invalid::", e.Code, "::message:", e.Message);
 				return false;
 			}
@@ -697,10 +697,10 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 				validation.LoadXml(FORMAT_RESULT_XML);
 				UIPage.Content.AppendChild(UIPage.Document.ImportNode(validation.DocumentElement as XmlNode, true));
 				xLogger.Debug("validate:ok");
-			} catch (x_exception e) {
+			} catch (XException e) {
 				throw e;
 			} catch (Exception e) {
-				throw (new x_exception("error_validate", String.Concat(error_validate, e.Message)));
+				throw (new XException("error_validate", String.Concat(error_validate, e.Message)));
 			}
 		}
 		#endregion

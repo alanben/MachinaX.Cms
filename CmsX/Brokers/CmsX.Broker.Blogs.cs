@@ -255,11 +255,11 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 						xLogger.Debug("list:ok");
 					}
 				}
-			} catch (x_exception e) {
+			} catch (XException e) {
 				throw e;
 			} catch (Exception e) {
 				xLogger.Debug("list::error_blogs_list:", e.Message);
-				throw (new x_exception("error_blogs_list", String.Concat(error_blogs_list, e.Message)));
+				throw (new XException("error_blogs_list", String.Concat(error_blogs_list, e.Message)));
 			}
 		}
 		
@@ -269,10 +269,10 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 				getBlogQuery();
 				UIPage.Content.AppendChild(UIPage.Document.ImportNode(_Blogs.ItemXmlRootNode, true));
 				xLogger.Debug("get:ok");
-			} catch (x_exception e) {
+			} catch (XException e) {
 				throw e;
 			} catch (Exception e) {
-				throw (new x_exception("error_blogs_get", String.Concat(error_blogs_get, e.Message)));
+				throw (new XException("error_blogs_get", String.Concat(error_blogs_get, e.Message)));
 			}
 		}
 
@@ -288,10 +288,10 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 
 				UIPage.Content.AppendChild(UIPage.Document.ImportNode(_Blogs.ItemXmlRootNode, true));
 				xLogger.Debug("gettopics:ok");
-			} catch (x_exception e) {
+			} catch (XException e) {
 				throw e;
 			} catch (Exception e) {
-				throw (new x_exception("error_blogs_get", String.Concat(error_blogs_get, e.Message)));
+				throw (new XException("error_blogs_get", String.Concat(error_blogs_get, e.Message)));
 			}
 		}
 
@@ -307,10 +307,10 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 
 				UIPage.Content.AppendChild(UIPage.Document.ImportNode(_Blogs.ItemXmlRootNode, true));
 				xLogger.Debug("gettopics:ok");
-			} catch (x_exception e) {
+			} catch (XException e) {
 				throw e;
 			} catch (Exception e) {
-				throw (new x_exception("error_blogs_get", String.Concat(error_blogs_get, e.Message)));
+				throw (new XException("error_blogs_get", String.Concat(error_blogs_get, e.Message)));
 			}
 		}
 
@@ -320,10 +320,10 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 				xLogger.Info("select:");
 
 				xLogger.Debug("select:ok");
-			} catch (x_exception e) {
-				throw (new x_exception("error_blogs_select", String.Concat(error_blogs_select, e.Code, " - ", e.Message)));
+			} catch (XException e) {
+				throw (new XException("error_blogs_select", String.Concat(error_blogs_select, e.Code, " - ", e.Message)));
 			} catch (Exception e) {
-				throw (new x_exception("error_blogs_select", String.Concat(error_blogs_select, e.Message)));
+				throw (new XException("error_blogs_select", String.Concat(error_blogs_select, e.Message)));
 			}
 		}
 
@@ -377,12 +377,12 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 				handleHistory("1_record_", space, topic, blogi, is_new);
 
 				xLogger.Debug("submit:ok");
-			} catch (x_exception e) {
+			} catch (XException e) {
 				xLogger.Debug("submit:xerror:", e.Code, "::", e.Message);
 				throw e;
 			} catch (Exception e) {
 				xLogger.Debug("submit:error:", e.Message);
-				throw (new x_exception("error_blogs_submit", String.Concat(error_blogs_submit, e.Message)));
+				throw (new XException("error_blogs_submit", String.Concat(error_blogs_submit, e.Message)));
 			} finally {
 				UserProfile.Add("blog_actions", "");
 			}
@@ -481,10 +481,10 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 				_Blogs.DeleteBlog(blogSpace, blogTopic, blogBlog);
 
 				xLogger.Debug("delete_blog:ok");
-			} catch (x_exception e) {
+			} catch (XException e) {
 				throw e;
 			} catch (Exception e) {
-				throw (new x_exception("error_blogs_delete", String.Concat(error_blogs_delete, e.Message)));
+				throw (new XException("error_blogs_delete", String.Concat(error_blogs_delete, e.Message)));
 			}
 		}
 
@@ -509,10 +509,10 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 				}
 
 				xLogger.Debug("getblog:ok");
-			} catch (x_exception e) {
+			} catch (XException e) {
 				throw e;
 			} catch (Exception e) {
-				throw (new x_exception("error_blogs_blog", String.Concat(error_blogs_blog, e.Message)));
+				throw (new XException("error_blogs_blog", String.Concat(error_blogs_blog, e.Message)));
 			}
 		}
 
@@ -532,10 +532,10 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 				xLogger.Debug("saveblog::finished:ok");
 
 				xLogger.Debug("saveblog:ok");
-			} catch (x_exception e) {
+			} catch (XException e) {
 				throw e;
 			} catch (Exception e) {
-				throw (new x_exception("error_blogs_blog", String.Concat(error_blogs_blog, e.Message)));
+				throw (new XException("error_blogs_blog", String.Concat(error_blogs_blog, e.Message)));
 			}
 		}
 
@@ -557,10 +557,10 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 				}
 
 				xLogger.Debug("getcomment:ok");
-			} catch (x_exception e) {
+			} catch (XException e) {
 				throw e;
 			} catch (Exception e) {
-				throw (new x_exception("error_blogs_blog", String.Concat(error_blogs_blog, e.Message)));
+				throw (new XException("error_blogs_blog", String.Concat(error_blogs_blog, e.Message)));
 			}
 		}
 		#endregion
@@ -576,11 +576,11 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 				xLogger.Debug("spacetopics:", ":_Spaces.ListXmlRoot:", _Spaces.ListXmlRoot.OuterXml);
 				UIPage.Content.AppendChild(UIPage.Document.ImportNode(_Spaces.ListXmlRoot, true));
 				xLogger.Debug("spacetopics:ok");
-			} catch (x_exception e) {
+			} catch (XException e) {
 				throw e;
 			} catch (Exception e) {
 				xLogger.Debug("spacetopics::error_blogs_list:", e.Message);
-				throw (new x_exception("error_blogs_list", String.Concat(error_blogs_list, e.Message)));
+				throw (new XException("error_blogs_list", String.Concat(error_blogs_list, e.Message)));
 			}
 		}
 		#endregion

@@ -235,11 +235,11 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 						xLogger.Debug("list:ok");
 					}
 				}
-			} catch (x_exception e) {
+			} catch (XException e) {
 				throw e;
 			} catch (Exception e) {
 				xLogger.Debug("list::error_yyyy_list:", e.Message);
-				throw (new x_exception("error_yyyy_list", String.Concat(error_yyyy_list, e.Message)));
+				throw (new XException("error_yyyy_list", String.Concat(error_yyyy_list, e.Message)));
 			}
 		}
 		
@@ -254,10 +254,10 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 
 				//UIPage.Content.AppendChild(UIPage.Document.ImportNode(_YyyyWS.ItemXmlRootNode, true));
 				xLogger.Debug("get:ok");
-			} catch (x_exception e) {
+			} catch (XException e) {
 				throw e;
 			} catch (Exception e) {
-				throw (new x_exception("error_yyyy_get", String.Concat(error_yyyy_get, e.Message)));
+				throw (new XException("error_yyyy_get", String.Concat(error_yyyy_get, e.Message)));
 			}
 		}
 
@@ -267,10 +267,10 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 				xLogger.Info("select:");
 
 				xLogger.Debug("select:ok");
-			} catch (x_exception e) {
-				throw (new x_exception("error_yyyy_select", String.Concat(error_yyyy_select, e.Code, " - ", e.Message)));
+			} catch (XException e) {
+				throw (new XException("error_yyyy_select", String.Concat(error_yyyy_select, e.Code, " - ", e.Message)));
 			} catch (Exception e) {
-				throw (new x_exception("error_yyyy_select", String.Concat(error_yyyy_select, e.Message)));
+				throw (new XException("error_yyyy_select", String.Concat(error_yyyy_select, e.Message)));
 			}
 		}
 
@@ -295,12 +295,12 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 				handleSubItems("0_record_", yyyy_id.ToString(), is_new);
 
 				xLogger.Debug("submit:ok");
-			} catch (x_exception e) {
+			} catch (XException e) {
 				xLogger.Debug("submit:xerror:", e.Code, "::", e.Message);
 				throw e;
 			} catch (Exception e) {
 				xLogger.Debug("submit:error:", e.Message);
-				throw (new x_exception("error_yyyy_submit", String.Concat(error_yyyy_submit, e.Message)));
+				throw (new XException("error_yyyy_submit", String.Concat(error_yyyy_submit, e.Message)));
 			} finally {
 				UserProfile.Add("yyyy_actions", "");
 			}
@@ -366,10 +366,10 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 				xLogger.Info("delete_yyyy:");
 
 				xLogger.Debug("delete_yyyy:ok");
-			} catch (x_exception e) {
+			} catch (XException e) {
 				throw e;
 			} catch (Exception e) {
-				throw (new x_exception("error_yyyy_delete", String.Concat(error_yyyy_delete, e.Message)));
+				throw (new XException("error_yyyy_delete", String.Concat(error_yyyy_delete, e.Message)));
 			}
 		}
 		#endregion
@@ -382,11 +382,11 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 				_Upload();
 				UserProfile.Add(PROFILE_PROCESSED_FLAG, "no");
 				xLogger.Debug("upload:ok");
-			} catch (x_exception e) {
+			} catch (XException e) {
 				throw e;
 			} catch (Exception e) {
 				xLogger.Debug("upload:error::", e.Message, ":trace:", e.StackTrace);
-				throw (new x_exception("error_yyyy_upload", String.Concat(error_yyyy_upload, e.Message)));
+				throw (new XException("error_yyyy_upload", String.Concat(error_yyyy_upload, e.Message)));
 			}
 		}
 
@@ -406,10 +406,10 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 
 				UIPage.Content.AppendChild(UIPage.Document.ImportNode(list, true));
 				xLogger.Debug("upload_list", "::finished:ok");
-			} catch (x_exception e) {
+			} catch (XException e) {
 				throw e;
 			} catch (Exception e) {
-				throw (new x_exception("error_yyyy_upload_list", String.Concat(error_yyyy_upload_list, e.Message)));
+				throw (new XException("error_yyyy_upload_list", String.Concat(error_yyyy_upload_list, e.Message)));
 			}
 		}
 
@@ -423,11 +423,11 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 
 				UIPage.Content.AppendChild(UIPage.Document.ImportNode(_Yyyys.ListXmlRoot, true));
 				xLogger.Debug("defaults:ok");
-			} catch (x_exception e) {
+			} catch (XException e) {
 				throw e;
 			} catch (Exception e) {
 				xLogger.Debug("defaults", "::error_yyyy_upload_list:", e.Message);
-				throw (new x_exception("error_yyyy_upload_list", String.Concat(error_yyyy_upload_list, e.Message)));
+				throw (new XException("error_yyyy_upload_list", String.Concat(error_yyyy_upload_list, e.Message)));
 			}
 		}
 
@@ -464,10 +464,10 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 				XmlNode items = UIPage.Content.AppendChild(UIPage.Document.CreateElement("items"));
 				items.AppendChild(UIPage.Document.ImportNode(yyyy, true));
 				xLogger.Debug("upload_get:ok");
-			} catch (x_exception e) {
+			} catch (XException e) {
 				throw e;
 			} catch (Exception e) {
-				throw (new x_exception("error_import_get", String.Concat(error_yyyy_upload_get, e.Message)));
+				throw (new XException("error_import_get", String.Concat(error_yyyy_upload_get, e.Message)));
 			}
 		}
 
@@ -510,12 +510,12 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 				items.AppendChild(UIPage.Document.ImportNode(yyyy, true));
 
 				xLogger.Debug("upload_submit:ok");
-			} catch (x_exception e) {
+			} catch (XException e) {
 				xLogger.Debug("upload_submit", "::xerror:", e.Code, "::", e.Message);
 				throw e;
 			} catch (Exception e) {
 				xLogger.Debug("upload_submit", "::error:", e.Message);
-				throw (new x_exception("error_import_upload_submit", String.Concat(error_yyyy_upload_submit, e.Message)));
+				throw (new XException("error_import_upload_submit", String.Concat(error_yyyy_upload_submit, e.Message)));
 			} finally {
 				UserProfile.Add("yyyys_actions", "");
 			}
@@ -566,10 +566,10 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 				listdoc.Save(UploadDocName);
 
 				Logger.Debug("upload_delete:ok");
-			} catch (x_exception e) {
+			} catch (XException e) {
 				throw e;
 			} catch (Exception e) {
-				throw (new x_exception("error_yyyy_upload_delete", String.Concat(error_yyyy_upload_delete, e.Message)));
+				throw (new XException("error_yyyy_upload_delete", String.Concat(error_yyyy_upload_delete, e.Message)));
 			}
 		}
 
@@ -579,11 +579,11 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 			try {
 				XmlElement list = _Import();
 				xLogger.Debug("import:ok");
-			} catch (x_exception e) {
+			} catch (XException e) {
 				throw e;
 			} catch (Exception e) {
 				xLogger.Debug("import:error::", e.Message, ":trace:", e.StackTrace);
-				throw (new x_exception("error_yyyy_import", String.Concat(error_yyyy_import, e.Message)));
+				throw (new XException("error_yyyy_import", String.Concat(error_yyyy_import, e.Message)));
 			}
 		}
 
@@ -598,10 +598,10 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 
 				UIPage.Content.AppendChild(UIPage.Document.ImportNode(list, true));
 				Logger.Debug(String.Concat(logid, "import_list::finished:ok"));
-			} catch (x_exception e) {
+			} catch (XException e) {
 				throw e;
 			} catch (Exception e) {
-				throw (new x_exception("error_yyyy_import_list", String.Concat(error_yyyy_import_list, e.Message)));
+				throw (new XException("error_yyyy_import_list", String.Concat(error_yyyy_import_list, e.Message)));
 			}
 		}
 

@@ -61,7 +61,7 @@ namespace XXBoom.MachinaX.GeneratorX {
 				Generate(sourceDoc.DocumentElement, TemplateName, tok.ToString(), WantPDF);
 
 				xLogger.Debug("Generate:ok");
-			} catch (x_exception e) {
+			} catch (XException e) {
 				_AddError(e);
 			} catch (System.Exception e) {
 				_AddError(e);
@@ -82,7 +82,7 @@ namespace XXBoom.MachinaX.GeneratorX {
 				Generate(sourceDoc.DocumentElement, TemplateName, FileName, WantPDF);
 
 				xLogger.Debug("GenerateFile:ok");
-			} catch (x_exception e) {
+			} catch (XException e) {
 				_AddError(e);
 			} catch (System.Exception e) {
 				_AddError(e);
@@ -100,7 +100,7 @@ namespace XXBoom.MachinaX.GeneratorX {
 				addOkPdf(Generate(Url, true));
 
 				xLogger.Debug("GeneratePDFfromUrl:ok");
-			} catch (x_exception e) {
+			} catch (XException e) {
 				_AddError(e);
 			} catch (System.Exception e) {
 				_AddError(e);
@@ -124,7 +124,7 @@ namespace XXBoom.MachinaX.GeneratorX {
 				addOkPdf(Generate(Url, true, Filename));
 
 				xLogger.Debug("GeneratePDFFilefromUrl:ok");
-			} catch (x_exception e) {
+			} catch (XException e) {
 				_AddError(e);
 			} catch (System.Exception e) {
 				_AddError(e);
@@ -143,7 +143,7 @@ namespace XXBoom.MachinaX.GeneratorX {
 				addOkPdf(generatePDFfromUrlOptions(Url, true, null, OptionsID));
 
 				xLogger.Debug("GeneratePDFfromUrl:ok");
-			} catch (x_exception e) {
+			} catch (XException e) {
 				_AddError(e);
 			} catch (System.Exception e) {
 				_AddError(e);
@@ -163,7 +163,7 @@ namespace XXBoom.MachinaX.GeneratorX {
 				addOkPdf(generatePDFfromUrlOptions(Url, true, Filename, OptionsID));
 
 				xLogger.Debug("GeneratePDFFilefromUrl:ok");
-			} catch (x_exception e) {
+			} catch (XException e) {
 				_AddError(e);
 			} catch (System.Exception e) {
 				_AddError(e);
@@ -182,7 +182,7 @@ namespace XXBoom.MachinaX.GeneratorX {
 				addOkPdf(generatePDFfromUrlOptions(Url, true, null, OptionsXml));
 
 				xLogger.Debug("GeneratePDFfromUrl:ok");
-			} catch (x_exception e) {
+			} catch (XException e) {
 				_AddError(e);
 			} catch (System.Exception e) {
 				_AddError(e);
@@ -202,7 +202,7 @@ namespace XXBoom.MachinaX.GeneratorX {
 				addOkPdf(generatePDFfromUrlOptions(Url, true, Filename, OptionsXml));
 
 				xLogger.Debug("GeneratePDFFilefromUrl:ok");
-			} catch (x_exception e) {
+			} catch (XException e) {
 				_AddError(e);
 			} catch (System.Exception e) {
 				_AddError(e);

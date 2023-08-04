@@ -73,7 +73,7 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 		/// <param name="thispage">The web application Page object</param>
 		public CmsXBrokerAccess(CmsX thispage) : base(thispage, typeof(CmsXBrokerAccess), logid) {
 			if (_Access == null || _Users == null) {
-				throw new x_exception("error_access", String.Concat(error_access, "_Access or _Users is null"));
+				throw new XException("error_access", String.Concat(error_access, "_Access or _Users is null"));
 			}
 		}
 		#endregion
@@ -123,11 +123,11 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 				Logger.Info(String.Concat(logid, "_user_unlock:token:", result.GetAttribute("Token")));
 				_CustomerWS.UnlockUser(result.GetAttribute("Token"));
 				Logger.Debug(String.Concat(logid, "_user_unlock::finished:ok"));
-			} catch (x_exception e) {
+			} catch (XException e) {
 				throw e;
 			} catch (Exception e) {
 				Logger.Debug(String.Concat(logid, "_user_unlock:error:", e.Message));
-				throw (new x_exception("error_user_unlock", String.Concat(error_user_unlock, e.Message)));
+				throw (new XException("error_user_unlock", String.Concat(error_user_unlock, e.Message)));
 			}
 		}
 		/// <summary>Manage user</summary>
@@ -135,10 +135,10 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 			try {
 				Logger.Info(String.Concat(logid, "_user_manage:"));
 				Logger.Debug(String.Concat(logid, "_user_manage::finished:ok"));
-			} catch (x_exception e) {
+			} catch (XException e) {
 				throw e;
 			} catch (Exception e) {
-				throw (new x_exception("error_user_manage", String.Concat(error_user_manage, e.Message)));
+				throw (new XException("error_user_manage", String.Concat(error_user_manage, e.Message)));
 			}
 		}
 		/// <summary>List admin user</summary>
@@ -157,10 +157,10 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 				UIPage.Content.AppendChild(UIPage.Document.ImportNode(_Access.ListXmlRoot as XmlNode, true));
 
 				Logger.Debug(String.Concat(logid, "user_list_dd::finished:ok"));
-			} catch (x_exception e) {
+			} catch (XException e) {
 				throw e;
 			} catch (Exception e) {
-				throw (new x_exception("error_user_list", String.Concat(error_user_list, e.Message)));
+				throw (new XException("error_user_list", String.Concat(error_user_list, e.Message)));
 			}
 		}
 		/// <summary>List user</summary>
@@ -175,10 +175,10 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 				UIPage.Content.AppendChild(UIPage.Document.ImportNode(_Access.ListXmlRoot as XmlNode, true));
 
 				Logger.Debug(String.Concat(logid, "_user_list::finished:ok"));
-			} catch (x_exception e) {
+			} catch (XException e) {
 				throw e;
 			} catch (Exception e) {
-				throw (new x_exception("error_user_list", String.Concat(error_user_list, e.Message)));
+				throw (new XException("error_user_list", String.Concat(error_user_list, e.Message)));
 			}
 		}
 		/// <summary>Get user</summary>
@@ -191,10 +191,10 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 				UIPage.Content.AppendChild(UIPage.Document.ImportNode(_Access.ItemXmlRootNode, true));
 
 				Logger.Debug(String.Concat(logid, "_user_get::finished:ok"));
-			} catch (x_exception e) {
+			} catch (XException e) {
 				throw e;
 			} catch (Exception e) {
-				throw (new x_exception("error_user_get", String.Concat(error_user_get, e.Message)));
+				throw (new XException("error_user_get", String.Concat(error_user_get, e.Message)));
 			}
 		}
 		/// <summary>Add admin user</summary>
@@ -220,11 +220,11 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 
 				//Logger.Debug(String.Concat(logid, "_user_admin_add::finished:userID:", _Users.ItemID, ":userID:", _Access.ItemID));
 				Logger.Debug(String.Concat(logid, "_user_admin_add::finished:"));
-			} catch (x_exception e) {
+			} catch (XException e) {
 				throw e;
 			} catch (Exception e) {
 				Logger.Debug(String.Concat(logid, "_user_admin_add:error:", e.Message, "::", e.StackTrace));
-				throw (new x_exception("error_user_admin_add", String.Concat(error_user_admin_add, e.Message)));
+				throw (new XException("error_user_admin_add", String.Concat(error_user_admin_add, e.Message)));
 			}
 		}
 		/// <summary>Edit user</summary>
@@ -250,10 +250,10 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 
 
 				Logger.Debug(String.Concat(logid, "_user_admin_edit::finished:ok"));
-			} catch (x_exception e) {
+			} catch (XException e) {
 				throw e;
 			} catch (Exception e) {
-				throw (new x_exception("error_user_admin_edit", String.Concat(error_user_admin_edit, e.Message)));
+				throw (new XException("error_user_admin_edit", String.Concat(error_user_admin_edit, e.Message)));
 			}
 		}
 		/// <summary>Delete user</summary>
@@ -270,10 +270,10 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 				//UIPage.Content.AppendChild(UIPage.Document.ImportNode(_Access.ItemXmlRootNode, true));
 
 				Logger.Debug(String.Concat(logid, "_user_delete::finished:ok"));
-			} catch (x_exception e) {
+			} catch (XException e) {
 				throw e;
 			} catch (Exception e) {
-				throw (new x_exception("error_user_delete", String.Concat(error_user_delete, e.Message)));
+				throw (new XException("error_user_delete", String.Concat(error_user_delete, e.Message)));
 			}
 		}
 		#endregion
@@ -284,10 +284,10 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 			try {
 				Logger.Info(String.Concat(logid, "_profile_manage:"));
 				Logger.Debug(String.Concat(logid, "_profile_manage::finished:ok"));
-			} catch (x_exception e) {
+			} catch (XException e) {
 				throw e;
 			} catch (Exception e) {
-				throw (new x_exception("error_profile_manage", String.Concat(error_profile_manage, e.Message)));
+				throw (new XException("error_profile_manage", String.Concat(error_profile_manage, e.Message)));
 			}
 		}
 		/// <summary>List groups</summary>
@@ -310,10 +310,10 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 				UIPage.Content.AppendChild(UIPage.Document.ImportNode(_Access.ListXmlRoot as XmlNode, true));
 
 				Logger.Debug(String.Concat(logid, "_profile_list::finished:ok"));
-			} catch (x_exception e) {
+			} catch (XException e) {
 				throw e;
 			} catch (Exception e) {
-				throw (new x_exception("error_profile_list", String.Concat(error_profile_list, e.Message)));
+				throw (new XException("error_profile_list", String.Concat(error_profile_list, e.Message)));
 			}
 		}
 		/// <summary>Get group</summary>
@@ -328,10 +328,10 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 				UIPage.Content.AppendChild(UIPage.Document.ImportNode(_Access.ItemXmlRootNode, true));
 
 				Logger.Debug(String.Concat(logid, "_group_get::finished:ok"));
-			} catch (x_exception e) {
+			} catch (XException e) {
 				throw e;
 			} catch (Exception e) {
-				throw (new x_exception("error_group_get", String.Concat(error_profile_get, e.Message)));
+				throw (new XException("error_group_get", String.Concat(error_profile_get, e.Message)));
 			}
 		}
 		/// <summary>Add profile</summary>
@@ -347,11 +347,11 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 				UIPage.Content.AppendChild(UIPage.Document.ImportNode(_Access.ItemXmlRootNode, true));
 
 				Logger.Debug(String.Concat(logid, "_group_add::finished:group:", _Access.ItemID));
-			} catch (x_exception e) {
+			} catch (XException e) {
 				throw e;
 			} catch (Exception e) {
 				Logger.Debug(String.Concat(logid, "_group_add:error:", e.Message, "::", e.StackTrace));
-				throw (new x_exception("error_group_add", String.Concat(error_group_add, e.Message)));
+				throw (new XException("error_group_add", String.Concat(error_group_add, e.Message)));
 			}
 		}
 		/// <summary>Edit profile</summary>
@@ -378,10 +378,10 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 				new AccessRight(xLogger, group_id, _Access).Process(true, "1", UserProfile);
 
 				Logger.Info(String.Concat(logid, "_group_edit:ok."));
-			} catch (x_exception e) {
+			} catch (XException e) {
 				throw e;
 			} catch (Exception e) {
-				throw (new x_exception("error_group_edit", String.Concat(error_group_edit, e.Message)));
+				throw (new XException("error_group_edit", String.Concat(error_group_edit, e.Message)));
 			}
 		}
 		/// <summary>Delete profile</summary>
@@ -395,10 +395,10 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 				////UIPage.Content.AppendChild(UIPage.Document.ImportNode(_Access.ItemXmlRootNode, true));
 
 				Logger.Debug(String.Concat(logid, "_group_delete::finished:ok"));
-			} catch (x_exception e) {
+			} catch (XException e) {
 				throw e;
 			} catch (Exception e) {
-				throw (new x_exception("error_group_delete", String.Concat(error_group_delete, e.Message)));
+				throw (new XException("error_group_delete", String.Concat(error_group_delete, e.Message)));
 			}
 		}
 		/// <summary>Get group rights</summary>
@@ -413,10 +413,10 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 				UIPage.Content.AppendChild(UIPage.Document.ImportNode(_Access.ItemXmlRootNode, true));
 
 				Logger.Debug(String.Concat(logid, "_groupRights_get::finished:ok"));
-			} catch (x_exception e) {
+			} catch (XException e) {
 				throw e;
 			} catch (Exception e) {
-				throw (new x_exception("error_groupRights_get", String.Concat(error_group_rights_get, e.Message)));
+				throw (new XException("error_groupRights_get", String.Concat(error_group_rights_get, e.Message)));
 			}
 		}
 		/// <summary>Edit group rights</summary>
@@ -430,10 +430,10 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 				group_categoriesall("1_record_", groupID);
 
 				Logger.Debug(String.Concat(logid, "_groupRights_edit::finished:ok"));
-			} catch (x_exception e) {
+			} catch (XException e) {
 				throw e;
 			} catch (Exception e) {
-				throw (new x_exception("error_groupRights_edit", String.Concat(error_group_edit, e.Message)));
+				throw (new XException("error_groupRights_edit", String.Concat(error_group_edit, e.Message)));
 			}
 		}
 		/// <summary>List collections</summary>
@@ -456,10 +456,10 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 				UIPage.Content.AppendChild(UIPage.Document.ImportNode(_Access.ListXmlRoot as XmlNode, true));
 
 				Logger.Debug(String.Concat(logid, "_profile_list::finished:ok"));
-			} catch (x_exception e) {
+			} catch (XException e) {
 				throw e;
 			} catch (Exception e) {
-				throw (new x_exception("error_profile_list", String.Concat(error_profile_list, e.Message)));
+				throw (new XException("error_profile_list", String.Concat(error_profile_list, e.Message)));
 			}
 		}
 		/// <summary>Get collection</summary>
@@ -474,10 +474,10 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 				UIPage.Content.AppendChild(UIPage.Document.ImportNode(_Access.ItemXmlRootNode, true));
 
 				Logger.Debug(String.Concat(logid, "_collection_get::finished:ok"));
-			} catch (x_exception e) {
+			} catch (XException e) {
 				throw e;
 			} catch (Exception e) {
-				throw (new x_exception("error_collection_get", String.Concat(error_profile_get, e.Message)));
+				throw (new XException("error_collection_get", String.Concat(error_profile_get, e.Message)));
 			}
 		}
 		/// <summary>Edit Collections</summary>
@@ -495,10 +495,10 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 				collection_usersall("0_record_", collectionID);
 
 				Logger.Debug(String.Concat(logid, "_collection_edit::finished:ok"));
-			} catch (x_exception e) {
+			} catch (XException e) {
 				throw e;
 			} catch (Exception e) {
-				throw (new x_exception("error_collection_edit", String.Concat(error_collection_edit, e.Message)));
+				throw (new XException("error_collection_edit", String.Concat(error_collection_edit, e.Message)));
 			}
 		}
 

@@ -157,11 +157,11 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 				// Output list to csv or content page (for rendering to grid)
 				UIPage.Content.AppendChild(UIPage.Document.ImportNode(_Media.ListXmlRoot, true));
 				xLogger.Debug("list:ok");
-			} catch (x_exception e) {
+			} catch (XException e) {
 				throw e;
 			} catch (Exception e) {
 				xLogger.Debug("list::error_media_list:", e.Message);
-				throw (new x_exception("error_media_list", String.Concat(error_media_list, e.Message)));
+				throw (new XException("error_media_list", String.Concat(error_media_list, e.Message)));
 			}
 		}
 		
@@ -176,10 +176,10 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 
 				UIPage.Content.AppendChild(UIPage.Document.ImportNode(_Media.ItemXmlRootNode, true));
 				xLogger.Debug("get:ok");
-			} catch (x_exception e) {
+			} catch (XException e) {
 				throw e;
 			} catch (Exception e) {
-				throw (new x_exception("error_media_get", String.Concat(error_media_get, e.Message)));
+				throw (new XException("error_media_get", String.Concat(error_media_get, e.Message)));
 			}
 		}
 
@@ -189,10 +189,10 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 				xLogger.Info("select:");
 
 				xLogger.Debug("select:ok");
-			} catch (x_exception e) {
-				throw (new x_exception("error_media_select", String.Concat(error_media_select, e.Code, " - ", e.Message)));
+			} catch (XException e) {
+				throw (new XException("error_media_select", String.Concat(error_media_select, e.Code, " - ", e.Message)));
 			} catch (Exception e) {
-				throw (new x_exception("error_media_select", String.Concat(error_media_select, e.Message)));
+				throw (new XException("error_media_select", String.Concat(error_media_select, e.Message)));
 			}
 		}
 
@@ -217,12 +217,12 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 				}
 
 				xLogger.Debug("submit:ok");
-			} catch (x_exception e) {
+			} catch (XException e) {
 				xLogger.Debug("submit:xerror:", e.Code, "::", e.Message);
 				throw e;
 			} catch (Exception e) {
 				xLogger.Debug("submit:error:", e.Message);
-				throw (new x_exception("error_media_submit", String.Concat(error_media_submit, e.Message)));
+				throw (new XException("error_media_submit", String.Concat(error_media_submit, e.Message)));
 			} finally {
 				UserProfile.Add("media_actions", "");
 			}
@@ -249,10 +249,10 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 				_Media.DeleteMedia(mediaID);
 
 				xLogger.Debug("delete_media:ok");
-			} catch (x_exception e) {
+			} catch (XException e) {
 				throw e;
 			} catch (Exception e) {
-				throw (new x_exception("error_media_delete", String.Concat(error_media_delete, e.Message)));
+				throw (new XException("error_media_delete", String.Concat(error_media_delete, e.Message)));
 			}
 		}
 		#endregion
@@ -280,10 +280,10 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 					UserProfile.Add("MediaDescription", item.GetAttribute("description"));
 				}
 				xLogger.Debug("upload:ok");
-			} catch (x_exception e) {
+			} catch (XException e) {
 				throw e;
 			} catch (Exception e) {
-				throw (new x_exception("error_media_upload", String.Concat(error_media_upload, e.Message)));
+				throw (new XException("error_media_upload", String.Concat(error_media_upload, e.Message)));
 			}
 		}
 
@@ -312,10 +312,10 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 					_Media.UpdateMedia(mediaID, mediaDesc, filename, _ReadToEnd(thisfile.InputStream)); 
 				}
 				xLogger.Debug("doupload:ok");
-			} catch (x_exception e) {
+			} catch (XException e) {
 				throw e;
 			} catch (Exception e) {
-				throw (new x_exception("error_media_upload", String.Concat(error_media_upload, e.Message)));
+				throw (new XException("error_media_upload", String.Concat(error_media_upload, e.Message)));
 			}
 		}
 		#endregion

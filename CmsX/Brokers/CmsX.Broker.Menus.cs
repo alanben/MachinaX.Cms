@@ -210,11 +210,11 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 						xLogger.Debug("list:ok");
 					}
 				}
-			} catch (x_exception e) {
+			} catch (XException e) {
 				throw e;
 			} catch (Exception e) {
 				xLogger.Debug("list::error_menus_list:", e.Message);
-				throw (new x_exception("error_menus_list", String.Concat(error_menus_list, e.Message)));
+				throw (new XException("error_menus_list", String.Concat(error_menus_list, e.Message)));
 			}
 		}
 		
@@ -231,10 +231,10 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 
 				UIPage.Content.AppendChild(UIPage.Document.ImportNode(_Menus.ItemXmlRootNode, true));
 				xLogger.Debug("get:ok");
-			} catch (x_exception e) {
+			} catch (XException e) {
 				throw e;
 			} catch (Exception e) {
-				throw (new x_exception("error_menu_get", String.Concat(error_menu_get, e.Message)));
+				throw (new XException("error_menu_get", String.Concat(error_menu_get, e.Message)));
 			}
 		}
 
@@ -247,10 +247,10 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 
 				UIPage.Content.AppendChild(UIPage.Document.ImportNode(_Menus.ItemXmlRootNode, true));
 				xLogger.Debug("getmenuitems:ok");
-			} catch (x_exception e) {
+			} catch (XException e) {
 				throw e;
 			} catch (Exception e) {
-				throw (new x_exception("error_menu_get", String.Concat(error_menu_get, e.Message)));
+				throw (new XException("error_menu_get", String.Concat(error_menu_get, e.Message)));
 			}
 		}
 
@@ -270,10 +270,10 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 				xLogger.Info("select:");
 
 				xLogger.Debug("select:ok");
-			} catch (x_exception e) {
-				throw (new x_exception("error_menu_select", String.Concat(error_menu_select, e.Code, " - ", e.Message)));
+			} catch (XException e) {
+				throw (new XException("error_menu_select", String.Concat(error_menu_select, e.Code, " - ", e.Message)));
 			} catch (Exception e) {
-				throw (new x_exception("error_menu_select", String.Concat(error_menu_select, e.Message)));
+				throw (new XException("error_menu_select", String.Concat(error_menu_select, e.Message)));
 			}
 		}
 
@@ -318,12 +318,12 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 				handleMenuItems("0_record_", menu_id, is_new);
 
 				xLogger.Debug("submit:ok");
-			} catch (x_exception e) {
+			} catch (XException e) {
 				xLogger.Debug("submit:xerror:", e.Code, "::", e.Message);
 				throw e;
 			} catch (Exception e) {
 				xLogger.Debug("submit:error:", e.Message);
-				throw (new x_exception("error_menu_submit", String.Concat(error_menu_submit, e.Message)));
+				throw (new XException("error_menu_submit", String.Concat(error_menu_submit, e.Message)));
 			} finally {
 				UserProfile.Add("menu_actions", "");
 			}
@@ -490,10 +490,10 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 
 				_Menus.DeleteMenu(menu_id);
 				xLogger.Debug("delete_menu:ok");
-			} catch (x_exception e) {
+			} catch (XException e) {
 				throw e;
 			} catch (Exception e) {
-				throw (new x_exception("error_menu_delete", String.Concat(error_menu_delete, e.Message)));
+				throw (new XException("error_menu_delete", String.Concat(error_menu_delete, e.Message)));
 			}
 		}
 		#endregion
@@ -506,11 +506,11 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 				_Menus.ListProfiles();
 				UIPage.Content.AppendChild(UIPage.Document.ImportNode(_Menus.ListXmlRoot, true));
 				xLogger.Debug("profiles:ok");
-			} catch (x_exception e) {
+			} catch (XException e) {
 				throw e;
 			} catch (Exception e) {
 				xLogger.Debug("profiles::error_menus_list:", e.Message);
-				throw (new x_exception("error_menus_list", String.Concat(error_menus_list, e.Message)));
+				throw (new XException("error_menus_list", String.Concat(error_menus_list, e.Message)));
 			}
 		}
 		#endregion

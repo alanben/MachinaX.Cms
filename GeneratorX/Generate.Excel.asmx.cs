@@ -53,7 +53,7 @@ namespace XXBoom.MachinaX.GeneratorX {
 				AddOk();
 				generateExcel(Data, null, FileName, null, false);
 				xLogger.Debug("Generate:ok");
-			} catch (x_exception e) {
+			} catch (XException e) {
 				_AddError(e);
 			} catch (System.Exception e) {
 				_AddError(e);
@@ -74,7 +74,7 @@ namespace XXBoom.MachinaX.GeneratorX {
 				Generate(ExcelDoc, FileName);
 
 				xLogger.Debug("GenerateXml:ok");
-			} catch (x_exception e) {
+			} catch (XException e) {
 				_AddError(e);
 			} catch (System.Exception e) {
 				_AddError(e);
@@ -94,7 +94,7 @@ namespace XXBoom.MachinaX.GeneratorX {
 				AddOk();
 				generateExcel(Data, Columns, FileName, null, false);
 				xLogger.Debug("GenerateColumns:ok");
-			} catch (x_exception e) {
+			} catch (XException e) {
 				_AddError(e);
 			} catch (System.Exception e) {
 				_AddError(e);
@@ -116,7 +116,7 @@ namespace XXBoom.MachinaX.GeneratorX {
 				GenerateColumns(ExcelDoc, Columns, FileName);
 
 				xLogger.Debug("GenerateColumnsXml:ok");
-			} catch (x_exception e) {
+			} catch (XException e) {
 				_AddError(e);
 			} catch (System.Exception e) {
 				_AddError(e);
@@ -136,7 +136,7 @@ namespace XXBoom.MachinaX.GeneratorX {
 				AddOk();
 				generateExcel(Data, Columns, FileName, null, CreateCSV);
 				xLogger.Debug("XmlToExcel:ok");
-			} catch (x_exception e) {
+			} catch (XException e) {
 				_AddError(e);
 			} catch (System.Exception e) {
 				_AddError(e);
@@ -150,7 +150,7 @@ namespace XXBoom.MachinaX.GeneratorX {
 				AddOk();
 				generateExcel(Data, Columns, FileName, Response, CreateCSV);
 				xLogger.Debug("XmlToExcel:ok");
-			} catch (x_exception e) {
+			} catch (XException e) {
 				_AddError(e);
 			} catch (System.Exception e) {
 				_AddError(e);
@@ -164,7 +164,7 @@ namespace XXBoom.MachinaX.GeneratorX {
 				AddOk();
 				generateExcel(Data, FileName, Response);
 				xLogger.Debug("XmlToExcelSections:ok");
-			} catch (x_exception e) {
+			} catch (XException e) {
 				_AddError(e);
 			} catch (System.Exception e) {
 				_AddError(e);
@@ -201,7 +201,7 @@ namespace XXBoom.MachinaX.GeneratorX {
 				AddNode("filepath", excelfile.FullName);
 			} catch (Exception e) {
 				xLogger.Debug("generateExcel", "::error:", e.Message, "::trace:", e.StackTrace);
-				throw new x_exception("generateExcel", String.Concat("generateExcel", e.Message));
+				throw new XException("generateExcel", String.Concat("generateExcel", e.Message));
 			}
 			xLogger.Debug("generateExcel:ok");
 		}
@@ -476,7 +476,7 @@ namespace XXBoom.MachinaX.GeneratorX {
 			string xpath_nodes = ".//child::*";
 			// Check for data and throw exception so message can be served in popup window
 			if (Data.SelectSingleNode(xpath_nodes) == null)
-				throw new x_exception("error_csv_nodata", String.Concat(error_csv, error_csv_nodata, csvFileName));
+				throw new XException("error_csv_nodata", String.Concat(error_csv, error_csv_nodata, csvFileName));
 
 			string file = (csvFileName == null) ? Guid.NewGuid().ToString() : String.Concat(csvFileName, "-", DateTime.Now.ToShortDateString());
 			uipage.Response.Clear();

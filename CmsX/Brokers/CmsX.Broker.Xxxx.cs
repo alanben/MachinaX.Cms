@@ -185,11 +185,11 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 						xLogger.Debug("list:ok");
 					}
 				}
-			} catch (x_exception e) {
+			} catch (XException e) {
 				throw e;
 			} catch (Exception e) {
 				xLogger.Debug("list::error_zzzs_list:", e.Message);
-				throw (new x_exception("error_zzzs_list", String.Concat(error_zzzs_list, e.Message)));
+				throw (new XException("error_zzzs_list", String.Concat(error_zzzs_list, e.Message)));
 			}
 		}
 		
@@ -204,10 +204,10 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 
 				//UIPage.Content.AppendChild(UIPage.Document.ImportNode(_XxxxWS.ItemXmlRootNode, true));
 				xLogger.Debug("get:ok");
-			} catch (x_exception e) {
+			} catch (XException e) {
 				throw e;
 			} catch (Exception e) {
-				throw (new x_exception("error_zzzs_get", String.Concat(error_zzzs_get, e.Message)));
+				throw (new XException("error_zzzs_get", String.Concat(error_zzzs_get, e.Message)));
 			}
 		}
 
@@ -217,10 +217,10 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 				xLogger.Info("select:");
 
 				xLogger.Debug("select:ok");
-			} catch (x_exception e) {
-				throw (new x_exception("error_zzzs_select", String.Concat(error_zzzs_select, e.Code, " - ", e.Message)));
+			} catch (XException e) {
+				throw (new XException("error_zzzs_select", String.Concat(error_zzzs_select, e.Code, " - ", e.Message)));
 			} catch (Exception e) {
-				throw (new x_exception("error_zzzs_select", String.Concat(error_zzzs_select, e.Message)));
+				throw (new XException("error_zzzs_select", String.Concat(error_zzzs_select, e.Message)));
 			}
 		}
 
@@ -245,12 +245,12 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 				handleSubItems("0_record_", xxx_id.ToString(), is_new);
 
 				xLogger.Debug("submit:ok");
-			} catch (x_exception e) {
+			} catch (XException e) {
 				xLogger.Debug("submit:xerror:", e.Code, "::", e.Message);
 				throw e;
 			} catch (Exception e) {
 				xLogger.Debug("submit:error:", e.Message);
-				throw (new x_exception("error_zzzs_submit", String.Concat(error_zzzs_submit, e.Message)));
+				throw (new XException("error_zzzs_submit", String.Concat(error_zzzs_submit, e.Message)));
 			} finally {
 				UserProfile.Add("xxx_actions", "");
 			}
@@ -316,10 +316,10 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 				xLogger.Info("delete_xxx:");
 
 				xLogger.Debug("delete_xxx:ok");
-			} catch (x_exception e) {
+			} catch (XException e) {
 				throw e;
 			} catch (Exception e) {
-				throw (new x_exception("error_zzzs_delete", String.Concat(error_zzzs_delete, e.Message)));
+				throw (new XException("error_zzzs_delete", String.Concat(error_zzzs_delete, e.Message)));
 			}
 		}
 		#endregion

@@ -49,7 +49,7 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 			string xpath_nodes = ".//child::*";
 			// Check for data and throw exception so message can be served in popup window
 			if (Data.SelectSingleNode(xpath_nodes) == null)
-				throw new x_exception("error_csv_nodata", String.Concat(error_csv, error_csv_nodata, csvFileName));
+				throw new XException("error_csv_nodata", String.Concat(error_csv, error_csv_nodata, csvFileName));
 
 			_UIPage.Response.Clear();
 			_UIPage.Response.ClearHeaders();
@@ -103,7 +103,7 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 			string xpath_nodes = ".//child::*";
 			// Check for data and throw exception so message can be served in popup window
 			if (Data.SelectSingleNode(xpath_nodes) == null)
-				throw new x_exception("error_csv_nodata", String.Concat(error_csv, error_csv_nodata, csvFileName));
+				throw new XException("error_csv_nodata", String.Concat(error_csv, error_csv_nodata, csvFileName));
 
 			string file = (csvFileName == null) ? Guid.NewGuid().ToString() : String.Concat(csvFileName, "-", DateTime.Now.ToShortDateString());
 			_UIPage.Response.Clear();
@@ -215,7 +215,7 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 
 			// Check for data and throw exception so message can be served in popup window
 			if (Data.SelectSingleNode(xpath_nodes) == null)
-				throw new x_exception("error_csv_nodata", String.Concat(error_csv, error_csv_nodata, csvFileName));
+				throw new XException("error_csv_nodata", String.Concat(error_csv, error_csv_nodata, csvFileName));
 
 			_UIPage.Response.Clear();
 			_UIPage.Response.ClearHeaders();

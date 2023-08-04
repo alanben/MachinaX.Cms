@@ -130,10 +130,10 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 				xLogger.Debug("GetMenusXml:::", DisplayX.ListXmlRoot.OuterXml);
 				UIPage.Content.AppendChild(UIPage.Document.ImportNode(DisplayX.ListXmlRoot as XmlNode, true));
 				xLogger.Debug("menus_list::finished:ok");
-			} catch (x_exception e) {
+			} catch (XException e) {
 				throw e;
 			} catch (Exception e) {
-				throw (new x_exception("error_menu_list", String.Concat(error_menu_list, e.Message)));
+				throw (new XException("error_menu_list", String.Concat(error_menu_list, e.Message)));
 			}
 		}
 
@@ -170,10 +170,10 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 				}
 				UIPage.Content.AppendChild(UIPage.Document.ImportNode(DisplayX.ListXmlRoot as XmlNode, true));
 				xLogger.Debug("pages_list::finished:ok");
-			} catch (x_exception e) {
+			} catch (XException e) {
 				throw e;
 			} catch (Exception e) {
-				throw (new x_exception("error_pages_list", String.Concat(error_pages_list, e.Message)));
+				throw (new XException("error_pages_list", String.Concat(error_pages_list, e.Message)));
 			}
 		}
 
@@ -193,10 +193,10 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 				Logger.Debug(String.Concat("_list Parents:Xml::", DisplayX.ItemXmlRoot.OuterXml));
 				UIPage.Content.AppendChild(UIPage.Document.ImportNode(DisplayX.ListXmlRoot as XmlNode, true));
 				xLogger.Debug("parent_list::finished:ok");
-			} catch (x_exception e) {
+			} catch (XException e) {
 				throw e;
 			} catch (Exception e) {
-				throw (new x_exception("error_parent_list", String.Concat(error_parent_list, e.Message)));
+				throw (new XException("error_parent_list", String.Concat(error_parent_list, e.Message)));
 			}
 		}
 		/// <summary>List Thoughtspaces</summary>
@@ -242,10 +242,10 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 				xLogger.Debug("Thoughtspaces_list::xml:::", thoughtspacelistNode.OuterXml);
 				UIPage.Content.AppendChild(UIPage.Document.ImportNode(thoughtspacelistNode, true));
 				xLogger.Debug("Thoughtspaces_list::finished:ok");
-			} catch (x_exception e) {
+			} catch (XException e) {
 				throw e;
 			} catch (Exception e) {
-				throw (new x_exception("error_pages_list", String.Concat(error_pages_list, e.Message)));
+				throw (new XException("error_pages_list", String.Concat(error_pages_list, e.Message)));
 			}
 		}
 		
@@ -264,10 +264,10 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 				UIPage.Content.AppendChild(UIPage.Document.ImportNode(_AdminX.ListXmlRoot, true));
 
 				xLogger.Debug("topics_list::finished:ok");
-			} catch (x_exception e) {
+			} catch (XException e) {
 				throw e;
 			} catch (Exception e) {
-				throw (new x_exception("error_topics_list", String.Concat(error_topics_list, e.Message)));
+				throw (new XException("error_topics_list", String.Concat(error_topics_list, e.Message)));
 			}
 		}
 
@@ -314,10 +314,10 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 				xLogger.Debug("topics_list::xml:::", topiclistNode.OuterXml);
 				UIPage.Content.AppendChild(UIPage.Document.ImportNode(topiclistNode, true));
 				xLogger.Debug("topics_list::finished:ok");
-			} catch (x_exception e) {
+			} catch (XException e) {
 				throw e;
 			} catch (Exception e) {
-				throw (new x_exception("error_topics_list", String.Concat(error_topics_list, e.Message)));
+				throw (new XException("error_topics_list", String.Concat(error_topics_list, e.Message)));
 			}
 		}
 		*/
@@ -334,10 +334,10 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 				xLogger.Debug(" list presspages xml::", thoughtspacelistNode.OuterXml);
 				UIPage.Content.AppendChild(UIPage.Document.ImportNode(thoughtspacelistNode, true));
 				xLogger.Debug("press_pages_list::finished:ok");
-			} catch (x_exception e) {
+			} catch (XException e) {
 				throw e;
 			} catch (Exception e) {
-				throw (new x_exception("error_press_pages_list", String.Concat(error_press_pages_list, e.Message)));
+				throw (new XException("error_press_pages_list", String.Concat(error_press_pages_list, e.Message)));
 			}
 		}
 		/// <summary>List menus</summary>
@@ -400,10 +400,10 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 				UIPage.Content.AppendChild(UIPage.Document.ImportNode(DisplayX.ItemXmlRootNode, true));
 
 				xLogger.Debug("menu_get::finished:ok");
-			} catch (x_exception e) {
+			} catch (XException e) {
 				throw e;
 			} catch (Exception e) {
-				throw (new x_exception("error_menu_get", String.Concat(error_menu_get, e.Message)));
+				throw (new XException("error_menu_get", String.Concat(error_menu_get, e.Message)));
 			}
 		}
 		/* originally (not sure why the foreach??)
@@ -428,10 +428,10 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 				UIPage.Content.AppendChild(UIPage.Document.ImportNode(DisplayX.ItemXmlRootNode, true));
 
 				xLogger.Debug("menu_get::finished:ok");
-			} catch (x_exception e) {
+			} catch (XException e) {
 				throw e;
 			} catch (Exception e) {
-				throw (new x_exception("error_menu_get", String.Concat(error_menu_get, e.Message)));
+				throw (new XException("error_menu_get", String.Concat(error_menu_get, e.Message)));
 			}
 		}
 		*/
@@ -451,10 +451,10 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 
 				xLogger.Debug("press_page_get::finished:ok, XML::", pressNode.OuterXml);
 				return pressNode;
-			} catch (x_exception e) {
+			} catch (XException e) {
 				throw e;
 			} catch (Exception e) {
-				throw (new x_exception("error_press_page_get", String.Concat(error_press_page_get, e.Message)));
+				throw (new XException("error_press_page_get", String.Concat(error_press_page_get, e.Message)));
 			}
 		}
 		/// <summary>Get page</summary>
@@ -485,10 +485,10 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 				UIPage.Content.AppendChild(UIPage.Document.ImportNode(DisplayX.ItemXmlRootNode, true));
 
 				xLogger.Debug("page_get::finished:ok");
-			} catch (x_exception e) {
+			} catch (XException e) {
 				throw e;
 			} catch (Exception e) {
-				throw (new x_exception("error_page_get", String.Concat(error_page_get, e.Message)));
+				throw (new XException("error_page_get", String.Concat(error_page_get, e.Message)));
 			}
 		}
 		/// <summary>Edit page and content</summary>
@@ -505,10 +505,10 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 				xLogger.Debug("pages_Content_Edit: Bloghtml::", bloghtml);
 				_AdminX.EditBlogHtml(thoughtspace, topic, blog, title, bloghtml);
 				xLogger.Debug("pages_content_edit::finished:ok");
-			} catch (x_exception e) {
+			} catch (XException e) {
 				throw e;
 			} catch (Exception e) {
-				throw (new x_exception("error_pages_content_edit", String.Concat(error_pages_content_edit, e.Message)));
+				throw (new XException("error_pages_content_edit", String.Concat(error_pages_content_edit, e.Message)));
 			}
 		}
 		/// <summary>Edit page and content</summary>
@@ -527,10 +527,10 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 				xLogger.Debug("AddPressPage::title:", title, ", Year:", year, ", Month:", month, ", Day:", day);
 				_AdminX.EditBlogPress(thoughtspace, topic, blogID, title, year, month, day);
 				xLogger.Debug("pages_press_edit::finished:ok");
-			} catch (x_exception e) {
+			} catch (XException e) {
 				throw e;
 			} catch (Exception e) {
-				throw (new x_exception("error_pages_content_edit", String.Concat(error_pages_content_edit, e.Message)));
+				throw (new XException("error_pages_content_edit", String.Concat(error_pages_content_edit, e.Message)));
 			}
 		}
 		/// <summary>Add page and content</summary>
@@ -548,10 +548,10 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 				xLogger.Debug("AddPage::PageName:", PageName, "; thoughtspace:", thoughtspace, "; Topic:", topic, ", Blog:", blog);
 				DisplayX.AddPage(PageName, thoughtspace, topic, blog);
 				xLogger.Debug("pages_content_add::finished:ok");
-			} catch (x_exception e) {
+			} catch (XException e) {
 				throw e;
 			} catch (Exception e) {
-				throw (new x_exception("error_pages_content_add", String.Concat(error_pages_content_add, e.Message)));
+				throw (new XException("error_pages_content_add", String.Concat(error_pages_content_add, e.Message)));
 			}
 		}
 		/// <summary>Add press page</summary>
@@ -572,10 +572,10 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 				xLogger.Debug("AddPressPage::title:", title, ", Year:", year, ", Month:", month, ", Day:", day);
 				_AdminX.AddBlogPress(thoughtspace, topic, year, month, day, title, blogtext, bloghtml);
 				xLogger.Debug("pages_press_add:::finished:ok");
-			} catch (x_exception e) {
+			} catch (XException e) {
 				throw e;
 			} catch (Exception e) {
-				throw (new x_exception("error_pages_press_add", String.Concat(error_pages_press_add, e.Message)));
+				throw (new XException("error_pages_press_add", String.Concat(error_pages_press_add, e.Message)));
 			}
 		}
 
@@ -618,11 +618,11 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 
 				string title = _AdminX.ItemXmlRoot.SelectSingleNode(String.Concat("//blogX/Result/blogs/blog[@id='", blogId, "']/title")).InnerText;
 				_AdminX.EditBlogPressContent(thoughtspace, "default", blogId, title, document, "<p>press</p>");
-			} catch (x_exception e) {
+			} catch (XException e) {
 				throw e;
 			} catch (Exception e) {
 				xLogger.Debug("press_upload:error::", e.Message, ":trace:", e.StackTrace);
-				throw (new x_exception("error_press_upload", String.Concat(error_press_upload, e.Message)));
+				throw (new XException("error_press_upload", String.Concat(error_press_upload, e.Message)));
 			}
 		}
 
@@ -638,11 +638,11 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 				}
 				xLogger.Debug("press_view:ok");
 
-			} catch (x_exception e) {
+			} catch (XException e) {
 				throw e;
 			} catch (Exception e) {
 				xLogger.Debug("press_upload:error::", e.Message, ":trace:", e.StackTrace);
-				throw (new x_exception("error_press_upload", String.Concat(error_press_upload, e.Message)));
+				throw (new XException("error_press_upload", String.Concat(error_press_upload, e.Message)));
 			}
 		}
 
@@ -686,11 +686,11 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 				}
 				//profile_users("0_record_", profileID, true);
 				xLogger.Debug("menu_add::finished");
-			} catch (x_exception e) {
+			} catch (XException e) {
 				throw e;
 			} catch (Exception e) {
 				xLogger.Debug("menu_add:error:", e.Message, "::", e.StackTrace);
-				throw (new x_exception("error_menu_add", String.Concat(error_menu_add, e.Message)));
+				throw (new XException("error_menu_add", String.Concat(error_menu_add, e.Message)));
 			}
 		}
 		/// <summary>Delete menu</summary>
@@ -703,10 +703,10 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 				////UIPage.Content.AppendChild(UIPage.Document.ImportNode(_Access.ItemXmlRootNode, true));
 
 				xLogger.Debug("menu_delete::finished:ok");
-			} catch (x_exception e) {
+			} catch (XException e) {
 				throw e;
 			} catch (Exception e) {
-				throw (new x_exception("error_menu_delete", String.Concat(error_menu_delete, e.Message)));
+				throw (new XException("error_menu_delete", String.Concat(error_menu_delete, e.Message)));
 			}
 		}
 		/// <summary>Delete page</summary>
@@ -719,10 +719,10 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 				////UIPage.Content.AppendChild(UIPage.Document.ImportNode(_Access.ItemXmlRootNode, true));
 
 				xLogger.Debug("page_delete::finished:ok");
-			} catch (x_exception e) {
+			} catch (XException e) {
 				throw e;
 			} catch (Exception e) {
-				throw (new x_exception("error_page_delete", String.Concat(error_page_delete, e.Message)));
+				throw (new XException("error_page_delete", String.Concat(error_page_delete, e.Message)));
 			}
 		}
 		/// <summary>Delete press page</summary>
@@ -733,10 +733,10 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 				string thoughtspace = getThoughtspace(); 
 				_AdminX.DeletePress(blogID, thoughtspace);
 				xLogger.Debug("press_page_delete::finished:ok");
-			} catch (x_exception e) {
+			} catch (XException e) {
 				throw e;
 			} catch (Exception e) {
-				throw (new x_exception("error_press_page_delete", String.Concat(error_press_page_delete, e.Message)));
+				throw (new XException("error_press_page_delete", String.Concat(error_press_page_delete, e.Message)));
 			}
 		}
 		/// <summary>Edit menu and menuitems</summary>
@@ -762,10 +762,10 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 				menu_menuitemsall("0_record_", newId);
 
 				xLogger.Debug("menu_menuitems_edit::finished:ok");
-			} catch (x_exception e) {
+			} catch (XException e) {
 				throw e;
 			} catch (Exception e) {
-				throw (new x_exception("error_menu_menuitems_edit", String.Concat(error_menu_menuitems_edit, e.Message)));
+				throw (new XException("error_menu_menuitems_edit", String.Concat(error_menu_menuitems_edit, e.Message)));
 			}
 		}
 		

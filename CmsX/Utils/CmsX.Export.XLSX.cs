@@ -48,7 +48,7 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 			string xpath_nodes = ".//child::*";
 			// Check for data and throw exception so message can be served in popup window
 			if (Data.SelectSingleNode(xpath_nodes) == null) { 
-				throw new x_exception("error_xlsx_nodata", String.Concat(error_xlsx, error_xlsx_nodata, exportFileName));
+				throw new XException("error_xlsx_nodata", String.Concat(error_xlsx, error_xlsx_nodata, exportFileName));
 			}
 			GenerateExcel generator = new GenerateExcel();
 			generator.XmlToExcel(Data, columns, exportFileName, _UIPage.Response, false);

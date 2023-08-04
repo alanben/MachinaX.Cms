@@ -59,7 +59,7 @@ namespace XXBoom.MachinaX.ReCaptchaX {
 				check_recaptcha();
 				Response.ContentType = "text/xml";
 				Response.Write(recaptchaXml.DocumentElement.OuterXml);
-			} catch (x_exception e) {
+			} catch (XException e) {
 				Status = e.Code;
 				Recaptcha.InnerText = e.Message;
 				Response.ContentType = "text/xml";

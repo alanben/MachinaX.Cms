@@ -221,9 +221,9 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 			bool isOK = (code == "0");
 			if (throwException && !isOK) {
 				if (throwCode) {
-					throw (new x_exception(code, desc));
+					throw (new XException(code, desc));
 				} else {
-					throw (new x_exception("error_service", String.Concat(logid, "::code:", code, "::description:", desc)));
+					throw (new XException("error_service", String.Concat(logid, "::code:", code, "::description:", desc)));
 				}
 			}
 			if (throwException) {	// ie configure for extjs handler

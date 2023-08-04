@@ -73,10 +73,10 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 			try {
 
 				xLogger.Debug("get:ok");
-			} catch (x_exception e) {
+			} catch (XException e) {
 				throw e;
 			} catch (Exception e) {
-				throw (new x_exception("error_zzzz_get", String.Concat(error_zzzz_get, e.Message)));
+				throw (new XException("error_zzzz_get", String.Concat(error_zzzz_get, e.Message)));
 			}
 		}
 
@@ -86,10 +86,10 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 			try {
 
 				xLogger.Debug("select:ok");
-			} catch (x_exception e) {
+			} catch (XException e) {
 				throw e;
 			} catch (Exception e) {
-				throw (new x_exception("error_zzzz_select", String.Concat(error_zzzz_select, e.Message)));
+				throw (new XException("error_zzzz_select", String.Concat(error_zzzz_select, e.Message)));
 			}
 		}
 
@@ -99,10 +99,10 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 			try {
 
 				xLogger.Debug("select:ok");
-			} catch (x_exception e) {
+			} catch (XException e) {
 				throw e;
 			} catch (Exception e) {
-				throw (new x_exception("error_zzzz_select", String.Concat(error_zzzz_select, e.Message)));
+				throw (new XException("error_zzzz_select", String.Concat(error_zzzz_select, e.Message)));
 			}
 		}
 
@@ -112,10 +112,10 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 			try {
 
 				xLogger.Debug("remove:ok");
-			} catch (x_exception e) {
+			} catch (XException e) {
 				throw e;
 			} catch (Exception e) {
-				throw (new x_exception("error_zzzz_remove", String.Concat(error_zzzz_remove, e.Message)));
+				throw (new XException("error_zzzz_remove", String.Concat(error_zzzz_remove, e.Message)));
 			}
 		}
 	}

@@ -92,22 +92,22 @@ namespace XXBoom.MachinaX.ReCaptchaX {
 					if (errorcodes != null) {
 						string code = errorcodes.InnerText;
 						if (code == "missing-input-secret" || code == "invalid-input-secret")  {
-							throw (new x_exception("error_unavailable", error_unavailable));
+							throw (new XException("error_unavailable", error_unavailable));
 						} else if (code == "missing-input-response" || code == "invalid-input-response") {
-							throw (new x_exception("error_incorrect", error_incorrect));
+							throw (new XException("error_incorrect", error_incorrect));
 						} else {
 							throw (new Exception(code));
 						}
 					} else {
-						throw (new x_exception("error_unavailable", error_unavailable));
+						throw (new XException("error_unavailable", error_unavailable));
 					}
 				}
 
-			} catch (x_exception e) {
+			} catch (XException e) {
 				throw e;
 			} catch (Exception e) {
 				xLogger.Debug("Check:", "::error:", e.Message);
-				throw (new x_exception("error_unavailable", error_unavailable));
+				throw (new XException("error_unavailable", error_unavailable));
 			}
 		}
 
@@ -124,18 +124,18 @@ namespace XXBoom.MachinaX.ReCaptchaX {
 				RecaptchaResponse result = validator.Validate();
 
 				if (result.ErrorCode == "incorrect-captcha-sol")
-					throw (new x_exception("error_incorrect", error_incorrect));
+					throw (new XException("error_incorrect", error_incorrect));
 
 				if (result.ErrorCode == "recaptcha-not-reachable")
-					throw (new x_exception("error_unavailable", error_unavailable));
+					throw (new XException("error_unavailable", error_unavailable));
 
 				if (!result.IsValid)
 					throw (new Exception(result.ErrorCode));
 
-			} catch (x_exception e) {
+			} catch (XException e) {
 				throw e;
 			} catch (Exception e) {
-				throw (new x_exception("error_recaptcha", String.Concat(error_recaptcha, e.Message)));
+				throw (new XException("error_recaptcha", String.Concat(error_recaptcha, e.Message)));
 			}
 		}
 

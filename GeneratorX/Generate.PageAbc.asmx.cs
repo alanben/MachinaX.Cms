@@ -66,7 +66,7 @@ namespace XXBoom.MachinaX.GeneratorX {
 				AddOk();
 				AddNode("license", _Pdf.License);
 			} 
-			catch(x_exception e)		{_AddError(e);}
+			catch(XException e)		{_AddError(e);}
 			catch(System.Exception e) 	{_AddError(e);}
 			return(Result);
         }
@@ -85,7 +85,7 @@ namespace XXBoom.MachinaX.GeneratorX {
 				Generate(sourceDoc.DocumentElement, TemplateName, tok.ToString(), WantPDF);
 
 				xLogger.Debug("Generate:ok");
-			} catch (x_exception e) {
+			} catch (XException e) {
 				_AddError(e);
 			} catch (System.Exception e) {
 				_AddError(e);
@@ -106,7 +106,7 @@ namespace XXBoom.MachinaX.GeneratorX {
 				Generate(sourceDoc.DocumentElement, TemplateName, FileName, WantPDF);
 
 				xLogger.Debug("GenerateFile:ok");
-			} catch (x_exception e) {
+			} catch (XException e) {
 				_AddError(e);
 			} catch (System.Exception e) {
 				_AddError(e);

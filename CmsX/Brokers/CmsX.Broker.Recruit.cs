@@ -102,11 +102,11 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 					RecaptchaX recapx = new RecaptchaX();
 					recapx.Check(challenge, response, UIPage.Request.UserHostAddress);
 				}
-			} catch (x_exception e) {
+			} catch (XException e) {
 				xLogger.Info("_recaptcha", "::error:", e.Message);
 				throw (new displayException(LINK_RECAPTCHA));
 			} catch (Exception e) {
-				throw (new x_exception("error_recruit_recaptcha", String.Concat(error_recruit_recaptcha, e.Message, " - ", e.StackTrace)));
+				throw (new XException("error_recruit_recaptcha", String.Concat(error_recruit_recaptcha, e.Message, " - ", e.StackTrace)));
 			}
 		}
 
@@ -123,7 +123,7 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 			} catch (WebsiteXPassportException e) {
 				throw e;
 			} catch (Exception e) {
-				throw (new x_exception("error_recruit_add", String.Concat(error_recruit_add, e.Message)));
+				throw (new XException("error_recruit_add", String.Concat(error_recruit_add, e.Message)));
 			}
 		}
 
@@ -139,7 +139,7 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 			} catch (WebsiteXPassportException e) {
 				throw e;
 			} catch (Exception e) {
-				throw (new x_exception("error_recruit_get", String.Concat(error_recruit_get, e.Message)));
+				throw (new XException("error_recruit_get", String.Concat(error_recruit_get, e.Message)));
 			}
 		}
 
@@ -156,9 +156,9 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 				xLogger.Debug("check:ok");
 			} catch (WebsiteXPassportException e) {
 				//throw e;
-				throw (new x_exception("error_recruit_failed", String.Concat(error_recruit_check, e.Message)));
+				throw (new XException("error_recruit_failed", String.Concat(error_recruit_check, e.Message)));
 			} catch (Exception e) {
-				throw (new x_exception("error_recruit_check", String.Concat(error_recruit_check, e.Message)));
+				throw (new XException("error_recruit_check", String.Concat(error_recruit_check, e.Message)));
 			}
 		}
 
@@ -168,10 +168,10 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 			try {
 
 				xLogger.Debug("check:ok");
-			} catch (x_exception e) {
+			} catch (XException e) {
 				throw e;
 			} catch (Exception e) {
-				throw (new x_exception("error_recruit_check", String.Concat(error_recruit_check, e.Message)));
+				throw (new XException("error_recruit_check", String.Concat(error_recruit_check, e.Message)));
 			}
 		}
 
@@ -180,15 +180,15 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 			xLogger.Info("remove:");
 			try {
 				if (!_CustomerWS.DeleteRecruit(recruit.ID)) {
-					throw (new x_exception("error_recruit_failed", String.Concat(error_recruit_check, " not deleted")));
+					throw (new XException("error_recruit_failed", String.Concat(error_recruit_check, " not deleted")));
 				} else {
 					recruit.Reset();
 				}
 				xLogger.Debug("remove:ok");
-			} catch (x_exception e) {
+			} catch (XException e) {
 				throw e;
 			} catch (Exception e) {
-				throw (new x_exception("error_recruit_remove", String.Concat(error_recruit_remove, e.Message)));
+				throw (new XException("error_recruit_remove", String.Concat(error_recruit_remove, e.Message)));
 			}
 		}
 
@@ -204,10 +204,10 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 				recruit.Set(result.first_name, result.middle_name, result.last_name, result.name, result.username, result.id, result.email);
 
 				xLogger.Debug("facebook:ok");
-			} catch (x_exception e) {
+			} catch (XException e) {
 				throw e;
 			} catch (Exception e) {
-				throw (new x_exception("error_recruit_facebook", String.Concat(error_recruit_facebook, e.Message)));
+				throw (new XException("error_recruit_facebook", String.Concat(error_recruit_facebook, e.Message)));
 			}
 		}
 

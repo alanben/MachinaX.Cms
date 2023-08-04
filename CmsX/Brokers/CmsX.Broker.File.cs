@@ -217,11 +217,11 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 						xLogger.Debug("list:ok");
 					}
 				}
-			} catch (x_exception e) {
+			} catch (XException e) {
 				throw e;
 			} catch (Exception e) {
 				xLogger.Debug("list::error_file_list:", e.Message);
-				throw (new x_exception("error_file_list", String.Concat(error_file_list, e.Message)));
+				throw (new XException("error_file_list", String.Concat(error_file_list, e.Message)));
 			}
 		}
 		
@@ -236,10 +236,10 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 
 				UIPage.Content.AppendChild(UIPage.Document.ImportNode(_Files.ItemXmlRootNode, true));
 				xLogger.Debug("get:ok");
-			} catch (x_exception e) {
+			} catch (XException e) {
 				throw e;
 			} catch (Exception e) {
-				throw (new x_exception("error_file_get", String.Concat(error_file_get, e.Message)));
+				throw (new XException("error_file_get", String.Concat(error_file_get, e.Message)));
 			}
 		}
 
@@ -249,10 +249,10 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 				xLogger.Info("select:");
 
 				xLogger.Debug("select:ok");
-			} catch (x_exception e) {
-				throw (new x_exception("error_file_select", String.Concat(error_file_select, e.Code, " - ", e.Message)));
+			} catch (XException e) {
+				throw (new XException("error_file_select", String.Concat(error_file_select, e.Code, " - ", e.Message)));
 			} catch (Exception e) {
-				throw (new x_exception("error_file_select", String.Concat(error_file_select, e.Message)));
+				throw (new XException("error_file_select", String.Concat(error_file_select, e.Message)));
 			}
 		}
 
@@ -276,12 +276,12 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 				}
 
 				xLogger.Debug("submit:ok");
-			} catch (x_exception e) {
+			} catch (XException e) {
 				xLogger.Debug("submit:xerror:", e.Code, "::", e.Message);
 				throw e;
 			} catch (Exception e) {
 				xLogger.Debug("submit:error:", e.Message);
-				throw (new x_exception("error_file_submit", String.Concat(error_file_submit, e.Message)));
+				throw (new XException("error_file_submit", String.Concat(error_file_submit, e.Message)));
 			} finally {
 				UserProfile.Add("file_actions", "");
 			}
@@ -306,10 +306,10 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 				_Files.DeleteFile(Path, fileID);
 
 				xLogger.Debug("delete_file::ok");
-			} catch (x_exception e) {
+			} catch (XException e) {
 				throw e;
 			} catch (Exception e) {
-				throw (new x_exception("error_file_delete", String.Concat(error_file_delete, e.Message)));
+				throw (new XException("error_file_delete", String.Concat(error_file_delete, e.Message)));
 			}
 		}
 		#endregion
@@ -322,11 +322,11 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 				_Files.ListExtensions(DEFAULT_PATH);	// Path?
 				UIPage.Content.AppendChild(UIPage.Document.ImportNode(_Files.ListXmlRoot, true));
 				xLogger.Debug("extensions:ok");
-			} catch (x_exception e) {
+			} catch (XException e) {
 				throw e;
 			} catch (Exception e) {
 				xLogger.Debug("extensions::error_file_list:", e.Message);
-				throw (new x_exception("error_file_list", String.Concat(error_file_list, e.Message)));
+				throw (new XException("error_file_list", String.Concat(error_file_list, e.Message)));
 			}
 		}
 		/// <summary>Get list of paths</summary>
@@ -336,11 +336,11 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 				_Files.ListPaths(DEFAULT_PATH);	// Path?
 				UIPage.Content.AppendChild(UIPage.Document.ImportNode(_Files.ListXmlRoot, true));
 				xLogger.Debug("paths:ok");
-			} catch (x_exception e) {
+			} catch (XException e) {
 				throw e;
 			} catch (Exception e) {
 				xLogger.Debug("paths::error_file_list:", e.Message);
-				throw (new x_exception("error_file_list", String.Concat(error_file_list, e.Message)));
+				throw (new XException("error_file_list", String.Concat(error_file_list, e.Message)));
 			}
 		}
 		#endregion
@@ -370,10 +370,10 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 					UserProfile.Add("FilePath", String.Concat(PathID, item.GetAttribute("pathid")));
 				}
 				xLogger.Debug("upload:ok");
-			} catch (x_exception e) {
+			} catch (XException e) {
 				throw e;
 			} catch (Exception e) {
-				throw (new x_exception("error_file_upload", String.Concat(error_file_upload, e.Message)));
+				throw (new XException("error_file_upload", String.Concat(error_file_upload, e.Message)));
 			}
 		}
 
@@ -430,10 +430,10 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 					_Files.UpdateFile(Path, fileID, fileName, fileExtn, DEFAULT_PATH, _ReadToEnd(thisfile.InputStream));
 				}
 				xLogger.Debug("doupload:ok");
-			} catch (x_exception e) {
+			} catch (XException e) {
 				throw e;
 			} catch (Exception e) {
-				throw (new x_exception("error_file_upload", String.Concat(error_file_upload, e.Message)));
+				throw (new XException("error_file_upload", String.Concat(error_file_upload, e.Message)));
 			}
 		}
 		#endregion

@@ -143,7 +143,7 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 				xLogger.Debug("Read::ok:");
 			} catch (Exception e) {
 				xLogger.Debug("Read::error:", e.Message);
-				throw new x_exception("error_reading", String.Concat(error_reading, e.Message));
+				throw new XException("error_reading", String.Concat(error_reading, e.Message));
 			}
 			return listDoc.DocumentElement;
 		}
@@ -164,7 +164,7 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 				xLogger.Debug("List::ok:");
 			} catch (Exception e) {
 				xLogger.Debug("List::error:", e.Message);
-				throw new x_exception("error_listing", String.Concat(error_listing, e.Message));
+				throw new XException("error_listing", String.Concat(error_listing, e.Message));
 			}
 			return listDoc.DocumentElement;
 		}
@@ -187,7 +187,7 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 				xLogger.Debug("Import::ok:");
 			} catch (Exception e) {
 				xLogger.Debug("Import::error:", e.Message);
-				throw new x_exception("error_importing", String.Concat(error_importing, e.Message));
+				throw new XException("error_importing", String.Concat(error_importing, e.Message));
 			}
 			return listDoc.DocumentElement;
 		}

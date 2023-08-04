@@ -74,10 +74,10 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 			try {
 				CmsExport.SaveFilters(true);
 				xLogger.Debug("savesettings::finished:ok");
-			} catch (x_exception e) {
+			} catch (XException e) {
 				throw e;
 			} catch (Exception e) {
-				throw (new x_exception("error_csv_saveset", String.Concat(error_csv_saveset, e.Message)));
+				throw (new XException("error_csv_saveset", String.Concat(error_csv_saveset, e.Message)));
 			}
 		}
 		#endregion

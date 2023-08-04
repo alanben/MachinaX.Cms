@@ -51,7 +51,7 @@ namespace XXBoom.MachinaX.GeneratorX {
 				AddOk();
 				degenExcel(null, FileName);
 				xLogger.Debug("Degenerate:ok");
-			} catch (x_exception e) {
+			} catch (XException e) {
 				_AddError(e);
 			} catch (System.Exception e) {
 				_AddError(e);
@@ -71,7 +71,7 @@ namespace XXBoom.MachinaX.GeneratorX {
 				AddOk();
 				degenerateExcel(Columns, FileName);
 				xLogger.Debug("DegenerateColumns:ok");
-			} catch (x_exception e) {
+			} catch (XException e) {
 				_AddError(e);
 			} catch (System.Exception e) {
 				_AddError(e);
@@ -93,7 +93,7 @@ namespace XXBoom.MachinaX.GeneratorX {
 				Columns.LoadXml(ColumnsXml);
 				degenerateExcel(Columns, FileName);
 				xLogger.Debug("DegenerateColumnsXml:ok");
-			} catch (x_exception e) {
+			} catch (XException e) {
 				_AddError(e);
 			} catch (System.Exception e) {
 				_AddError(e);
@@ -108,7 +108,7 @@ namespace XXBoom.MachinaX.GeneratorX {
 				AddOk();
 				degenerateExcel(Columns, FileName);
 				xLogger.Debug("DegenerateColumns:ok");
-			} catch (x_exception e) {
+			} catch (XException e) {
 				_AddError(e);
 			} catch (System.Exception e) {
 				_AddError(e);

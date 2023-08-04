@@ -202,9 +202,9 @@ namespace XXBoom.MachinaX.GeneratorX {
 			bool isOK = (code == "0");
 			if (!isOK) {
 				if (throwCode) {
-					throw (new x_exception(code, desc));
+					throw (new XException(code, desc));
 				} else {
-					throw (new x_exception("error_service", String.Concat("::code:", code, "::description:", desc)));
+					throw (new XException("error_service", String.Concat("::code:", code, "::description:", desc)));
 				}
 			}
 			return result;
@@ -363,9 +363,9 @@ namespace XXBoom.MachinaX.GeneratorX {
 				templ.Load(tmplpath);
 				return (templ);
 			} catch (XsltCompileException e) {
-				throw new x_exception("template_compile_error", String.Format("Template compile error: '{0}' at line {1} position {2}", e.Message, e.LineNumber, e.LinePosition));
+				throw new XException("template_compile_error", String.Format("Template compile error: '{0}' at line {1} position {2}", e.Message, e.LineNumber, e.LinePosition));
 			} catch (Exception e) {
-				throw new x_exception("template_error", String.Format("Template error: '{0} [{1}]'", e.Message, e.ToString()));
+				throw new XException("template_error", String.Format("Template error: '{0} [{1}]'", e.Message, e.ToString()));
 			}
 		}
 		private void writePageHTML(string filepath, XmlElement source, XslCompiledTransform xslt, XsltArgumentList args) {

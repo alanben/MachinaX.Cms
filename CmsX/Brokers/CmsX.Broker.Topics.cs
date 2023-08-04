@@ -187,11 +187,11 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 						xLogger.Debug("list:ok");
 					}
 				}
-			} catch (x_exception e) {
+			} catch (XException e) {
 				throw e;
 			} catch (Exception e) {
 				xLogger.Debug("list::error_list:", e.Message);
-				throw (new x_exception("error_list", String.Concat(error_list, e.Message)));
+				throw (new XException("error_list", String.Concat(error_list, e.Message)));
 			}
 		}
 		
@@ -201,10 +201,10 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 				Logger.Info(String.Concat(logid, "get:"));
  				
 				Logger.Debug(String.Concat(logid, "get:ok"));
-			} catch (x_exception e) {
+			} catch (XException e) {
 				throw e;
 			} catch (Exception e) {
-				throw (new x_exception("error_get", String.Concat(error_get, e.Message)));
+				throw (new XException("error_get", String.Concat(error_get, e.Message)));
 			}
 		}
 
@@ -214,10 +214,10 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 				xLogger.Info("select:");
 
 				xLogger.Debug("select:ok");
-			} catch (x_exception e) {
-				throw (new x_exception("error_select", String.Concat(error_select, e.Code, " - ", e.Message)));
+			} catch (XException e) {
+				throw (new XException("error_select", String.Concat(error_select, e.Code, " - ", e.Message)));
 			} catch (Exception e) {
-				throw (new x_exception("error_select", String.Concat(error_select, e.Message)));
+				throw (new XException("error_select", String.Concat(error_select, e.Message)));
 			}
 		}
 
@@ -227,12 +227,12 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 				Logger.Debug(String.Concat(logid, "submit:is_new:", is_new.ToString()));
 
 				Logger.Debug(String.Concat(logid, "submit:ok"));
-			} catch (x_exception e) {
+			} catch (XException e) {
 				Logger.Debug(String.Concat(logid, "submit:xerror:", e.Code, "::", e.Message));
 				throw e;
 			} catch (Exception e) {
 				Logger.Debug(String.Concat(logid, "submit:error:", e.Message));
-				throw (new x_exception("error_submit", String.Concat(error_submit, e.Message)));
+				throw (new XException("error_submit", String.Concat(error_submit, e.Message)));
 			} finally {
 				UserProfile.Add("topic_actions", "");
 			}
@@ -254,10 +254,10 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 				Logger.Info(String.Concat(logid, "delete:"));
 
 				Logger.Debug(String.Concat(logid, "delete:ok"));
-			} catch (x_exception e) {
+			} catch (XException e) {
 				throw e;
 			} catch (Exception e) {
-				throw (new x_exception("error_delete", String.Concat(error_delete, e.Message)));
+				throw (new XException("error_delete", String.Concat(error_delete, e.Message)));
 			}
 		}
 		#endregion

@@ -200,7 +200,7 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 					share();
 					break;
 				default:
-					throw (new x_exception("error_passport_type", String.Concat(error_passport, error_passport_type)));
+					throw (new XException("error_passport_type", String.Concat(error_passport, error_passport_type)));
 			}
 		}
 		#endregion
@@ -279,12 +279,12 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 				throw e;
 			}
 			catch (WebsiteXPassportException e) {
-				//throw (new x_exception(e.Code, e.Message));
+				//throw (new XException(e.Code, e.Message));
 				// Rather throw more specific so this can be handled by pages that call the base ProcessRequest and need to handle passport exceptions their own way - eg account on hold
 				throw e;
 			}
 			catch (Exception e) {
-				throw (new x_exception("error_passport_login", String.Concat(error_passport_login, "::", e.Message, " - ", e.StackTrace)));
+				throw (new XException("error_passport_login", String.Concat(error_passport_login, "::", e.Message, " - ", e.StackTrace)));
 			}
 		}
 
@@ -407,9 +407,9 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 			} catch (displayException e) {
 				throw e;
 			} catch (WebsiteXPassportException e) {
-				throw (new x_exception("error_passport_login", String.Concat(error_passport_login, e.Message)));
+				throw (new XException("error_passport_login", String.Concat(error_passport_login, e.Message)));
 			} catch (Exception e) {
-				throw (new x_exception("error_passport_login", String.Concat(error_passport_login, e.Message, " - ", e.StackTrace)));
+				throw (new XException("error_passport_login", String.Concat(error_passport_login, e.Message, " - ", e.StackTrace)));
 			}
 		}
 
@@ -461,9 +461,9 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 			} catch (displayException e) {
 				throw e;
 			} catch (WebsiteXPassportException e) {
-				throw (new x_exception("error_passport_login", String.Concat(error_passport_login, e.Message)));
+				throw (new XException("error_passport_login", String.Concat(error_passport_login, e.Message)));
 			} catch (Exception e) {
-				throw (new x_exception("error_passport_login", String.Concat(error_passport_login, e.Message, " - ", e.StackTrace)));
+				throw (new XException("error_passport_login", String.Concat(error_passport_login, e.Message, " - ", e.StackTrace)));
 			}
 		}
 
@@ -479,11 +479,11 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 					RecaptchaX recapx = new RecaptchaX();
 					recapx.Check(challenge, response, UIPage.Request.UserHostAddress);
 				}
-			} catch (x_exception e) {
+			} catch (XException e) {
 				xLogger.Info("_recaptcha", "::error:", e.Message);
 				throw (new displayException(LINK_RECAPTCHA));
 			} catch (Exception e) {
-				throw (new x_exception("error_passport_recaptcha", String.Concat(error_passport_recaptcha, e.Message, " - ", e.StackTrace)));
+				throw (new XException("error_passport_recaptcha", String.Concat(error_passport_recaptcha, e.Message, " - ", e.StackTrace)));
 			}
 		}
 
@@ -498,11 +498,11 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 					Recaptcha2X recapx = new Recaptcha2X();
 					recapx.Check(response);
 				}
-			} catch (x_exception e) {
+			} catch (XException e) {
 				xLogger.Info("_recaptcha2", "::error:", e.Message);
 				throw (new displayException(LINK_RECAPTCHA));
 			} catch (Exception e) {
-				throw (new x_exception("error_passport_recaptcha", String.Concat(error_passport_recaptcha, e.Message, " - ", e.StackTrace)));
+				throw (new XException("error_passport_recaptcha", String.Concat(error_passport_recaptcha, e.Message, " - ", e.StackTrace)));
 			}
 		}
 		
@@ -529,10 +529,10 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 				}
 			} catch (displayException e) {
 				throw e;
-			} catch (x_exception e) {
-				throw (new x_exception("error_passport_register", String.Concat(error_passport_register, e.Message)));
+			} catch (XException e) {
+				throw (new XException("error_passport_register", String.Concat(error_passport_register, e.Message)));
 			} catch (Exception e) {
-				throw (new x_exception("error_passport_register", String.Concat(error_passport_register, e.Message, " - ", e.StackTrace)));
+				throw (new XException("error_passport_register", String.Concat(error_passport_register, e.Message, " - ", e.StackTrace)));
 			}
 		}
 
@@ -549,11 +549,11 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 					_User.Set(Root);
 				}
 			}
-			catch (x_exception e) {
-				throw (new x_exception("error_passport_change", String.Concat(error_passport_change, e.Message)));
+			catch (XException e) {
+				throw (new XException("error_passport_change", String.Concat(error_passport_change, e.Message)));
 			}
 			catch (Exception e) {
-				throw (new x_exception("error_passport_change", String.Concat(error_passport_change, e.Message, " - ", e.StackTrace)));
+				throw (new XException("error_passport_change", String.Concat(error_passport_change, e.Message, " - ", e.StackTrace)));
 			}
 		}
 
@@ -564,7 +564,7 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 				getHint();
 			}
 			catch (Exception e) {
-				throw (new x_exception("error_passport_gethint", String.Concat(error_passport_gethint, e.Message, " - ", e.StackTrace)));
+				throw (new XException("error_passport_gethint", String.Concat(error_passport_gethint, e.Message, " - ", e.StackTrace)));
 			}
 		}
 
@@ -581,11 +581,11 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 			catch (displayException e) {
 				throw e;
 			}
-			catch (x_exception e) {
-				throw (new x_exception("error_passport_checkhint", String.Concat(error_passport_checkhint, e.Message)));
+			catch (XException e) {
+				throw (new XException("error_passport_checkhint", String.Concat(error_passport_checkhint, e.Message)));
 			}
 			catch (Exception e) {
-				throw (new x_exception("error_passport_checkhint", String.Concat(error_passport_checkhint, e.Message, " - ", e.StackTrace)));
+				throw (new XException("error_passport_checkhint", String.Concat(error_passport_checkhint, e.Message, " - ", e.StackTrace)));
 			}
 		}
 
@@ -600,7 +600,7 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 				_User.HintAnswer = Root.SelectSingleNode(SELECT_USER_ANSWER).InnerText;
 				xLogger.Debug("_getHint:", logsep, "id:", _User.HintID, logsep, "answer:", _User.HintAnswer, logsep, "password:", _User.Password);
 			} else {
-				throw new x_exception("error_passport_gethint", error_passport_gethint);
+				throw new XException("error_passport_gethint", error_passport_gethint);
 			}
 
 		}
@@ -624,11 +624,11 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 					throw (new displayException(LINK_NOTFOUND));
 				}
 			}
-			catch (x_exception e) {
-				throw (new x_exception("error_passport_forgot", String.Concat(error_passport_forgot, e.Message)));
+			catch (XException e) {
+				throw (new XException("error_passport_forgot", String.Concat(error_passport_forgot, e.Message)));
 			}
 			catch (Exception e) {
-				throw (new x_exception("error_passport_forgot", String.Concat(error_passport_forgot, e.Message, " - ", e.StackTrace)));
+				throw (new XException("error_passport_forgot", String.Concat(error_passport_forgot, e.Message, " - ", e.StackTrace)));
 			}
 		}
 
@@ -640,11 +640,11 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 				exportutil.LoadFilters();
 				xLogger.Debug("_summary:ok");
 			}
-			catch (x_exception e) {
-				throw (new x_exception("error_passport_summary", String.Concat(error_passport_summary, e.Message)));
+			catch (XException e) {
+				throw (new XException("error_passport_summary", String.Concat(error_passport_summary, e.Message)));
 			}
 			catch (Exception e) {
-				throw (new x_exception("error_passport_summary", String.Concat(error_passport_summary, e.Message, " - ", e.StackTrace)));
+				throw (new XException("error_passport_summary", String.Concat(error_passport_summary, e.Message, " - ", e.StackTrace)));
 			}
 		}
 
@@ -682,11 +682,11 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 			catch (displayException e) {
 				throw e;
 			}
-			catch (x_exception e) {
-				throw (new x_exception("error_passport_locked", String.Concat(error_passport_locked, e.Message)));
+			catch (XException e) {
+				throw (new XException("error_passport_locked", String.Concat(error_passport_locked, e.Message)));
 			}
 			catch (Exception e) {
-				throw (new x_exception("error_passport_locked", String.Concat(error_passport_locked, e.Message, " - ", e.StackTrace)));
+				throw (new XException("error_passport_locked", String.Concat(error_passport_locked, e.Message, " - ", e.StackTrace)));
 			}
 		}
 
@@ -700,11 +700,11 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 			catch (displayException e) {
 				throw e;
 			}
-			catch (x_exception e) {
-				throw (new x_exception("error_passport_unlock", String.Concat(error_passport_unlock, e.Message)));
+			catch (XException e) {
+				throw (new XException("error_passport_unlock", String.Concat(error_passport_unlock, e.Message)));
 			}
 			catch (Exception e) {
-				throw (new x_exception("error_passport_unlock", String.Concat(error_passport_unlock, e.Message, " - ", e.StackTrace)));
+				throw (new XException("error_passport_unlock", String.Concat(error_passport_unlock, e.Message, " - ", e.StackTrace)));
 			}
 		}
 
@@ -917,7 +917,7 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 	/// <summary>
 	/// An exception class specific to iBurstPassport and derived classes
 	/// </summary>
-	public class WebsiteXPassportException : x_exception {
+	public class WebsiteXPassportException : XException {
 		/// <summary>Constructor</summary>
 		/// <param name="cde">Error code</param>
 		/// <param name="message">Error message</param>

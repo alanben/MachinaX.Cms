@@ -126,7 +126,7 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 		private void getTemplate() {
 			templateElement = (XmlElement) UIPage.Application[template];
 			if (templateElement == null)
-				throw new x_exception("error_templateElement_null", String.Concat(error_templateElement, error_templateElement_null));
+				throw new XException("error_templateElement_null", String.Concat(error_templateElement, error_templateElement_null));
 				
 		}
 		#endregion
