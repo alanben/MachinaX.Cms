@@ -28,7 +28,7 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 
 		#region Invisible properties
 		public x_logger xLogger;
-		private x_config webconfig;
+		private XConfig webconfig;
 		#endregion
 
 		#region Constant name strings
@@ -74,28 +74,28 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 
 		/// <summary>Normal constructor</summary>
 		public CmsXStartup(HttpApplicationState application, string configID, x_siteprofile siteProfile) {
-			initialise(application, new x_config(configID), siteProfile);
+			initialise(application, new XConfig(configID), siteProfile);
 		}
 
 		/// <summary>Normal constructor</summary>
-		public CmsXStartup(HttpApplicationState application, x_config config) {
+		public CmsXStartup(HttpApplicationState application, XConfig config) {
 			initialise(application, config, (x_siteprofile)application.Get(BlogTemplateX.SITEPROFILE));
 		}
 
 		/// <summary>Normal constructor</summary>
 		public CmsXStartup(HttpApplicationState application, string BlogID) {
-			x_config config = new x_config(BlogID);
+			XConfig config = new XConfig(BlogID);
 			initialise(application, config, (x_siteprofile)application.Get(BlogTemplateX.SITEPROFILE));
 		}
 
 		/// <summary>Normal constructor</summary>
-		public CmsXStartup(HttpApplicationState application, x_config config, x_siteprofile siteProfile) {
+		public CmsXStartup(HttpApplicationState application, XConfig config, x_siteprofile siteProfile) {
 			initialise(application, config, siteProfile);
 		}
 		#endregion
 
 		#region Private methods
-		private void initialise(HttpApplicationState application, x_config config, x_siteprofile siteProfile) {
+		private void initialise(HttpApplicationState application, XConfig config, x_siteprofile siteProfile) {
 			xLogger = new x_logger(typeof(CmsXStartup), logid, false, true);
 
 			Application = application;

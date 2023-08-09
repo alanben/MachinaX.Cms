@@ -851,7 +851,7 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 		/// <summary>Emails the _User details, including password</summary>
 		private string send(string email) {
 			string sendtext = "";
-			Utils.x_email thisemail = new Utils.x_email();
+			BlogXEmail thisemail = new BlogXEmail();
 			try {
 				/* originally...
 				thisemail.Bcc = "alan@clickclickBOOM.co.za";
@@ -864,7 +864,7 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 				if (!String.IsNullOrEmpty(Config.EmailFrom)) {
 					thisemail.From = Config.EmailFrom;
 				}
-				thisemail.Type = x_emailtype.html;
+				thisemail.Type = Domain.XEmailType.html;
 				xLogger.Debug("_send", "::result:", result.OuterXml);
 				xLogger.Debug("_send", "::ResultDoc:", ResultDoc.OuterXml);
 				xLogger.Debug("_send", "::To:", thisemail.To, "::From:", thisemail.From, "::Bcc:", thisemail.Bcc);

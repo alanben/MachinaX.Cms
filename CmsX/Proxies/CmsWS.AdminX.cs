@@ -28,7 +28,7 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 		#region Private properties
 		private string token;
 		private string archive = "";
-		private x_config config;
+		private XConfig config;
 		#endregion
 
 		#region Constant name strings
@@ -68,7 +68,7 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 		/// <summary>Initiate properties</summary>
 		private void initialize() {
 			xLogger.Debug("initialize");
-			config = new x_config();
+			config = new XConfig();
 			
 			adminxWS = new AdminXWS.adminX();
 			adminxWS.Url = _GetUrl(CONFIG_SERVICE_ID);
