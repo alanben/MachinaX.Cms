@@ -5,7 +5,7 @@
 		<RootNamespace>XXBoom.MachinaX.GeneratorX</RootNamespace>
 		<AssemblyName>XXBoom.MachinaX.GeneratorX</AssemblyName>
 
-		<AssemblyVersion>2.1.1</AssemblyVersion>
+		<AssemblyVersion>2.1.2</AssemblyVersion>
 		<FileVersion>$(AssemblyVersion)</FileVersion>
 
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
@@ -27,9 +27,9 @@
 	  <PackageReference Include="Ionic.Zip" Version="1.9.1.8" />
 	  <PackageReference Include="log4net" Version="2.0.15" />
 	  <PackageReference Include="XXBoom.MachinaX" Version="2.1.1" />
-	  <PackageReference Include="XXBoom.MachinaX.BlogX" Version="2.1.1" />
+	  <PackageReference Include="XXBoom.MachinaX.BlogX" Version="2.1.2" />
 	  <PackageReference Include="XXBoom.MachinaX.Domain" Version="2.1.1" />
-	  <PackageReference Include="XXBoom.MachinaX.ServiceX" Version="2.1.1" />
+	  <PackageReference Include="XXBoom.MachinaX.ServiceX" Version="2.1.2" />
 	</ItemGroup>
 
 	<ItemGroup>
