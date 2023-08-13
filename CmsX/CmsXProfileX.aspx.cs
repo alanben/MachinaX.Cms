@@ -32,7 +32,7 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 		private const string logid = "CmsXProfileX.";
 		private const string CONFIG_ROOT = "WebsiteX";
 
-		protected new x_logger xLogger;
+		protected new XLogger xLogger;
 
 		public CmsXCookies Cooker { get; set; }
 		public CmsXUser WebsiteUser { get; set; }
@@ -193,7 +193,7 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 		}
 
 		private void initialise(Type type, string loggerID) {
-			xLogger = new x_logger(type, loggerID, false, true);
+			xLogger = new XLogger(type, loggerID, false, true);
 			Authenticate = true;
 			xLogger.Debug("initialize");
 

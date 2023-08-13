@@ -30,7 +30,7 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 
 		public CmsXProfileX UIPage;
 		public CmsXUser WebsiteUser;
-		public x_logger xLogger;
+		public XLogger xLogger;
 
 		public bool Active	{ get; set; }
 		public string Skin		{ get; set; }

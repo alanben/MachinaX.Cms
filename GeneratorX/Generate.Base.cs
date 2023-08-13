@@ -21,7 +21,8 @@
 
 namespace XXBoom.MachinaX.GeneratorX {
 
-	using XXBoom.MachinaX;
+    using XXBoom.MachinaX;
+    using XXBoom.MachinaX.Domain;
 	using System;
 	using System.IO;
 	using System.Xml;
@@ -136,18 +137,18 @@ namespace XXBoom.MachinaX.GeneratorX {
 			get { return Config.Value(WANTPDF, "no"); }
 		}
 
-		private x_config config;
+		private XConfig config;
 		/// <summary>Generator default output file directory</summary>
 		/// <value>full directory path</value>
-		public x_config Config {
+		public XConfig Config {
 			get { return config; }
 			set { config = value; }
 		}
 
-		private x_logger logger;
+		private XLogger logger;
 		/// <summary>Generator default output file directory</summary>
 		/// <value>full directory path</value>
-		public x_logger xLogger {
+		public XLogger xLogger {
 			get { return logger; }
 			set { logger = value; }
 		}
@@ -173,12 +174,12 @@ namespace XXBoom.MachinaX.GeneratorX {
 			initialise();
 		}
 		private void initialise() {
-			//xLogger = new x_logger(typeof(GenerateBase), "gen---", true, false);
-			xLogger = new x_logger(typeof(GenerateBase), "gen---", false, ":");
-			Config = new x_config();
+			//xLogger = new XLogger(typeof(GenerateBase), "gen---", true, false);
+			xLogger = new XLogger(typeof(GenerateBase), "gen---", false, false, ":");
+			Config = new XConfig();
 			xLogger.Debug("initialise", "HtmlDir", HtmlDir, "PdfDir", PdfDir, "ExcelDir", ExcelDir);
 
-			ResultType = x_resultType.webservice;
+			ResultType = XResultType.webservice;
 		}
 
 

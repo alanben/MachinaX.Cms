@@ -154,7 +154,7 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 			try {
 				xLogger.Debug("login:", _User.Username, "/", _User.Password);
 				bool expireToken = getRemember();
-				xLogger.Debug("login:", _User.Username, "/", _User.Password, "/", expireToken.ToString());
+				xLogger.Debug("login:", _User.Username, "/", _User.Password, "/", expireToken);
 				_AdminX.Login(_User.Username, _User.Password);
 				xLogger.Debug("login::result:", _AdminX.ItemXml.OuterXml);
 
@@ -177,7 +177,7 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 				} else if (verifyResult == VERIFY_LOGIN_BAD) {
 					throw (new displayException(LINK_FORGOT));
 				} else {
-					xLogger.Info("login:", verifyResult.ToString());
+					xLogger.Info("login:", verifyResult);
 				}
 			} catch (displayException e) {
 				throw e;
@@ -248,7 +248,7 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 				int verifyResult = verify();
 				if (verifyResult == VERIFY_OK) {	// ie is iPassport User
 					_User.Set(Root.GetAttribute("Token"), Root.GetAttribute("UserID"), Root.SelectSingleNode("UserName").InnerText, Root.SelectSingleNode("Password").InnerText, Root.SelectSingleNode("FirstName").InnerText, Root.SelectSingleNode("Surname").InnerText);
-					xLogger.Info("login:", _User.Token, "/", _User.UserID));
+					xLogger.Info("login:", _User.Token, "/", _User.UserID);
 				} else if (verifyResult == VERIFY_TOKEN_INVALID) {	// token invalid
 					xLogger.Info("token:", verifyResult.ToString()));
 					((WebsiteXProfileX)UIPage).Cooker.Token = "";
@@ -270,7 +270,7 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 		/// <summary>Register user (ie account holder)</summary>
 		private void register() {
 			try {
-				//xLogger.Info("register:"));
+				//xLogger.Info("register:");
 				//xLogger.Debug("register:", UIPage.UserProfile.ProfileXml.OuterXml));
 				//result = _AdminX.RegisterUser(_User.Username, _User.Password, _User.Firstname, _User.Surname, _User.Email, "", _User.Cellno);
 				//xLogger.Debug("register:", Root.OuterXml));
@@ -349,7 +349,7 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 		/// <summary>Forgot password</summary>
 		private void forgot() {
 			try {
-				//xLogger.Info("forgot:"));
+				//xLogger.Info("forgot:");
 				//result = _AdminX.GetPassword(_User.Username);
 				//int verifyResult = verify();
 				//xLogger.Debug("forgot:", Root.OuterXml));
@@ -414,7 +414,7 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 		/// <summary>Unlock account</summary>
 		private void unlock() {
 			try {
-				//xLogger.Info("unlock:", UIPage.Parameters.Token));
+				//xLogger.Info("unlock:", UIPage.Parameters.Token);
 				//if (!_AdminX.UnlockUser(UIPage.Parameters.Token))
 				//    throw (new displayException(LINK_LOCKED));
 			}
@@ -550,7 +550,7 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 			}
 			catch(System.Exception e) {
 				string msg = String.Concat(error_passport, error_passport_email, e.Message);
-				xLogger.Info("email:", _User.Username, logsep, "Email_NotOK", logsep, email, logsep, thisemail.Server, logsep, msg));
+				xLogger.Info("email:", _User.Username, logsep, "Email_NotOK", logsep, email, logsep, thisemail.Server, logsep, msg);
 				throw(new iBurstCmsXAuthException("error_passport_email", msg));
 			}
 			return sendtext;
@@ -560,7 +560,7 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 		private bool getRemember() {
 			xLogger.Debug("getRemember:", "RememberMe:", _User.RememberMe);
 			bool noremember = (_User.RememberMe != "on");
-			xLogger.Info("getRemember:", "noremember:", noremember.ToString());
+			xLogger.Info("getRemember:", "noremember:", noremember);
 			_User.RememberMe = "off";	// set off automatically, for safety
 			return noremember;
 		}

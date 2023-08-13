@@ -81,7 +81,7 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 		#region Public methods
 		public override void Process(string type) {
 			base.Process(true);	// does login checking
-			Logger.Info(String.Concat(logid, "_Process:", type));
+			xLogger.Info(logid, "_Process:", type);
 			switch (type) {
 				case "user_unlock":				user_unlock();			break;
 				case "user_admin_list_dd":		user_list_dd();			break;
@@ -116,25 +116,25 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 		/// <summary>Manage user</summary>
 		private void user_unlock() {
 			try {
-				Logger.Info(String.Concat(logid, "_user_unlock:"));
+				xLogger.Info(logid, "_user_unlock:");
 				XmlElement result = _CustomerWS.GetUser(UserProfile.Value("AccessUsername")) as XmlElement;
 				if (!VerifyPassport(result))
 					throw new displayException("access_unlock_notuser");
-				Logger.Info(String.Concat(logid, "_user_unlock:token:", result.GetAttribute("Token")));
+				xLogger.Info(logid, "_user_unlock:token:", result.GetAttribute("Token"));
 				_CustomerWS.UnlockUser(result.GetAttribute("Token"));
-				Logger.Debug(String.Concat(logid, "_user_unlock::finished:ok"));
+				xLogger.Debug(logid, "_user_unlock::finished:ok");
 			} catch (XException e) {
 				throw e;
 			} catch (Exception e) {
-				Logger.Debug(String.Concat(logid, "_user_unlock:error:", e.Message));
+				xLogger.Debug(logid, "_user_unlock:error:", e.Message);
 				throw (new XException("error_user_unlock", String.Concat(error_user_unlock, e.Message)));
 			}
 		}
 		/// <summary>Manage user</summary>
 		private void user_manage() {
 			try {
-				Logger.Info(String.Concat(logid, "_user_manage:"));
-				Logger.Debug(String.Concat(logid, "_user_manage::finished:ok"));
+				xLogger.Info(logid, "_user_manage:");
+				xLogger.Debug(logid, "_user_manage::finished:ok");
 			} catch (XException e) {
 				throw e;
 			} catch (Exception e) {
@@ -148,15 +148,15 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 		/// <summary>List user</summary>
 		private void user_list_dd() {
 			try {
-				Logger.Info(String.Concat(logid, "user_list_dd:"));
-				SearchSettings search = new SearchSettings(UserProfile, Logger, 1, "4", false, true);
+				xLogger.Info(logid, "user_list_dd:");
+				SearchSettings search = new SearchSettings(UserProfile, xLogger, 1, "4", false, true);
 
 				_Access.ListAdminUsersDrop(search);
 
-				Logger.Debug(String.Concat(logid, "user_list_dd::ListXmlRoot:", _Access.ListXmlRoot.OuterXml));
+				xLogger.Debug(logid, "user_list_dd::ListXmlRoot:", _Access.ListXmlRoot.OuterXml);
 				UIPage.Content.AppendChild(UIPage.Document.ImportNode(_Access.ListXmlRoot as XmlNode, true));
 
-				Logger.Debug(String.Concat(logid, "user_list_dd::finished:ok"));
+				xLogger.Debug(logid, "user_list_dd::finished:ok");
 			} catch (XException e) {
 				throw e;
 			} catch (Exception e) {
@@ -167,14 +167,14 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 		/// <param name="clearProfile">True when list is for a drop-down</param>
 		private void user_list(bool clearProfile) {
 			try {
-				Logger.Info(String.Concat(logid, "_user_list:"));
-				SearchSettings search = new SearchSettings(UserProfile, Logger, 1, "4", false, true);
+				xLogger.Info(logid, "_user_list:");
+				SearchSettings search = new SearchSettings(UserProfile, xLogger, 1, "4", false, true);
 
 				_Access.ListAdminUsers(search);
-				Logger.Debug(String.Concat(logid, "_user_list::ListXmlRoot:", _Access.ListXmlRoot.OuterXml));
+				xLogger.Debug(logid, "_user_list::ListXmlRoot:", _Access.ListXmlRoot.OuterXml);
 				UIPage.Content.AppendChild(UIPage.Document.ImportNode(_Access.ListXmlRoot as XmlNode, true));
 
-				Logger.Debug(String.Concat(logid, "_user_list::finished:ok"));
+				xLogger.Debug(logid, "_user_list::finished:ok");
 			} catch (XException e) {
 				throw e;
 			} catch (Exception e) {
@@ -184,13 +184,13 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 		/// <summary>Get user</summary>
 		private void user_admin_get() {
 			try {
-				Logger.Info(String.Concat(logid, "_user_get:"));
+				xLogger.Info(logid, "_user_get:");
 
 				string userID = _GetQueryID(PROFILE_ADMINID);
 				_Access.GetAdminUser(Int32.Parse(userID));
 				UIPage.Content.AppendChild(UIPage.Document.ImportNode(_Access.ItemXmlRootNode, true));
 
-				Logger.Debug(String.Concat(logid, "_user_get::finished:ok"));
+				xLogger.Debug(logid, "_user_get::finished:ok");
 			} catch (XException e) {
 				throw e;
 			} catch (Exception e) {
@@ -200,7 +200,7 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 		/// <summary>Add admin user</summary>
 		private void user_admin_add() {
 			try {
-				Logger.Info(String.Concat(logid, "_user_add:"));
+				xLogger.Info(logid, "_user_add:");
 
 				string username = UserProfile.Value("username");
 				string password = UserProfile.Value("password");
@@ -209,28 +209,28 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 				string email = UserProfile.Value("email");
 				string cellphone = UserProfile.Value("cellphone");
 				string telno = UserProfile.Value("telno");
-				Logger.Debug(String.Concat(logid, "_user_add:username:", username));
+				xLogger.Debug(logid, "_user_add:username:", username);
 
 				_Access.AddAdminUser(username, password, firstname, surname, email, telno, cellphone);
 				UIPage.Content.AppendChild(UIPage.Document.ImportNode(_Access.ItemXmlRootNode, true));
 				
-				//Logger.Debug(String.Concat(logid, "_user_admin_add:", _Users.ItemID));
+				//xLogger.Debug(logid, "_user_admin_add:", _Users.ItemID);
 
 				//_Access.AddUser(Int32.Parse(_Users.ItemID));
 
-				//Logger.Debug(String.Concat(logid, "_user_admin_add::finished:userID:", _Users.ItemID, ":userID:", _Access.ItemID));
-				Logger.Debug(String.Concat(logid, "_user_admin_add::finished:"));
+				//xLogger.Debug(logid, "_user_admin_add::finished:userID:", _Users.ItemID, ":userID:", _Access.ItemID);
+				xLogger.Debug(logid, "_user_admin_add::finished:");
 			} catch (XException e) {
 				throw e;
 			} catch (Exception e) {
-				Logger.Debug(String.Concat(logid, "_user_admin_add:error:", e.Message, "::", e.StackTrace));
+				xLogger.Debug(logid, "_user_admin_add:error:", e.Message, "::", e.StackTrace);
 				throw (new XException("error_user_admin_add", String.Concat(error_user_admin_add, e.Message)));
 			}
 		}
 		/// <summary>Edit user</summary>
 		private void user_admin_edit() {
 			try {
-				Logger.Info(String.Concat(logid, "_user_admin_edit:"));
+				xLogger.Info(logid, "_user_admin_edit:");
 
 				string userID = _GetQueryID(PROFILE_ADMINID);
 				_Access.GetAdminUser(Int32.Parse(userID));
@@ -249,7 +249,7 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 				user_profiles("0_record_", userID);
 
 
-				Logger.Debug(String.Concat(logid, "_user_admin_edit::finished:ok"));
+				xLogger.Debug(logid, "_user_admin_edit::finished:ok");
 			} catch (XException e) {
 				throw e;
 			} catch (Exception e) {
@@ -259,7 +259,7 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 		/// <summary>Delete user</summary>
 		private void user_admin_delete() {
 			try {
-				Logger.Info(String.Concat(logid, "_user_admin_delete:"));
+				xLogger.Info(logid, "_user_admin_delete:");
 
 				string userID = _GetQueryID(PROFILE_ADMINID);
 				_Access.GetUser(Int32.Parse(userID));
@@ -269,7 +269,7 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 				//user_admin_list();
 				//UIPage.Content.AppendChild(UIPage.Document.ImportNode(_Access.ItemXmlRootNode, true));
 
-				Logger.Debug(String.Concat(logid, "_user_delete::finished:ok"));
+				xLogger.Debug(logid, "_user_delete::finished:ok");
 			} catch (XException e) {
 				throw e;
 			} catch (Exception e) {
@@ -282,8 +282,8 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 		/// <summary>Manage profile</summary>
 		private void profile_manage() {
 			try {
-				Logger.Info(String.Concat(logid, "_profile_manage:"));
-				Logger.Debug(String.Concat(logid, "_profile_manage::finished:ok"));
+				xLogger.Info(logid, "_profile_manage:");
+				xLogger.Debug(logid, "_profile_manage::finished:ok");
 			} catch (XException e) {
 				throw e;
 			} catch (Exception e) {
@@ -298,8 +298,8 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 		/// <param name="clearProfile">True when list is for a drop-down</param>
 		private void group_list(bool clearProfile) {
 			try {
-				Logger.Info(String.Concat(logid, "_group_list:"));
-				SearchSettings search = new SearchSettings(UserProfile, Logger, 1, "3", false, true);
+				xLogger.Info(logid, "_group_list:");
+				SearchSettings search = new SearchSettings(UserProfile, xLogger, 1, "3", false, true);
 
 				if (clearProfile) {
 					UserProfile.Add("LA_Profile_ProfileID", "0");
@@ -309,7 +309,7 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 
 				UIPage.Content.AppendChild(UIPage.Document.ImportNode(_Access.ListXmlRoot as XmlNode, true));
 
-				Logger.Debug(String.Concat(logid, "_profile_list::finished:ok"));
+				xLogger.Debug(logid, "_profile_list::finished:ok");
 			} catch (XException e) {
 				throw e;
 			} catch (Exception e) {
@@ -319,15 +319,15 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 		/// <summary>Get group</summary>
 		private void groups_get() {
 			try {
-				Logger.Info(String.Concat(logid, "_group_get:"));
+				xLogger.Info(logid, "_group_get:");
 
 				string groupID = _GetQueryID(GROUP_ID);
-				Logger.Info(String.Concat(logid, "_group_get:profileID:", groupID));
+				xLogger.Info(logid, "_group_get:profileID:", groupID);
 
 				_Access.GetGroup(Int32.Parse(groupID));
 				UIPage.Content.AppendChild(UIPage.Document.ImportNode(_Access.ItemXmlRootNode, true));
 
-				Logger.Debug(String.Concat(logid, "_group_get::finished:ok"));
+				xLogger.Debug(logid, "_group_get::finished:ok");
 			} catch (XException e) {
 				throw e;
 			} catch (Exception e) {
@@ -337,26 +337,26 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 		/// <summary>Add profile</summary>
 		private void group_add() {
 			try {
-				Logger.Info(String.Concat(logid, "_group_add:"));
+				xLogger.Info(logid, "_group_add:");
 
 				string name = UserProfile.Value("name");
-				Logger.Debug(String.Concat(logid, "_group_add:name:", name));
+				xLogger.Debug(logid, "_group_add:name:", name);
 
 				_Access.AddGroup(name);
 				//profile_users("0_record_", profileID, true);
 				UIPage.Content.AppendChild(UIPage.Document.ImportNode(_Access.ItemXmlRootNode, true));
 
-				Logger.Debug(String.Concat(logid, "_group_add::finished:group:", _Access.ItemID));
+				xLogger.Debug(logid, "_group_add::finished:group:", _Access.ItemID);
 			} catch (XException e) {
 				throw e;
 			} catch (Exception e) {
-				Logger.Debug(String.Concat(logid, "_group_add:error:", e.Message, "::", e.StackTrace));
+				xLogger.Debug(logid, "_group_add:error:", e.Message, "::", e.StackTrace);
 				throw (new XException("error_group_add", String.Concat(error_group_add, e.Message)));
 			}
 		}
 		/// <summary>Edit profile</summary>
 		private void groups_edit() {
-			Logger.Info(String.Concat(logid, "_group_edit:"));
+			xLogger.Info(logid, "_group_edit:");
 			try {
 
 				string groupID = _GetQueryID(GROUP_ID);
@@ -364,7 +364,7 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 
 				_Access.GetGroup(group_id);
 				string name = UserProfile.Value("name");
-				Logger.Debug(String.Concat(logid, "_group_edit", "::group_id:", group_id.ToString(), ":name:", name));
+				xLogger.Debug(String.Concat(logid, "_group_edit", "::group_id:", group_id.ToString(), ":name:", name));
 
 				_Access.UpdateGroup(group_id, name);
 				UIPage.Content.AppendChild(UIPage.Document.ImportNode(_Access.ItemXmlRootNode, true));
@@ -377,7 +377,7 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 				_Access.DeleteGroupCategories(group_id);
 				new AccessRight(xLogger, group_id, _Access).Process(true, "1", UserProfile);
 
-				Logger.Info(String.Concat(logid, "_group_edit:ok."));
+				xLogger.Info(logid, "_group_edit:ok.");
 			} catch (XException e) {
 				throw e;
 			} catch (Exception e) {
@@ -387,14 +387,14 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 		/// <summary>Delete profile</summary>
 		private void groups_delete() {
 			try {
-				Logger.Info(String.Concat(logid, "_group_delete:"));
+				xLogger.Info(logid, "_group_delete:");
 
 				string groupID = _GetQueryID(GROUP_ID);
 				_Access.DeleteGroupUsers(Convert.ToInt32(groupID));
 				_Access.DeleteGroup(Int32.Parse(groupID));
 				////UIPage.Content.AppendChild(UIPage.Document.ImportNode(_Access.ItemXmlRootNode, true));
 
-				Logger.Debug(String.Concat(logid, "_group_delete::finished:ok"));
+				xLogger.Debug(logid, "_group_delete::finished:ok");
 			} catch (XException e) {
 				throw e;
 			} catch (Exception e) {
@@ -404,15 +404,15 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 		/// <summary>Get group rights</summary>
 		private void groups_rights_get() {
 			try {
-				Logger.Info(String.Concat(logid, "_groupRights_get:"));
+				xLogger.Info(logid, "_groupRights_get:");
 
 				string groupID = _GetQueryID(GROUP_ID);
-				Logger.Info(String.Concat(logid, "_groupRights_get:profileID:", groupID));
+				xLogger.Info(logid, "_groupRights_get:profileID:", groupID);
 
 				_Access.GetGroupRights(Int32.Parse(groupID));
 				UIPage.Content.AppendChild(UIPage.Document.ImportNode(_Access.ItemXmlRootNode, true));
 
-				Logger.Debug(String.Concat(logid, "_groupRights_get::finished:ok"));
+				xLogger.Debug(logid, "_groupRights_get::finished:ok");
 			} catch (XException e) {
 				throw e;
 			} catch (Exception e) {
@@ -422,14 +422,14 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 		/// <summary>Edit group rights</summary>
 		private void groups_rights_edit() {
 			try {
-				Logger.Info(String.Concat(logid, "_groupRights_edit:"));
+				xLogger.Info(logid, "_groupRights_edit:");
 
 				string groupID = _GetQueryID(GROUP_ID);
 				string name = UserProfile.Value("name");
-				Logger.Debug(String.Concat(logid, "_groupRights_edit:groupID", groupID));
+				xLogger.Debug(logid, "_groupRights_edit:groupID", groupID);
 				group_categoriesall("1_record_", groupID);
 
-				Logger.Debug(String.Concat(logid, "_groupRights_edit::finished:ok"));
+				xLogger.Debug(logid, "_groupRights_edit::finished:ok");
 			} catch (XException e) {
 				throw e;
 			} catch (Exception e) {
@@ -444,8 +444,8 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 		/// <param name="clearProfile">True when list is for a drop-down</param>
 		private void collection_list(bool clearProfile) {
 			try {
-				Logger.Info(String.Concat(logid, "_collection_list:"));
-				SearchSettings search = new SearchSettings(UserProfile, Logger, 1, "3", false, true);
+				xLogger.Info(logid, "_collection_list:");
+				SearchSettings search = new SearchSettings(UserProfile, xLogger, 1, "3", false, true);
 
 				//if (clearProfile) {
 				//    UserProfile.Add("LA_Profile_ProfileID", "0");
@@ -455,7 +455,7 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 
 				UIPage.Content.AppendChild(UIPage.Document.ImportNode(_Access.ListXmlRoot as XmlNode, true));
 
-				Logger.Debug(String.Concat(logid, "_profile_list::finished:ok"));
+				xLogger.Debug(logid, "_profile_list::finished:ok");
 			} catch (XException e) {
 				throw e;
 			} catch (Exception e) {
@@ -465,15 +465,15 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 		/// <summary>Get collection</summary>
 		private void collections_get() {
 			try {
-				Logger.Info(String.Concat(logid, "_collection_get:"));
+				xLogger.Info(logid, "_collection_get:");
 
 				string collectionID = _GetQueryID(COLLECTION_ID);
-				Logger.Info(String.Concat(logid, "_collection_get:collectionID:", collectionID));
+				xLogger.Info(logid, "_collection_get:collectionID:", collectionID);
 
 				_Access.GetCollection(Int32.Parse(collectionID));
 				UIPage.Content.AppendChild(UIPage.Document.ImportNode(_Access.ItemXmlRootNode, true));
 
-				Logger.Debug(String.Concat(logid, "_collection_get::finished:ok"));
+				xLogger.Debug(logid, "_collection_get::finished:ok");
 			} catch (XException e) {
 				throw e;
 			} catch (Exception e) {
@@ -483,18 +483,18 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 		/// <summary>Edit Collections</summary>
 		private void collections_edit() {
 			try {
-				Logger.Info(String.Concat(logid, "_collections_edit:"));
+				xLogger.Info(logid, "_collections_edit:");
 
 				string collectionID = _GetQueryID(COLLECTION_ID);
 				//_Access.GetCollection(Int32.Parse(collectionID));
 				string name = UserProfile.Value("name");
 
-				Logger.Debug(String.Concat(logid, "_group_edit:groupID", collectionID, ":name:", name));
+				xLogger.Debug(logid, "_group_edit:groupID", collectionID, ":name:", name);
 
 				//_Access.UpdateGroup(Int32.Parse(groupID), name);
 				collection_usersall("0_record_", collectionID);
 
-				Logger.Debug(String.Concat(logid, "_collection_edit::finished:ok"));
+				xLogger.Debug(logid, "_collection_edit::finished:ok");
 			} catch (XException e) {
 				throw e;
 			} catch (Exception e) {
@@ -515,14 +515,14 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 					break;
 
 				string[] users = usersCSV.Split(new char[] { '|' });
-				Logger.Debug(String.Concat(logid, "_profile_users:", prof, ":", usersCSV, "; profileID:", profileID));
+				xLogger.Debug(logid, "_profile_users:", prof, ":", usersCSV, "; profileID:", profileID);
 
 				string testcol = users[0];
 				string user_id = users[1];
-				Logger.Debug(String.Concat(logid, "_profile_users:user_id:", user_id));
+				xLogger.Debug(logid, "_profile_users:user_id:", user_id);
 
 				string user_remove = users[4];
-				Logger.Debug(String.Concat(logid, "_profile_users:user_remove:", user_remove));
+				xLogger.Debug(logid, "_profile_users:user_remove:", user_remove);
 				if (user_remove == "true") {
 					if (!(_IsDefault(testcol) || isNew))
 						_Access.DeleteProfileUser(Int32.Parse(profileID), Int32.Parse(user_id));
@@ -533,7 +533,7 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 						_Access.UpdateProfileUser(Int32.Parse(profileID), Int32.Parse(user_id));
 				}
 			}
-			Logger.Debug(String.Concat(logid, "_profile_users:finished"));
+			xLogger.Debug(logid, "_profile_users:finished");
 		}
 /*
 		private void group_usersall(string groupPrefix, int groupID) {
@@ -548,20 +548,20 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 					break;
 
 				string[] users = usersCSV.Split(new char[] { '|' });	// eg: 10180|zwetsh|Zwelakhe|Tshabangu|0||
-				Logger.Debug(String.Concat(logid, "_group_usersall:", prof, ":", usersCSV, "; profileID:", groupID));
+				xLogger.Debug(logid, "_group_usersall:", prof, ":", usersCSV, "; profileID:", groupID);
 
 				string user_id = users[1];
 				string test = users[5];
 				if (test == "true" || test == "1") {	// true when clicked, 1 when exists
-					Logger.Debug(String.Concat(logid, "_group_usersall:adding...", user_id));
+					xLogger.Debug(logid, "_group_usersall:adding...", user_id);
 					_Access.AddGroupUser(groupID, Int32.Parse(user_id));
 				}
 			}
-			Logger.Debug(String.Concat(logid, "_group_usersall:finished"));
+			xLogger.Debug(logid, "_group_usersall:finished");
 		}
 */
 		private void group_categoriesall(string groupPrefix, string groupID) {
-			Logger.Debug(String.Concat(logid, "_group_usersall:groupPrefix:", groupPrefix, ":groupID:", groupID));
+			xLogger.Debug(logid, "_group_usersall:groupPrefix:", groupPrefix, ":groupID:", groupID);
 
 			// first remove all rights from the group and gives them default rights
 			int groupid = Int32.Parse(groupID);
@@ -576,27 +576,27 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 					break;
 
 				string[] groups = categoriesCSV.Split(new char[] { '|' });	// eg: 10180|zwetsh|Zwelakhe|Tshabangu|0||
-				Logger.Debug(String.Concat(logid, "_group_usersall:", prof, ":", categoriesCSV, "; profileID:", groupID));
+				xLogger.Debug(logid, "_group_usersall:", prof, ":", categoriesCSV, "; profileID:", groupID);
 				string category_id = groups[2];
 				string test = groups[6];
 				if (test == "true" || test == "1") {	// true when clicked, 1 when exists
-					Logger.Debug(String.Concat(logid, "_group_Categoriesall:adding...", category_id));
+					xLogger.Debug(logid, "_group_Categoriesall:adding...", category_id);
 					_Access.AddGroupCategory(groupid, Int32.Parse(category_id), 3);
 				} else {
 					test = groups[5];
 					if (test == "true" || test == "1") {	// true when clicked, 1 when exists
-						Logger.Debug(String.Concat(logid, "_group_Categoriesall:adding...", category_id));
+						xLogger.Debug(logid, "_group_Categoriesall:adding...", category_id);
 						_Access.AddGroupCategory(groupid, Int32.Parse(category_id), 2);
 					} else {
 						test = groups[4];
 						if (test == "true" || test == "1") {	// true when clicked, 1 when exists
-							Logger.Debug(String.Concat(logid, "_group_Categoriesall:adding...", category_id));
+							xLogger.Debug(logid, "_group_Categoriesall:adding...", category_id);
 							_Access.AddGroupCategory(groupid, Int32.Parse(category_id), 1);
 						}
 					}
 				}
 			}
-			Logger.Debug(String.Concat(logid, "_group_Categoriesall:finished"));
+			xLogger.Debug(logid, "_group_Categoriesall:finished");
 		}
 
 		/// <summary>Add, update, remove profiles from a user</summary>
@@ -612,14 +612,14 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 					break;
 
 				string[] profiles = profilesCSV.Split(new char[] { '|' });
-				Logger.Debug(String.Concat(logid, "_user_profiles:", prof, ":", profilesCSV, "; userID:", userID));
+				xLogger.Debug(logid, "_user_profiles:", prof, ":", profilesCSV, "; userID:", userID);
 
 				string testcol = profiles[0];
 				string profile_id = profiles[1];
-				Logger.Debug(String.Concat(logid, "_user_profiles:profile_id:", profile_id));
+				xLogger.Debug(logid, "_user_profiles:profile_id:", profile_id);
 
 				string user_remove = profiles[2];
-				Logger.Debug(String.Concat(logid, "_user_profiles:user_remove:", user_remove));
+				xLogger.Debug(logid, "_user_profiles:user_remove:", user_remove);
 				if (user_remove == "true") {
 					if (!(_IsDefault(testcol) || isNew))
 						_Access.DeleteProfileUser(Int32.Parse(profile_id), Int32.Parse(userID));
@@ -630,11 +630,11 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 						_Access.UpdateProfileUser(Int32.Parse(profile_id), Int32.Parse(userID));
 				}
 			}
-			Logger.Debug(String.Concat(logid, "_user_profiles:finished"));
+			xLogger.Debug(logid, "_user_profiles:finished");
 		}
 
 		private void collection_usersall(string collectionPrefix, string collectionID) {
-			Logger.Debug(String.Concat(logid, "_group_usersall:groupPrefix:", collectionPrefix, ":groupID:", collectionID));
+			xLogger.Debug(logid, "_group_usersall:groupPrefix:", collectionPrefix, ":groupID:", collectionID);
 
 			// first remove all users from the collection 
 			int collectionid = Int32.Parse(collectionID);
@@ -649,16 +649,16 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 					break;
 
 				string[] users = usersCSV.Split(new char[] { '|' });	// eg: 10180|zwetsh|Zwelakhe|Tshabangu|0||
-				Logger.Debug(String.Concat(logid, "_collections_usersall:", prof, ":", usersCSV, "; collectionID:", collectionID));
+				xLogger.Debug(logid, "_collections_usersall:", prof, ":", usersCSV, "; collectionID:", collectionID);
 
 				string user_id = users[1];
 				string test = users[5];
 				if (test == "true" || test == "1") {	// true when clicked, 1 when exists
-					Logger.Debug(String.Concat(logid, "_collection_usersall:adding...", user_id));
+					xLogger.Debug(logid, "_collection_usersall:adding...", user_id);
 					_Access.AddCollectionUser(collectionid, Int32.Parse(user_id));
 				}
 			}
-			Logger.Debug(String.Concat(logid, "_collection_usersall:finished"));
+			xLogger.Debug(logid, "_collection_usersall:finished");
 		}
 
 

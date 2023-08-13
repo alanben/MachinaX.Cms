@@ -79,7 +79,7 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 
 		/// <summary>List sites</summary>
 		private void list_sites_admin(bool clearProfile) {
-			Logger.Info(String.Concat(logid, "list_sites_admin:"));
+			xLogger.Info(logid, "list_sites_admin:");
 			//string dir = UserProfile.Value("dir", "ASC");
 			//string sort_col = UserProfile.Value("sort", "");
 			//UserProfile.Add("LA_Awards_sort", sort_col);
@@ -102,7 +102,7 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 			//    UIPage.Content.AppendChild(UIPage.Document.ImportNode(sitesXml, true));
 			//} else
 			//    UIPage.Content.AppendChild(UIPage.Document.ImportNode(_Categories.ListXmlRoot as XmlNode, true));
-			Logger.Debug(String.Concat(logid, "list_sites_admin:ok"));
+			xLogger.Debug(logid, "list_sites_admin:ok");
 		}
 
 		/// <summary>List sites</summary>
@@ -114,7 +114,7 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 
 		/// <summary>List sites</summary>
 		private void load_sites(bool isStartup) {
-			xLogger.Info("load_sites", "::isStartup:", isStartup.ToString());
+			xLogger.Info("load_sites", "::isStartup:", isStartup);
 			
 			DisplayX.GetSites();
 			xLogger.Debug("load_sites", "::sites:", DisplayX.ListXml.OuterXml);
@@ -140,7 +140,7 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 		/// <summary>Get a media type</summary> 
 		private void get_site() {
 			try {
-				Logger.Info(String.Concat(logid, "get_site:"));
+				xLogger.Info(logid, "get_site:");
 				string site = UserProfile.Value(Cms.PROFILE_SITES);
 
 				// Set profile values associated with site here...
@@ -153,7 +153,7 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 				//_Categories.GetAward(site_id);
 				//UserProfile.Add("siteid", site_id);
 				//UIPage.Content.AppendChild(UIPage.Document.ImportNode(_Categories.ItemXmlRootNode, true));
-				Logger.Debug(String.Concat(logid, "get_site:ok"));
+				xLogger.Debug(logid, "get_site:ok");
 			} catch (XException e) {
 				throw e;
 			} catch (Exception e) {
@@ -187,7 +187,7 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 		/// <summary>Get a media type</summary> 
 		private void submit_site(bool is_new) {
 			try {
-				Logger.Debug(String.Concat(logid, "submit_site:is_new:", is_new.ToString()));
+				xLogger.Debug(String.Concat(logid, "submit_site:is_new:", is_new.ToString()));
 /*
 				string site_id = UserProfile.Value("siteid", UIPage.QueryParam("id", "0"));
 				string year = UserProfile.Value("year", "-");
@@ -207,10 +207,10 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 				//site_actions
 				// todo ::
 				if (is_new) {
-					Logger.Debug(String.Concat(logid, "submit_site:group:", group));
-					Logger.Debug(String.Concat(logid, "submit_site:adding..."));
+					xLogger.Debug(logid, "submit_site:group:", group);
+					xLogger.Debug(logid, "submit_site:adding...");
 					_Categories.AddAward(year, desc, group, entry_prefix, virt_inv_prefix, inv_prefix, entry_seed);
-					Logger.Debug(String.Concat(logid, "submit_site:...added."));
+					xLogger.Debug(logid, "submit_site:...added.");
 				} else {
 					if (site_actions.IndexOf("archive") >= 0) {
 						_Categories.ArchiveAwards(site_id);
@@ -224,14 +224,14 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 							_Categories.DuplicateAwardsLimited(site_id);
 						else
 							_Categories.DuplicateAwards(site_id);
-						Logger.Debug(String.Concat(logid, "submit_site:...duplicated."));
+						xLogger.Debug(logid, "submit_site:...duplicated.");
 					}
 					//,
-					Logger.Debug(String.Concat(logid, "submit_site:before update..."));
+					xLogger.Debug(logid, "submit_site:before update...");
 					_Categories.UpdateAward(site_id, year, desc, group, Boolean.Parse(is_open), Boolean.Parse(is_archived), entry_prefix, virt_inv_prefix, inv_prefix, entry_seed);
-					Logger.Debug(String.Concat(logid, "submit_site:before get..."));
+					xLogger.Debug(logid, "submit_site:before get...");
 					_Categories.GetAward(site_id);
-					Logger.Debug(String.Concat(logid, "submit_site:...edited."));
+					xLogger.Debug(logid, "submit_site:...edited.");
 				}
 
 				// Now reset the site's application cache for the site shows
@@ -241,12 +241,12 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 				UserProfile.Add("siteid", site_id);
 				UIPage.Content.AppendChild(UIPage.Document.ImportNode(_Categories.ItemXmlRootNode, true));
 */
-				Logger.Debug(String.Concat(logid, "submit_site:ok"));
+				xLogger.Debug(logid, "submit_site:ok");
 			} catch (XException e) {
-				Logger.Debug(String.Concat(logid, "submit_site:xerror:", e.Code, "::", e.Message));
+				xLogger.Debug(logid, "submit_site:xerror:", e.Code, "::", e.Message);
 				throw e;
 			} catch (Exception e) {
-				Logger.Debug(String.Concat(logid, "submit_site:error:", e.Message));
+				xLogger.Debug(logid, "submit_site:error:", e.Message);
 				throw (new XException("error_sites_get", String.Concat(error_sites_get, e.Message)));
 			} finally {
 				UserProfile.Add("site_actions", "");
@@ -261,13 +261,13 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 		/// <summary>Get a media type</summary> 
 		private void delete_site() {
 			try {
-				Logger.Info(String.Concat(logid, "delete_site:"));
+				xLogger.Info(logid, "delete_site:");
 				//string site_id = UIPage.QueryParam("id", "0");
 				//site_id = (site_id == "0") ? UserProfile.Value("siteid", site_id) : site_id;
 				//_Categories.DeleteAward(site_id);
 				//UserProfile.Add("siteid", site_id);
 				//UIPage.Content.AppendChild(UIPage.Document.ImportNode(_Categories.ItemXmlRootNode, true));
-				Logger.Debug(String.Concat(logid, "delete_site:ok"));
+				xLogger.Debug(logid, "delete_site:ok");
 			} catch (XException e) {
 				throw e;
 			} catch (Exception e) {

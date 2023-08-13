@@ -45,7 +45,7 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 		#endregion
 
 		#region Constructors/Destructors
-		public AccessGroup(x_logger xlogger, int id, Access accessws) : base(xlogger) {
+		public AccessGroup(XLogger xlogger, int id, Access accessws) : base(xlogger) {
 			xLogger.Debug("constructor");
 			GroupID = id;
 			_Access = accessws;

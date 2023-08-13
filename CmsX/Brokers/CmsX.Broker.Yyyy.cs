@@ -194,7 +194,7 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 
 		/// <summary>Get list of Yyyys</summary>
 		private void list(bool is_csv) {
-			xLogger.Info("list", "::is_csv:", is_csv.ToString());
+			xLogger.Info("list", "::is_csv:", is_csv);
 			try {
 				SearchSettings setting = new SearchSettings(UserProfile, xLogger, is_csv);
 
@@ -565,7 +565,7 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 				yyyys.RemoveChild(yyyy);
 				listdoc.Save(UploadDocName);
 
-				Logger.Debug("upload_delete:ok");
+				xLogger.Debug("upload_delete:ok");
 			} catch (XException e) {
 				throw e;
 			} catch (Exception e) {
@@ -597,7 +597,7 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 				xLogger.Debug("import_list", "::yyyys:", list.OuterXml);
 
 				UIPage.Content.AppendChild(UIPage.Document.ImportNode(list, true));
-				Logger.Debug(String.Concat(logid, "import_list::finished:ok"));
+				xLogger.Debug(logid, "import_list::finished:ok");
 			} catch (XException e) {
 				throw e;
 			} catch (Exception e) {

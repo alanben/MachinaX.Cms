@@ -47,9 +47,9 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
         #endregion
 
         #region Visible properties
-		private x_logger xlogger;
+		private XLogger xlogger;
 		/// <summary></summary>
-		public x_logger xLogger {
+		public XLogger xLogger {
 			get { return xlogger; }
 			set { xlogger = value; }
 		}
@@ -114,17 +114,17 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 
         #region Constructors/Destructors
         /// <summary>Default constructor</summary>
-		public CmsXSubItem(x_logger Logger) {
+		public CmsXSubItem(XLogger Logger) {
 			xLogger = Logger;
 			blankfield = CmsXBrokerBase.DEFAULT_SUBITEM;
 		}
 		/// <summary>Common constructor</summary>
-		public CmsXSubItem(x_logger Logger, string BlankField) {
+		public CmsXSubItem(XLogger Logger, string BlankField) {
 			xLogger = Logger;
 			blankfield = BlankField;
 		}
 		/// <summary>Common constructor</summary>
-		public CmsXSubItem(x_logger Logger, string BlankField, string Record) {
+		public CmsXSubItem(XLogger Logger, string BlankField, string Record) {
 			xLogger = Logger;
 			initialise(BlankField, Record);
 		}

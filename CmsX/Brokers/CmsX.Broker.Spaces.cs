@@ -150,12 +150,12 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 
 		/// <summary>List spaces</summary>
 		private void list_admin(bool clearProfile) {
-			Logger.Info(String.Concat(logid, "list_admin:"));
+			xLogger.Info(logid, "list_admin:");
 
 			//_Spaces.ListSpaces();
 			UIPage.Content.AppendChild(UIPage.Document.ImportNode(_Spaces.ListXmlRoot, true));
 
-			Logger.Debug(String.Concat(logid, "list_admin:ok"));
+			xLogger.Debug(logid, "list_admin:ok");
 		}
 
 		/// <summary>List spaces</summary>
@@ -269,7 +269,7 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 		/// <summary>Add/Edit a space</summary> 
 		private void submit(bool is_new) {
 			try {
-				Logger.Debug(String.Concat(logid, "submit:is_new:", is_new.ToString()));
+				xLogger.Debug(String.Concat(logid, "submit:is_new:", is_new.ToString()));
 
 				string spaceid = UserProfile.Value("id");
 				xLogger.Debug("submit:spaceid:", spaceid);
@@ -295,12 +295,12 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 
 				handleTopics("0_record_", name, is_new);
 
-				Logger.Debug(String.Concat(logid, "submit:ok"));
+				xLogger.Debug(logid, "submit:ok");
 			} catch (XException e) {
-				Logger.Debug(String.Concat(logid, "submit:xerror:", e.Code, "::", e.Message));
+				xLogger.Debug(logid, "submit:xerror:", e.Code, "::", e.Message);
 				throw e;
 			} catch (Exception e) {
-				Logger.Debug(String.Concat(logid, "submit:error:", e.Message));
+				xLogger.Debug(logid, "submit:error:", e.Message);
 				throw (new XException("error_submit", String.Concat(error_submit, e.Message)));
 			} finally {
 				UserProfile.Add("space_actions", "");

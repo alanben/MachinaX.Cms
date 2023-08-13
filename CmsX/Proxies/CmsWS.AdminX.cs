@@ -28,7 +28,7 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 		#region Private properties
 		private string token;
 		private string archive = "";
-		private x_config config;
+		private XConfig config;
 		#endregion
 
 		#region Constant name strings
@@ -68,7 +68,7 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 		/// <summary>Initiate properties</summary>
 		private void initialize() {
 			xLogger.Debug("initialize");
-			config = new x_config();
+			config = new XConfig();
 			
 			adminxWS = new AdminXWS.adminX();
 			adminxWS.Url = _GetUrl(CONFIG_SERVICE_ID);
@@ -158,7 +158,7 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 				);
 		}
 		public void GetPressPages(SearchSettings Settings, bool IsDropDown, string thoughtspace) {
-			Logger.Debug(String.Concat("_ListPressPages:settings:", Settings.Page.ToString(), ":", Settings.Column, ":", Settings.Descending.ToString(), ":", Settings.Rows.ToString()));
+			xLogger.Debug(String.Concat("_ListPressPages:settings:", Settings.Page.ToString(), ":", Settings.Column, ":", Settings.Descending.ToString(), ":", Settings.Rows.ToString()));
 			XmlNode result;
 			result = adminxWS.ListBlogs(Token, thoughtspace, "default", archive);
 			ListXmlRoot.RemoveAll();

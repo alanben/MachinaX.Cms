@@ -45,14 +45,15 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 
 		#region Visible properties
 		/// <summary>Web Configuration object</summary>
-		//public clickclickboom.machinaX.blogX.x_config Config { get; set; }
-		public x_logger xLogger;	// ideally move this to x_broker / x_actor
-		public ILog Logger {
-			get { return xLogger.Logger; }
-		}
+		//public clickclickboom.machinaX.blogX.XConfig Config { get; set; }
+		public XLogger xLogger; // ideally move this to x_broker / x_actor
+        /// NB: Not available in XLogger - artifact from x_logger
+        //public ILog Logger {
+        //	get { return xLogger.Logger; }
+        //}
 
-		/// <summary>Determines how the list data is output</summary>
-		public ListOutputStyle ListStyle { get; set; }
+        /// <summary>Determines how the list data is output</summary>
+        public ListOutputStyle ListStyle { get; set; }
 
 		/// <summary>
 		/// Required in Access.ListGroups (leave in for now)
@@ -335,11 +336,11 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 		#region Private Methods
 		/// <summary>Initialise the xLogger</summary>
 		private void initialise(Type logType, string logID) {
-			xLogger = new x_logger((logType == null) ? typeof(CmsXProfileX) : logType, (String.IsNullOrEmpty(logID)) ? logid : logID, false, true);
+			xLogger = new XLogger((logType == null) ? typeof(CmsXProfileX) : logType, (String.IsNullOrEmpty(logID)) ? logid : logID, false, true);
 		}
 		/// <summary>Initiate properties</summary>
 		private void initialize() {
-			//Config = new clickclickboom.machinaX.blogX.x_config();
+			//Config = new clickclickboom.machinaX.blogX.XConfig();
 			string listOutputStyle = Config.Value(String.Concat(Cms.CONFIG_ROOT, "/ListOutputStyle"), Cms.DEFAULT_LISTOUTPUTSTYLE);
 			xLogger.Debug("initialize", "::listOutputStyle:", listOutputStyle);
 

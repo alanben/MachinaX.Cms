@@ -241,7 +241,7 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 
 				result = _CustomerWS.Login(_User.Username, _User.Password, expireToken);
 				int verifyResult = verify();
-                xLogger.Info("_login:", _User.Username, "/", _User.Password, "::result:", verifyResult.ToString());
+                xLogger.Info("_login:", _User.Username, "/", _User.Password, "::result:", verifyResult);
 
 				if (verifyResult == VERIFY_OK) {	// ie is iPassport User
                     _User.Set(Root.GetAttribute("Token"), Root.GetAttribute("UserID"));
@@ -272,7 +272,7 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 						throw (new displayException(LINK_INFO));
 					}
 				} else {
-					xLogger.Info("_login:", verifyResult.ToString());
+					xLogger.Info("_login:", verifyResult);
 				}
 			}
 			catch (displayException e) {
@@ -393,7 +393,7 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 					xLogger.Debug("validate", "::Root:", Root.OuterXml);
 
 					int verifyResult = verify();
-					xLogger.Info("validate", "::verifyResult:", verifyResult.ToString());
+					xLogger.Info("validate", "::verifyResult:", verifyResult);
 					
 					if (verifyResult == VERIFY_OK) {	// ie is iPassport User
 						return;
@@ -451,11 +451,11 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 						throw (new displayException(link));
 					}
 				} else if (verifyResult == VERIFY_TOKEN_INVALID) {	// token invalid
-					xLogger.Info("_token:", verifyResult.ToString());
+					xLogger.Info("_token:", verifyResult);
 					ProfilePage.Cooker.Token = "";
 					_User.Reset();
 				} else {
-					xLogger.Info("_token:", verifyResult.ToString());
+					xLogger.Info("_token:", verifyResult);
 					throw new Exception(String.Concat("Bad token validate result: ", verifyResult.ToString()));
 				}
 			} catch (displayException e) {
@@ -851,7 +851,7 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 		/// <summary>Emails the _User details, including password</summary>
 		private string send(string email) {
 			string sendtext = "";
-			Utils.x_email thisemail = new Utils.x_email();
+            BlogXEmail thisemail = new BlogXEmail();
 			try {
 				/* originally...
 				thisemail.Bcc = "alan@clickclickBOOM.co.za";
@@ -864,7 +864,7 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 				if (!String.IsNullOrEmpty(Config.EmailFrom)) {
 					thisemail.From = Config.EmailFrom;
 				}
-				thisemail.Type = x_emailtype.html;
+				thisemail.Type = Domain.XEmailType.html;
 				xLogger.Debug("_send", "::result:", result.OuterXml);
 				xLogger.Debug("_send", "::ResultDoc:", ResultDoc.OuterXml);
 				xLogger.Debug("_send", "::To:", thisemail.To, "::From:", thisemail.From, "::Bcc:", thisemail.Bcc);
@@ -907,7 +907,7 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 		//private bool getRemember() {
 		//	xLogger.Debug("_getRemember:", "RememberMe:", _User.RememberMe);
 		//	bool noremember = (_User.RememberMe != "on");
-		//	xLogger.Info("_getRemember:", "noremember:", noremember.ToString());
+		//	xLogger.Info("_getRemember:", "noremember:", noremember.ToString();
 		//	_User.RememberMe = "off";	// set off automatically, for safety
 		//	return noremember;
 		//}

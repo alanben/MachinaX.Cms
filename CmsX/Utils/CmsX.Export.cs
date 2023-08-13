@@ -39,7 +39,7 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 		private const ExportType DEFAULT_EXPORTTYPE = ExportType.XLSX;
 		private const string logid = "CmsXExport.";
 
-		protected x_logger xLogger;
+		protected XLogger xLogger;
 		/// <summary>The UIPage of the processing broker</summary>
 		private displayX uipage;
 		public displayX UIPage {
@@ -97,7 +97,7 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 		}
 
 		private void inititalise(displayX thispage, string filterPrefix, string logId, Type logtype, ExportType exportType) {
-			xLogger = new x_logger(logtype, logId, false, true);
+			xLogger = new XLogger(logtype, logId, false, true);
 			id = filterPrefix;
 			UIPage = thispage;
 			ExportType = exportType;

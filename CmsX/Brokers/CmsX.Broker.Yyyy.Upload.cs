@@ -55,7 +55,7 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 		#endregion
 
 		#region Constructors/Destructors
-		public YyyyUpload(x_logger xlogger, XmlDocument uploaddoc, XmlElement deftypes, XmlElement yyyy) : base(xlogger) {
+		public YyyyUpload(XLogger xlogger, XmlDocument uploaddoc, XmlElement deftypes, XmlElement yyyy) : base(xlogger) {
 			xLogger.Debug("constructor");
 			UploadDoc = uploaddoc;
 			DefaultTypes = deftypes;

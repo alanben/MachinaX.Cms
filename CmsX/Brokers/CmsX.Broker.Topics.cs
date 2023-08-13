@@ -198,9 +198,9 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 		/// <summary>Get a topic</summary> 
 		private void get() {
 			try {
-				Logger.Info(String.Concat(logid, "get:"));
+				xLogger.Info(logid, "get:");
  				
-				Logger.Debug(String.Concat(logid, "get:ok"));
+				xLogger.Debug(logid, "get:ok");
 			} catch (XException e) {
 				throw e;
 			} catch (Exception e) {
@@ -224,14 +224,14 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 		/// <summary>Add/Edit a topic</summary> 
 		private void submit(bool is_new) {
 			try {
-				Logger.Debug(String.Concat(logid, "submit:is_new:", is_new.ToString()));
+				xLogger.Debug(String.Concat(logid, "submit:is_new:", is_new.ToString()));
 
-				Logger.Debug(String.Concat(logid, "submit:ok"));
+				xLogger.Debug(logid, "submit:ok");
 			} catch (XException e) {
-				Logger.Debug(String.Concat(logid, "submit:xerror:", e.Code, "::", e.Message));
+				xLogger.Debug(logid, "submit:xerror:", e.Code, "::", e.Message);
 				throw e;
 			} catch (Exception e) {
-				Logger.Debug(String.Concat(logid, "submit:error:", e.Message));
+				xLogger.Debug(logid, "submit:error:", e.Message);
 				throw (new XException("error_submit", String.Concat(error_submit, e.Message)));
 			} finally {
 				UserProfile.Add("topic_actions", "");
@@ -251,9 +251,9 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 		/// <summary>Delete a topic</summary> 
 		private void delete_topic() {
 			try {
-				Logger.Info(String.Concat(logid, "delete:"));
+				xLogger.Info(logid, "delete:");
 
-				Logger.Debug(String.Concat(logid, "delete:ok"));
+				xLogger.Debug(logid, "delete:ok");
 			} catch (XException e) {
 				throw e;
 			} catch (Exception e) {

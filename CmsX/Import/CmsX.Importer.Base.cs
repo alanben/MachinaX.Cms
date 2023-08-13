@@ -39,7 +39,7 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 		#endregion
 
         #region Public constants
-		protected x_logger xLogger;
+		protected XLogger xLogger;
 		public const string PROFILE_UPLOAD_TYPE = "UploadFileType";
 		public const string PROFILE_UPLOAD_FILE = "UploadFileName";
 		public const string csvDelimiter = ",;";
@@ -224,12 +224,12 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
         /// <summary>Constructor for derived classes</summary>
         public Importer(x_userprofile uprofile, string logid){
 			optionSplit = new Char[] { '|' };
-			xLogger = new x_logger(typeof(Importer), logid, false, true);
+			xLogger = new XLogger(typeof(Importer), logid, false, true);
 			profile = uprofile;
         }
         /// <summary>Common constructor</summary>
 		//public Importer(displayX thispage) {
-		//    xLogger = new x_logger(typeof(Importer), logid, false, true);
+		//    xLogger = new XLogger(typeof(Importer), logid, false, true);
 		//    profile = thispage.UserProfile;
 		//}
         #endregion

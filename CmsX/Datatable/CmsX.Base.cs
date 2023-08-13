@@ -25,7 +25,7 @@ namespace XXBoom.MachinaX.BlogX.CmsX.datatable {
 
 		protected int ID { get; set; }
 		protected x_userprofile Profile { get; set; }
-		protected x_logger xLogger { get; set; }
+		protected XLogger xLogger { get; set; }
 
         /// <summary>Constructor</summary>
 		public Base(x_userprofile profile) {
@@ -35,7 +35,7 @@ namespace XXBoom.MachinaX.BlogX.CmsX.datatable {
 			initialise(profile, id);
 		}
 		private void initialise(x_userprofile profile, int id) {
-			xLogger = new x_logger(typeof(Base), ".datatable", false, true);
+			xLogger = new XLogger(typeof(Base), ".datatable", false, true);
 			Profile = profile;
 			ID = id;
 		}

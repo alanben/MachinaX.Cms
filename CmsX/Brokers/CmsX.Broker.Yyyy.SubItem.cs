@@ -45,7 +45,7 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 		#endregion
 
 		#region Constructors/Destructors
-		public YyyySubItem(x_logger xlogger, int id, Yyyys yyyyws) : base(xlogger) {
+		public YyyySubItem(XLogger xlogger, int id, Yyyys yyyyws) : base(xlogger) {
 			xLogger.Debug("constructor");
 			YyyyID = id;
 			_Yyyys = yyyyws;

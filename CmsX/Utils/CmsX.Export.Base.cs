@@ -21,7 +21,7 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
     /// </summary>
     public class CmsXExportBase {
 
-		protected x_logger xLogger;
+		protected XLogger xLogger;
 
 		/// <summary>The UIPage of the processing broker</summary>
 		private displayX uipage;
@@ -35,7 +35,7 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
         public CmsXExportBase() {
         }
         /// <summary>Constructor for derived classes</summary>
-		public CmsXExportBase(displayX thispage, x_logger xlogger) {
+		public CmsXExportBase(displayX thispage, XLogger xlogger) {
 			_UIPage = thispage;
 			xLogger = xlogger;
         }

@@ -38,7 +38,7 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 			: base() {
 		}
 		/// <summary>Constructor for derived classes</summary>
-		public CmsXExportXLSX(displayX thispage, x_logger xlogger)
+		public CmsXExportXLSX(displayX thispage, XLogger xlogger)
 			: base(thispage, xlogger) {
 		}
 		#endregion

@@ -69,7 +69,7 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 		/// <param name="RootName">The root (the part that changes) of the user profile name</param>
 		/// <param name="UserProfile">The user profile</param>
 		/// <param name="Logger">A reference to a Logger</param>
-		public SearchItemDrop(string SearchPrefix, string RootName, x_userprofile UserProfile, x_logger Logger) : base(SearchPrefix, RootName, UserProfile) {
+		public SearchItemDrop(string SearchPrefix, string RootName, x_userprofile UserProfile, XLogger Logger) : base(SearchPrefix, RootName, UserProfile) {
 			testNone();
 			Logger.Debug(":", RootName, ":", Type.ToString(), ":", Val);
 		}
@@ -154,7 +154,7 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 		/// <param name="RootName">The root (the part that changes) of the user profile name</param>
 		/// <param name="UserProfile">The user profile</param>
 		/// <param name="Logger">A reference to a Logger</param>
-		public SearchItem(string SearchPrefix, string RootName, x_userprofile UserProfile, x_logger Logger) {
+		public SearchItem(string SearchPrefix, string RootName, x_userprofile UserProfile, XLogger Logger) {
 			string rootName = String.Concat(SearchPrefix, RootName, SUFFIX_SEARCH);
 			initialise(rootName, UserProfile);
 			Logger.Debug(":", rootName, ":", Type.ToString(), ":", Val);
@@ -208,7 +208,7 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 		}
 
 		/// <summary>Constructors</summary>
-		public CmsSearch(CmsXProfileX thispage, x_logger xlogger, bool isMaxRows) : base(thispage.UserProfile, xlogger, isMaxRows) {
+		public CmsSearch(CmsXProfileX thispage, XLogger xlogger, bool isMaxRows) : base(thispage.UserProfile, xlogger, isMaxRows) {
 			listStyle = thispage.ListStyle;
 			if (listStyle == ListOutputStyle.Datatable) {
 				input = new datatable.Input(thispage.UserProfile);
@@ -310,19 +310,42 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 		public SearchSettings(x_userprofile UserProfile) {
 			initialise(UserProfile, null as ILog);
 		}
+        /// <summary>Constructor</summary>
+        public SearchSettings(x_userprofile UserProfile, XLogger Logger, bool IsMaxRows) {
+            initialise(UserProfile, Logger);
+            MaxRows = IsMaxRows;
+            Logger.Debug(String.Concat(":SortDesc:", sort_desc.ToString(), ":SortCol:", sort_col, ":Page:", page));
+        }
+        /// <summary>Constructor</summary>
+        public SearchSettings(x_userprofile UserProfile, XLogger Logger, string DefaultSortCol, bool IsDescending) {
+            def_desc = (IsDescending) ? SORT_DESC : SORT_ASC;
+            initialise(UserProfile, DefaultSortCol, Logger);
+            //sort_desc = IsDescending;
+        }
+        /// <summary>Constructor</summary>
+        public SearchSettings(x_userprofile UserProfile, XLogger Logger, int DefaultPage, string DefaultSortCol, bool IsDescending) {
+            initialise(DefaultPage, DefaultSortCol, IsDescending);
+        }
+        /// <summary>Constructor</summary>
+        public SearchSettings(x_userprofile UserProfile, XLogger Logger, int DefaultPage, string DefaultSortCol, bool IsDescending, bool IsMaxRows) {
+            initialise(DefaultPage, DefaultSortCol, IsDescending);
+            MaxRows = IsMaxRows;
+            Logger.Debug(String.Concat(":SortDesc:", sort_desc.ToString(), ":SortCol:", sort_col, ":Page:", page));
+        }
+        /// <summary>Constructor</summary>
+        public SearchSettings(int DefaultPage, string DefaultSortCol, bool IsDescending, bool IsMaxRows) {
+            initialise(DefaultPage, DefaultSortCol, IsDescending);
+            MaxRows = IsMaxRows;
+        }
 
+        // Removed constructors (from x_logger)
+        /*
 		public SearchSettings(x_userprofile UserProfile, ILog Logger) {
 			initialise(UserProfile, Logger);
 			Logger.Debug(String.Concat(":SortDesc:", sort_desc.ToString(), ":SortCol:", sort_col, ":Page:", page));
 		}
 		/// <summary>Constructor</summary>
 		public SearchSettings(x_userprofile UserProfile, ILog Logger, bool IsMaxRows) {
-			initialise(UserProfile, Logger);
-			MaxRows = IsMaxRows;
-			Logger.Debug(String.Concat(":SortDesc:", sort_desc.ToString(), ":SortCol:", sort_col, ":Page:", page));
-		}
-		/// <summary>Constructor</summary>
-		public SearchSettings(x_userprofile UserProfile, x_logger Logger, bool IsMaxRows) {
 			initialise(UserProfile, Logger);
 			MaxRows = IsMaxRows;
 			Logger.Debug(String.Concat(":SortDesc:", sort_desc.ToString(), ":SortCol:", sort_col, ":Page:", page));
@@ -344,12 +367,6 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 			//sort_desc = IsDescending;
 		}
 		/// <summary>Constructor</summary>
-		public SearchSettings(x_userprofile UserProfile, x_logger Logger, string DefaultSortCol, bool IsDescending) {
-			def_desc = (IsDescending) ? SORT_DESC : SORT_ASC;
-			initialise(UserProfile, DefaultSortCol, Logger);
-			//sort_desc = IsDescending;
-		}
-		/// <summary>Constructor</summary>
 		public SearchSettings(x_userprofile UserProfile, ILog Logger, int DefaultPage, string DefaultSortCol, bool IsDescending) {
 			initialise(DefaultPage, DefaultSortCol, IsDescending);
 		}
@@ -359,16 +376,13 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 			MaxRows = IsMaxRows;
 			Logger.Debug(String.Concat(":SortDesc:", sort_desc.ToString(), ":SortCol:", sort_col, ":Page:", page));
 		}
-		/// <summary>Constructor</summary>
-		public SearchSettings(int DefaultPage, string DefaultSortCol, bool IsDescending, bool IsMaxRows) {
-			initialise(DefaultPage, DefaultSortCol, IsDescending);
-			MaxRows = IsMaxRows;
-		}
+		*/
 
-		private void initialise(x_userprofile userProfile, ILog logger) {
+
+        private void initialise(x_userprofile userProfile, ILog logger) {
 			initialise(userProfile, DEFAULT_SORTCOL, logger);
 		}
-		private void initialise(x_userprofile userProfile, x_logger logger) {
+		private void initialise(x_userprofile userProfile, XLogger logger) {
 			initialise(userProfile, DEFAULT_SORTCOL, logger);
 		}
 		private void initialise(x_userprofile userProfile, string defaultSortCol, ILog logger) {
@@ -388,7 +402,7 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 				logger.Debug(String.Concat(":initialise:page:", page.ToString()));
 			}
 		}
-		private void initialise(x_userprofile userProfile, string defaultSortCol, x_logger logger) {
+		private void initialise(x_userprofile userProfile, string defaultSortCol, XLogger logger) {
 			if (logger != null) { 
 				logger.Debug(String.Concat(":initialise:defaultSortCol:", defaultSortCol));
 			}

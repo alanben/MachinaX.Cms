@@ -85,7 +85,7 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 			Process(type, ProfilePage.Authenticate);
 		}
 		public override void Process(string type, bool authenticate) {
-			xLogger.Info("Process::type:", type, "::authenticate:", authenticate.ToString());
+			xLogger.Info("Process::type:", type, "::authenticate:", authenticate);
 			if (authenticate) {
 				base.Process((type == "list"));
 			}

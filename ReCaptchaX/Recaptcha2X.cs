@@ -33,14 +33,14 @@ namespace XXBoom.MachinaX.ReCaptchaX {
 		private const string error_incorrect	= "ReCaptcha error: incorrect words";
 		private const string error_unavailable	= "ReCaptcha error: api unavailable";
 
-		private x_config config;
+		private XConfig config;
 		/// <summary>Configuration object</summary>
-		public x_config Config {
+		public XConfig Config {
 			get { return config; }
 		}
 
 		/// <summary>The logger object</summary>
-		public x_logger xLogger { get; set; }
+		public XLogger xLogger { get; set; }
 
 		/// <summary>Private ReCaptcha key as defined in config</summary>
 		public string PrivateKey { get; set; }
@@ -54,8 +54,8 @@ namespace XXBoom.MachinaX.ReCaptchaX {
 		}
 
 		private void initialise() {
-			config = new x_config();
-			xLogger = new x_logger(typeof(Recaptcha2X), "Recaptcha2X", false, ":");
+			config = new XConfig();
+			xLogger = new XLogger(typeof(Recaptcha2X), "Recaptcha2X", false, false, ":");
 
 			PrivateKey = config.Value("ReCaptchaX/Key[@id='private']", DEFAULT_PRIVATE_KEY);
 			PublicKey = config.Value("ReCaptchaX/Key[@id='public']", DEFAULT_PUBLIC_KEY);

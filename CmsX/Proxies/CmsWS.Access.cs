@@ -103,7 +103,7 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 				);
 		}
 		public void ListAdminUsers(SearchSettings Settings) {
-			Logger.Debug(String.Concat("ListUsers:settings:", Settings.Page.ToString(), ":", Settings.Column, ":", Settings.Descending.ToString(), ":", Settings.Rows.ToString()));
+			xLogger.Debug(String.Concat("ListUsers:settings:", Settings.Page.ToString(), ":", Settings.Column, ":", Settings.Descending.ToString(), ":", Settings.Rows.ToString()));
 			ListXmlRoot.RemoveAll();
 			ListXmlRoot.AppendChild(
 					ListXml.ImportNode(
@@ -177,7 +177,7 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 		}
 		/// <summary>List of setup items</summary>
 		public void ListGroups(string CategoryCollectionID, SearchSettings Settings, bool IsDropDown) {
-			Logger.Debug(String.Concat("_ListProfiles:settings:", Settings.Page.ToString(), ":", Settings.Column, ":", Settings.Descending.ToString(), ":", Settings.Rows.ToString()));
+			xLogger.Debug(String.Concat("_ListProfiles:settings:", Settings.Page.ToString(), ":", Settings.Column, ":", Settings.Descending.ToString(), ":", Settings.Rows.ToString()));
 			XmlNode result;
 			if (IsDropDown)
 				result = accessService.ListProfilesDrop(false, AwardID, Int32.Parse(CategoryCollectionID), Settings.Page, Settings.Column, Settings.Descending, Settings.Rows);
@@ -198,7 +198,7 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 				);
 		}
 		public void AddGroupUser(int GroupID, int UserID) {
-			Logger.Debug(String.Concat("_AddGroupUser:GroupID:", GroupID.ToString(), ":UserID:", UserID.ToString()));
+			xLogger.Debug(String.Concat("_AddGroupUser:GroupID:", GroupID.ToString(), ":UserID:", UserID.ToString()));
 			ItemXmlRoot.RemoveAll();
 			ItemXmlRoot.AppendChild(
 				   ItemXml.ImportNode(
@@ -207,7 +207,7 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 				);
 		}
 		public void AddGroupCategory(int GroupID, int CategoryID, int RightID) {
-			Logger.Debug(String.Concat("_AddGroupCategory:GroupID:", GroupID.ToString(), ":CategoryID:", CategoryID.ToString(), ":RightID", RightID.ToString()));
+			xLogger.Debug(String.Concat("_AddGroupCategory:GroupID:", GroupID.ToString(), ":CategoryID:", CategoryID.ToString(), ":RightID", RightID.ToString()));
 			ItemXmlRoot.RemoveAll();
 			ItemXmlRoot.AppendChild(
 				   ItemXml.ImportNode(
@@ -217,7 +217,7 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 		}
 
 		public void UpdateProfileUser(int ProfileID, int UserID) {
-			Logger.Debug(String.Concat("_UpdateProfileUser:ProfileID:", ProfileID.ToString(), ":UserID:", UserID.ToString()));
+			xLogger.Debug(String.Concat("_UpdateProfileUser:ProfileID:", ProfileID.ToString(), ":UserID:", UserID.ToString()));
 			ItemXmlRoot.RemoveAll();
 			ItemXmlRoot.AppendChild(
 				   ItemXml.ImportNode(
@@ -226,7 +226,7 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 				);
 		}
 		public void DeleteProfileUser(int ProfileID, int UserID) {
-			Logger.Debug(String.Concat("_DeleteProfileUser:ProfileID:", ProfileID.ToString(), ":UserID:", UserID.ToString()));
+			xLogger.Debug(String.Concat("_DeleteProfileUser:ProfileID:", ProfileID.ToString(), ":UserID:", UserID.ToString()));
 			ItemXmlRoot.RemoveAll();
 			ItemXmlRoot.AppendChild(
 				   ItemXml.ImportNode(
@@ -235,7 +235,7 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 				);
 		}
 		public void DeleteGroupUsers(int GroupID) {
-			Logger.Debug(String.Concat("_DeleteGroupUsers:GroupID:", GroupID.ToString()));
+			xLogger.Debug(String.Concat("_DeleteGroupUsers:GroupID:", GroupID.ToString()));
 			ItemXmlRoot.RemoveAll();
 			ItemXmlRoot.AppendChild(
 				   ItemXml.ImportNode(
@@ -244,7 +244,7 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 				);
 		}
 		public void DeleteGroupCategories(int GroupID) {
-			Logger.Debug(String.Concat("_DeleteGroupCategories:GroupID:", GroupID.ToString()));
+			xLogger.Debug(String.Concat("_DeleteGroupCategories:GroupID:", GroupID.ToString()));
 			ItemXmlRoot.RemoveAll();
 			ItemXmlRoot.AppendChild(
 				   ItemXml.ImportNode(
@@ -254,7 +254,7 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 		}
 		/// <summary>List of shows</summary>
 		public void ListCollections(SearchSettings Settings, bool IsDropDown) {
-			Logger.Debug(String.Concat("_ListCollections:settings:", Settings.Page.ToString(), ":", Settings.Column, ":", Settings.Descending.ToString(), ":", Settings.Rows.ToString()));
+			xLogger.Debug(String.Concat("_ListCollections:settings:", Settings.Page.ToString(), ":", Settings.Column, ":", Settings.Descending.ToString(), ":", Settings.Rows.ToString()));
 			XmlNode result;
 			if (IsDropDown)
 				result = accessService.ListCollectionsDrop(false, Settings.Page, Settings.Column, Settings.Descending, Settings.Rows);
@@ -273,7 +273,7 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 				);
 		}
 		public void DeleteCollectionUsers(int CollectionID) {
-			Logger.Debug(String.Concat("_DeleteCollectionUsers:GroupID:", CollectionID.ToString()));
+			xLogger.Debug(String.Concat("_DeleteCollectionUsers:GroupID:", CollectionID.ToString()));
 			ItemXmlRoot.RemoveAll();
 			ItemXmlRoot.AppendChild(
 				   ItemXml.ImportNode(
@@ -282,7 +282,7 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 				);
 		}
 		public void AddCollectionUser(int CollectionID, int UserID) {
-			Logger.Debug(String.Concat("_AddCollectionUser:CollectionID:", CollectionID.ToString(), ":UserID:", UserID.ToString()));
+			xLogger.Debug(String.Concat("_AddCollectionUser:CollectionID:", CollectionID.ToString(), ":UserID:", UserID.ToString()));
 			ItemXmlRoot.RemoveAll();
 			ItemXmlRoot.AppendChild(
 				   ItemXml.ImportNode(

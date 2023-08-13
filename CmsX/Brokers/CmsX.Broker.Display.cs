@@ -122,7 +122,7 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 		private void menus_list(bool clearProfile) {
 			try {
 				xLogger.Info("menus_list:");
-				SearchSettings search = new SearchSettings(UserProfile, Logger, 1, "3", false, true);
+				SearchSettings search = new SearchSettings(UserProfile, xLogger, 1, "3", false, true);
 				if (clearProfile) {
 					UserProfile.Add("LA_Profile_ProfileID", "0");
 				}
@@ -153,19 +153,19 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 			try {
 				string data_id = UIPage.QueryParam("id", "0");
 				xLogger.Info("pages_list::data_id:", data_id);
-				SearchSettings search = new SearchSettings(UserProfile, Logger, 1, "3", false, true);
+				SearchSettings search = new SearchSettings(UserProfile, xLogger, 1, "3", false, true);
 				if (clearProfile) {
 					UserProfile.Add("LA_Profile_ProfileID", "0");
 				}
 				DisplayX.GetPages(search, clearProfile);
 				if (data_id != "0") {
-					Logger.Debug(String.Concat("_SetPageRow:ID::", data_id));
+					xLogger.Debug(String.Concat("_SetPageRow:ID::", data_id));
 					CmsXGrid grid = new CmsXGrid(UIPage, false);
 					int rows = Int32.Parse(DisplayX.ListXmlRoot.SelectSingleNode(Cms.SELECT_ITEMS_ROWS).InnerText);
 					int row = Int32.Parse(DisplayX.ListXmlRoot.SelectSingleNode(String.Format(Cms.SELECT_ITEMSITEM_ROW, data_id)).InnerText);
-					Logger.Debug(String.Concat("Number of rows pre::", grid.RowsPerPage.ToString()));
+					xLogger.Debug(String.Concat("Number of rows pre::", grid.RowsPerPage.ToString()));
 					grid.RowsPerPage = rows;
-					Logger.Debug(String.Concat("Number of rows post::", grid.RowsPerPage.ToString()));
+					xLogger.Debug(String.Concat("Number of rows post::", grid.RowsPerPage.ToString()));
 					grid.SetFocus(rows, row);
 				}
 				UIPage.Content.AppendChild(UIPage.Document.ImportNode(DisplayX.ListXmlRoot as XmlNode, true));
@@ -185,12 +185,12 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 		private void parent_list(bool clearProfile) {
 			try {
 				xLogger.Info("parent_list:");
-				SearchSettings search = new SearchSettings(UserProfile, Logger, 1, "3", false, true);
+				SearchSettings search = new SearchSettings(UserProfile, xLogger, 1, "3", false, true);
 				if (clearProfile) {
 					UserProfile.Add("LA_Profile_ProfileID", "0");
 				}
 				DisplayX.GetParents(search, clearProfile);
-				Logger.Debug(String.Concat("_list Parents:Xml::", DisplayX.ItemXmlRoot.OuterXml));
+				xLogger.Debug(String.Concat("_list Parents:Xml::", DisplayX.ItemXmlRoot.OuterXml));
 				UIPage.Content.AppendChild(UIPage.Document.ImportNode(DisplayX.ListXmlRoot as XmlNode, true));
 				xLogger.Debug("parent_list::finished:ok");
 			} catch (XException e) {
@@ -207,7 +207,7 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 		private void thoughtspace_list(bool clearProfile) {
 			try {
 				xLogger.Info("Thoughtspaces_list:");
-				SearchSettings search = new SearchSettings(UserProfile, Logger, 1, "3", false, true);
+				SearchSettings search = new SearchSettings(UserProfile, xLogger, 1, "3", false, true);
 				if (clearProfile) {
 					UserProfile.Add("LA_Profile_ProfileID", "0");
 				}
@@ -281,7 +281,7 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 		private void topic_list_org(bool clearProfile) {
 			try {
 				xLogger.Info("topics_list:");
-				SearchSettings search = new SearchSettings(UserProfile, Logger, 1, "3", false, true);
+				SearchSettings search = new SearchSettings(UserProfile, xLogger, 1, "3", false, true);
 				if (clearProfile) {
 					UserProfile.Add("LA_Profile_ProfileID", "0");
 				}
@@ -342,7 +342,7 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 		}
 		/// <summary>List menus</summary>
 		private XmlNode getPressPages(bool clearProfile) {
-			SearchSettings search = new SearchSettings(UserProfile, Logger, 1, "3", false, true);
+			SearchSettings search = new SearchSettings(UserProfile, xLogger, 1, "3", false, true);
 			if (clearProfile) {
 				UserProfile.Add("LA_Profile_ProfileID", "0");
 			}
@@ -473,12 +473,12 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 				xLogger.Debug("; Thoughtspace:", thoughtspace, "; Topic:", topic, "; Blog:", blog);
 				
 				XmlNode contentNode = _AdminX.GetBlog(thoughtspace, topic, blog);
-				Logger.Debug(String.Concat(" Blog Content::", contentNode.OuterXml));
+				xLogger.Debug(String.Concat(" Blog Content::", contentNode.OuterXml));
 				addNode(contentNode, "//blog/title"); 
 				addNode(contentNode, "//blog/date");
 				string blogHtml = contentNode.SelectSingleNode("//blog/bloghtml").InnerText;
 				string decodedHtml = HttpUtility.HtmlDecode(blogHtml);
-				Logger.Debug(String.Concat(" The Decoded Html::", decodedHtml));
+				xLogger.Debug(String.Concat(" The Decoded Html::", decodedHtml));
 				contentNode.SelectSingleNode("//blog/bloghtml").InnerText = decodedHtml;
 				addNode(contentNode, "//blog/bloghtml");
 				
@@ -603,9 +603,9 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 				string blogId = UIPage.UserProfile.Value("PressId");
 				XmlNode itemNode = pages_press_get();
 				DateTime dateTotal = DateTime.Parse(itemNode.SelectSingleNode("//item/@date").InnerText);
-				Logger.Debug(String.Concat("Date before::", itemNode.SelectSingleNode("//item/@date").InnerText));
+				xLogger.Debug(String.Concat("Date before::", itemNode.SelectSingleNode("//item/@date").InnerText));
 				string date = dateTotal.ToString("yyyyMMdd");
-				Logger.Debug(String.Concat("Date after::", date));
+				xLogger.Debug(String.Concat("Date after::", date));
 				string document = String.Concat("TheLoerieAwards_", date, "_", blogId , ".", fileExt);
 				string filename = String.Concat("Press/", document); 
 				filename = UIPage.Server.MapPath(filename);
@@ -670,9 +670,9 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 				if (ConcatId != "0") {
 					//get the menu id with a separate call
 					menus_list();
-					Logger.Debug(String.Concat("_TheMenuXml::::", DisplayX.ListXmlRoot.OuterXml));
+					xLogger.Debug(String.Concat("_TheMenuXml::::", DisplayX.ListXmlRoot.OuterXml));
 					string menuID= DisplayX.ListXmlRoot.SelectSingleNode(String.Format("//items/item[@ConcatId='{0}']/@menuId", ConcatId)).InnerText;
-					Logger.Debug(String.Concat(" MenuitemsAdd:MenuId::", menuID));
+					xLogger.Debug(String.Concat(" MenuitemsAdd:MenuId::", menuID));
 					//add menuitems
 					menu_menuitemsall("0_record_", menuID);
 				} else {//ie this is to be a parent menu
@@ -681,7 +681,7 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 					XmlNodeList itemNodes = DisplayX.ListXmlRoot.SelectNodes(Cms.SELECT_ITEMSITEM);
 					int menuid = itemNodes.Count;
 					string menuID = menuid.ToString();
-					Logger.Debug(String.Concat(" THE MENU ID IS::", menuID));
+					xLogger.Debug(String.Concat(" THE MENU ID IS::", menuID));
 					menu_menuitemsall("0_record_", menuID);
 				}
 				//profile_users("0_record_", profileID, true);

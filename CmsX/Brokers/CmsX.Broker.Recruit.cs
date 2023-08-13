@@ -243,10 +243,10 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 			xLogger.Info("send::Email:", recruit.Email);
 			
 			try {
-				x_email thisemail = new x_email();
+                BlogXEmail thisemail = new BlogXEmail();
 				thisemail.Bcc = Config.EmailBcc;
 				thisemail.To = recruit.Email;
-				thisemail.Type = x_emailtype.html;
+				thisemail.Type = Domain.XEmailType.html;
 				thisemail.Send(result, _GetTemplate(EMAILTEMPLATE));
 				xLogger.Info("send::Message:", thisemail.Message);
 			} catch (System.Exception e) {

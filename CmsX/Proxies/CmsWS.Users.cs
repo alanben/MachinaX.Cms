@@ -105,7 +105,7 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 		}
 
 		public void AddUser(string Username, string Password, string Firstname, string Surname, string Email, string Telephone, string Cellphone) {
-			Logger.Debug(String.Concat("AddUser::"));
+			xLogger.Debug(String.Concat("AddUser::"));
 			ItemXmlRoot.RemoveAll();
 			ItemXmlRoot.AppendChild(
 				   ItemXml.ImportNode(

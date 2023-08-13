@@ -25,7 +25,7 @@ namespace XXBoom.MachinaX.ReCaptchaX {
 	public class RecaptchaAjaxX : System.Web.UI.Page {
         #region Invisible properties
         private XmlDocument recaptchaXml;
-		private x_logger logger;
+		private XLogger logger;
 		#endregion
 
 		#region Constants
@@ -76,7 +76,7 @@ namespace XXBoom.MachinaX.ReCaptchaX {
 
 		#region Private methods
 		private void initialise() {
-			logger = new x_logger(typeof(RecaptchaX));
+			logger = new XLogger(typeof(RecaptchaX));
 			recaptchaXml = new XmlDocument();
 			recaptchaXml.LoadXml(DOCXML);
 		}

@@ -35,10 +35,10 @@ namespace XXBoom.MachinaX.ReCaptchaX {
 		#endregion
 
 		#region Visible properties
-		private x_config config;
+		private XConfig config;
 		/// <summary>Configuration object</summary>
 		/// <value>Configuration values acces via the object</value>
-		public x_config Config {
+		public XConfig Config {
 			get { return config; }
 		}
 
@@ -99,7 +99,7 @@ namespace XXBoom.MachinaX.ReCaptchaX {
 
 		#region Private methods
 		private void initialise() {
-			config = new x_config();
+			config = new XConfig();
 			privateKey = config.Value("ReCaptchaX/Key[@id='private']", DEFAULT_PRIVATE_KEY);
 			publicKey = config.Value("ReCaptchaX/Key[@id='public']", DEFAULT_PUBLIC_KEY);
 		}

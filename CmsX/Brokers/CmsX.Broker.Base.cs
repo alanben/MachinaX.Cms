@@ -55,7 +55,7 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 		#endregion
 
         #region Visible properties
-		protected x_logger xLogger;
+		protected XLogger xLogger;
 		#endregion
 
         #region Private Constants
@@ -88,10 +88,11 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 		#region Visible properties
 		/// <summary>
 		/// Reference to the Logger object itself
+		/// NB: Not available in XLogger - artifact from x_logger
 		/// </summary>
-		public ILog Logger {
-			get { return xLogger.Logger; }
-		}
+		//public ILog Logger {
+		//	get { return xLogger.Logger; }
+		//}
 
 		private bool wantCmsAuth = true;
 		/// <summary>Flag to indicate if authentication (eg token validation) is done via CmsAuth (or PassportX)</summary>
@@ -223,7 +224,7 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 		/// <summary>verify the Passport result</summary>
 		/// <returns></returns>
 		protected bool VerifyPassport(XmlElement result) {
-			Logger.Debug(String.Concat(logid, "verify:result", result.OuterXml));
+			xLogger.Debug(logid, "verify:result", result.OuterXml);
 			XmlElement rescode = result.SelectSingleNode(SELECT_PASSPORT_RESULT_CODE) as XmlElement;
 			if (rescode != null) {
 				return (rescode.InnerText == "0");
@@ -610,7 +611,7 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 		/// Initialises properties common to constructors
 		/// </summary>
 		private void initialise(CmsXProfileX thispage, Type type, string loggerID) {
-			xLogger = new x_logger(type, loggerID, false, ":");
+			xLogger = new XLogger(typeof(CmsXBrokerBase), loggerID, false, false, ":");
 
 			WantCmsAuth = (Config.Value("CmsX/Auth") == "CmsAuth");
 			xLogger.Debug("initialise", "::WantCmsAuth:", WantCmsAuth.ToString(), "::_User:", _User.Username);

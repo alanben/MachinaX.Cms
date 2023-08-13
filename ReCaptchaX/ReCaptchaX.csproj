@@ -5,13 +5,13 @@
 		<RootNamespace>XXBoom.MachinaX.ReCaptchaX</RootNamespace>
 		<AssemblyName>XXBoom.MachinaX.ReCaptchaX</AssemblyName>
 
-		<AssemblyVersion>2.1.0</AssemblyVersion>
+		<AssemblyVersion>2.1.1</AssemblyVersion>
 		<FileVersion>$(AssemblyVersion)</FileVersion>
 
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 		<IsPublishable>False</IsPublishable>
 		<Title>MachinaX ReCaptchaX library</Title>
-		<Version>$(AssemblyVersion)-beta1</Version>
+		<Version>$(AssemblyVersion)</Version>
 		<Authors>alanben</Authors>
 		<Company>XXBoom</Company>
 		<Description>MachinaX ReCaptchaX classes</Description>
@@ -23,7 +23,7 @@
 	<ItemGroup>
 		<PackageReference Include="log4net" Version="2.0.15" />
 		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
-		<PackageReference Include="XXBoom.MachinaX" Version="2.1.0-beta2" />
+		<PackageReference Include="XXBoom.MachinaX" Version="2.1.1" />
 	</ItemGroup>
 
 	<ItemGroup>

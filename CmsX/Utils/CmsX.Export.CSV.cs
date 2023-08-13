@@ -37,7 +37,7 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
         public CmsXExportCSV() : base() {
         }
         /// <summary>Constructor for derived classes</summary>
-		public CmsXExportCSV(displayX thispage, x_logger xlogger) : base(thispage, xlogger) {
+		public CmsXExportCSV(displayX thispage, XLogger xlogger) : base(thispage, xlogger) {
         }
         #endregion
 
@@ -116,7 +116,7 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 				string name = column.SelectSingleNode("prompt").InnerText;
 				_UIPage.Response.Write((x == 0) ? "" : TOKEN_COMMA);
 				_UIPage.Response.Write(name);
-				//Logger.Debug(String.Concat(logid, " COLUMNS::", column.OuterXml)); 
+				//xLogger.Debug(logid, " COLUMNS::", column.OuterXml); 
 				x++;
 			}
 			_UIPage.Response.Write("\n");
