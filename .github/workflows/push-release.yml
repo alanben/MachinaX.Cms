@@ -1,0 +1,50 @@
+name: Release to NuGet
+
+on:
+  release:
+    types: [published]
+    
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Get branch name
+      id: extract_branch
+      run: echo "::set-output name=branch::$(echo ${GITHUB_REF#refs/heads/})"
+      
+    - name: Get AssemblyVersion from .csproj
+      id: get_version
+      run: |
+        VERSION=$(grep -oP '<AssemblyVersion>\K(.*?)(?=<)' CmsX/CmsX.csproj)
+        echo "VERSION=$VERSION" >> $GITHUB_ENV
+        echo "::set-output name=version::$VERSION"
+
+    - name: Create GitHub Release
+      id: create_release
+      uses: actions/create-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Set the GITHUB_TOKEN environment variable
+      with:
+        tag_name: ${{ steps.get_version.outputs.version }}
+        release_name: v${{ steps.get_version.outputs.version }}
+        draft: true
+        prerelease: false
+
+    - name: Setup .NET SDK
+      uses: actions/setup-dotnet@v1
+
+    - name: Build
+      run: dotnet build -c Release
+
+    - name: Test
+      run: dotnet test -c Release --no-build
+
+    - name: Pack nugets
+      run: dotnet pack -c Release --no-build --output .
+
+    - name: Push to NuGet
+      run: dotnet nuget push "*.nupkg" --api-key ${{secrets.nuget_api_key}} --source https://api.nuget.org/v3/index.json
