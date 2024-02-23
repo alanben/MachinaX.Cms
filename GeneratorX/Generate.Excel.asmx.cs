@@ -245,8 +245,6 @@ namespace XXBoom.MachinaX.GeneratorX {
 
 				if (response != null) {
 					package.SaveAs(response.OutputStream);
-					response.Flush();
-					//response.End();
 					HttpContext.Current.ApplicationInstance.CompleteRequest();
 				} else {
 					package.Save();
@@ -367,8 +365,6 @@ namespace XXBoom.MachinaX.GeneratorX {
 				worksheet.Cells.AutoFitColumns(0);  //Autofit columns for all cells
 				if (response != null) {
 					package.SaveAs(response.OutputStream);
-					response.Flush();
-					//response.End();
 					HttpContext.Current.ApplicationInstance.CompleteRequest();
 				} else {
 					package.Save();
@@ -463,8 +459,7 @@ namespace XXBoom.MachinaX.GeneratorX {
 				worksheet.Cells.AutoFitColumns(0);  //Autofit columns for all cells
 				// Only written to HttpResponse
 				package.SaveAs(response.OutputStream);
-				response.Flush();
-				response.End();
+				HttpContext.Current.ApplicationInstance.CompleteRequest();
 			}
 
 		}
