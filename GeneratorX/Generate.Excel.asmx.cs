@@ -24,6 +24,7 @@ namespace XXBoom.MachinaX.GeneratorX {
 	using System.Web;
 	using System.Web.Services;
 	using System.Xml;
+	using System.Threading;
 
 	/// <summary>
 	/// Excel Generator web service
@@ -245,7 +246,12 @@ namespace XXBoom.MachinaX.GeneratorX {
 
 				if (response != null) {
 					package.SaveAs(response.OutputStream);
-					HttpContext.Current.ApplicationInstance.CompleteRequest();
+					// End the response and catch the ThreadAbortException
+					try {
+						response.End();
+					} catch (ThreadAbortException) {
+						// Ignore the exception
+					}
 				} else {
 					package.Save();
 				}
@@ -365,7 +371,12 @@ namespace XXBoom.MachinaX.GeneratorX {
 				worksheet.Cells.AutoFitColumns(0);  //Autofit columns for all cells
 				if (response != null) {
 					package.SaveAs(response.OutputStream);
-					HttpContext.Current.ApplicationInstance.CompleteRequest();
+					// End the response and catch the ThreadAbortException
+					try {
+						response.End();
+					} catch (ThreadAbortException) {
+						// Ignore the exception
+					}
 				} else {
 					package.Save();
 				}
@@ -459,7 +470,12 @@ namespace XXBoom.MachinaX.GeneratorX {
 				worksheet.Cells.AutoFitColumns(0);  //Autofit columns for all cells
 				// Only written to HttpResponse
 				package.SaveAs(response.OutputStream);
-				HttpContext.Current.ApplicationInstance.CompleteRequest();
+				// End the response and catch the ThreadAbortException
+				try {
+					response.End();
+				} catch (ThreadAbortException) {
+					// Ignore the exception
+				}
 			}
 
 		}
