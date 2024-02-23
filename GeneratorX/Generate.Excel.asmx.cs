@@ -246,7 +246,8 @@ namespace XXBoom.MachinaX.GeneratorX {
 				if (response != null) {
 					package.SaveAs(response.OutputStream);
 					response.Flush();
-					response.End();
+					//response.End();
+					HttpContext.Current.ApplicationInstance.CompleteRequest();
 				} else {
 					package.Save();
 				}
@@ -367,7 +368,8 @@ namespace XXBoom.MachinaX.GeneratorX {
 				if (response != null) {
 					package.SaveAs(response.OutputStream);
 					response.Flush();
-					response.End();
+					//response.End();
+					HttpContext.Current.ApplicationInstance.CompleteRequest();
 				} else {
 					package.Save();
 				}
