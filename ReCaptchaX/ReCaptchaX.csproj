@@ -5,7 +5,7 @@
 		<RootNamespace>XXBoom.MachinaX.ReCaptchaX</RootNamespace>
 		<AssemblyName>XXBoom.MachinaX.ReCaptchaX</AssemblyName>
 
-		<AssemblyVersion>2.0.8</AssemblyVersion>
+		<AssemblyVersion>2.0.8.1</AssemblyVersion>
 		<FileVersion>$(AssemblyVersion)</FileVersion>
 		<Version>$(AssemblyVersion)</Version>
 

@@ -25,6 +25,7 @@ namespace XXBoom.MachinaX.GeneratorX {
 	using System.Web.Services;
 	using System.Xml;
 	using System.Threading;
+	using System.IO.Packaging;
 
 	/// <summary>
 	/// Excel Generator web service
@@ -243,18 +244,28 @@ namespace XXBoom.MachinaX.GeneratorX {
 				if (createCSV) {
 					EpplusCsvConverter.ConvertToCsv(package, excelfile);
 				}
+				package.Save();
+			}
 
-				if (response != null) {
-					package.SaveAs(response.OutputStream);
-					// End the response and catch the ThreadAbortException
-					try {
-						response.End();
-					} catch (ThreadAbortException) {
-						// Ignore the exception
-					}
-				} else {
-					package.Save();
-				}
+			if (response != null) {
+				WriteExcel(response, excelfile);
+			}
+		}
+
+		// Set response content type for xlsx and write fielpath to response
+		private void WriteExcel(HttpResponse response, FileInfo excelfile) {
+			try {
+				string exportFileName = excelfile.Name.Substring(0, excelfile.Name.Length - excelfile.Extension.Length);
+
+				response.Clear();
+				response.ClearHeaders();
+				response.AddHeader("Content-Disposition", String.Concat("attachment; filename=", exportFileName, ".xlsx"));
+				response.ContentType = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
+				response.WriteFile(excelfile.FullName);
+				response.Flush();
+				response.End();
+			} catch (ThreadAbortException) {
+				// Ignore the exception
 			}
 		}
 
