@@ -26,6 +26,9 @@ namespace XXBoom.MachinaX.GeneratorX {
 	using System.Xml;
 	using System.Threading;
 	using System.IO.Packaging;
+	using DocumentFormat.OpenXml.Drawing.Charts;
+	using DocumentFormat.OpenXml.Spreadsheet;
+	using System.Runtime.InteropServices;
 
 	/// <summary>
 	/// Excel Generator web service
@@ -265,7 +268,13 @@ namespace XXBoom.MachinaX.GeneratorX {
 				response.Flush();
 				response.End();
 			} catch (ThreadAbortException) {
-				// Ignore the exception
+				// Note: The following from ChatGPT in response to why I still see this exception being thrown even after catching it in the code.
+				//	The ThreadAbortException is a special type of exception in .NET that behaves differently from other exceptions.
+				//	When Response.End() is called, it throws a ThreadAbortException to terminate the current thread.
+				//	Even if you catch and ignore this exception, the runtime will automatically re - throw it at the end of the catch block.
+				//	This behavior is by design, as the ThreadAbortException is meant to ensure that the thread is terminated.
+				//	When you catch the exception, you're temporarily handling it, but as soon as your catch block completes, the runtime re-throws the exception to continue the thread termination process.
+				//	This is why you're seeing the exception handler higher up in the call chain catching the ThreadAbortException again.
 			}
 		}
 
