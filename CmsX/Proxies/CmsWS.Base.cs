@@ -348,7 +348,7 @@ namespace XXBoom.MachinaX.BlogX.CmsX {
 			return _GetFlag(result, "value", true);
 		}
 		protected bool _GetFlag(XmlNode result, string FlagName, bool throwcode) {
-			return bool.Parse(_CheckWSResult(result, true, throwcode).SelectSingleNode(FlagName).InnerText);
+			return bool.Parse(_CheckWSResult(result, true, throwcode).SelectSingleNode("//" + FlagName).InnerText);
 		}
 		#endregion
 

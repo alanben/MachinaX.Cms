@@ -104,6 +104,7 @@ namespace XXBoom.MachinaX.GeneratorX {
 
 		public XmlDocument DegenerateColumns(XmlElement Columns, string FileName) {
 			xLogger.Debug("DegenerateColumns");
+			xLogger.Debug("DegenerateColumns", "::Columns:", Columns, "::FileName:", FileName);
 			try {
 				AddOk();
 				degenerateExcel(Columns, FileName);
